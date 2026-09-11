@@ -1,0 +1,18 @@
+{
+  "id": "mars-crossing_asteroid",
+  "name": "穿越火星轨道的小行星",
+  "total": 29550,
+  "validElliptic": 29550,
+  "skipped": 0,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/mars-crossing_asteroid.asset",
+  "sample": "catalogs/mars-crossing_asteroid.json",
+  "archive": "catalogs/mars-crossing_asteroid.csv.gz",
+  "archiveBytes": 2049634,
+  "archiveSha256": "bb7bdccae1eef4074f6e128389377c433ca19e7a066975f8ddde0813889ef25a",
+  "identifier": "sssb_data_mars-crossing_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_mars-crossing_asteroid.csv",
+  "sha256": "d31e42f416586b09f8258d018f0059e5acf21ae6c57a23b70ce34843abd65424",
+  "bytes": 4847628
+}

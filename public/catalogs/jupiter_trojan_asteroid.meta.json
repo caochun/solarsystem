@@ -1,0 +1,18 @@
+{
+  "id": "jupiter_trojan_asteroid",
+  "name": "木星特洛伊小行星",
+  "total": 16372,
+  "validElliptic": 16372,
+  "skipped": 0,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/jupiter_trojan_asteroid.asset",
+  "sample": "catalogs/jupiter_trojan_asteroid.json",
+  "archive": "catalogs/jupiter_trojan_asteroid.csv.gz",
+  "archiveBytes": 1144840,
+  "archiveSha256": "c21a61331520d48b0c967b932e29296b913897bddacd0fd924522f4f187f0f9c",
+  "identifier": "sssb_data_jupiter_trojan_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_jupiter_trojan_asteroid.csv",
+  "sha256": "606a9d2b434c1d4313367e1b81ae9d292248e99af418b676d31d19d1460606f6",
+  "bytes": 2690552
+}

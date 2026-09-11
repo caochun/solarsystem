@@ -1,0 +1,18 @@
+{
+  "id": "main_belt_asteroid",
+  "name": "主带小行星",
+  "total": 1365050,
+  "validElliptic": 1365050,
+  "skipped": 0,
+  "displayed": 3004,
+  "asset": "data/assets/scene/solarsystem/sssb/main_belt_asteroid.asset",
+  "sample": "catalogs/main_belt_asteroid.json",
+  "archive": "catalogs/main_belt_asteroid.csv.gz",
+  "archiveBytes": 93971787,
+  "archiveSha256": "8758b087b9bb32d2c58fc478d89303ed2e52f0ebe08a54110eff63a6940c93e1",
+  "identifier": "sssb_data_main_belt_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_main_belt_asteroid.csv",
+  "sha256": "9e9ee7a9643c60a5441fcf612f325a379444d8712ddef578cf8003c6484614f3",
+  "bytes": 224022174
+}

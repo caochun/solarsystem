@@ -1,0 +1,18 @@
+{
+  "id": "encke-type_comet",
+  "name": "恩克型彗星",
+  "total": 79,
+  "validElliptic": 79,
+  "skipped": 0,
+  "displayed": 79,
+  "asset": "data/assets/scene/solarsystem/sssb/encke-type_comet.asset",
+  "sample": "catalogs/encke-type_comet.json",
+  "archive": "catalogs/encke-type_comet.csv.gz",
+  "archiveBytes": 6547,
+  "archiveSha256": "61caf9919da98d9d40835a4bb2abca1714286bb384409c743085ec4ba14ec40f",
+  "identifier": "sssb_data_encke-type_comet",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_encke-type_comet.csv",
+  "sha256": "e20b8da5787cdaf47cfe161e3cd14d6e65355afd9f68fed691c7777178462ac4",
+  "bytes": 13271
+}

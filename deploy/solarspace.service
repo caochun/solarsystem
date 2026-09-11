@@ -1,0 +1,18 @@
+[Unit]
+Description=SolarSpace browser solar system explorer
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=%h/Develop/SolarSpace
+ExecStart=/usr/bin/node %h/Develop/SolarSpace/server.mjs
+Environment=NODE_ENV=production
+Environment=HOST=0.0.0.0
+Environment=PORT=5173
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=10
+NoNewPrivileges=true
+
+[Install]
+WantedBy=default.target

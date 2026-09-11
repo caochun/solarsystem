@@ -1,0 +1,18 @@
+{
+  "id": "centaur_asteroid",
+  "name": "半人马小天体",
+  "total": 1021,
+  "validElliptic": 1021,
+  "skipped": 0,
+  "displayed": 1021,
+  "asset": "data/assets/scene/solarsystem/sssb/centaur_asteroid.asset",
+  "sample": "catalogs/centaur_asteroid.json",
+  "archive": "catalogs/centaur_asteroid.csv.gz",
+  "archiveBytes": 72449,
+  "archiveSha256": "68521bbd7fe19cc6942bbf25dfc7d91a9b713c9bbfaeaeefbcfca1f90226b5c2",
+  "identifier": "sssb_data_centaur_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_centaur_asteroid.csv",
+  "sha256": "fc04c5a8db6cf66fc95085b26202b08cae647d38cb917e85b90ac620f499f5c7",
+  "bytes": 164832
+}

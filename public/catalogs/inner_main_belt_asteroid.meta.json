@@ -1,0 +1,18 @@
+{
+  "id": "inner_main_belt_asteroid",
+  "name": "内主带小行星",
+  "total": 32680,
+  "validElliptic": 32680,
+  "skipped": 0,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/inner_main_belt_asteroid.asset",
+  "sample": "catalogs/inner_main_belt_asteroid.json",
+  "archive": "catalogs/inner_main_belt_asteroid.csv.gz",
+  "archiveBytes": 2275380,
+  "archiveSha256": "2e266ca2511d5843c5674945d5c091e7a6e30cc9c62ebdb32aec67d4b8174dfe",
+  "identifier": "sssb_data_inner_main_belt_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_inner_main_belt_asteroid.csv",
+  "sha256": "82fcce3b35c07927e20e293f6809dc2b5892a21dbaa7a233f5e3b25d30bc9e6b",
+  "bytes": 5393693
+}

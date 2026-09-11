@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.DS_Store
+test-results*/
+playwright-report/
+data-cache/
+__pycache__/
+data/
+.dist-*/
+.env
+.env.*
+!.env.example
+*.log

@@ -1,0 +1,1051 @@
+{
+  "physical": {
+    "moon": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 4902.8,
+      "gmSigma": 0.001,
+      "gmReference": "DE440",
+      "massKg": 7.345789071513118e+22,
+      "massUpperLimit": false,
+      "meanRadiusKm": 1737.4,
+      "meanRadiusSigmaKm": 0.1,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 3.344,
+      "densitySigma": 0.001
+    },
+    "phobos": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.0007087,
+      "gmSigma": 6e-07,
+      "gmReference": "MAR097",
+      "massKg": 1.061834199841182e+16,
+      "massUpperLimit": false,
+      "meanRadiusKm": 11.08,
+      "meanRadiusSigmaKm": 0.04,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.872,
+      "densitySigma": 0.076
+    },
+    "deimos": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 9.62e-05,
+      "gmSigma": 2.8e-06,
+      "gmReference": "MAR097",
+      "massKg": 1441349654645431.0,
+      "massUpperLimit": false,
+      "meanRadiusKm": 6.2,
+      "meanRadiusSigmaKm": 0.24,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.471,
+      "densitySigma": 0.166
+    },
+    "io": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 5959.91547,
+      "gmSigma": 0.00135,
+      "gmReference": "JUP365",
+      "massKg": 8.929648757173036e+22,
+      "massUpperLimit": false,
+      "meanRadiusKm": 1821.49,
+      "meanRadiusSigmaKm": 0.5,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 3.5276,
+      "densitySigma": 0.0029
+    },
+    "europa": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 3202.7121,
+      "gmSigma": 0.00181,
+      "gmReference": "JUP365",
+      "massKg": 4.7985737830184444e+22,
+      "massUpperLimit": false,
+      "meanRadiusKm": 1560.8,
+      "meanRadiusSigmaKm": 0.3,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 3.013,
+      "densitySigma": 0.0017
+    },
+    "ganymede": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 9887.83275,
+      "gmSigma": 0.00247,
+      "gmReference": "JUP365",
+      "massKg": 1.4814786194806946e+23,
+      "massUpperLimit": false,
+      "meanRadiusKm": 2631.2,
+      "meanRadiusSigmaKm": 1.7,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.9416,
+      "densitySigma": 0.0038
+    },
+    "callisto": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 7179.2834,
+      "gmSigma": 0.00324,
+      "gmReference": "JUP365",
+      "massKg": 1.075660878294353e+23,
+      "massUpperLimit": false,
+      "meanRadiusKm": 2410.3,
+      "meanRadiusSigmaKm": 1.5,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.834,
+      "densitySigma": 0.0034
+    },
+    "mimas": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 2.50349,
+      "gmSigma": 0.00014,
+      "gmReference": "SAT441",
+      "massKg": 3.750940173501342e+19,
+      "massUpperLimit": false,
+      "meanRadiusKm": 198.2,
+      "meanRadiusSigmaKm": 0.4,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.1501,
+      "densitySigma": 0.007
+    },
+    "enceladus": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 7.21037,
+      "gmSigma": 9e-05,
+      "gmReference": "SAT441",
+      "massKg": 1.0803185352771078e+20,
+      "massUpperLimit": false,
+      "meanRadiusKm": 252.1,
+      "meanRadiusSigmaKm": 0.2,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.6097,
+      "densitySigma": 0.0038
+    },
+    "tethys": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 41.21353,
+      "gmSigma": 0.00031,
+      "gmReference": "SAT441",
+      "massKg": 6.174959171748349e+20,
+      "massUpperLimit": false,
+      "meanRadiusKm": 531.1,
+      "meanRadiusSigmaKm": 0.6,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 0.984,
+      "densitySigma": 0.0033
+    },
+    "dione": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 73.11607,
+      "gmSigma": 5e-05,
+      "gmReference": "SAT441",
+      "massKg": 1.095486717708224e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 561.4,
+      "meanRadiusSigmaKm": 0.4,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.4781,
+      "densitySigma": 0.0032
+    },
+    "rhea": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 153.94175,
+      "gmSigma": 0.00041,
+      "gmReference": "SAT441",
+      "massKg": 2.3064853243036725e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 763.5,
+      "meanRadiusSigmaKm": 0.6,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.2372,
+      "densitySigma": 0.0029
+    },
+    "titan": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 8978.1371,
+      "gmSigma": 0.00025,
+      "gmReference": "SAT441",
+      "massKg": 1.3451803335181217e+23,
+      "massUpperLimit": false,
+      "meanRadiusKm": 2574.76,
+      "meanRadiusSigmaKm": 0.02,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.8814,
+      "densitySigma": 0.0001
+    },
+    "hyperion": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.37049,
+      "gmSigma": 5e-05,
+      "gmReference": "SAT441",
+      "massKg": 5.550994111742055e+18,
+      "massUpperLimit": false,
+      "meanRadiusKm": 135.0,
+      "meanRadiusSigmaKm": 4.0,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 0.5386,
+      "densitySigma": 0.0479
+    },
+    "iapetus": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 120.51511,
+      "gmSigma": 0.00242,
+      "gmReference": "SAT441",
+      "massKg": 1.805659170250064e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 734.3,
+      "meanRadiusSigmaKm": 2.8,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.0887,
+      "densitySigma": 0.0125
+    },
+    "ariel": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 83.5,
+      "gmSigma": 1.4,
+      "gmReference": "URA111",
+      "massKg": 1.2510675276808056e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 578.9,
+      "meanRadiusSigmaKm": 0.6,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.539,
+      "densitySigma": 0.026
+    },
+    "umbriel": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 85.1,
+      "gmSigma": 1.9,
+      "gmReference": "URA111",
+      "massKg": 1.2750400791094197e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 584.7,
+      "meanRadiusSigmaKm": 2.8,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.523,
+      "densitySigma": 0.041
+    },
+    "titania": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 226.9,
+      "gmSigma": 4.1,
+      "gmReference": "URA111",
+      "massKg": 3.3996074494703567e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 788.9,
+      "meanRadiusSigmaKm": 1.8,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.653,
+      "densitySigma": 0.032
+    },
+    "oberon": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 205.3,
+      "gmSigma": 5.8,
+      "gmReference": "URA111",
+      "massKg": 3.075978005184064e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 761.4,
+      "meanRadiusSigmaKm": 2.6,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.664,
+      "densitySigma": 0.05
+    },
+    "miranda": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 4.3,
+      "gmSigma": 0.2,
+      "gmReference": "URA111",
+      "massKg": 6.4426231964400755e+19,
+      "massUpperLimit": false,
+      "meanRadiusKm": 235.8,
+      "meanRadiusSigmaKm": 0.7,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 1.178,
+      "densitySigma": 0.053
+    },
+    "triton": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 1428.49546,
+      "gmSigma": 0.61603,
+      "gmReference": "NEP097",
+      "massKg": 2.1402925550244972e+22,
+      "massUpperLimit": false,
+      "meanRadiusKm": 1352.6,
+      "meanRadiusSigmaKm": 2.4,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": 2.0649,
+      "densitySigma": 0.011
+    },
+    "nereid": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.0,
+      "gmSigma": 0.0,
+      "gmReference": "NEP101",
+      "massKg": null,
+      "massUpperLimit": false,
+      "meanRadiusKm": 170.0,
+      "meanRadiusSigmaKm": 25.0,
+      "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
+      "densityGcm3": null,
+      "densitySigma": null
+    },
+    "charon": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 106.1,
+      "gmSigma": 0.3,
+      "gmReference": "PLU060",
+      "massKg": 1.5896798166099815e+21,
+      "massUpperLimit": false,
+      "meanRadiusKm": 606.0,
+      "meanRadiusSigmaKm": 0.5,
+      "radiusReference": "Francis Nimmo, Orkan Umurhan, Carey M. Lisse, Carver J. Bierson, Tod R. Lauer, Marc W. Buie, Henry B. Throop, Josh A. Kammer, James H. Roberts, William B. McKinnon, Amanda M. Zangari, Jeffrey M. Moore, S. Alan Stern, Leslie A. Young, Harold A. Weaver, Cathy B. Olkin, Kim Ennico (2017) \"Mean radius and shape of Pluto and Charon from New Horizons images\". Icarus 287 :12-29.",
+      "densityGcm3": 1.853,
+      "densitySigma": 0.004
+    },
+    "nix": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.0015,
+      "gmSigma": 0.0005,
+      "gmReference": "PLU060",
+      "massKg": 2.247426696432585e+16,
+      "massUpperLimit": false,
+      "meanRadiusKm": 18.0,
+      "meanRadiusSigmaKm": 1.0,
+      "radiusReference": "S. Alan Stern, William M. Grundy, William B. McKinnon, Harold A. Weaver, Leslie A. Young (2018) \"The Pluto System After New Horizons\". Annual Review of Astronomy and Astrophysics 56 :357-392.",
+      "densityGcm3": 0.88,
+      "densitySigma": 0.31
+    },
+    "hydra": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.002,
+      "gmSigma": 0.0003,
+      "gmReference": "PLU060",
+      "massKg": 2.9965689285767796e+16,
+      "massUpperLimit": false,
+      "meanRadiusKm": 18.5,
+      "meanRadiusSigmaKm": 1.0,
+      "radiusReference": "S. Alan Stern, William M. Grundy, William B. McKinnon, Harold A. Weaver, Leslie A. Young (2018) \"The Pluto System After New Horizons\". Annual Review of Astronomy and Astrophysics 56 :357-392.",
+      "densityGcm3": 1.21,
+      "densitySigma": 0.19
+    },
+    "kerberos": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.0002,
+      "gmSigma": null,
+      "gmReference": "PLU060",
+      "massKg": 2996568928576779.5,
+      "massUpperLimit": true,
+      "meanRadiusKm": 6.0,
+      "meanRadiusSigmaKm": 1.0,
+      "radiusReference": "S. Alan Stern, William M. Grundy, William B. McKinnon, Harold A. Weaver, Leslie A. Young (2018) \"The Pluto System After New Horizons\". Annual Review of Astronomy and Astrophysics 56 :357-392.",
+      "densityGcm3": null,
+      "densitySigma": null
+    },
+    "styx": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+        "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 0.0003,
+      "gmSigma": null,
+      "gmReference": "PLU060",
+      "massKg": 4494853392865169.0,
+      "massUpperLimit": true,
+      "meanRadiusKm": 5.2,
+      "meanRadiusSigmaKm": 1.0,
+      "radiusReference": "S. Alan Stern, William M. Grundy, William B. McKinnon, Harold A. Weaver, Leslie A. Young (2018) \"The Pluto System After New Horizons\". Annual Review of Astronomy and Astrophysics 56 :357-392.",
+      "densityGcm3": null,
+      "densitySigma": null
+    },
+    "ceres": {
+      "source": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true",
+        "sha256": "5cb2a3c8ea09ba6efe47e88e19310792c3a9287c651099686086002018e39f1f",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 62.6284,
+      "gmSigma": 0.0009,
+      "gmReference": "Nature vol. 537, pp515-517 (22 September 2016)",
+      "massKg": 9.3835158743239e+20,
+      "massUpperLimit": false,
+      "meanRadiusKm": 469.7,
+      "meanRadiusSigmaKm": 0.1,
+      "radiusReference": "Nature vol. 537, pp515-517 (22 September 2016)",
+      "densityGcm3": 2.162,
+      "densitySigma": 0.008,
+      "originalParameters": {
+        "H": {
+          "desc": "absolute magnitude (magnitude at 1 au from Sun and observer)",
+          "title": "absolute magnitude",
+          "sigma": null,
+          "name": "H",
+          "notes": "IRAS observations used: 15",
+          "units": null,
+          "value": "3.34",
+          "ref": "MPO980521"
+        },
+        "G": {
+          "title": "magnitude slope",
+          "desc": "magnitude slope parameter used in the standard asteroid H/G magnitude law",
+          "ref": "PDS3 (MPC 17257)",
+          "units": null,
+          "notes": "Fit",
+          "value": "0.12",
+          "name": "G",
+          "sigma": null
+        },
+        "diameter": {
+          "sigma": "0.2",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "value": "939.4",
+          "notes": null,
+          "units": "km",
+          "name": "diameter",
+          "desc": "effective body diameter",
+          "title": "diameter"
+        },
+        "extent": {
+          "title": "extent",
+          "desc": "tri(or bi)-axial body dimensions",
+          "units": "km",
+          "notes": "fit w.r.t. center of mass and in body-fixed frame",
+          "value": "964.4 x 964.2 x 891.8",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "name": "extent",
+          "sigma": "0.2 x 0.2 x 0.2"
+        },
+        "GM": {
+          "sigma": "0.0009",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "notes": null,
+          "units": "km^3/s^2",
+          "value": "62.6284",
+          "name": "GM",
+          "desc": "standard gravitational parameter: product of the mass (M) and gravitational constant (G)",
+          "title": "GM"
+        },
+        "density": {
+          "name": "density",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "value": "2.162",
+          "notes": null,
+          "units": "g/cm^3",
+          "sigma": "0.008",
+          "title": "bulk density",
+          "desc": "bulk density"
+        },
+        "rot_per": {
+          "value": "9.074170",
+          "notes": "derived from published value: 952.1532 +/- 0.0001 deg./day",
+          "units": "h",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "name": "rot_per",
+          "sigma": "0.000001",
+          "title": "rotation period",
+          "desc": "body rotation period (synodic)"
+        },
+        "pole": {
+          "value": "291.421/66.758",
+          "notes": null,
+          "units": null,
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "name": "pole",
+          "sigma": "0.007/0.002",
+          "title": "pole direction",
+          "desc": "spin-pole direction in R.A./Dec."
+        },
+        "albedo": {
+          "sigma": "0.003",
+          "ref": "Li et al. (2006) Icarus v182:pp143-160",
+          "value": "0.090",
+          "notes": "V-band geometric albedo",
+          "units": null,
+          "name": "albedo",
+          "desc": "geometric albedo",
+          "title": "geometric albedo"
+        },
+        "BV": {
+          "units": null,
+          "notes": "#obs=52; phase (min.=1.47, mean=11.85, max.=22.59) deg.",
+          "value": "0.713",
+          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
+          "name": "BV",
+          "sigma": "0.014",
+          "title": "B-V",
+          "desc": "color index B-V magnitude difference"
+        },
+        "UB": {
+          "value": "0.426",
+          "notes": "#obs=52; phase (min.=1.47, mean=12.16, max.=22.59) deg.",
+          "units": null,
+          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
+          "name": "UB",
+          "sigma": "0.026",
+          "title": "U-B",
+          "desc": "color index U-B magnitude difference"
+        },
+        "spec_T": {
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
+          "value": "G",
+          "notes": "used 7 color indices; used ground-based radiometric albedo",
+          "units": null,
+          "name": "spec_T",
+          "sigma": null,
+          "title": "Tholen spectral type",
+          "desc": "Tholen spectral taxonomic classification"
+        },
+        "spec_B": {
+          "title": "SMASSII spectral type",
+          "desc": "SMASSII spectral taxonomic classification",
+          "units": null,
+          "notes": "based on a high-resolution spectrum by Xu et al. (1995) or Bus and Binzel (2002)",
+          "value": "C",
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
+          "name": "spec_B",
+          "sigma": null
+        }
+      }
+    },
+    "vesta": {
+      "source": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true",
+        "sha256": "3e209f0abcb6559312438f215a0235426474368328fd3ea6614830c2db00d196",
+        "retrieved": "2026-09-11"
+      },
+      "gm": 17.2882844,
+      "gmSigma": 3e-06,
+      "gmReference": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+      "massKg": 2.5902767930719325e+20,
+      "massUpperLimit": false,
+      "meanRadiusKm": 261.385,
+      "meanRadiusSigmaKm": 0.05,
+      "radiusReference": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+      "densityGcm3": 3.46,
+      "densitySigma": 0.005,
+      "originalParameters": {
+        "H": {
+          "desc": "absolute magnitude (magnitude at 1 au from Sun and observer)",
+          "sigma": null,
+          "ref": "E2024D82",
+          "title": "absolute magnitude",
+          "name": "H",
+          "value": "3.25",
+          "notes": "IRAS observations used: 2",
+          "units": null
+        },
+        "G": {
+          "units": null,
+          "notes": "Fit",
+          "value": "0.32",
+          "name": "G",
+          "title": "magnitude slope",
+          "ref": "PDS3 (MPC 17257)",
+          "sigma": null,
+          "desc": "magnitude slope parameter used in the standard asteroid H/G magnitude law"
+        },
+        "diameter": {
+          "name": "diameter",
+          "title": "diameter",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "units": "km",
+          "notes": null,
+          "value": "522.77",
+          "sigma": "0.1",
+          "desc": "effective body diameter"
+        },
+        "extent": {
+          "sigma": "0.1 x 0.1 x 0.1",
+          "desc": "tri(or bi)-axial body dimensions",
+          "name": "extent",
+          "title": "extent",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "notes": null,
+          "units": "km",
+          "value": "569.24 x 554.48 x 452.66"
+        },
+        "GM": {
+          "value": "17.2882844",
+          "units": "km^3/s^2",
+          "notes": null,
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "title": "GM",
+          "name": "GM",
+          "desc": "standard gravitational parameter: product of the mass (M) and gravitational constant (G)",
+          "sigma": "0.0000030"
+        },
+        "density": {
+          "title": "bulk density",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "name": "density",
+          "value": "3.460",
+          "notes": null,
+          "units": "g/cm^3",
+          "desc": "bulk density",
+          "sigma": "0.005"
+        },
+        "rot_per": {
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "title": "rotation period",
+          "name": "rot_per",
+          "value": "5.3421276322",
+          "units": "h",
+          "notes": "Rotation rate (deg/day): 1617.33312922 +/- 0.00000013",
+          "desc": "body rotation period (synodic)",
+          "sigma": "0.0000000004"
+        },
+        "pole": {
+          "notes": "values in degrees",
+          "units": null,
+          "value": "309.06110/42.232386",
+          "name": "pole",
+          "title": "pole direction",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "sigma": "0.00031/0.000068",
+          "desc": "spin-pole direction in R.A./Dec."
+        },
+        "albedo": {
+          "name": "albedo",
+          "ref": "IRAS-A-FPA-3-RDR-IMPS-V6.0",
+          "title": "geometric albedo",
+          "units": null,
+          "notes": "IRAS observations used: 2",
+          "value": "0.4228",
+          "sigma": "0.053",
+          "desc": "geometric albedo"
+        },
+        "BV": {
+          "title": "B-V",
+          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
+          "name": "BV",
+          "value": "0.782",
+          "units": null,
+          "notes": "#obs=23; phase (min.=1.73, mean=14.92, max.=24.69) deg.",
+          "desc": "color index B-V magnitude difference",
+          "sigma": "0.020"
+        },
+        "UB": {
+          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
+          "title": "U-B",
+          "name": "UB",
+          "value": "0.492",
+          "notes": "#obs=23; phase (min.=1.73, mean=15.34, max.=24.69) deg.",
+          "units": null,
+          "desc": "color index U-B magnitude difference",
+          "sigma": "0.030"
+        },
+        "spec_T": {
+          "title": "Tholen spectral type",
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
+          "name": "spec_T",
+          "value": "V",
+          "units": null,
+          "notes": "used 7 color indices; used ground-based radiometric albedo",
+          "desc": "Tholen spectral taxonomic classification",
+          "sigma": null
+        },
+        "spec_B": {
+          "units": null,
+          "notes": "based on a high-resolution spectrum by Xu et al. (1995) or Bus and Binzel (2002)",
+          "value": "V",
+          "name": "spec_B",
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
+          "title": "SMASSII spectral type",
+          "sigma": null,
+          "desc": "SMASSII spectral taxonomic classification"
+        }
+      }
+    }
+  },
+  "rings": {
+    "jupiter": {
+      "source": {
+        "url": "https://pds-rings.seti.org/jupiter/jupiter_rings_table.html",
+        "sha256": "61c744fe0610a60306c45cc7d2a587fb7582a0f4738db47a7421daaec7603597",
+        "retrieved": "2026-09-11"
+      },
+      "bands": [
+        {
+          "name": "Halo",
+          "innerKm": 100000.0,
+          "outerKm": 122400.0,
+          "widthKm": 22400.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#a9aaa0"
+        },
+        {
+          "name": "Main Ring",
+          "innerKm": 122400.0,
+          "outerKm": 129100.0,
+          "widthKm": 6700.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.3,
+          "color": "#a9aaa0"
+        },
+        {
+          "name": "Amalthea Gossamer Ring",
+          "innerKm": 122400.0,
+          "outerKm": 181350.0,
+          "widthKm": 58950.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#a9aaa0"
+        },
+        {
+          "name": "Thebe Gossamer Ring",
+          "innerKm": 122400.0,
+          "outerKm": 221900.0,
+          "widthKm": 99500.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#a9aaa0"
+        },
+        {
+          "name": "Thebe Extension",
+          "innerKm": 221900.0,
+          "outerKm": 270000.0,
+          "widthKm": 48100.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#a9aaa0"
+        }
+      ],
+      "note": "NASA PDS 环尺寸；圆形共面示意，亮度增强，展示比例下细环加宽；未模拟偏心、环弧与颗粒散射"
+    },
+    "uranus": {
+      "source": {
+        "url": "https://pds-rings.seti.org/uranus/uranus_rings_table.html",
+        "sha256": "de6a861aacdd4de68cbfebc1975feaf2b1d4d0392eea21c3083d4225b24bbf4a",
+        "retrieved": "2026-09-11"
+      },
+      "bands": [
+        {
+          "name": "Zeta",
+          "innerKm": 37850.0,
+          "outerKm": 41350.0,
+          "widthKm": 3500.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Six",
+          "innerKm": 41837.235,
+          "outerKm": 41838.765,
+          "widthKm": 1.53,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Five",
+          "innerKm": 42232.86,
+          "outerKm": 42235.14,
+          "widthKm": 2.28,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Four",
+          "innerKm": 42569.835,
+          "outerKm": 42572.165,
+          "widthKm": 2.33,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Alpha",
+          "innerKm": 44713.77,
+          "outerKm": 44722.23,
+          "widthKm": 8.46,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Beta",
+          "innerKm": 45656.255,
+          "outerKm": 45665.745,
+          "widthKm": 9.49,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Eta",
+          "innerKm": 47175.2,
+          "outerKm": 47176.8,
+          "widthKm": 1.6,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Gamma",
+          "innerKm": 47625.925,
+          "outerKm": 47628.075,
+          "widthKm": 2.15,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Delta",
+          "innerKm": 48297.7,
+          "outerKm": 48302.3,
+          "widthKm": 4.6,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Lambda",
+          "innerKm": 50022.85,
+          "outerKm": 50025.15,
+          "widthKm": 2.3,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Epsilon",
+          "innerKm": 51119.95,
+          "outerKm": 51178.05,
+          "widthKm": 58.1,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.3,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Nu",
+          "innerKm": 65400.0,
+          "outerKm": 69200.0,
+          "widthKm": 3800.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#8b999b"
+        },
+        {
+          "name": "Mu",
+          "innerKm": 89200.0,
+          "outerKm": 106200.0,
+          "widthKm": 17000.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#8b999b"
+        }
+      ],
+      "note": "NASA PDS 环尺寸；圆形共面示意，亮度增强，展示比例下细环加宽；未模拟偏心、环弧与颗粒散射"
+    },
+    "neptune": {
+      "source": {
+        "url": "https://pds-rings.seti.org/neptune/neptune_rings_table.html",
+        "sha256": "1f103caa55e1961424a3700936dcf000ca517db74fa8ddba018c9bf8758befcf",
+        "retrieved": "2026-09-11"
+      },
+      "bands": [
+        {
+          "name": "Galle",
+          "innerKm": 41000.0,
+          "outerKm": 43000.0,
+          "widthKm": 2000.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#8999b4"
+        },
+        {
+          "name": "Le Verrier",
+          "innerKm": 53150.0,
+          "outerKm": 53250.0,
+          "widthKm": 100.0,
+          "widthUpperLimit": true,
+          "opacityIllustrated": 0.22,
+          "color": "#8999b4"
+        },
+        {
+          "name": "Lassell",
+          "innerKm": 53200.0,
+          "outerKm": 57200.0,
+          "widthKm": 4000.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.12,
+          "color": "#8999b4"
+        },
+        {
+          "name": "Arago",
+          "innerKm": 57200.0,
+          "outerKm": 57200.0,
+          "widthKm": null,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.22,
+          "color": "#8999b4"
+        },
+        {
+          "name": "Adams",
+          "innerKm": 62925.5,
+          "outerKm": 62940.5,
+          "widthKm": 15.0,
+          "widthUpperLimit": false,
+          "opacityIllustrated": 0.3,
+          "color": "#8999b4"
+        }
+      ],
+      "note": "NASA PDS 环尺寸；圆形共面示意，亮度增强，展示比例下细环加宽；未模拟偏心、环弧与颗粒散射"
+    }
+  },
+  "resources": [
+    {
+      "url": "https://ssd.jpl.nasa.gov/sats/phys_par/",
+      "sha256": "0c6323f469e48ac654f7d4dd263ed6c62ad14689218c5451a98da29d625aaf10",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true",
+      "sha256": "5cb2a3c8ea09ba6efe47e88e19310792c3a9287c651099686086002018e39f1f",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true",
+      "sha256": "3e209f0abcb6559312438f215a0235426474368328fd3ea6614830c2db00d196",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "url": "https://pds-rings.seti.org/jupiter/jupiter_rings_table.html",
+      "sha256": "61c744fe0610a60306c45cc7d2a587fb7582a0f4738db47a7421daaec7603597",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "url": "https://pds-rings.seti.org/uranus/uranus_rings_table.html",
+      "sha256": "de6a861aacdd4de68cbfebc1975feaf2b1d4d0392eea21c3083d4225b24bbf4a",
+      "retrieved": "2026-09-11"
+    },
+    {
+      "url": "https://pds-rings.seti.org/neptune/neptune_rings_table.html",
+      "sha256": "1f103caa55e1961424a3700936dcf000ca517db74fa8ddba018c9bf8758befcf",
+      "retrieved": "2026-09-11"
+    }
+  ],
+  "massConversion": {
+    "G": 6.6743e-20,
+    "relativeSigmaG": 2.2e-05,
+    "source": "https://physics.nist.gov/cgi-bin/cuu/Value?bg"
+  },
+  "vestaModel": {
+    "path": "models/vesta.glb",
+    "source": {
+      "identifier": "vesta_model",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/missions/dawn/vesta/model/1/VestaComet_5000.obj",
+      "sha256": "e0da508f60f10c1e79eed92e6256bec49ba07ecd3302d16fe173d1e3d8113b68",
+      "bytes": 153572019
+    },
+    "outputSha256": "72c979aa90c0bc7db9582c2db6ba5f822d500b782a23bf42c2f2f060d7968a4e",
+    "sourceFaces": 799999,
+    "outputFaces": 80000,
+    "note": "OpenSpace 引用的灶神星 OBJ 转换并简化网格；无表面影像，纯色着色"
+  }
+}

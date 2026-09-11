@@ -1,0 +1,18 @@
+{
+  "id": "apollo_asteroid",
+  "name": "阿波罗型近地小行星",
+  "total": 23686,
+  "validElliptic": 23686,
+  "skipped": 0,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/apollo_asteroid.asset",
+  "sample": "catalogs/apollo_asteroid.json",
+  "archive": "catalogs/apollo_asteroid.csv.gz",
+  "archiveBytes": 1640768,
+  "archiveSha256": "56bf583d9a27a234bad57af3079fa40a6c0d57fc7464e9021a6a1ead7c5c6b72",
+  "identifier": "sssb_data_apollo_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_apollo_asteroid.csv",
+  "sha256": "472c2a6e0d38bd4f899bcb3b7c28b25f35d8e56e5769d896bf82dd59556ddd39",
+  "bytes": 3889881
+}

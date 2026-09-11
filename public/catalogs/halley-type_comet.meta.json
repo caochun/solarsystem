@@ -1,0 +1,18 @@
+{
+  "id": "halley-type_comet",
+  "name": "哈雷型彗星",
+  "total": 110,
+  "validElliptic": 110,
+  "skipped": 0,
+  "displayed": 110,
+  "asset": "data/assets/scene/solarsystem/sssb/halley-type_comet.asset",
+  "sample": "catalogs/halley-type_comet.json",
+  "archive": "catalogs/halley-type_comet.csv.gz",
+  "archiveBytes": 9233,
+  "archiveSha256": "3780ee11d40e3505c38863512ab823f3dfa3512ba09e7e6621f031e81c510fe5",
+  "identifier": "sssb_data_halley-type_comet",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_halley-type_comet.csv",
+  "sha256": "cad64859cf0e9a36b3a20eb976ca4774e326903ccf9ea9b372e73b66b941a71a",
+  "bytes": 18804
+}

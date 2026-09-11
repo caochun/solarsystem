@@ -1,0 +1,2009 @@
+{
+  "epoch": "2026-09-10T00:00:00Z",
+  "bodies": {
+    "ariel": {
+      "name": "天卫一",
+      "english": "ARIEL",
+      "parent": "uranus",
+      "category": "satellite",
+      "naif": 701,
+      "radiiKm": [
+        581.1,
+        577.9,
+        577.7
+      ],
+      "assetRadiiKm": [
+        1162.0,
+        1156.0,
+        1155.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/uranus/ariel/globe.asset",
+      "orbit": {
+        "a": 0.0012764169765171122,
+        "e": 0.00032313270845628984,
+        "i": 97.71236242710589,
+        "node": 167.68641028255388,
+        "peri": 221.05904741789865,
+        "m": 290.424908731374,
+        "period": 2.5209003659036444,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        166463.2464943375,
+        -23801.92585759954,
+        90425.99359341891,
+        2.4324614919464,
+        -1.1957782389174498,
+        -4.796140951411834
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 5793951.3,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 2.5209003659036444,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "callisto": {
+      "name": "木卫四",
+      "english": "CALLISTO",
+      "parent": "jupiter",
+      "category": "satellite",
+      "naif": 504,
+      "radiiKm": [
+        2410.3,
+        2410.3,
+        2410.3
+      ],
+      "assetRadiiKm": [
+        2410.0,
+        2410.0,
+        2410.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/callisto/globe.asset",
+      "orbit": {
+        "a": 0.012592680390662872,
+        "e": 0.007092171720995213,
+        "i": 1.952465578744628,
+        "node": 336.7399095329143,
+        "peri": 38.04813198558068,
+        "m": 109.99407571577045,
+        "period": 16.705761866282508,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "Astronomy Engine / L1",
+      "stateKm": [
+        -1098042.9919434914,
+        1536093.9549627027,
+        33327.19222866623,
+        -6.685999371250482,
+        -4.707324632768944,
+        -0.23743994271331045
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 126686534.911,
+      "texture": "callisto.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 16.705761866282508,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "ceres": {
+      "name": "谷神星",
+      "english": "CERES",
+      "parent": "sun",
+      "category": "dwarf",
+      "radiiKm": [
+        487.3,
+        487.3,
+        446.0
+      ],
+      "assetRadiiKm": [
+        487.3,
+        487.3,
+        454.7
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/ceres/globe.asset",
+      "orbitSource": "OpenSpace SBDB elements",
+      "texture": "ceres.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "orbit": {
+        "a": 2.765615651508659,
+        "e": 0.07957631994408416,
+        "i": 10.58788658206854,
+        "node": 80.24963090816965,
+        "peri": 73.29975464616518,
+        "m": 231.5397330043706,
+        "period": 1679.910572771899,
+        "epoch": 1763683200000
+      },
+      "rotationDays": 0.3780833333333333,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "charon": {
+      "name": "冥卫一",
+      "english": "CHARON",
+      "parent": "pluto",
+      "category": "satellite",
+      "naif": 901,
+      "radiiKm": [
+        606.0,
+        606.0,
+        606.0
+      ],
+      "assetRadiiKm": [
+        0.006035,
+        0.005,
+        0.006035,
+        0.005,
+        0.006035,
+        0.005
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/moons/charon/globe.asset",
+      "orbit": {
+        "a": 0.00013099174331062378,
+        "e": 5.646235222385847e-05,
+        "i": 112.87177469805346,
+        "node": 227.4095520777687,
+        "peri": 210.5127182621133,
+        "m": 200.8966537130143,
+        "period": 6.387140801747412,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -12655.737122504519,
+        -4970.788041392097,
+        14112.784234879728,
+        0.07819113676970663,
+        0.1649851178926468,
+        0.1282230668039987
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 975.5,
+      "texture": "charon.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 6.387140801747412,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "deimos": {
+      "name": "火卫二",
+      "english": "DEIMOS",
+      "parent": "mars",
+      "category": "satellite",
+      "naif": 402,
+      "radiiKm": [
+        7.8,
+        6.0,
+        5.1
+      ],
+      "assetRadiiKm": [
+        7.5,
+        6.1,
+        5.2
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/mars/moons/deimos/globe.asset",
+      "orbit": {
+        "a": 0.0001568124426100628,
+        "e": 0.00022028600619282773,
+        "i": 24.125163441956108,
+        "node": 81.4882240996853,
+        "peri": 39.284234287254144,
+        "m": 160.64087737116347,
+        "period": 1.2625809260695398,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        3955.462944949239,
+        -22895.595464937116,
+        -3269.6247488205486,
+        1.2144582340379133,
+        0.2838385866614717,
+        -0.5190880151985118
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 42828.375214,
+      "texture": null,
+      "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
+      "rotationDays": 1.2625809260695398,
+      "model": "models/deimos.glb",
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "dione": {
+      "name": "土卫四",
+      "english": "DIONE",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 604,
+      "radiiKm": [
+        563.4,
+        561.3,
+        559.6
+      ],
+      "assetRadiiKm": [
+        561.4,
+        561.4,
+        561.4
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/dione/globe.asset",
+      "orbit": {
+        "a": 0.0025244816163121327,
+        "e": 0.0014985173325121554,
+        "i": 28.025287205238712,
+        "node": 169.54743898190074,
+        "peri": 274.96576869087227,
+        "m": 170.37282546350605,
+        "period": 2.7404016906239073,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -90413.4150148863,
+        -321710.6122199902,
+        177127.9854787541,
+        9.678836677317333,
+        -2.513340569511106,
+        0.3809417784448253
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "dione.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 2.7404016906239073,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "enceladus": {
+      "name": "土卫二",
+      "english": "ENCELADUS",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 602,
+      "radiiKm": [
+        256.6,
+        251.4,
+        248.3
+      ],
+      "assetRadiiKm": [
+        252.0,
+        252.0,
+        252.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/enceladus/globe.asset",
+      "orbit": {
+        "a": 0.0015936568981910024,
+        "e": 0.0032778264200255883,
+        "i": 28.04363391329537,
+        "node": 169.52668503772279,
+        "peri": 196.02969323147863,
+        "m": 148.01817913406987,
+        "period": 1.3745107744382494,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -215843.88447307597,
+        98159.1051945807,
+        -30516.64403600582,
+        -5.320124009376033,
+        -9.876896130044715,
+        5.688786454421172
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "enceladus.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 1.3745107744382494,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "eris": {
+      "name": "阋神星",
+      "english": "ERIS",
+      "parent": "sun",
+      "category": "dwarf",
+      "radiiKm": [
+        1163,
+        1163,
+        1163
+      ],
+      "assetRadiiKm": null,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/eris/model.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
+      "orbit": {
+        "a": 68.14633540173307,
+        "e": 0.4319581224809352,
+        "i": 43.76049565740999,
+        "node": 36.07068767579804,
+        "peri": 150.9970340507818,
+        "m": 208.7617474668772,
+        "period": 205472.1258735657,
+        "epoch": 1675892285000.0
+      },
+      "rotationDays": 1.0791666666666666,
+      "model": "models/eris.glb",
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "europa": {
+      "name": "木卫二",
+      "english": "EUROPA",
+      "parent": "jupiter",
+      "category": "satellite",
+      "naif": 502,
+      "radiiKm": [
+        1562.6,
+        1560.3,
+        1559.5
+      ],
+      "assetRadiiKm": [
+        1560.8,
+        1560.8,
+        1560.8
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/europa/globe.asset",
+      "orbit": {
+        "a": 0.00448674972295147,
+        "e": 0.009446930417711809,
+        "i": 2.0842810003412375,
+        "node": 326.1697353936924,
+        "peri": 253.94482032420103,
+        "m": 44.107579615959125,
+        "period": 3.5529310721390877,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "Astronomy Engine / L1",
+      "stateKm": [
+        -58098.76637668239,
+        -663808.3174563416,
+        -21245.31687292135,
+        13.767570731073748,
+        -1.3046110704540486,
+        0.23951199766756895
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 126686534.911,
+      "texture": "europa.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 3.5529310721390877,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "ganymede": {
+      "name": "木卫三",
+      "english": "GANYMEDE",
+      "parent": "jupiter",
+      "category": "satellite",
+      "naif": 503,
+      "radiiKm": [
+        2631.2,
+        2631.2,
+        2631.2
+      ],
+      "assetRadiiKm": [
+        2631.0,
+        2631.0,
+        2631.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/ganymede/globe.asset",
+      "orbit": {
+        "a": 0.007156851644199899,
+        "e": 0.002255727696587852,
+        "i": 2.3431288405264574,
+        "node": 339.08192350189387,
+        "peri": 16.08192234124231,
+        "m": 66.10621963457186,
+        "period": 7.1576760254613045,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "Astronomy Engine / L1",
+      "stateKm": [
+        509979.3717853523,
+        939280.9622172536,
+        43350.87439359272,
+        -9.558601489124205,
+        5.212655005607928,
+        0.05959173707598512
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 126686534.911,
+      "texture": "ganymede.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 7.1576760254613045,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "gonggong": {
+      "name": "共工星",
+      "english": "GONGGONG",
+      "parent": "sun",
+      "category": "minor",
+      "radiiKm": [
+        615.0,
+        615.0,
+        615.0
+      ],
+      "assetRadiiKm": [
+        615.0,
+        615.0,
+        615.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/gonggong/globe.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "orbit": {
+        "a": 67.28368697208764,
+        "e": 0.4979719595192342,
+        "i": 30.6429146610929,
+        "node": 336.8562311756138,
+        "peri": 207.244325413599,
+        "m": 108.9504644269052,
+        "period": 201582.9642396014,
+        "epoch": 1669396700000.0
+      },
+      "rotationDays": 0.9333333333333332,
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "haumea": {
+      "name": "妊神星",
+      "english": "HAUMEA",
+      "parent": "sun",
+      "category": "dwarf",
+      "radiiKm": [
+        1161,
+        852,
+        513
+      ],
+      "assetRadiiKm": null,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/haumea/model.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
+      "orbit": {
+        "a": 42.90891832299778,
+        "e": 0.200029230460531,
+        "i": 28.21036755623824,
+        "node": 122.031014162472,
+        "peri": 240.4219275047551,
+        "m": 219.4933206849489,
+        "period": 102662.1853273871,
+        "epoch": 1677283200000.0
+      },
+      "rotationDays": 0.16314166666666666,
+      "model": "models/haumea.glb",
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "hydra": {
+      "name": "冥卫三",
+      "english": "HYDRA",
+      "parent": "pluto",
+      "category": "satellite",
+      "naif": 903,
+      "radiiKm": [
+        53.0,
+        53.0,
+        53.0
+      ],
+      "assetRadiiKm": [
+        53.0,
+        53.0,
+        53.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/moons/hydra/globe.asset",
+      "orbit": {
+        "a": 0.0004368155661054201,
+        "e": 0.012483994514698409,
+        "i": 112.56602466748633,
+        "node": 227.46241876317345,
+        "peri": 291.6840822535691,
+        "m": 24.07179082239061,
+        "period": 38.89446180887428,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -18992.554889630344,
+        -46011.84921447681,
+        -41180.24408566448,
+        -0.08313987186059912,
+        -0.040109462332995574,
+        0.08216138927172882
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 975.5,
+      "texture": null,
+      "surface": "原资产与参数核中的历史占位尺寸；球体仅作定位，尚未接入新视野号形状数据",
+      "rotationDays": 38.89446180887428,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc",
+      "radiusQuality": "placeholder"
+    },
+    "hyperion": {
+      "name": "土卫七",
+      "english": "HYPERION",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 607,
+      "radiiKm": [
+        180.1,
+        133.0,
+        102.7
+      ],
+      "assetRadiiKm": [
+        360.2,
+        266.0,
+        205.4
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/hyperion/globe.asset",
+      "orbit": {
+        "a": 0.009929891276801089,
+        "e": 0.09669011017924876,
+        "i": 27.05630161591714,
+        "node": 169.54766841155282,
+        "peri": 67.249604219298,
+        "m": 246.17442660321626,
+        "period": 21.378274452581522,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -641832.8861863728,
+        1288078.0465672587,
+        -587513.3714584201,
+        -4.190422394294289,
+        -1.9569124566105438,
+        1.3712248947848433
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 21.378274452581522,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "iapetus": {
+      "name": "土卫八",
+      "english": "IAPETUS",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 608,
+      "radiiKm": [
+        745.7,
+        745.7,
+        712.1
+      ],
+      "assetRadiiKm": [
+        734.0,
+        734.0,
+        734.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/iapetus/globe.asset",
+      "orbit": {
+        "a": 0.023811219061205473,
+        "e": 0.028335416540895917,
+        "i": 16.98183105149309,
+        "node": 138.87135425836217,
+        "peri": 231.75453256545407,
+        "m": 165.0142569788496,
+        "period": 79.38315470721965,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -3588763.688117064,
+        299797.11480470595,
+        651902.7337256391,
+        -0.1465302482764081,
+        -3.0842584180835226,
+        0.7388920255991149
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "iapetus.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 79.38315470721965,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "io": {
+      "name": "木卫一",
+      "english": "IO",
+      "parent": "jupiter",
+      "category": "satellite",
+      "naif": 501,
+      "radiiKm": [
+        1829.4,
+        1819.4,
+        1815.7
+      ],
+      "assetRadiiKm": [
+        1821.6,
+        1821.6,
+        1821.6
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/io/globe.asset",
+      "orbit": {
+        "a": 0.0028212040599180114,
+        "e": 0.004189537812041017,
+        "i": 2.2258374723719245,
+        "node": 338.4246240506278,
+        "peri": 68.2674895311461,
+        "m": 83.75725699938035,
+        "period": 1.7714984038662756,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "Astronomy Engine / L1",
+      "stateKm": [
+        -276413.3079410202,
+        318598.9699859871,
+        7564.913026156617,
+        -13.138879621484294,
+        -11.28938748193869,
+        -0.5958381236132408
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 126686534.911,
+      "texture": "io.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 1.7714984038662756,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "kerberos": {
+      "name": "冥卫四",
+      "english": "KERBEROS",
+      "parent": "pluto",
+      "category": "satellite",
+      "naif": 904,
+      "radiiKm": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "assetRadiiKm": [
+        10.0,
+        10.0,
+        10.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/moons/kerberos/globe.asset",
+      "orbit": {
+        "a": 0.00039064717790767686,
+        "e": 0.009509968195032843,
+        "i": 113.3033146761521,
+        "node": 227.30807495034534,
+        "peri": 305.05208240849464,
+        "m": 358.2247373771872,
+        "period": 32.89407239898383,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -7438.98627822118,
+        -36308.91333567978,
+        -44462.7834768105,
+        -0.09475340642318748,
+        -0.06097727303652713,
+        0.06569839668627178
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 975.5,
+      "texture": null,
+      "surface": "原资产与参数核中的历史占位尺寸；球体仅作定位，尚未接入新视野号形状数据",
+      "rotationDays": 32.89407239898383,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc",
+      "radiusQuality": "placeholder"
+    },
+    "makemake": {
+      "name": "鸟神星",
+      "english": "MAKEMAKE",
+      "parent": "sun",
+      "category": "dwarf",
+      "radiiKm": [
+        715,
+        715,
+        715
+      ],
+      "assetRadiiKm": null,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/makemake/model.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
+      "orbit": {
+        "a": 45.26514245277056,
+        "e": 0.1661360684291203,
+        "i": 29.01842946746389,
+        "node": 79.36123402529158,
+        "peri": 295.8223003368652,
+        "m": 167.5755900333624,
+        "period": 111233.3435553189,
+        "epoch": 1675892323000.0
+      },
+      "rotationDays": 0.42804166666666665,
+      "model": "models/makemake.glb",
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "mimas": {
+      "name": "土卫一",
+      "english": "MIMAS",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 601,
+      "radiiKm": [
+        207.8,
+        196.7,
+        190.6
+      ],
+      "assetRadiiKm": [
+        207.0,
+        197.0,
+        191.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/mimas/globe.asset",
+      "orbit": {
+        "a": 0.0012435707353796027,
+        "e": 0.022081180047684487,
+        "i": 27.55692528027857,
+        "node": 172.73830377268862,
+        "peri": 136.42148900374204,
+        "m": 332.2549934030691,
+        "period": 0.9474616672419628,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        34822.450882699115,
+        -159950.50254330286,
+        80500.67784404769,
+        14.236290340698808,
+        2.221986971865659,
+        -2.089228066911936
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "mimas.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 0.9474616672419628,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "miranda": {
+      "name": "天卫五",
+      "english": "MIRANDA",
+      "parent": "uranus",
+      "category": "satellite",
+      "naif": 705,
+      "radiiKm": [
+        240.4,
+        234.2,
+        232.9
+      ],
+      "assetRadiiKm": [
+        471.6,
+        468.0,
+        466.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/uranus/miranda/globe.asset",
+      "orbit": {
+        "a": 0.0008681337028484689,
+        "e": 0.001011764806488579,
+        "i": 98.10351467651883,
+        "node": 163.21409673461739,
+        "peri": 65.46954296760335,
+        "m": 189.74831396879048,
+        "period": 1.413991337665059,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        26680.15723869699,
+        -26553.573290100434,
+        -124431.49220289616,
+        -6.245970316157202,
+        1.633263430298879,
+        -1.6865826324281559
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 5793951.3,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 1.413991337665059,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "nereid": {
+      "name": "海卫二",
+      "english": "NEREID",
+      "parent": "neptune",
+      "category": "satellite",
+      "naif": 802,
+      "radiiKm": [
+        170.0,
+        170.0,
+        170.0
+      ],
+      "assetRadiiKm": [
+        357.0,
+        340.0,
+        340.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/neptune/nereid/globe.asset",
+      "orbit": {
+        "a": 0.03685498147641674,
+        "e": 0.7455613412962463,
+        "i": 4.989278613893811,
+        "node": 320.0945518958157,
+        "peri": 295.97799139133093,
+        "m": 241.9056881120422,
+        "period": 360.1024733917719,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -81381.86282749189,
+        8798078.12379691,
+        584634.3485680686,
+        -0.4603669507311935,
+        -0.31057911902568575,
+        -0.046581796095865616
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 6835099.97,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 360.1024733917719,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "nix": {
+      "name": "冥卫二",
+      "english": "NIX",
+      "parent": "pluto",
+      "category": "satellite",
+      "naif": 902,
+      "radiiKm": [
+        45.0,
+        45.0,
+        45.0
+      ],
+      "assetRadiiKm": [
+        45.0,
+        45.0,
+        45.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/moons/nix/globe.asset",
+      "orbit": {
+        "a": 0.000329640807986248,
+        "e": 0.01604747449202703,
+        "i": 112.87174313392161,
+        "node": 227.38539433700495,
+        "peri": 206.50332783625646,
+        "m": 341.9413558819935,
+        "period": 25.497761941816254,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        34471.08723890178,
+        33653.815378137784,
+        -6121.687704242716,
+        0.026721953029668573,
+        -0.05210434561708162,
+        -0.13024816029534825
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 975.5,
+      "texture": null,
+      "surface": "原资产与参数核中的历史占位尺寸；球体仅作定位，尚未接入新视野号形状数据",
+      "rotationDays": 25.497761941816254,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc",
+      "radiusQuality": "placeholder"
+    },
+    "oberon": {
+      "name": "天卫四",
+      "english": "OBERON",
+      "parent": "uranus",
+      "category": "satellite",
+      "naif": 704,
+      "radiiKm": [
+        761.4,
+        761.4,
+        761.4
+      ],
+      "assetRadiiKm": [
+        1522.8,
+        1522.8,
+        1522.8
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/uranus/oberon/globe.asset",
+      "orbit": {
+        "a": 0.0039001259826211073,
+        "e": 0.0025419428824034612,
+        "i": 97.91068457414751,
+        "node": 167.70801355378526,
+        "peri": 195.73174843772892,
+        "m": 181.66236064808862,
+        "period": 13.464330938251388,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -540292.4808544657,
+        142342.79583969974,
+        173116.14822563675,
+        1.0057909653416532,
+        0.203368566838013,
+        2.9710573738249315
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 5793951.3,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 13.464330938251388,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "orcus": {
+      "name": "亡神星",
+      "english": "ORCUS",
+      "parent": "sun",
+      "category": "minor",
+      "radiiKm": [
+        455,
+        455,
+        458.5
+      ],
+      "assetRadiiKm": [
+        910.0,
+        910.0,
+        917.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/orcus/globe.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "orbit": {
+        "a": 39.11708578529354,
+        "e": 0.2286250262659888,
+        "i": 20.56757017337535,
+        "node": 268.5357792998585,
+        "peri": 73.46005226906388,
+        "m": 184.3682302120697,
+        "period": 89359.12208173508,
+        "epoch": 1675879250000.0
+      },
+      "rotationDays": 0.5495,
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "phobos": {
+      "name": "火卫一",
+      "english": "PHOBOS",
+      "parent": "mars",
+      "category": "satellite",
+      "naif": 401,
+      "radiiKm": [
+        13.0,
+        11.4,
+        9.1
+      ],
+      "assetRadiiKm": [
+        13.03,
+        11.4,
+        9.14
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/mars/moons/phobos/globe.asset",
+      "orbit": {
+        "a": 6.268847332707146e-05,
+        "e": 0.015296305361240799,
+        "i": 25.702735372162202,
+        "node": 81.98238682039882,
+        "peri": 267.77822269182883,
+        "m": 332.29616890863895,
+        "period": 0.3191317286779783,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        6433.939812583807,
+        -5683.820494167891,
+        -3448.132430674969,
+        1.237019583852286,
+        1.713581915648758,
+        -0.47455012680280356
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 42828.375214,
+      "texture": null,
+      "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
+      "rotationDays": 0.3191317286779783,
+      "model": "models/phobos.glb",
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "pluto": {
+      "name": "冥王星",
+      "english": "PLUTO",
+      "parent": "sun",
+      "category": "dwarf",
+      "radiiKm": [
+        1188.3,
+        1188.3,
+        1188.3
+      ],
+      "assetRadiiKm": [
+        1173.0,
+        1173.0,
+        1173.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/globe.asset",
+      "orbitSource": "Astronomy Engine",
+      "texture": "pluto.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 6.38723,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "quaoar": {
+      "name": "创神星",
+      "english": "QUAOAR",
+      "parent": "sun",
+      "category": "minor",
+      "radiiKm": [
+        569,
+        569,
+        518
+      ],
+      "assetRadiiKm": [
+        1138.0,
+        1138.0,
+        1036.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/quaoar/globe.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "orbit": {
+        "a": 43.47262257795771,
+        "e": 0.04098702510897952,
+        "i": 7.991232171849933,
+        "node": 189.0902949942479,
+        "peri": 155.214428533145,
+        "m": 296.22300217209,
+        "period": 104691.8599963541,
+        "epoch": 1660016068000.0
+      },
+      "rotationDays": 0.36833333333333335,
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "rhea": {
+      "name": "土卫五",
+      "english": "RHEA",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 605,
+      "radiiKm": [
+        765.0,
+        763.1,
+        762.4
+      ],
+      "assetRadiiKm": [
+        765.0,
+        765.0,
+        765.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/rhea/globe.asset",
+      "orbit": {
+        "a": 0.003524243178425186,
+        "e": 0.0007891347951944495,
+        "i": 28.270918284013362,
+        "node": 169.9758362793141,
+        "peri": 175.74394785053192,
+        "m": 174.54868647371333,
+        "period": 4.5201693881102605,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -498525.6558226154,
+        167620.58919110277,
+        -42101.775126196044,
+        -2.6873639918590286,
+        -6.996712443680338,
+        3.9568841768705916
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "rhea.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 4.5201693881102605,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "sedna": {
+      "name": "塞德娜",
+      "english": "SEDNA",
+      "parent": "sun",
+      "category": "minor",
+      "radiiKm": [
+        497.5,
+        497.5,
+        497.5
+      ],
+      "assetRadiiKm": [
+        995.0,
+        1060.0,
+        1025.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/sedna/globe.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "orbit": {
+        "a": 532.3140469775566,
+        "e": 0.8565069519144183,
+        "i": 11.93034000375754,
+        "node": 144.2584776398181,
+        "peri": 310.8687900929183,
+        "m": 358.4694078785378,
+        "period": 4485811.755507208,
+        "epoch": 1676036918000.0
+      },
+      "rotationDays": 0.42804166666666665,
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+    },
+    "styx": {
+      "name": "冥卫五",
+      "english": "STYX",
+      "parent": "pluto",
+      "category": "satellite",
+      "naif": 905,
+      "radiiKm": [
+        45.0,
+        45.0,
+        45.0
+      ],
+      "assetRadiiKm": [
+        45.0,
+        45.0,
+        45.0
+      ],
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/moons/styx/globe.asset",
+      "orbit": {
+        "a": 0.00028372290328209726,
+        "e": 0.017782339715080323,
+        "i": 112.63085260510718,
+        "node": 227.43977017959574,
+        "peri": 143.53327779580846,
+        "m": 250.14312536798914,
+        "period": 20.360207508562254,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -30934.142568570114,
+        -20891.850607284752,
+        20759.698223429266,
+        0.019167517474165348,
+        0.092973318486607,
+        0.11697456316712325
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 975.5,
+      "texture": null,
+      "surface": "原资产与参数核中的历史占位尺寸；球体仅作定位，尚未接入新视野号形状数据",
+      "rotationDays": 20.360207508562254,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc",
+      "radiusQuality": "placeholder"
+    },
+    "tethys": {
+      "name": "土卫三",
+      "english": "TETHYS",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 603,
+      "radiiKm": [
+        538.4,
+        528.3,
+        526.3
+      ],
+      "assetRadiiKm": [
+        531.1,
+        531.1,
+        531.1
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/tethys/globe.asset",
+      "orbit": {
+        "a": 0.001971789884796131,
+        "e": 0.0010285587597148932,
+        "i": 28.047933437617264,
+        "node": 171.8461670380263,
+        "peri": 123.45414007122548,
+        "m": 3.714660157734052,
+        "period": 1.8916764606461849,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        146872.9040271018,
+        -230374.10326438647,
+        110400.11751274153,
+        9.812140927270706,
+        4.709158488737524,
+        -3.225053980234801
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "tethys.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 1.8916764606461849,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "titan": {
+      "name": "土卫六",
+      "english": "TITAN",
+      "parent": "saturn",
+      "category": "satellite",
+      "naif": 606,
+      "radiiKm": [
+        2575.15,
+        2574.78,
+        2574.47
+      ],
+      "assetRadiiKm": [
+        2576.0,
+        2576.0,
+        2576.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/titan/globe.asset",
+      "orbit": {
+        "a": 0.008170206321818509,
+        "e": 0.02878295390833491,
+        "i": 27.706022539970537,
+        "node": 169.08040388493205,
+        "peri": 177.75412307493085,
+        "m": 281.90959423380576,
+        "period": 15.955317248940426,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -69276.33557636704,
+        -1076170.0539839088,
+        561805.2132295208,
+        5.5754388052646195,
+        -0.3697419480799451,
+        -0.3639865083809457
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 37931207.8,
+      "texture": "titan.jpg",
+      "surface": "卡西尼 ISS 地表拼接图，透过云雾的观测表示",
+      "rotationDays": 15.955317248940426,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "titania": {
+      "name": "天卫三",
+      "english": "TITANIA",
+      "parent": "uranus",
+      "category": "satellite",
+      "naif": 703,
+      "radiiKm": [
+        788.9,
+        788.9,
+        788.9
+      ],
+      "assetRadiiKm": [
+        1576.8,
+        1576.8,
+        1576.8
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/uranus/titania/globe.asset",
+      "orbit": {
+        "a": 0.0029165917274947954,
+        "e": 0.001258319501498929,
+        "i": 97.7647212172631,
+        "node": 167.63735876679442,
+        "peri": 282.5353956430203,
+        "m": 268.3088352799758,
+        "period": 8.707235347872201,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        416460.93938272947,
+        -102485.4034979788,
+        -80270.44880090657,
+        -0.7688197986452202,
+        -0.3266098572657533,
+        -3.5468960043902875
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 5793951.3,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 8.707235347872201,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "triton": {
+      "name": "海卫一",
+      "english": "TRITON",
+      "parent": "neptune",
+      "category": "satellite",
+      "naif": 801,
+      "radiiKm": [
+        1352.6,
+        1352.6,
+        1352.6
+      ],
+      "assetRadiiKm": [
+        2709.0,
+        2706.0,
+        2705.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/neptune/triton/globe.asset",
+      "orbit": {
+        "a": 0.0023719697422126865,
+        "e": 0.00023277529833589972,
+        "i": 129.12228128810898,
+        "node": 222.83764298685134,
+        "peri": 3.439248247035733,
+        "m": 3.2540255378965885,
+        "period": 5.879569461726218,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -276108.39117688395,
+        -220428.52255604902,
+        32085.55309594702,
+        -1.4952697524728233,
+        2.365232888784712,
+        3.382483304812801
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 6835099.97,
+      "texture": "triton.jpg",
+      "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
+      "rotationDays": 5.879569461726218,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "umbriel": {
+      "name": "天卫二",
+      "english": "UMBRIEL",
+      "parent": "uranus",
+      "category": "satellite",
+      "naif": 702,
+      "radiiKm": [
+        584.7,
+        584.7,
+        584.7
+      ],
+      "assetRadiiKm": [
+        1169.4,
+        1169.4,
+        1169.4
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/uranus/umbriel/globe.asset",
+      "orbit": {
+        "a": 0.0017780697215609995,
+        "e": 0.004107511439395571,
+        "i": 97.71550702340652,
+        "node": 167.70414057942,
+        "peri": 56.966540515591234,
+        "m": 310.5463338229548,
+        "period": 4.144670437573483,
+        "epoch": 1788998400000.0
+      },
+      "orbitSource": "OpenSpace SPK epoch / Kepler approximation",
+      "stateKm": [
+        -256239.87266040404,
+        60389.57796776919,
+        32739.02617983842,
+        0.7163035222398061,
+        0.4816175851143335,
+        4.599272163182715
+      ],
+      "stateEpochET": 842270469.1824903,
+      "gmKm3S2": 5793951.3,
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "rotationDays": 4.144670437573483,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    },
+    "vesta": {
+      "name": "灶神星",
+      "english": "VESTA",
+      "parent": "sun",
+      "category": "minor",
+      "radiiKm": [
+        289.0,
+        280.0,
+        229.0
+      ],
+      "assetRadiiKm": null,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/vesta/model.asset",
+      "orbitSource": "OpenSpace Kepler elements",
+      "texture": null,
+      "surface": "无全球影像，使用纯色形状示意",
+      "orbit": {
+        "a": 2.363071846845419,
+        "e": 0.0887575049859888,
+        "i": 7.139257981928672,
+        "node": 103.7573001493549,
+        "peri": 151.5991639880173,
+        "m": 115.1329895974862,
+        "period": 1326.797192349944,
+        "epoch": 1618312557000.0
+      },
+      "rotationDays": 0.2225886525,
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+    }
+  },
+  "resources": [
+    {
+      "identifier": "general_pck",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/general_kernels/pck/1/pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+      "bytes": 131226
+    },
+    {
+      "identifier": "ceres_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/missions/dawn/ceres/textures/2/ceres_lamo_4096x2048.png",
+      "sha256": "273bbeffafe56317f94a6c7b1b22b6adf79039b53660edeac1a07e82c0f4d986",
+      "bytes": 8463656,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/ceres/layers/colorlayers/lamo_local.asset",
+      "output": "textures/ceres.jpg",
+      "outputSha256": "715c4c855d034c611e81a15d32fe61ac8ad6d82185e114e13890df55546b102f"
+    },
+    {
+      "identifier": "charon_textures",
+      "version": 3,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/missions/newhorizons/charon/textures/3/NH_Charon_mosaic.png",
+      "sha256": "060de41a665041f09ee03e5640493481dc396217e4337cae20895024dc308ac0",
+      "bytes": 45393355,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/moons/charon/layers/colorlayers/mosaic.asset",
+      "output": "textures/charon.jpg",
+      "outputSha256": "d7da643357963880dffdf76428722e52d09c1ab714315e80bf3aad45ad68f13d"
+    },
+    {
+      "identifier": "pluto_textures",
+      "version": 5,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/missions/newhorizons/pluto/textures/3/NH_Pluto_mosaic_16384.png",
+      "sha256": "8fb1c2546ced8df03fba314c578b20a65896a1453f7d138963c103f7ff0e76ec",
+      "bytes": 28930886,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/pluto/layers/colorlayers/mosaic.asset",
+      "output": "textures/pluto.jpg",
+      "outputSha256": "b0199bcecb361519e2d4c31c1c5bf14bf9f7a6313ce930aee4e805d7a17049e5"
+    },
+    {
+      "identifier": "callisto_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/callisto/textures/2/callisto_os.tif",
+      "sha256": "7aeee9b42f296dddf1500fa5bd9a66836a732d53299c0cac0f6fe93e7866f85d",
+      "bytes": 4867578,
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/callisto/layers/colorlayers/callisto_texture.asset",
+      "output": "textures/callisto.jpg",
+      "outputSha256": "48a4d9ef6b6a11652e14685f6d49a216544d5fe4c8047e0db75e123ead890cad"
+    },
+    {
+      "identifier": "europa_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/europa/textures/2/europa_os.tif",
+      "sha256": "d3274481f1b53a20f37668fddfb8ece856899c7a97c35a6b15aa628941cf7367",
+      "bytes": 25182674,
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/europa/layers/colorlayers/europa_texture.asset",
+      "output": "textures/europa.jpg",
+      "outputSha256": "76cd245eb23daa09c0cc039c8e82170dcfdfe979fcb991ee52af49d29ad0fcb2"
+    },
+    {
+      "identifier": "ganymede_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/ganymede/textures/1/ganymede.jpg",
+      "sha256": "d54a8f62e653e0a523963bcee30d7f95dbbd1e2f33a3ae395fb7999368ec3864",
+      "bytes": 361313,
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/ganymede/layers/colorlayers/ganymede_texture.asset",
+      "output": "textures/ganymede.jpg",
+      "outputSha256": "75b54fafad38ce23883d3a4e2aa78a39e57a1e2d05cfbdf12aaf105ae2d7b881"
+    },
+    {
+      "identifier": "io_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/io/textures/1/io.jpg",
+      "sha256": "79e7e7febd6f7a8c3149ca6a0cc4164c325d108c04ebc61733d6edc704316fac",
+      "bytes": 1020766,
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/io/layers/colorlayers/io_texture.asset",
+      "output": "textures/io.jpg",
+      "outputSha256": "607f7c45449819d957d5972974252fe488221e9de581d0f56ef9321ff1176e7f"
+    },
+    {
+      "identifier": "deimos_model",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/mars/deimos/model/1/Deimos_1_1000.glb",
+      "sha256": "5d5da763970acffe88aac26d3c3bd0fa66c5bef251d1bb4bfe2ae5fd723507e4",
+      "bytes": 1600012,
+      "asset": "data/assets/scene/solarsystem/planets/mars/moons/deimos/model.asset",
+      "output": "models/deimos.glb",
+      "outputSha256": "5d5da763970acffe88aac26d3c3bd0fa66c5bef251d1bb4bfe2ae5fd723507e4"
+    },
+    {
+      "identifier": "phobos_model",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/mars/phobos/model/1/Phobos_1_1000.glb",
+      "sha256": "757712101e4fbcf9527942ee664a3bc6dfe3ab460466b760f4bf51ee85dbd8d3",
+      "bytes": 3855016,
+      "asset": "data/assets/scene/solarsystem/planets/mars/moons/phobos/model.asset",
+      "output": "models/phobos.glb",
+      "outputSha256": "757712101e4fbcf9527942ee664a3bc6dfe3ab460466b760f4bf51ee85dbd8d3"
+    },
+    {
+      "identifier": "triton_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/triton/textures/1/Triton_Voyager2_ClrMosaic_GlobalFill_600m.png",
+      "sha256": "0237309be070a464b4ee8f3fb9122a7c5450df0a8488d1d03cfdc1ea36bac916",
+      "bytes": 32780229,
+      "asset": "data/assets/scene/solarsystem/planets/neptune/triton/layers/colorlayers/triton_voyager2_clrmosaic_globalfill_600m.asset",
+      "output": "textures/triton.jpg",
+      "outputSha256": "10ecb28c0b35cba3cfbfabda0d0c6996d1481e22f50c81dcec318751553deb11"
+    },
+    {
+      "identifier": "dione_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/dione/textures/1/dione.jpg",
+      "sha256": "418fdc4ea2b53103350be26ee8a1569e9d9abd21be32aafaf2e801eeff495077",
+      "bytes": 5159886,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/dione/layers/colorlayers/dione_texture.asset",
+      "output": "textures/dione.jpg",
+      "outputSha256": "877c323e869e588e615e1b18fdf42f2113417c14bfd4c54f25bbe214822eeff5"
+    },
+    {
+      "identifier": "enceladus_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/enceladus/textures/1/enceladus.jpg",
+      "sha256": "5ba6590ca057565369bcb5e5785a3d4c0deeb9635af2e20701aa25e5d330ce31",
+      "bytes": 4858450,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/enceladus/layers/colorlayers/enceladus_texture.asset",
+      "output": "textures/enceladus.jpg",
+      "outputSha256": "314a48d770b38afab195e9ad453d9febc9ea5b816de328091f638356d73f34ce"
+    },
+    {
+      "identifier": "iapetus_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/iapetus/textures/1/iapetus.jpg",
+      "sha256": "d49a3795bf5e831fb1ce040c58b66a0c81ca1a5d73badca077b24c3c8e67ec9b",
+      "bytes": 3998916,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/iapetus/layers/colorlayers/iapetus_texture.asset",
+      "output": "textures/iapetus.jpg",
+      "outputSha256": "45984ae42f91c51dc83f909f60c2adf8b62f6013af218b2335fc1ba57c5a57ba"
+    },
+    {
+      "identifier": "mimas_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/mimas/textures/1/mimas.jpg",
+      "sha256": "d55601e1661a9c47046a06303f308f6f32b5e53eeed69ca708ff37b6d0580ffb",
+      "bytes": 1370319,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/mimas/layers/colorlayers/mimas_texture.asset",
+      "output": "textures/mimas.jpg",
+      "outputSha256": "f9f76d4ec239c09c8024c2c6cbeb24d72eda0d6e1841be5f7805954d26ad5ee7"
+    },
+    {
+      "identifier": "rhea_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/rhea/textures/1/rhea.jpg",
+      "sha256": "17df9b4dae4c7e40aa42f0d06e44ca4f7962817a7764e936a01395f6aa2e159f",
+      "bytes": 7578314,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/rhea/layers/colorlayers/rhea_texture.asset",
+      "output": "textures/rhea.jpg",
+      "outputSha256": "a8c58de7b419be96314b8504ae717b6c3c8fcd052c31dc321dab5a5b5ad2b674"
+    },
+    {
+      "identifier": "tethys_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/tethys/textures/1/tethys.jpg",
+      "sha256": "a0c4a0344f2361b781977e9ef9679a8cd99dd6cffacf2c1f1212a3afafa2f7d9",
+      "bytes": 1483819,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/tethys/layers/colorlayers/tethys_texture.asset",
+      "output": "textures/tethys.jpg",
+      "outputSha256": "b34ee629a053c65717e049354034c0ce9e687ef9a79c265969613ac65610419e"
+    },
+    {
+      "identifier": "titan_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/titan/textures/2/Titan_ISS_P19658_Mosaic_Global_4km_os.tif",
+      "sha256": "5052b9f679d5e5a3e5c35c19bbac8349fcb0a6c17a8b0027b00ed8d735cc1477",
+      "bytes": 8169258,
+      "asset": "data/assets/scene/solarsystem/planets/saturn/titan/layers/colorlayers/cassini_iss_global_mosaic_4km_local.asset",
+      "output": "textures/titan.jpg",
+      "outputSha256": "d00b419e54089afd4d291ec2852d56e3891bbae5866018950ed8887cab98e320"
+    },
+    {
+      "identifier": "eris_model",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/eris/model/1/Eris_1_2326.glb",
+      "sha256": "1b97f1b9eea244b047a72c2a3ac0db315715b7d421033d860d669ffd78681d54",
+      "bytes": 4398964,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/eris/model.asset",
+      "output": "models/eris.glb",
+      "outputSha256": "1b97f1b9eea244b047a72c2a3ac0db315715b7d421033d860d669ffd78681d54"
+    },
+    {
+      "identifier": "haumea_model",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/haumea/model/1/Haumea_1_1000.glb",
+      "sha256": "7b31737593054bd4ef8f61138a6ad1a2577bec03b84d1c3e76e8ac78632a87f8",
+      "bytes": 11335060,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/haumea/model.asset",
+      "output": "models/haumea.glb",
+      "outputSha256": "7b31737593054bd4ef8f61138a6ad1a2577bec03b84d1c3e76e8ac78632a87f8"
+    },
+    {
+      "identifier": "makemake_model",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/makemake/model/1/Makemake_1_1430.glb",
+      "sha256": "e7d5fa27f50afae10f0e7290cdf7a14ca856c0b9e99b2db02f25b75441fbdbef",
+      "bytes": 4441844,
+      "asset": "data/assets/scene/solarsystem/dwarf_planets/makemake/model.asset",
+      "output": "models/makemake.glb",
+      "outputSha256": "e7d5fa27f50afae10f0e7290cdf7a14ca856c0b9e99b2db02f25b75441fbdbef"
+    }
+  ],
+  "spk": [
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep097.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 2792,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "7ebb95d9576b2e49e3e8c71306a92c11f06edddf7b52dbebf82a845f7b3fb514"
+        },
+        {
+          "range": "31240960-400",
+          "sha256": "6cca4435fc5c23bc972c281ee617d9d38343f949177509a54da6156b806789fc"
+        },
+        {
+          "range": "58510960-32",
+          "sha256": "4a19b44cff6f62dab4597cc436da94bba6902743f669d0f8d723faa41be11759"
+        },
+        {
+          "range": "63965144-280",
+          "sha256": "4bea971643a39479894b3f7cb1aea3bd5b14df298d1321ef53f1777ae59cc6c3"
+        },
+        {
+          "range": "68737744-32",
+          "sha256": "e266766d03934722dcd238bad2942216424ce39221f754d0987a12a657215001"
+        },
+        {
+          "range": "71680-1024",
+          "sha256": "82cb542d8354f7ad63df8be9064ebe4cf8c13376a95aa445d8c5527730687e5a"
+        }
+      ]
+    },
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/mars/kernels/1/mar097.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 4112,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "161da2dde342256dde549d0c5f1fc9edf152bffdd86025c2ae9f780bbfaf55cb"
+        },
+        {
+          "range": "145113984-784",
+          "sha256": "13340e1f8b268688fdb29ea007cfd2bad909d96dd26285a440879a1066530f17"
+        },
+        {
+          "range": "229084304-32",
+          "sha256": "a250e794ba4a52e9788af329ae70329500a226679dd1029fcf7469687407fee1"
+        },
+        {
+          "range": "301635696-784",
+          "sha256": "e71e2615f82c0707bd1ecd2eaba1f68c94a08296a635aeeb1655cb595ef26627"
+        },
+        {
+          "range": "343621248-32",
+          "sha256": "02f27f0939f82f1a7fdcee219484f6bdc61a0495c22cf4c55d0c631b2e3d411d"
+        },
+        {
+          "range": "417653280-400",
+          "sha256": "ee2a0de5fd069239036bc59333ebbdc1e09d58c70180ac1bfd7f10250de82410"
+        },
+        {
+          "range": "460495280-32",
+          "sha256": "5c6dd7a8c04b2a31a6ee98527c9c8c08db8bfc8bd3a4de715f04671b7ae5c776"
+        },
+        {
+          "range": "9216-1024",
+          "sha256": "8c61fea39207da05060b6d7d22464f4bf9efaa58de23d8f7a12cd8ea4802b21b"
+        }
+      ]
+    },
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep101xl-802.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 2360,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "190a96e0e275a60b92edab9b6254e42dff8d51a5de651d67f6518affc650645b"
+        },
+        {
+          "range": "384193800-280",
+          "sha256": "8c5db05714099f36b7b85f4b41307e2e1a2c51080693e6d0adf018fa4eb44860"
+        },
+        {
+          "range": "5120-1024",
+          "sha256": "b2c95316d39c7e6cb0894d27e35172d99ce1bea34fe89b94f8e74d9f70f71cbc"
+        },
+        {
+          "range": "767016800-32",
+          "sha256": "f9dc32aa08d015ca9a81ae842eaa6842b9a0c7841af89628437e766d962ff75f"
+        }
+      ]
+    },
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/2/jup365.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 3944,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "b2427e56478c67f39b06f7da6e5e02a4c33c15a1469eff99f2b689b79d0eea38"
+        },
+        {
+          "range": "1097603128-400",
+          "sha256": "8eb13d70f8e74feb7dfa8d61b8483d54dd94dba7b6508a96cb4659b852e3fc3f"
+        },
+        {
+          "range": "1108858728-32",
+          "sha256": "3d39cbb5e520c66e10b11b8925acfabf7c3fe7c12bdbc496475aabd4383ad562"
+        },
+        {
+          "range": "72704-1024",
+          "sha256": "ae368f7e8b1002cc9dae1337aee84990577855db1556677b68a05df0755b10a2"
+        },
+        {
+          "range": "737601072-400",
+          "sha256": "d6adfed2f712aaea56d6315d48a55f12ca8bd7d351b49a12c41f563e9aab5e7d"
+        },
+        {
+          "range": "760111472-32",
+          "sha256": "ca98c8ed961065de6b10de43e18ad23d4a8d81d5e0e2c42d3e09de17629a548b"
+        },
+        {
+          "range": "763961504-400",
+          "sha256": "40d743efb3757811fba7c0f469f60b605e7c0c1be125f1510f681c20fb447e80"
+        },
+        {
+          "range": "786471904-32",
+          "sha256": "ca98c8ed961065de6b10de43e18ad23d4a8d81d5e0e2c42d3e09de17629a548b"
+        },
+        {
+          "range": "788935936-256",
+          "sha256": "6ab47ce97518a816a06cc13c48f11a82e1c5464526814bf9ecf371b39fdad4df"
+        },
+        {
+          "range": "803342592-32",
+          "sha256": "d1c55528a0e96a7a5730e7cb4b56ab08fee912343ec5ae530bdec17e1ab5a7a7"
+        },
+        {
+          "range": "804689984-280",
+          "sha256": "6ceb3ed18f8106d0b69ba99a2878e75564af01d8e84579167be69dd93352eae0"
+        },
+        {
+          "range": "812568904-32",
+          "sha256": "3d1daa820142e44177920f64475988437106402afca22a13dc163b6eae1f6e3b"
+        }
+      ]
+    },
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/missions/newhorizons/newhorizons_kernels/1/spk/ssd_jpl_nasa_gov_plu043.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 5792,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "e706e7d82fc4666c5cef33421871a25ecd8a336d92f4b7f9a74c6a1de0d583ea"
+        },
+        {
+          "range": "17511712-592",
+          "sha256": "b26b73c79831b17f3b60401dd4adf5b74f702c4a06e082f44419268398eb31af"
+        },
+        {
+          "range": "22795904-32",
+          "sha256": "c1fd01cdc06e870ba0417dac4bf0f66e901cdf7e89f1ece030e75d833cfdffa5"
+        },
+        {
+          "range": "31185504-544",
+          "sha256": "30e784a8fce9dde7984952a8f2f42050e3b2442b082a9a0ed355a93ba2142923"
+        },
+        {
+          "range": "36041248-32",
+          "sha256": "862157b809fca829f27caf9036fda46232938ea00e3c28b385691fe870d2d7a8"
+        },
+        {
+          "range": "4096-1024",
+          "sha256": "f359209c483f1bf7ae6586f55431580a1248e9b9911918f3e2dce3391c97429b"
+        },
+        {
+          "range": "44430848-544",
+          "sha256": "6cee7d6858cac02a3965cdf522b46d1d0af3a7c9c29168b899b541227178481c"
+        },
+        {
+          "range": "49286592-32",
+          "sha256": "862157b809fca829f27caf9036fda46232938ea00e3c28b385691fe870d2d7a8"
+        },
+        {
+          "range": "5311312-688",
+          "sha256": "9506936fa4984fb71709232af2335e92fd30a6624fc4b320c9bd76291c04d616"
+        },
+        {
+          "range": "58416448-592",
+          "sha256": "1f78100dcc5f176e57faeb766482922a8dee9ed356e70f14fbe9bab2f955f2dd"
+        },
+        {
+          "range": "63700640-32",
+          "sha256": "c1fd01cdc06e870ba0417dac4bf0f66e901cdf7e89f1ece030e75d833cfdffa5"
+        },
+        {
+          "range": "68265584-592",
+          "sha256": "c2138b9961a432add29c13a01c62c36c4ddf8d39bb5f745c733b6447311c182e"
+        },
+        {
+          "range": "70907680-32",
+          "sha256": "3037f3da82469d2ff7a09d7ab430a62a50d0c5bf42b0ce30fcc0f32826cce7fe"
+        },
+        {
+          "range": "8381856-32",
+          "sha256": "a00c6d9946c17d67e5ffca864eaba7a0d50d27aa9003c0775818c438d6200283"
+        }
+      ]
+    },
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/1/ura111.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 5936,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "d8c4d18c35fedc24b1b52d411e450147597b5d4f73f610963b0e1078283c5cf7"
+        },
+        {
+          "range": "128063168-688",
+          "sha256": "536502aa2179a70e0cd11332e0915d87ef542a8200b05af57dd0e9b29877f010"
+        },
+        {
+          "range": "146480240-32",
+          "sha256": "fd883d53cf51a84c1f35f1e797bd34af96a648e069ac85cee5b71af368ba66fb"
+        },
+        {
+          "range": "155549584-784",
+          "sha256": "6ac3d66535f0093cf628d6fc8487e7cd874e14515acaff2134fc50a57c449e6c"
+        },
+        {
+          "range": "160796896-32",
+          "sha256": "9a22756c6e8250e9299c950e9aefa0e344eea8631209521a178392e813063e75"
+        },
+        {
+          "range": "19749504-640",
+          "sha256": "f83a4b09ad50c992728c85584c451440c51de8c2f8395e4a50bc6c3eea2e7742"
+        },
+        {
+          "range": "31170944-32",
+          "sha256": "5b3694630027af53f676f3a3d20d11753e34687e4f77ad2d5eba3bcea8e1c94b"
+        },
+        {
+          "range": "4096-1024",
+          "sha256": "1030450642701e0bdecdf6b44d640bed31f7a8105b8a2fdc21a5ea4366b6d414"
+        },
+        {
+          "range": "49433584-592",
+          "sha256": "97608b849dc3e4b2136366374c9d782d290323d7237809a986984df9f05cbc22"
+        },
+        {
+          "range": "59998416-32",
+          "sha256": "c46589da26268823ab25ffc7fa5067b56d41c43eb4898d9d43cff92df63e0358"
+        },
+        {
+          "range": "72584432-544",
+          "sha256": "58e548b0245b5c826f3430106eec88aa35b7c551fe08fbec0d2ae7e63957ad85"
+        },
+        {
+          "range": "79865872-32",
+          "sha256": "76a748781dd7b51af3da09e5558a9cb77f7097f84f87a69acb74903443177c31"
+        },
+        {
+          "range": "90230832-448",
+          "sha256": "25c4124154d08e603f77aacf8e3d906a5f255f05a0b6e6d3e9d5123a33752ea0"
+        },
+        {
+          "range": "96227312-32",
+          "sha256": "f608461a46b4911c1589a8808265a9aedee6a35e1a577c9fd7c2879b41f9c7de"
+        }
+      ]
+    },
+    {
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "downloadMode": "SPK header, descriptors and epoch records via HTTP Range",
+      "downloadedBytes": 6288,
+      "records": [
+        {
+          "range": "0-1024",
+          "sha256": "fc4440f408de006438f48f9ac73061a1384cad6deb8e39f7ce773cc832d08686"
+        },
+        {
+          "range": "340493376-400",
+          "sha256": "5973373b124355c3429583bf276249fb9af7973860124d9487ba61b7f4308532"
+        },
+        {
+          "range": "383995776-32",
+          "sha256": "c61037623bd694ebb7881d24c3f56efadc7107b3b797f9be39aa79a0ad9f7b17"
+        },
+        {
+          "range": "385904768-328",
+          "sha256": "5902a326a9037da3df2bef5e45249639c85f48ac7da5420a25af6f04991ed0f1"
+        },
+        {
+          "range": "421576736-32",
+          "sha256": "b0ffa63f65d02247aca3cb8f4f5d23c2566d2c10bfb530f7feef020695225f1d"
+        },
+        {
+          "range": "422670928-376",
+          "sha256": "661bc2c9a5a9793eaa829fe7f655e1f11424e148eac522c79b6e309bfc074c68"
+        },
+        {
+          "range": "443117056-32",
+          "sha256": "3da0bfd67cc2a35b394771b98c0479ca0cce2dcc059b11bbf2cf466c0027a551"
+        },
+        {
+          "range": "444001728-304",
+          "sha256": "f4516ef980d665e79b92fd3cb5d616a29bf67f1dfcb3d257ca2df723e5538e48"
+        },
+        {
+          "range": "460532640-32",
+          "sha256": "fef749aaa845550b4d804050bd344a70f4443d7efe8d7214434366454e5ef4b9"
+        },
+        {
+          "range": "461122432-304",
+          "sha256": "aa48c0853a7838932a474f6a7ec10de9ebf0f53c322b1dd489fc6cc494d095fb"
+        },
+        {
+          "range": "472143040-32",
+          "sha256": "7f935cc729536a4c7cca0ac99ef3a5262b4f57397a5dffe9e809776804299c2d"
+        },
+        {
+          "range": "472620312-328",
+          "sha256": "118a82e5ae5a0e9c69e7b3fdea37da22c0fd9091ddfeb4fbe632ac3e600bd233"
+        },
+        {
+          "range": "481538304-32",
+          "sha256": "118f922d500c503609834e4d1e4505551eef7ae8cc85ac6b99bface96948e7df"
+        },
+        {
+          "range": "481945736-280",
+          "sha256": "8cf035b82767391dfcb8d26349921525f26d959ebc584bc12dc9df8c3a557ad3"
+        },
+        {
+          "range": "489558656-32",
+          "sha256": "37aac4b378d74af6b1da5797035b89f6237a3c5a579ec6e6c44be8217bc21a7d"
+        },
+        {
+          "range": "489694488-280",
+          "sha256": "69509a219c216816e672420e01cf8d322de7f59df4fe0ea5d9b698841e5840c4"
+        },
+        {
+          "range": "492232128-32",
+          "sha256": "f51ed6a0f3440166e61853073dc15c1017820932f42ed7fa8298b76a854a0ad3"
+        },
+        {
+          "range": "510755840-1024",
+          "sha256": "0fdd99c47f99d02739a7be62d02cb6f0a951f08652711504551f555696b6aa65"
+        },
+        {
+          "range": "620788848-328",
+          "sha256": "77f814b5c713d370f90018fae3b1c87dc01543a8da16ba148277f0b2a6e97da5"
+        },
+        {
+          "range": "638624832-32",
+          "sha256": "3a2827bff2dd2b77198023b3980f805ff671a522ab156c2a7345e7050ac4da9d"
+        },
+        {
+          "range": "70656-1024",
+          "sha256": "bd2fbddd74f177a95aef3f5e773fe22e649493eeb1dedcd7f94975bc40bfad31"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "SPK epoch states propagated as fixed two-body osculating ellipses; not full SPICE at arbitrary dates.",
+    "Satellite dimensions use the general PCK referenced by OpenSpace; original asset values retained for auditing."
+  ]
+}

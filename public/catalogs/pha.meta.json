@@ -1,0 +1,18 @@
+{
+  "id": "pha",
+  "name": "潜在危险小行星",
+  "total": 2543,
+  "validElliptic": 2543,
+  "skipped": 0,
+  "displayed": 2543,
+  "asset": "data/assets/scene/solarsystem/sssb/pha.asset",
+  "sample": "catalogs/pha.json",
+  "archive": "catalogs/pha.csv.gz",
+  "archiveBytes": 67270,
+  "archiveSha256": "c99f31a25e31f25dada6f26dc3b70f5d95a7eaebbf3e1e910c0075312d12c29a",
+  "identifier": "sssb_data_pha",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_pha.csv",
+  "sha256": "5b036fea96adb459521886d476c4bd7334e2fcc6ccaad7a817348f5cbd9d6706",
+  "bytes": 198638
+}

@@ -1,0 +1,194 @@
+{
+  "repository": "https://liu-se.bigbang.openspaceproject.com/request",
+  "planets": {
+    "jupiter": {
+      "radiiKm": [
+        71492.0,
+        71492.0,
+        66854.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/globe.asset"
+    },
+    "mars": {
+      "radiiKm": [
+        3396.19,
+        3396.19,
+        3396.19
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/mars/globe.asset"
+    },
+    "mercury": {
+      "radiiKm": [
+        2439.7,
+        2439.7,
+        2439.7
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/mercury/globe.asset"
+    },
+    "neptune": {
+      "radiiKm": [
+        24764.0,
+        24764.0,
+        24314.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/neptune/globe.asset"
+    },
+    "saturn": {
+      "radiiKm": [
+        60268.0,
+        60268.0,
+        54364.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/saturn/globe.asset"
+    },
+    "uranus": {
+      "radiiKm": [
+        25559.0,
+        25559.0,
+        24973.0
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/uranus/globe.asset"
+    },
+    "venus": {
+      "radiiKm": [
+        6051.9,
+        6051.9,
+        6051.9
+      ],
+      "asset": "data/assets/scene/solarsystem/planets/venus/globe.asset"
+    }
+  },
+  "textures": [
+    {
+      "body": "jupiter",
+      "asset": "data/assets/scene/solarsystem/planets/jupiter/layers/colorlayers/jupiter_texture.asset",
+      "identifier": "jupiter_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/jupiter/textures/2/jupiter_os.tif",
+      "originalSize": [
+        4096,
+        2048
+      ],
+      "sha256Original": "7eca9876ad0b8eb3ab38ebc00a63e7d9d56451746e1f5e9c6f7309bff8e9e115",
+      "output": "jupiter.jpg",
+      "sha256Output": "f94e9915daa01dee3a12a815d2cd7f43865aa22fbfe4207b32ed9a112b9af5b6"
+    },
+    {
+      "body": "mars",
+      "asset": "data/assets/scene/solarsystem/planets/mars/layers/colorlayers/mars_texture.asset",
+      "identifier": "mars_textures",
+      "version": 3,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/mars/textures/3/mars.png",
+      "originalSize": [
+        8192,
+        4096
+      ],
+      "sha256Original": "e557e819919cbe5711f52f3b8bc7afcf98d84ec4d9a9f29b22da16ee166e142f",
+      "output": "mars.jpg",
+      "sha256Output": "6c20d430fc99b7a8b135457948e1d9b0a8ed7517e20eef38f955bf08015bb384"
+    },
+    {
+      "body": "mercury",
+      "asset": "data/assets/scene/solarsystem/planets/mercury/layers/colorlayers/mercury_texture.asset",
+      "identifier": "mercury_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/mercury/textures/2/Mercury_MESSENGER_MDIS_Basemap_BDR_Mosaic_Global_32ppd.jpg",
+      "originalSize": [
+        11520,
+        5760
+      ],
+      "sha256Original": "7fbdfaa9492b7be261b4c5de0116db5fbbf0ff11da35193433b50db3d437b073",
+      "output": "mercury.jpg",
+      "sha256Output": "3e890722745b2651926206d46c15c9844d259d200591ce238c1a3462892ec31d"
+    },
+    {
+      "body": "neptune",
+      "asset": "data/assets/scene/solarsystem/planets/neptune/layers/colorlayers/neptune_texture.asset",
+      "identifier": "neptune_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/textures/1/neptune.jpg",
+      "originalSize": [
+        3000,
+        1500
+      ],
+      "sha256Original": "ee91b73ec052e588d936f2578ff4625d9edd1810a8e257d492e2f96914e132ac",
+      "output": "neptune.jpg",
+      "sha256Output": "8a62ca6c87612be562d2d7c326278f55682e1c5615cfe5b7f0c9ae68b435bb8c"
+    },
+    {
+      "body": "saturn",
+      "asset": "data/assets/scene/solarsystem/planets/saturn/layers/colorlayers/saturn_texture.asset",
+      "identifier": "saturn_textures",
+      "version": 4,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/saturn/textures/1/saturn.jpg",
+      "originalSize": [
+        2880,
+        1440
+      ],
+      "sha256Original": "5976d520c16f7c91a7415bdaeb1a050373a706c07adae29b38b8b5110d88acc0",
+      "output": "saturn.jpg",
+      "sha256Output": "5ad4ee8f0fb5ba5485067d2aa38ab78c4f555549e923c0e809410a06bc02789b"
+    },
+    {
+      "body": "saturn",
+      "asset": "data/assets/scene/solarsystem/planets/saturn/globe.asset",
+      "identifier": "saturn_textures",
+      "version": 4,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/saturn/textures/4/color_original_single.png",
+      "originalSize": [
+        1500,
+        1
+      ],
+      "sha256Original": "952b8de4343127e2188a6fb293d499e3e8b7c19147f5a2d727c525f8e9bcebda",
+      "output": "saturn-rings.png",
+      "sha256Output": "7397e2254c092a22c3fa8a2501990ae526fc6c952815ef0780f08ed30779ee4b"
+    },
+    {
+      "body": "saturn",
+      "asset": "data/assets/scene/solarsystem/planets/saturn/globe.asset",
+      "identifier": "saturn_textures",
+      "version": 4,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/saturn/textures/4/trans_original_single.png",
+      "originalSize": [
+        1500,
+        1
+      ],
+      "sha256Original": "37a40a8217961cda634a3fe48775072f5097b40d8945cfaf82bdfb58b98caf2a",
+      "output": "saturn-rings.png",
+      "sha256Output": "7397e2254c092a22c3fa8a2501990ae526fc6c952815ef0780f08ed30779ee4b"
+    },
+    {
+      "body": "uranus",
+      "asset": "data/assets/scene/solarsystem/planets/uranus/layers/colorlayers/uranus_texture.asset",
+      "identifier": "uranus_textures",
+      "version": 1,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/textures/1/uranus.jpg",
+      "originalSize": [
+        2048,
+        1024
+      ],
+      "sha256Original": "28248995c174f4cb4320058a18eebd02a41cfcd9a07c5c21cf8d093d0733df27",
+      "output": "uranus.jpg",
+      "sha256Output": "e99c948e39d2ef1764283a92ebf27e176323f2f7bd3a4bd76d11226ebf60a2bf"
+    },
+    {
+      "body": "venus",
+      "asset": "data/assets/scene/solarsystem/planets/venus/layers/colorlayers/venus_texture.asset",
+      "identifier": "venus_textures",
+      "version": 2,
+      "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/venus/textures/2/venus_clouds.jpg",
+      "originalSize": [
+        1800,
+        900
+      ],
+      "sha256Original": "da7f68195e552020a888db1758bb7a87506718971c6c9a455189d7b17ceda321",
+      "output": "venus.jpg",
+      "sha256Output": "b4a9219dbaca5d816361fd81123a930c120d0a99f675221f08637aea80669db9"
+    }
+  ],
+  "saturnRings": {
+    "innerKm": 74500.0,
+    "outerKm": 140445.0,
+    "asset": "data/assets/scene/solarsystem/planets/saturn/globe.asset"
+  }
+}

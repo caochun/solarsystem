@@ -1,0 +1,18 @@
+{
+  "id": "atira_asteroid",
+  "name": "阿提拉型近地小行星",
+  "total": 38,
+  "validElliptic": 38,
+  "skipped": 0,
+  "displayed": 38,
+  "asset": "data/assets/scene/solarsystem/sssb/atira_asteroid.asset",
+  "sample": "catalogs/atira_asteroid.json",
+  "archive": "catalogs/atira_asteroid.csv.gz",
+  "archiveBytes": 3079,
+  "archiveSha256": "4381521051fc0172b9b5d851732110ce5c2c439f2e0cd88824abd31b8ca6e5bf",
+  "identifier": "sssb_data_atira_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_atira_asteroid.csv",
+  "sha256": "60b66c2b3a322c61e5513a6a0387ce778836dc8874d47078f715f830ac59bced",
+  "bytes": 6333
+}

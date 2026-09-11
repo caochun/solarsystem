@@ -1,0 +1,18 @@
+{
+  "id": "chiron-type_comet",
+  "name": "喀戎型彗星",
+  "total": 22,
+  "validElliptic": 22,
+  "skipped": 0,
+  "displayed": 22,
+  "asset": "data/assets/scene/solarsystem/sssb/chiron-type_comet.asset",
+  "sample": "catalogs/chiron-type_comet.json",
+  "archive": "catalogs/chiron-type_comet.csv.gz",
+  "archiveBytes": 2009,
+  "archiveSha256": "88b3a752cb5a8a652c79ac2a1716bb2bb8fba0fc1c983dd5a1f7a3b033debe17",
+  "identifier": "sssb_data_chiron-type_comet",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_chiron-type_comet.csv",
+  "sha256": "c72b9ea5bc60f93cec479b7584ed2b59c5e14382e30dffdd75d4fb74db2b676a",
+  "bytes": 3808
+}

@@ -1,0 +1,18 @@
+{
+  "id": "amor_asteroid",
+  "name": "阿莫尔型近地小行星",
+  "total": 14490,
+  "validElliptic": 14490,
+  "skipped": 0,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/amor_asteroid.asset",
+  "sample": "catalogs/amor_asteroid.json",
+  "archive": "catalogs/amor_asteroid.csv.gz",
+  "archiveBytes": 1007514,
+  "archiveSha256": "cfe0ee05d3f7ceac445ece9c7dc7f86689ae31b2c7444b0be50f852715b35be2",
+  "identifier": "sssb_data_amor_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_amor_asteroid.csv",
+  "sha256": "8beac7213ea9c87509b9a7093e2693de84f94dc50190e2dedf82a289ec2033f8",
+  "bytes": 2382269
+}

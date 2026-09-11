@@ -1,0 +1,18 @@
+{
+  "id": "transneptunian_object_asteroid",
+  "name": "海王星外小天体",
+  "total": 6041,
+  "validElliptic": 6040,
+  "skipped": 1,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/transneptunian_object_asteroid.asset",
+  "sample": "catalogs/transneptunian_object_asteroid.json",
+  "archive": "catalogs/transneptunian_object_asteroid.csv.gz",
+  "archiveBytes": 413598,
+  "archiveSha256": "0fd3db05ab0400955a33e7a34d6c21c0adc259e8cb6c6a6c11f4ac4b3677fbee",
+  "identifier": "sssb_data_transneptunian_object_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_transneptunian_object_asteroid.csv",
+  "sha256": "237a48c306ab961e3f04a7d072774c8972ee9e18a3056c01e54b96cbff7824a2",
+  "bytes": 980758
+}

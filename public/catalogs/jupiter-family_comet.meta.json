@@ -1,0 +1,18 @@
+{
+  "id": "jupiter-family_comet",
+  "name": "木星族彗星",
+  "total": 829,
+  "validElliptic": 829,
+  "skipped": 0,
+  "displayed": 829,
+  "asset": "data/assets/scene/solarsystem/sssb/jupiter-family_comet.asset",
+  "sample": "catalogs/jupiter-family_comet.json",
+  "archive": "catalogs/jupiter-family_comet.csv.gz",
+  "archiveBytes": 62938,
+  "archiveSha256": "14d65ca53a88aff5334667c7f792f79f7f96737baceacfb8a1b543bc0a41dcbc",
+  "identifier": "sssb_data_jupiter-family_comet",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_jupiter-family_comet.csv",
+  "sha256": "6e78d39ee106663fdd486738cc74675e1e0e21c4e75b4e02bfde6390e60dd0c8",
+  "bytes": 139179
+}

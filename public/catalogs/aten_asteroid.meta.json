@@ -1,0 +1,18 @@
+{
+  "id": "aten_asteroid",
+  "name": "阿登型近地小行星",
+  "total": 3377,
+  "validElliptic": 3377,
+  "skipped": 0,
+  "displayed": 3000,
+  "asset": "data/assets/scene/solarsystem/sssb/aten_asteroid.asset",
+  "sample": "catalogs/aten_asteroid.json",
+  "archive": "catalogs/aten_asteroid.csv.gz",
+  "archiveBytes": 233643,
+  "archiveSha256": "c2ac49de11d29047ad2e673e8eb8fc9d389810588f7dbf30af7fabeeb0792b95",
+  "identifier": "sssb_data_aten_asteroid",
+  "version": 5,
+  "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/sssb/horizons_sbdb/5/sssb_data_aten_asteroid.csv",
+  "sha256": "57cfc25b928842762befe5ef5d8323b855351f80d2f1196ffb48fcec9bb416fb",
+  "bytes": 554084
+}
