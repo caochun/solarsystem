@@ -2080,3 +2080,9 @@ body.tour-idle #viewport {
         #2f4f4b
     );
 }
+.catalog-coverage {
+    margin: -0.45rem 0 0.8rem;
+    color: #a9b9b7;
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+}
