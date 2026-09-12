@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { Vector3 } from "three";
 import { ephemeris } from "../src/model.ts";
+import minorMoonData from "../src/minor-moons.json";
 import {
     TOUR_STOPS,
     TOUR_DURATION,
@@ -10,6 +11,14 @@ import {
     transferCurve,
     safeCamera,
 } from "../src/tour-path.ts";
+test("Minor moon import covers the available OpenSpace giant-planet groups", () => {
+    assert.equal(minorMoonData.count, minorMoonData.bodies.length);
+    assert.ok(minorMoonData.count >= 100);
+    for (const parent of ["jupiter", "saturn", "uranus", "neptune"])
+        assert.ok(minorMoonData.bodies.some(body => body.parent === parent), parent);
+    assert.ok(minorMoonData.bodies.every(body => Number.isFinite(body.orbit.a) && body.orbit.a > 0 && body.orbit.e >= 0 && body.orbit.e < 1));
+});
+
 
 test("Tour includes inner worlds, satellites, belts and distant bodies in an eleven-minute loop", () => {
     assert.equal(TOUR_STOPS[0].body, "sun");

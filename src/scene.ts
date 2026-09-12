@@ -6,6 +6,7 @@ import {
     type KeplerElements,
 } from "./kepler";
 import type { CatalogObject } from "./catalog-types";
+import minorMoonData from "./minor-moons.json";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RotationAxis, Vector } from "astronomy-engine";
 import {
@@ -93,6 +94,7 @@ export class SolarScene {
     >;
     private readonly ring: THREE.Mesh;
     private readonly additionalRings = new Map<BodyId, THREE.Group>();
+    private readonly minorMoonCloud: THREE.Points;
     private ringScaleMode: ScaleMode | null = null;
     private readonly loadModels: Partial<Record<BodyId, () => void>> = {};
     private readonly axis = new THREE.Line(
@@ -497,6 +499,11 @@ export class SolarScene {
             }),
         );
         this.scene.add(this.stars, this.cloud);
+        const minorGeometry = new THREE.BufferGeometry();
+        minorGeometry.setAttribute("position", new THREE.Float32BufferAttribute(new Float32Array(minorMoonData.bodies.length * 3), 3));
+        this.minorMoonCloud = new THREE.Points(minorGeometry, new THREE.PointsMaterial({ color: 0xbfd8ce, size: 0.42, sizeAttenuation: false, transparent: true, opacity: 0.9 }));
+        this.minorMoonCloud.visible = false;
+        this.scene.add(this.minorMoonCloud);
         this.observer = new ResizeObserver(() => this.resize());
         this.observer.observe(host);
         this.resize();
@@ -686,6 +693,7 @@ export class SolarScene {
             }
         }
         this.updateVisibility();
+        this.updateMinorMoons();
         this.updateCloud();
         if (this.tracked?.orbit) {
             this.trackedMarker.position.set(0, 0, 0);
@@ -809,6 +817,7 @@ export class SolarScene {
         if (this.touring) {
             for (const id of BODY_IDS) this.bodies[id].visible = true;
             for (const id of ORBIT_IDS) this.orbits[id].visible = false;
+            this.minorMoonCloud.visible = false;
             return;
         }
         const anchor = isSatellite(this.selected)
@@ -838,6 +847,7 @@ export class SolarScene {
                     : isSatellite(id)
                       ? this.showMoons && parentOf(id) === anchor
                       : id === anchor);
+        this.minorMoonCloud.visible = this.showMoons && (this.overview || this.family);
     }
     setSmallBodies(bodies: KeplerElements[]) {
         if (this.touring) {
@@ -1077,6 +1087,22 @@ export class SolarScene {
         }
         buffer.needsUpdate = true;
         this.cloud.geometry.computeBoundingSphere();
+    }
+    private updateMinorMoons() {
+        const buffer = this.minorMoonCloud.geometry.getAttribute("position") as THREE.BufferAttribute;
+        for (let i = 0; i < minorMoonData.bodies.length; i++) {
+            const item = minorMoonData.bodies[i];
+            const parent = this.bodies[item.parent as BodyId];
+            const rel = keplerPosition(item.orbit, this.date.getTime());
+            const distance = Math.hypot(...rel);
+            const parentRadius = radius(item.parent as BodyId, this.mode);
+            const factor = this.mode === "physical"
+                ? radius("earth", "physical") / RADII.earth
+                : (parentRadius * (1.4 + 0.8 * Math.sqrt(Math.max(0.001, distance * 149597870.7 / RADII[item.parent as BodyId])))) / Math.max(distance * 149597870.7, 1);
+            buffer.setXYZ(i, parent.position.x + rel[0] * 149597870.7 * factor, parent.position.y + rel[1] * 149597870.7 * factor, parent.position.z + rel[2] * 149597870.7 * factor);
+        }
+        buffer.needsUpdate = true;
+        this.minorMoonCloud.geometry.computeBoundingSphere();
     }
     setLayers(
         orbits: boolean,

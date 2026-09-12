@@ -41,3 +41,5 @@ systemctl --user restart solarspace
 可用 `HOST`、`PORT` 改监听地址，`SOLARSPACE_PYTHON` 指定 Python 路径，`SOLARSPACE_CATALOG_DB` 指定索引文件路径。数据库连接只读，替换索引后需要重启服务关闭旧连接。局域网 HTTP 的复制链接按钮可能提示手动复制地址栏；不影响三维渲染和全量查询。
 
 沉浸漫游沿用同一入口和端口，打开页面按 F 即可启动。全屏由用户键盘或按钮操作触发，浏览器拒绝时自动使用页面沉浸布局。此次更新仅涉及前端代码与文档，现有数据库无需重新上传；备份源码和旧版 `dist/` 时可排除未变的 `data/`，保留服务器上的数据库。
+
+小卫星点云随前端构建部署，数据库无需更新。若重新生成 `src/minor-moons.json`，需重新执行 `npm run build` 后再按上述临时目录校验流程切换 `dist/`。
