@@ -2068,3 +2068,15 @@ body.tour-idle #viewport {
         transition: none;
     }
 }
+.planet-thumb.minor-moon {
+    width: 18px;
+    height: 18px;
+    margin: 6px;
+    box-shadow: 0 0 8px #b7d8ca99;
+    background-image: radial-gradient(
+        circle at 35% 35%,
+        #d7eee3,
+        #6e9187 65%,
+        #2f4f4b
+    );
+}

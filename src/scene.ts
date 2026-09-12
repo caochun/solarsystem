@@ -6,7 +6,14 @@ import {
     type KeplerElements,
 } from "./kepler";
 import type { CatalogObject } from "./catalog-types";
-import minorMoonData from "./minor-moons.json";
+import {
+    MINOR_MOONS,
+    targetOffset,
+    targetOrbitPoints,
+    targetPosition,
+    isMinorMoon,
+    type OrbitTarget,
+} from "./minor-moons";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RotationAxis, Vector } from "astronomy-engine";
 import {
@@ -123,7 +130,7 @@ export class SolarScene {
     private showOrbits = true;
     private showMoons = true;
     private smallBodies: KeplerElements[] = [];
-    private tracked: CatalogObject | null = null;
+    private tracked: OrbitTarget | null = null;
     private trackedOrbit = new THREE.Line(
         new THREE.BufferGeometry(),
         new THREE.LineBasicMaterial({
@@ -174,13 +181,16 @@ export class SolarScene {
     private touring = false;
     private normalCloud: KeplerElements[] = [];
     private onClick: (id: BodyId) => void;
+    private onMinorSelect: (id: string) => void;
 
     constructor(
         private host: HTMLElement,
         onSelect: (id: BodyId) => void,
         onTextureError: (file: string) => void,
+        onMinorSelect: (id: string) => void = () => undefined,
     ) {
         this.onClick = onSelect;
+        this.onMinorSelect = onMinorSelect;
         this.renderer = new THREE.WebGLRenderer({
             antialias: true,
             alpha: true,
@@ -500,8 +510,23 @@ export class SolarScene {
         );
         this.scene.add(this.stars, this.cloud);
         const minorGeometry = new THREE.BufferGeometry();
-        minorGeometry.setAttribute("position", new THREE.Float32BufferAttribute(new Float32Array(minorMoonData.bodies.length * 3), 3));
-        this.minorMoonCloud = new THREE.Points(minorGeometry, new THREE.PointsMaterial({ color: 0xbfd8ce, size: 0.42, sizeAttenuation: false, transparent: true, opacity: 0.9 }));
+        minorGeometry.setAttribute(
+            "position",
+            new THREE.Float32BufferAttribute(
+                new Float32Array(MINOR_MOONS.length * 3),
+                3,
+            ),
+        );
+        this.minorMoonCloud = new THREE.Points(
+            minorGeometry,
+            new THREE.PointsMaterial({
+                color: 0xbfd8ce,
+                size: 2.2,
+                sizeAttenuation: false,
+                transparent: true,
+                opacity: 0.9,
+            }),
+        );
         this.minorMoonCloud.visible = false;
         this.scene.add(this.minorMoonCloud);
         this.observer = new ResizeObserver(() => this.resize());
@@ -512,6 +537,7 @@ export class SolarScene {
             this.pointerDown,
         );
         this.renderer.domElement.addEventListener("pointerup", this.pointerUp);
+        this.raycaster.params.Points.threshold = 7;
     }
 
     private pointerDown = (e: PointerEvent) => {
@@ -548,6 +574,15 @@ export class SolarScene {
             true,
         )[0];
         if (hit) this.onClick(hit.object.userData.bodyId);
+        else {
+            const pointHit = this.raycaster.intersectObject(
+                this.minorMoonCloud,
+            )[0];
+            if (pointHit && pointHit.index !== undefined) {
+                const moon = MINOR_MOONS[pointHit.index];
+                if (moon) this.onMinorSelect(moon.id);
+            }
+        }
     };
     private resize() {
         const { width, height } = this.host.getBoundingClientRect();
@@ -566,10 +601,7 @@ export class SolarScene {
             this.touring
                 ? [0, 0, 0]
                 : this.tracked?.orbit
-                  ? solarPosition(
-                        keplerPosition(this.tracked.orbit, date.getTime()),
-                        mode,
-                    )
+                  ? targetPosition(this.tracked, data, date.getTime(), mode)
                   : this.overview
                     ? [0, 0, 0]
                     : pos[this.selected],
@@ -697,7 +729,11 @@ export class SolarScene {
         this.updateCloud();
         if (this.tracked?.orbit) {
             this.trackedMarker.position.set(0, 0, 0);
-            this.trackedOrbit.position.copy(this.origin).negate();
+            this.trackedOrbit.position.copy(
+                isMinorMoon(this.tracked)
+                    ? this.bodies[this.tracked.parentBody].position
+                    : this.origin.clone().negate(),
+            );
             this.trackedOrbit.visible = this.showOrbits;
             if (changedMode) this.focusCatalog(this.tracked);
         } else if (changedMode && !this.touring)
@@ -847,7 +883,9 @@ export class SolarScene {
                     : isSatellite(id)
                       ? this.showMoons && parentOf(id) === anchor
                       : id === anchor);
-        this.minorMoonCloud.visible = this.showMoons && (this.overview || this.family);
+        this.minorMoonCloud.visible =
+            this.showMoons &&
+            (this.overview || this.family || isMinorMoon(this.tracked));
     }
     setSmallBodies(bodies: KeplerElements[]) {
         if (this.touring) {
@@ -1028,7 +1066,7 @@ export class SolarScene {
             }
         }
     }
-    focusCatalog(body: CatalogObject) {
+    focusCatalog(body: OrbitTarget) {
         if (!body.orbit) return;
         this.clearControlInertia();
         this.tracked = body;
@@ -1038,11 +1076,13 @@ export class SolarScene {
         this.host.dataset.cameraState = "idle";
         this.update(this.data, this.date, this.mode);
         this.trackedOrbit.geometry.dispose();
+        const points = isMinorMoon(body)
+            ? targetOrbitPoints(body, this.mode)
+            : keplerOrbitPositions(body.orbit).map((point) =>
+                  solarPosition(point, this.mode),
+              );
         this.trackedOrbit.geometry = new THREE.BufferGeometry().setFromPoints(
-            keplerOrbitPositions(body.orbit).map(
-                (point) =>
-                    new THREE.Vector3(...solarPosition(point, this.mode)),
-            ),
+            points.map((point) => new THREE.Vector3(...point)),
         );
         this.trackedMarker.visible = true;
         this.trackedLabel.textContent = body.name;
@@ -1056,7 +1096,13 @@ export class SolarScene {
             .length();
         const distance =
             Math.max(
-                this.mode === "physical" ? 2000 : 30,
+                isMinorMoon(body)
+                    ? this.mode === "physical"
+                        ? 8
+                        : 6
+                    : this.mode === "physical"
+                      ? 2000
+                      : 30,
                 (span /
                     Math.sin(THREE.MathUtils.degToRad(this.camera.fov / 2))) *
                     1.05,
@@ -1089,17 +1135,20 @@ export class SolarScene {
         this.cloud.geometry.computeBoundingSphere();
     }
     private updateMinorMoons() {
-        const buffer = this.minorMoonCloud.geometry.getAttribute("position") as THREE.BufferAttribute;
-        for (let i = 0; i < minorMoonData.bodies.length; i++) {
-            const item = minorMoonData.bodies[i];
-            const parent = this.bodies[item.parent as BodyId];
+        const buffer = this.minorMoonCloud.geometry.getAttribute(
+            "position",
+        ) as THREE.BufferAttribute;
+        for (let i = 0; i < MINOR_MOONS.length; i++) {
+            const item = MINOR_MOONS[i];
+            const parent = this.bodies[item.parentBody as BodyId];
             const rel = keplerPosition(item.orbit, this.date.getTime());
-            const distance = Math.hypot(...rel);
-            const parentRadius = radius(item.parent as BodyId, this.mode);
-            const factor = this.mode === "physical"
-                ? radius("earth", "physical") / RADII.earth
-                : (parentRadius * (1.4 + 0.8 * Math.sqrt(Math.max(0.001, distance * 149597870.7 / RADII[item.parent as BodyId])))) / Math.max(distance * 149597870.7, 1);
-            buffer.setXYZ(i, parent.position.x + rel[0] * 149597870.7 * factor, parent.position.y + rel[1] * 149597870.7 * factor, parent.position.z + rel[2] * 149597870.7 * factor);
+            const offset = targetOffset(item, rel, this.mode);
+            buffer.setXYZ(
+                i,
+                parent.position.x + offset[0],
+                parent.position.y + offset[1],
+                parent.position.z + offset[2],
+            );
         }
         buffer.needsUpdate = true;
         this.minorMoonCloud.geometry.computeBoundingSphere();

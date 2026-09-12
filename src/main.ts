@@ -30,6 +30,13 @@ import { SolarTour } from "./tour";
 import { initCatalogs, catalogRequest } from "./catalogs";
 import { keplerPosition } from "./kepler";
 import type { CatalogObject } from "./catalog-types";
+import {
+    MINOR_MOONS,
+    MINOR_MOON_BY_ID,
+    isMinorMoon,
+    type OrbitTarget,
+} from "./minor-moons";
+import minorMoonData from "./minor-moons.json";
 
 const paths: Record<string, string> = {
     orbit: '<circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-35 12 12)"/>',
@@ -53,6 +60,7 @@ const icon = (name: string) =>
 const q = <T extends HTMLElement = HTMLElement>(selector: string) =>
     document.querySelector<T>(selector)!;
 const ids = BODY_IDS;
+const minorMoons = minorMoonData.bodies;
 const params = new URLSearchParams(location.search);
 let selected: BodyId = ids.includes(params.get("body") as BodyId)
     ? (params.get("body") as BodyId)
@@ -70,8 +78,8 @@ let playing = false,
     overview = params.get("view") === "system",
     family = params.get("view") === "family";
 let catalogState = params.get("catalog");
-let trackedObject: CatalogObject | null = null;
-let deferredCatalogObject: CatalogObject | null = null;
+let trackedObject: OrbitTarget | null = null;
+let deferredCatalogObject: OrbitTarget | null = null;
 let pendingObjectId = params.get("object");
 let scene: SolarScene | null = null;
 let tour: SolarTour | null = null;
@@ -103,9 +111,9 @@ q("#app").innerHTML = `
       <div class="eyebrow">OUR COSMIC NEIGHBORHOOD</div>
       <h1>从这里，<br>望向宇宙。</h1>
       <p class="intro">从岩石世界，到遥远的冰巨星。</p>
-      <div class="catalog-heading"><span>探索天体</span><span id="body-count" class="mono">${ids.length}</span></div>
+      <div class="catalog-heading"><span>探索天体</span><span id="body-count" class="mono">${ids.length + minorMoons.length}</span></div>
       <div class="catalog-filters"><select id="body-filter" aria-label="天体分类"><option value="all">全部天体</option><option value="major">太阳与行星</option><option value="satellite">天然卫星</option><option value="dwarf">五颗矮行星</option><option value="minor">其他小天体</option>${["earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"].map((id) => `<option value="${id}">${BODIES[id as BodyId].name}系统</option>`).join("")}</select><input id="body-search" type="search" placeholder="搜索天体" aria-label="搜索天体名称"/></div>
-      <div class="body-list" tabindex="0" aria-label="天体列表，可滚动">${ids.map((id) => `<button class="body-card ${id === selected ? "active" : ""}" data-body="${id}" aria-pressed="${id === selected}"><span class="planet-thumb ${id}" style="background-color:${BODIES[id].color};${textureOf(id) ? `background-image:url(${import.meta.env.BASE_URL}textures/${textureOf(id)})` : ""}"></span><span class="body-card-text">${BODIES[id].name}<small>${BODIES[id].english}</small></span><span class="body-card-arrow">↗</span></button>`).join("")}</div>
+      <div class="body-list" tabindex="0" aria-label="天体列表，可滚动">${ids.map((id) => `<button class="body-card ${id === selected ? "active" : ""}" data-body="${id}" aria-pressed="${id === selected}"><span class="planet-thumb ${id}" style="background-color:${BODIES[id].color};${textureOf(id) ? `background-image:url(${import.meta.env.BASE_URL}textures/${textureOf(id)})` : ""}"></span><span class="body-card-text">${BODIES[id].name}<small>${BODIES[id].english}</small></span><span class="body-card-arrow">↗</span></button>`).join("")}${minorMoons.map((body) => `<button class="body-card minor-moon-card" data-minor-moon="${body.id}" aria-pressed="false"><span class="planet-thumb minor-moon" style="background-color:#829b93"></span><span class="body-card-text">${body.name}<small>${body.parent.toUpperCase()} · 小卫星</small></span><span class="body-card-arrow">↗</span></button>`).join("")}</div>
       <button id="overview" class="overview-button">${icon("grid")}<span>太阳系总览</span>${icon("arrow")}</button>
     </aside>
     <div class="view-heading"><span class="eyebrow" id="view-eyebrow">FOCUS / EARTH</span><span class="view-title" id="view-title">地球近景</span><span class="view-rule"></span><div class="family-actions"><button id="parent-body" hidden></button><button id="family-view" hidden>卫星系统 ↗</button></div></div>
@@ -150,9 +158,11 @@ function updateLink() {
         scale: mode,
         view: overview ? "system" : family ? "family" : "focus",
         ...(catalogState ? { catalog: catalogState } : {}),
-        ...(trackedObject?.id || pendingObjectId
-            ? { object: trackedObject?.id || pendingObjectId! }
-            : {}),
+        ...(isMinorMoon(trackedObject)
+            ? { moon: trackedObject.id }
+            : trackedObject?.id || pendingObjectId
+              ? { object: trackedObject?.id || pendingObjectId! }
+              : {}),
     }).toString();
     history.replaceState(null, "", url);
 }
@@ -176,11 +186,21 @@ function syncTime(force = false) {
         `${((time - min) / (max - min)) * 100}%`,
     );
     if (trackedObject?.orbit) {
-        const distanceAU = Math.hypot(
-            ...keplerPosition(trackedObject.orbit, time),
-        );
-        q("#distance-title").textContent = "距太阳";
-        q("#distance-value").textContent = `${distanceAU.toFixed(5)} AU`;
+        const distanceAU = isMinorMoon(trackedObject)
+            ? Math.hypot(...keplerPosition(trackedObject.orbit, time))
+            : Math.hypot(...keplerPosition(trackedObject.orbit, time));
+        if (isMinorMoon(trackedObject)) {
+            const parentKm =
+                Math.hypot(...keplerPosition(trackedObject.orbit, time)) *
+                149597870.7;
+            q("#distance-title").textContent =
+                `距${BODIES[trackedObject.parentBody].name}`;
+            q("#distance-value").textContent =
+                `${Math.round(parentKm).toLocaleString("zh-CN")} km`;
+        } else {
+            q("#distance-title").textContent = "距太阳";
+            q("#distance-value").textContent = `${distanceAU.toFixed(5)} AU`;
+        }
         q("#secondary-title").textContent = "阳光抵达这里";
         q("#secondary-value").textContent =
             `${((distanceAU * 499.0048) / 60).toFixed(1)} 分钟`;
@@ -230,6 +250,57 @@ function refreshData() {
 function updateSelection() {
     q(".details").scrollTop = 0;
     q(".details").classList.toggle("catalog-details", Boolean(trackedObject));
+    if (isMinorMoon(trackedObject)) {
+        const body = trackedObject;
+        q("#body-name").textContent = body.name;
+        q("#body-english").textContent = body.english;
+        q("#body-kind").textContent = "天然卫星 · 轨道定位";
+        q("#body-number").textContent = "OpenSpace";
+        q("#body-description").textContent =
+            `围绕${BODIES[body.parentBody].name}运行的小卫星，使用本项目 OpenSpace SPICE 状态的开普勒近似外推。`;
+        q("#body-source").textContent = "OpenSpace SPICE / JPL";
+        q("#body-orbit-period").textContent =
+            `${body.orbit.period.toFixed(body.orbit.period < 1 ? 3 : 2)} 天`;
+        q("#body-fact").textContent =
+            `母行星：${BODIES[body.parentBody].name} · 历元 ${new Date(body.orbit.epoch).toISOString().slice(0, 10)}。未收录表面半径、质量与纹理。`;
+        for (const key of [
+            "radius",
+            "mass",
+            "rotation",
+            "temperature",
+            "density",
+        ])
+            q(`#body-${key}`).textContent = "未收录";
+        q("#body-radius-title").textContent = "参考半径";
+        q("#body-radius").textContent = "定位点";
+        q("#body-radius").nextElementSibling!.setAttribute("hidden", "");
+        q("#body-mass").nextElementSibling!.setAttribute("hidden", "");
+        q("#physical-source").textContent = "";
+        q("#ring-source").textContent = "";
+        q("#parent-body").hidden = false;
+        q("#parent-body").textContent = `返回${BODIES[body.parentBody].name} ↗`;
+        q("#family-view").hidden = false;
+        q("#family-view").textContent =
+            `${BODIES[body.parentBody].name}卫星系统 ↗`;
+        q("#view-title").textContent = `${body.name} · 轨道跟随`;
+        q("#view-eyebrow").textContent = "MOON / FOLLOW";
+        document
+            .querySelectorAll<HTMLButtonElement>("[data-body]")
+            .forEach((b) => {
+                b.classList.remove("active");
+                b.setAttribute("aria-pressed", "false");
+            });
+        document
+            .querySelectorAll<HTMLButtonElement>("[data-minor-moon]")
+            .forEach((b) => {
+                const a = b.dataset.minorMoon === body.id;
+                b.classList.toggle("active", a);
+                b.setAttribute("aria-pressed", String(a));
+            });
+        q("#overview").classList.remove("active");
+        syncTime();
+        return;
+    }
     if (trackedObject?.orbit) {
         const body = trackedObject;
         for (const key of [
@@ -416,8 +487,11 @@ function setMode(next: ScaleMode) {
 }
 
 try {
-    scene = new SolarScene(q("#viewport"), selectBody, (file) =>
-        toast(`纹理 ${file} 加载失败，请刷新重试。`),
+    scene = new SolarScene(
+        q("#viewport"),
+        selectBody,
+        (file) => toast(`纹理 ${file} 加载失败，请刷新重试。`),
+        (id) => focusMinorMoon(id),
     );
     scene.update(data, new Date(time), mode);
     scene.focus(overview ? "system" : selected, false, family);
@@ -455,18 +529,42 @@ function filterBodies() {
         const matchesText = `${BODIES[id].name} ${id}`
             .toLowerCase()
             .includes(keyword);
-        q<HTMLButtonElement>(`[data-body="${id}"]`).hidden =
-            !matchesGroup || !matchesText;
+        q<HTMLButtonElement>(`[data-body="${id}"]`).hidden = !(
+            matchesGroup && matchesText
+        );
         if (matchesGroup && matchesText) count++;
     }
-    q("#body-count").textContent = `${count} / ${ids.length}`;
+    for (const moon of MINOR_MOONS) {
+        const matchesGroup =
+            group === "all" ||
+            group === "satellite" ||
+            group === "minor" ||
+            group === moon.parentBody;
+        const matchesText =
+            `${moon.name} ${moon.english} ${moon.id} ${BODIES[moon.parentBody].name}`
+                .toLowerCase()
+                .includes(keyword);
+        q<HTMLButtonElement>(`[data-minor-moon="${moon.id}"]`).hidden = !(
+            matchesGroup && matchesText
+        );
+        if (matchesGroup && matchesText) count++;
+    }
+    q("#body-count").textContent =
+        `${count} / ${ids.length + MINOR_MOONS.length}`;
 }
 q("#body-filter").addEventListener("change", filterBodies);
 q("#body-search").addEventListener("input", filterBodies);
 q("#parent-body").addEventListener("click", () => {
-    if (parentOf(selected)) selectBody(parentOf(selected)!);
+    if (isMinorMoon(trackedObject)) selectBody(trackedObject.parentBody);
+    else if (parentOf(selected)) selectBody(parentOf(selected)!);
 });
 q("#family-view").addEventListener("click", () => {
+    if (isMinorMoon(trackedObject)) {
+        const parent = trackedObject.parentBody;
+        trackedObject = null;
+        pendingObjectId = null;
+        selected = parent;
+    }
     family = true;
     overview = false;
     scene?.focus(selected, true, true);
@@ -477,7 +575,7 @@ q("#catalog-overview").addEventListener("click", () => {
     q<HTMLDialogElement>("#catalog-dialog").close();
     q<HTMLButtonElement>("#overview").click();
 });
-function focusCatalog(body: CatalogObject) {
+function focusCatalog(body: OrbitTarget) {
     if (tour?.active) {
         deferredCatalogObject = body;
         return;
@@ -493,6 +591,13 @@ function focusCatalog(body: CatalogObject) {
     scene?.focusCatalog(body);
     updateSelection();
     updateLink();
+}
+function focusMinorMoon(id: string) {
+    const moon = MINOR_MOON_BY_ID.get(id);
+    if (moon) {
+        selected = moon.parentBody;
+        focusCatalog(moon);
+    }
 }
 void initCatalogs(
     scene,
@@ -512,6 +617,13 @@ document
     .forEach((button) =>
         button.addEventListener("click", () =>
             selectBody(button.dataset.body as BodyId),
+        ),
+    );
+document
+    .querySelectorAll<HTMLButtonElement>("[data-minor-moon]")
+    .forEach((button) =>
+        button.addEventListener("click", () =>
+            focusMinorMoon(button.dataset.minorMoon!),
         ),
     );
 document
@@ -665,7 +777,10 @@ function animate(now: number) {
         lastUI = now;
     }
 }
-if (pendingObjectId) {
+const requestedMoon = params.get("moon");
+if (requestedMoon && MINOR_MOON_BY_ID.has(requestedMoon))
+    focusMinorMoon(requestedMoon);
+if (pendingObjectId && !requestedMoon) {
     const requested = pendingObjectId;
     void catalogRequest<CatalogObject>(
         `object/${encodeURIComponent(requested)}`,
