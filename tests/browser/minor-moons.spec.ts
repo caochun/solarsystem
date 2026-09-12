@@ -6,7 +6,7 @@ test("minor moons are searchable, selectable, linked and navigable", async ({
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/?time=1788998400000");
     await expect(page.locator("#fps")).toHaveText(/\d+ FPS/);
-    await expect(page.locator(".body-card")).toHaveCount(152);
+    await expect(page.locator(".body-card")).toHaveCount(157);
     await page.locator("#body-filter").selectOption("jupiter");
     await expect(page.locator(".body-card:visible")).toHaveCount(48);
     await page.locator("#body-search").fill("Himalia");

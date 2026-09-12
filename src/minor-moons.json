@@ -1,6 +1,6 @@
 {
   "epoch": "2026-09-10T00:00:00Z",
-  "count": 106,
+  "count": 111,
   "bodies": [
     {
       "id": "aitne",
@@ -25,7 +25,8 @@
         -1.1691092439099529,
         0.16708940004522607
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "ananke",
@@ -50,7 +51,8 @@
         2.019127834175681,
         -0.239669320645688
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "aoede",
@@ -75,7 +77,8 @@
         -1.707050020256448,
         0.7014630500898769
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "arche",
@@ -100,7 +103,8 @@
         -1.7743238558414625,
         0.06565961154213842
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "autonoe",
@@ -125,7 +129,8 @@
         1.347665692588564,
         -0.19229221172782504
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "callirrhoe",
@@ -150,7 +155,8 @@
         1.8859112475772775,
         -1.0186724249444195
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "carme",
@@ -175,7 +181,8 @@
         1.6850152929418916,
         -0.19869493502398602
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "carpo",
@@ -200,7 +207,8 @@
         -0.570153957589756,
         0.22040041943876035
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "chaldene",
@@ -225,7 +233,8 @@
         2.438947514935375,
         0.13431075805736983
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "cyllene",
@@ -250,7 +259,8 @@
         -0.942736748827297,
         0.0014913441625499574
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "dia",
@@ -275,7 +285,8 @@
         1.655902636800445,
         -1.3326839290994645
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "elara",
@@ -300,7 +311,8 @@
         0.6852437994173274,
         1.385377011944001
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "erinome",
@@ -325,7 +337,8 @@
         0.5862540446042956,
         -0.6764675671566357
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "euanthe",
@@ -350,7 +363,8 @@
         -0.7317212596673747,
         -0.09730905274091398
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "eukelade",
@@ -375,7 +389,8 @@
         -1.068532828441055,
         0.7009456113693672
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "euporie",
@@ -400,7 +415,8 @@
         -2.6285085484838793,
         -0.9375578334242868
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "eurydome",
@@ -425,7 +441,8 @@
         -0.9933330514597781,
         -0.41288297056299217
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "harpalyke",
@@ -450,7 +467,8 @@
         2.247291615669945,
         0.8300629479153705
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "hegemone",
@@ -475,7 +493,8 @@
         2.283186871419758,
         -0.5665909416795566
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "helike",
@@ -500,7 +519,8 @@
         0.04893973593930578,
         0.020717507961594592
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "hermippe",
@@ -525,7 +545,8 @@
         1.6815726690212984,
         0.2487351761115231
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "herse",
@@ -550,7 +571,8 @@
         0.2951483053422529,
         0.26945975163376873
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "himalia",
@@ -575,7 +597,8 @@
         1.2648652332989525,
         1.5792760768561143
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "iocaste",
@@ -600,7 +623,8 @@
         2.4103316668653645,
         -1.5098940487270718
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "isonoe",
@@ -625,7 +649,8 @@
         0.8694736479703629,
         -0.37785466712804855
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "kale",
@@ -650,7 +675,8 @@
         -2.1634451668638794,
         -0.6078644110609144
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "kallichore",
@@ -675,7 +701,8 @@
         1.6717124015694729,
         0.3166833500605049
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "kalyke",
@@ -700,7 +727,8 @@
         0.7538040997812785,
         0.025126969062593686
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "kore",
@@ -725,7 +753,8 @@
         -1.3645342037481125,
         -0.036119530292689904
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "leda",
@@ -750,7 +779,8 @@
         -3.4039931622359814,
         1.8093801931258884
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "lysithea",
@@ -775,7 +805,8 @@
         -1.0934910243615046,
         0.14150252699546798
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "megaclite",
@@ -800,7 +831,8 @@
         1.1003132331801415,
         -0.8621545834945735
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "mneme",
@@ -825,7 +857,8 @@
         1.7115559734094397,
         0.21084402984413456
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "orthosie",
@@ -850,7 +883,8 @@
         0.1358115380544232,
         0.5761709887582536
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "pasiphae",
@@ -875,7 +909,8 @@
         2.6360490732837643,
         -0.8881537100005981
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "pasithee",
@@ -900,7 +935,8 @@
         -2.3039633755648072,
         0.5690697565863744
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "praxidike",
@@ -925,7 +961,8 @@
         1.7976331457714128,
         -0.9014203349634023
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "sinope",
@@ -950,7 +987,8 @@
         1.7659096437410964,
         -0.5565876353958805
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "sponde",
@@ -975,7 +1013,8 @@
         0.7601485531006912,
         1.0629378403160614
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "taygete",
@@ -1000,7 +1039,8 @@
         1.0230536768435792,
         -0.4897543170046709
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "thelxinoe",
@@ -1025,7 +1065,8 @@
         0.9585140301670655,
         -0.9617749922375711
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "themisto",
@@ -1050,7 +1091,8 @@
         2.9178628463819365,
         -2.7246570372043886
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "thyone",
@@ -1075,7 +1117,8 @@
         -1.2479414404449423,
         0.014470836340207106
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "despina",
@@ -1100,7 +1143,8 @@
         -7.680176990069835,
         0.7118786588156716
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "galatea",
@@ -1125,7 +1169,60 @@
         -6.2749650098474,
         -5.019701183927733
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": "halimede",
+      "name": "Halimede",
+      "english": "HALIMEDE",
+      "parent": "neptune",
+      "orbit": {
+        "a": 0.11096854124254751,
+        "e": 0.2505679825348434,
+        "i": 112.80799292802425,
+        "node": 218.18304042635793,
+        "peri": 155.5250647934988,
+        "m": 300.3123017029962,
+        "period": 1881.402097834297,
+        "epoch": 1788998400000.0
+      },
+      "stateKm": [
+        -8025855.319432522,
+        719026.4905782971,
+        13142064.528530797,
+        0.5117153036218811,
+        0.4522334166723877,
+        0.09308240151336321
+      ],
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/3/nep104.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": "laomedeia",
+      "name": "Laomedeia",
+      "english": "LAOMEDEIA",
+      "parent": "neptune",
+      "orbit": {
+        "a": 0.15839680144978982,
+        "e": 0.39902087931133723,
+        "i": 39.05628198558357,
+        "node": 48.42686281217251,
+        "peri": 139.10899543495356,
+        "m": 179.5269276064273,
+        "period": 3208.4953909217047,
+        "epoch": 1788998400000.0
+      },
+      "stateKm": [
+        29236801.24814833,
+        7452907.439517471,
+        -13734568.800779527,
+        0.0003210253085682855,
+        0.31002143208797583,
+        0.16673090260936643
+      ],
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/3/nep104.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "larissa",
@@ -1150,7 +1247,8 @@
         8.278695201981124,
         0.9269789321939477
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "naiad",
@@ -1175,7 +1273,34 @@
         -9.803810914630365,
         -1.534504292578691
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": "neso",
+      "name": "Neso",
+      "english": "NESO",
+      "parent": "neptune",
+      "orbit": {
+        "a": 0.3309472504368864,
+        "e": 0.7290356976707758,
+        "i": 142.54350141716714,
+        "node": 74.34536345021397,
+        "peri": 110.32767175973724,
+        "m": 195.7826667338214,
+        "period": 9689.915154512557,
+        "epoch": 1788998400000.0
+      },
+      "stateKm": [
+        -50148083.96718277,
+        49953856.662274234,
+        -47321275.66856792,
+        0.09710447332411451,
+        0.10258556027275857,
+        0.050426840128289824
+      ],
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/3/nep104.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "proteus",
@@ -1200,7 +1325,60 @@
         6.024725673938377,
         0.2588963405807408
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": "psamathe",
+      "name": "Psamathe",
+      "english": "PSAMATHE",
+      "parent": "neptune",
+      "orbit": {
+        "a": 0.32724897060180325,
+        "e": 0.1695661382616734,
+        "i": 122.32611068531224,
+        "node": 321.90013898904084,
+        "peri": 143.74632594315298,
+        "m": 182.43989129442224,
+        "period": 9527.94501354295,
+        "epoch": 1788998400000.0
+      },
+      "stateKm": [
+        47829863.20382921,
+        -15470489.91681931,
+        -27398915.703764383,
+        0.05306096487473177,
+        -0.21871150620330249,
+        0.2202418749312671
+      ],
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/3/nep104.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
+    },
+    {
+      "id": "sao",
+      "name": "Sao",
+      "english": "SAO",
+      "parent": "neptune",
+      "orbit": {
+        "a": 0.14801903538477945,
+        "e": 0.13843659291518043,
+        "i": 53.09350450784436,
+        "node": 59.68050874389528,
+        "peri": 63.74738162299534,
+        "m": 139.03259555298195,
+        "period": 2898.3989451608772,
+        "epoch": 1788998400000.0
+      },
+      "stateKm": [
+        -3795761.798445139,
+        -21979042.78412861,
+        -10411334.623808816,
+        0.34362134393262267,
+        0.06212417869226527,
+        -0.3532104597799135
+      ],
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/3/nep104.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "thalassa",
@@ -1225,7 +1403,8 @@
         7.892637184679864,
         -0.7197351588859779
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "aegir",
@@ -1250,7 +1429,8 @@
         -1.0698295419697244,
         -0.27664126926059207
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "albiorix",
@@ -1275,7 +1455,8 @@
         0.7339102515627098,
         0.051472088858648304
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "bebhionn",
@@ -1300,7 +1481,8 @@
         0.3577259853280774,
         -0.27129223989048173
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "bergelmir",
@@ -1325,7 +1507,8 @@
         0.6854460844181821,
         0.4705649803218029
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "bestla",
@@ -1350,7 +1533,8 @@
         -0.7424865024207279,
         0.5529896783637056
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "calypso",
@@ -1375,7 +1559,8 @@
         -5.242068415298715,
         1.870812629663491
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "erriapus",
@@ -1400,7 +1585,8 @@
         0.2697064416799808,
         1.256443629098757
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "farbauti",
@@ -1425,7 +1611,8 @@
         0.3466255978991965,
         -0.03436097807391891
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "fenrir",
@@ -1450,7 +1637,8 @@
         -0.6845877362026693,
         -0.417763221345739
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "fornjot",
@@ -1475,7 +1663,8 @@
         0.7165327635707208,
         0.20846658450945685
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "greip",
@@ -1500,7 +1689,8 @@
         -0.20280589983470296,
         0.004656892984781113
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "hati",
@@ -1525,7 +1715,8 @@
         -1.3497255277581788,
         0.3045831621544997
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "helene",
@@ -1550,7 +1741,8 @@
         7.5496685163505495,
         -4.452301720900898
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "hyrrokkin",
@@ -1575,7 +1767,8 @@
         -1.1295194515866944,
         0.3077517595723496
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "ijiraq",
@@ -1600,7 +1793,8 @@
         0.3072749943041598,
         0.5935267324397844
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "jarnsaxa",
@@ -1625,7 +1819,8 @@
         -0.967065066357352,
         0.37096475086188246
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "kari",
@@ -1650,7 +1845,8 @@
         0.5587128219578996,
         0.18442423184366866
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "kiviuq",
@@ -1675,7 +1871,8 @@
         -1.076960618080307,
         -1.3836607489971513
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "loge",
@@ -1700,7 +1897,8 @@
         1.0925350296650425,
         -0.23255025649141828
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "methone",
@@ -1725,7 +1923,8 @@
         12.36523348728795,
         -6.539147841915536
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "mundilfari",
@@ -1750,7 +1949,8 @@
         -0.7507531813860198,
         -0.19762425428755287
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "narvi",
@@ -1775,7 +1975,8 @@
         -1.478354531599779,
         -1.1117232612624224
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "paaliaq",
@@ -1800,7 +2001,8 @@
         -0.0006520091568340083,
         0.889734189305104
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "phoebe",
@@ -1825,7 +2027,8 @@
         -1.466887175405181,
         0.14619549834614748
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "polydeuces",
@@ -1850,7 +2053,8 @@
         -7.621507926581169,
         3.4157344412509016
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "siarnaq",
@@ -1875,7 +2079,8 @@
         0.2546077104728285,
         -0.22848621942375594
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "skathi",
@@ -1900,7 +2105,8 @@
         1.260927469082613,
         -0.11415993340708057
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "skoll",
@@ -1925,7 +2131,8 @@
         -1.3249844207427266,
         0.36581860992856063
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "surtur",
@@ -1950,7 +2157,8 @@
         -1.6373040049074348,
         0.20033899584598075
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "suttungr",
@@ -1975,7 +2183,8 @@
         -1.2222840764418557,
         -0.0444595584467906
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "tarqeq",
@@ -2000,7 +2209,8 @@
         0.638256396033875,
         -0.7953251347506436
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "tarvos",
@@ -2025,7 +2235,8 @@
         -0.7512791752818784,
         0.14737384019341407
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "telesto",
@@ -2050,7 +2261,8 @@
         9.977984132796,
         -5.4076572495807556
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "thrymr",
@@ -2075,7 +2287,8 @@
         1.2311632737109768,
         0.08642634336543116
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "ymir",
@@ -2100,7 +2313,8 @@
         1.5427105851425236,
         -0.006086882579910123
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "belinda",
@@ -2125,7 +2339,8 @@
         -0.1953619356169166,
         -8.141093908366182
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "bianca",
@@ -2150,7 +2365,8 @@
         1.238804524598438,
         -2.9868146063785592
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "caliban",
@@ -2175,7 +2391,8 @@
         0.37600647719711433,
         0.26697122906015947
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "cordelia",
@@ -2200,7 +2417,8 @@
         -2.710949258240295,
         -6.397341519372723
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "cressida",
@@ -2225,7 +2443,8 @@
         0.41724912962949107,
         9.246383482193705
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "cupid",
@@ -2250,7 +2469,8 @@
         -1.9260811084942415,
         -4.506929138050934
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "desdemona",
@@ -2275,7 +2495,8 @@
         -1.5484771208898656,
         -8.680804974156151
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "ferdinand",
@@ -2300,7 +2521,8 @@
         0.2513276183513003,
         0.07894839485946803
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "francisco",
@@ -2325,7 +2547,8 @@
         0.7607499028240458,
         0.43704183550876974
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "juliet",
@@ -2350,7 +2573,8 @@
         -2.1648227456864144,
         -6.170986527289417
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "mab",
@@ -2375,7 +2599,8 @@
         1.5372371212613163,
         6.739881848866339
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "margaret",
@@ -2400,7 +2625,8 @@
         0.32176401551496275,
         0.32150752524102544
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "ophelia",
@@ -2425,7 +2651,8 @@
         -2.56425361257185,
         -4.786859463447497
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "perdita",
@@ -2450,7 +2677,8 @@
         0.21785815088845198,
         7.305520634683491
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "portia",
@@ -2475,7 +2703,8 @@
         0.12778735359318674,
         -7.318464071819846
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "prospero",
@@ -2500,7 +2729,8 @@
         -0.11567393703409583,
         0.21570967058990423
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "puck",
@@ -2525,7 +2755,8 @@
         2.214558994769264,
         4.441300032949876
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "rosalind",
@@ -2550,7 +2781,8 @@
         -0.6520275456895314,
         5.462943197778819
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "setebos",
@@ -2575,7 +2807,8 @@
         -0.5239389747885684,
         0.14121422331892866
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "stephano",
@@ -2600,7 +2833,8 @@
         0.41708921932934295,
         0.20757570192947458
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "sycorax",
@@ -2625,7 +2859,8 @@
         0.21270570031812133,
         -0.1862414619647567
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     },
     {
       "id": "trinculo",
@@ -2650,7 +2885,8 @@
         0.5497980177407191,
         0.15586137401175093
       ],
-      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"
+      "source": "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp",
+      "sourceEpoch": "2026-09-10T00:00:00Z"
     }
   ]
 }

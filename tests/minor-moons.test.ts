@@ -8,8 +8,8 @@ import {
 } from "../src/minor-moons";
 
 test("all imported minor moons become unique selectable orbit targets", () => {
-    assert.equal(MINOR_MOONS.length, 106);
-    assert.equal(new Set(MINOR_MOONS.map((moon) => moon.id)).size, 106);
+    assert.equal(MINOR_MOONS.length, 111);
+    assert.equal(new Set(MINOR_MOONS.map((moon) => moon.id)).size, 111);
     assert.equal(MINOR_MOON_BY_ID.get("himalia")?.parentBody, "jupiter");
     assert.equal(MINOR_MOON_BY_ID.get("phoebe")?.parentBody, "saturn");
     assert.ok(

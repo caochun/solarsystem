@@ -1,11 +1,11 @@
 {
   "epoch": "2026-09-10T00:00:00Z",
-  "extractedCount": 106,
+  "extractedCount": 111,
   "extractedByParent": {
     "jupiter": 43,
     "saturn": 35,
     "uranus": 22,
-    "neptune": 6
+    "neptune": 11
   },
   "assetCandidatesByParent": {
     "jupiter": [
@@ -3697,36 +3697,6 @@
       }
     ],
     "neptune": [
-      {
-        "id": "halimede",
-        "english": "Halimede",
-        "name": "Halimede",
-        "reason": "OpenSpace asset present, but no usable elliptic segment at the selected epoch"
-      },
-      {
-        "id": "psamathe",
-        "english": "Psamathe",
-        "name": "Psamathe",
-        "reason": "OpenSpace asset present, but no usable elliptic segment at the selected epoch"
-      },
-      {
-        "id": "sao",
-        "english": "Sao",
-        "name": "Sao",
-        "reason": "OpenSpace asset present, but no usable elliptic segment at the selected epoch"
-      },
-      {
-        "id": "laomedeia",
-        "english": "Laomedeia",
-        "name": "Laomedeia",
-        "reason": "OpenSpace asset present, but no usable elliptic segment at the selected epoch"
-      },
-      {
-        "id": "neso",
-        "english": "Neso",
-        "name": "Neso",
-        "reason": "OpenSpace asset present, but no usable elliptic segment at the selected epoch"
-      },
       {
         "id": "s2002n5",
         "english": "S2002N5",
