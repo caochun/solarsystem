@@ -778,6 +778,17 @@ let observatorySite: ObservatorySite = OBSERVATORY_SITES[0];
 let observatoryTracking = false;
 let observatoryStarsKey = "";
 const observationTextureCache = new Map<string, HTMLImageElement | null>();
+const BODY_ROTATION_DAYS: Partial<Record<BodyId, number>> = {
+    mercury: 58.646,
+    venus: -243.025,
+    moon: 27.321661,
+    mars: 1.026,
+    jupiter: 0.4135,
+    saturn: 0.444,
+    uranus: -0.718,
+    neptune: 0.6713,
+    pluto: 6.387,
+};
 function updateObservatorySite(site: ObservatorySite) {
     observatorySite = site;
     q<HTMLInputElement>("#observatory-lat").value = String(site.latitude);
@@ -859,7 +870,12 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
             surface.width = diameter;
             surface.height = diameter;
             const surfaceContext = surface.getContext("2d")!;
-            surfaceContext.drawImage(texture, 0, 0, diameter, diameter);
+            const rotationDays = BODY_ROTATION_DAYS[result.target] ?? 1;
+            const rotation = ((time / 86_400_000) / Math.abs(rotationDays)) * Math.PI * 2 * Math.sign(rotationDays);
+            surfaceContext.translate(diameter / 2, diameter / 2);
+            surfaceContext.rotate(rotation);
+            surfaceContext.drawImage(texture, -diameter / 2, -diameter / 2, diameter, diameter);
+            surfaceContext.setTransform(1, 0, 0, 1, 0, 0);
             const pixels = surfaceContext.getImageData(0, 0, diameter, diameter);
             const phase = result.phaseAngleDeg === null ? 0 : (result.phaseAngleDeg * Math.PI) / 180;
             const sinPhase = Math.sin(phase);
@@ -875,9 +891,7 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
                         continue;
                     }
                     const nz = Math.sqrt(1 - sphere);
-                    const lighting = result.target === "moon"
-                        ? Math.max(0, nx * sinPhase + nz * cosPhase)
-                        : 0.72 + 0.28 * nz;
+                    const lighting = Math.max(0, nx * sinPhase + nz * cosPhase) * (0.72 + 0.28 * nz);
                     pixels.data[index] *= lighting * targetIntensity;
                     pixels.data[index + 1] *= lighting * targetIntensity;
                     pixels.data[index + 2] *= lighting * targetIntensity;
