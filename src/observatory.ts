@@ -5,6 +5,7 @@ import {
     Illumination,
     Observer,
     type HorizontalCoordinates,
+    SearchRiseSet,
 } from "astronomy-engine";
 import { ASTRO_BODY, type BodyId } from "./model";
 
@@ -30,6 +31,10 @@ export interface ObservationResult {
     aboveHorizon: boolean;
     astronomicalNight: boolean;
     observable: boolean;
+    nextRiseTime: Date | null;
+    nextSetTime: Date | null;
+    maxAltitudeDeg: number;
+    maxAltitudeTime: Date;
 }
 
 export const OBSERVATORY_SITES: ObservatorySite[] = [
@@ -69,6 +74,25 @@ export function observe(
     phaseAngleDeg = illumination.phase_angle;
     const aboveHorizon = horizontal.altitude > 0;
     const astronomicalNight = sunHorizontal.altitude < -18;
+    const nextRise = SearchRiseSet(body, observer, +1, date, 2);
+    const nextSet = SearchRiseSet(body, observer, -1, date, 2);
+    let maxAltitudeDeg = -90;
+    let maxAltitudeTime = date;
+    for (let minutes = 0; minutes <= 24 * 60; minutes += 5) {
+        const sampleDate = new Date(date.getTime() + minutes * 60_000);
+        const sampleEquator = Equator(body, sampleDate, observer, true, true);
+        const sampleHorizontal = Horizon(
+            sampleDate,
+            observer,
+            sampleEquator.ra,
+            sampleEquator.dec,
+            refraction,
+        );
+        if (sampleHorizontal.altitude > maxAltitudeDeg) {
+            maxAltitudeDeg = sampleHorizontal.altitude;
+            maxAltitudeTime = sampleDate;
+        }
+    }
     return {
         site,
         target,
@@ -83,6 +107,10 @@ export function observe(
         aboveHorizon,
         astronomicalNight,
         observable: aboveHorizon && astronomicalNight,
+        nextRiseTime: nextRise ? nextRise.date : null,
+        nextSetTime: nextSet ? nextSet.date : null,
+        maxAltitudeDeg,
+        maxAltitudeTime,
     };
 }
 
