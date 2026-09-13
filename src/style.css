@@ -2089,11 +2089,12 @@ dialog > p {
     color: #f5d38d;
     font-size: 10px;
     white-space: nowrap;
+    opacity: var(--target-brightness, 1);
 }
 .sky-marker i {
     display: block;
-    width: 9px;
-    height: 9px;
+    width: var(--target-size, 9px);
+    height: var(--target-size, 9px);
     border: 2px solid #f5d38d;
     border-radius: 50%;
     box-shadow: 0 0 12px #f5d38d99;

@@ -831,6 +831,10 @@ function solveObservatory() {
     marker.style.setProperty("--sky-x", trackingActive ? "50%" : `${(result.azimuthDeg / 360) * 100}%`);
     marker.style.setProperty("--sky-y", trackingActive ? "50%" : `${100 - ((altitude + 20) / 110) * 100}%`);
     marker.classList.toggle("below-horizon", !result.aboveHorizon);
+    const markerSize = Math.max(7, Math.min(34, 5 + Math.sqrt(result.angularDiameterArcsec) * 0.55));
+    const markerBrightness = Math.max(0.45, Math.min(1, 1 - Math.max(-2, result.visualMagnitude) * 0.04));
+    marker.style.setProperty("--target-size", `${markerSize}px`);
+    marker.style.setProperty("--target-brightness", String(markerBrightness));
     q("#observatory-marker-label").textContent = `${BODIES[target].name} · ${result.azimuthDeg.toFixed(0)}° / ${result.altitudeDeg.toFixed(1)}°`;
     const skyDome = q<HTMLElement>(".sky-dome");
     skyDome.classList.toggle("tracking", trackingActive);
