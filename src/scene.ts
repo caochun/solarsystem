@@ -11,6 +11,7 @@ import {
     targetOffset,
     targetOrbitPoints,
     targetPosition,
+    relativePosition,
     isMinorMoon,
     type OrbitTarget,
 } from "./minor-moons";
@@ -1141,7 +1142,7 @@ export class SolarScene {
         for (let i = 0; i < MINOR_MOONS.length; i++) {
             const item = MINOR_MOONS[i];
             const parent = this.bodies[item.parentBody as BodyId];
-            const rel = keplerPosition(item.orbit, this.date.getTime());
+            const rel = relativePosition(item, this.date.getTime());
             const offset = targetOffset(item, rel, this.mode);
             buffer.setXYZ(
                 i,

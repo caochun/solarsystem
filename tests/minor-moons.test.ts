@@ -7,6 +7,7 @@ import {
     targetOffset,
     targetOrbitPoints,
     orbitAccuracy,
+    relativePosition,
 } from "../src/minor-moons";
 
 test("all imported minor moons become unique selectable orbit targets", () => {
@@ -41,6 +42,14 @@ test("Minor moon accuracy warning follows the distance from the SPICE epoch", ()
     assert.equal(orbitAccuracy(moon, epoch), "near-epoch");
     assert.equal(orbitAccuracy(moon, epoch + 180 * 86_400_000), "extended");
     assert.equal(orbitAccuracy(moon, epoch + 3 * 365 * 86_400_000), "far");
+});
+test("SPICE samples interpolate inside their window and fall back outside it", () => {
+    const moon = MINOR_MOON_BY_ID.get("himalia")!;
+    const original = moon.spiceSamples;
+    moon.spiceSamples = [[0, 0, 0, 0], [1000, 10, 20, 30]];
+    assert.deepEqual(relativePosition(moon, 500), [5, 10, 15]);
+    assert.notDeepEqual(relativePosition(moon, 2000), [20, 40, 60]);
+    moon.spiceSamples = original;
 });
 
 test("minor moon orbit points use local parent-relative scale in both modes", () => {

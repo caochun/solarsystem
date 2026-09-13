@@ -36,6 +36,7 @@ import {
     MINOR_MOON_BY_ID,
     isMinorMoon,
     orbitAccuracy,
+    relativePosition,
     type OrbitTarget,
 } from "./minor-moons";
 import minorMoonData from "./minor-moons.json";
@@ -206,11 +207,11 @@ function syncTime(force = false) {
     );
     if (trackedObject?.orbit) {
         const distanceAU = isMinorMoon(trackedObject)
-            ? Math.hypot(...keplerPosition(trackedObject.orbit, time))
+            ? Math.hypot(...relativePosition(trackedObject, time))
             : Math.hypot(...keplerPosition(trackedObject.orbit, time));
         if (isMinorMoon(trackedObject)) {
             const parentKm =
-                Math.hypot(...keplerPosition(trackedObject.orbit, time)) *
+                Math.hypot(...relativePosition(trackedObject, time)) *
                 149597870.7;
             q("#distance-title").textContent =
                 `距${BODIES[trackedObject.parentBody].name}`;

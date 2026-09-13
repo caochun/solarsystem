@@ -23,8 +23,11 @@ export interface MinorMoon extends CatalogObject {
     orbit: KeplerElements;
     dataStatus: "orbit-point";
     physical?: PhysicalData;
+    /** Optional local SPICE position samples, ordered by UTC milliseconds. */
+    spiceSamples?: SpiceSample[];
 }
 export type OrbitAccuracy = "near-epoch" | "extended" | "far";
+export type SpiceSample = [time: number, x: number, y: number, z: number];
 export type OrbitTarget = CatalogObject | MinorMoon;
 export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
     id: body.id,
@@ -54,6 +57,21 @@ export function orbitAccuracy(target: OrbitTarget, time: number): OrbitAccuracy 
     if (days <= 90) return "near-epoch";
     if (days <= 730) return "extended";
     return "far";
+}
+
+/** Interpolate local SPICE samples and fall back to the osculating ellipse. */
+export function relativePosition(target: OrbitTarget, time: number): [number, number, number] {
+    if (!isMinorMoon(target) || !target.spiceSamples || target.spiceSamples.length < 2)
+        return keplerPosition(target.orbit!, time);
+    const samples = target.spiceSamples;
+    if (time < samples[0][0] || time > samples[samples.length - 1][0])
+        return keplerPosition(target.orbit!, time);
+    const hi = samples.findIndex((sample) => sample[0] >= time);
+    if (hi <= 0) return samples[0].slice(1) as [number, number, number];
+    const lo = hi - 1;
+    const a = samples[lo], b = samples[hi];
+    const fraction = (time - a[0]) / Math.max(b[0] - a[0], 1);
+    return [a[1] + (b[1] - a[1]) * fraction, a[2] + (b[2] - a[2]) * fraction, a[3] + (b[3] - a[3]) * fraction];
 }
 
 export function targetOffset(
@@ -90,7 +108,7 @@ export function targetPosition(
     time: number,
     mode: ScaleMode,
 ): [number, number, number] {
-    const relative = keplerPosition(target.orbit!, time);
+    const relative = relativePosition(target, time);
     if (!isMinorMoon(target)) return solarPosition(relative, mode);
     const parent = data.heliocentric[target.parentBody];
     const parentScene = solarPosition(parent, mode);

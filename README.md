@@ -97,7 +97,7 @@ F 请求浏览器全屏，隐藏导航、资料、时间轴、标签与轨道。
 | 谷神星与目录点云 | OpenSpace 引用的 JPL SBDB 快照开普勒要素 |
 | 其余可选小天体 | 原 OpenSpace `transforms.asset` 中的开普勒要素 |
 
-浏览器没有运行完整 SPICE，也没有下载全部多 GB 星历内核。固定历元轨道只作展示，离历元越远，相位误差可能越大；未模拟长期摄动、非引力加速度、精确食现象或彗尾。日期范围表示控件支持范围，不是所有模型在该范围内的精度保证。
+浏览器没有运行完整 SPICE，也没有下载全部多 GB 星历内核。固定历元轨道只作展示，离历元越远，相位误差可能越大；可选的 `sample-minor-moons.py` 会把历元附近的 SPICE 相对位置写入 `spiceSamples`，浏览器在样本窗口内线性插值，窗口外仍回退到开普勒模型。未模拟长期摄动、非引力加速度、精确食现象或彗尾。日期范围表示控件支持范围，不是所有模型在该范围内的精度保证。
 
 累计新增 15 张表面图和 6 个 GLB 模型，其中灶神星来自原 OpenSpace OBJ，约 80 万面简化为 8 万面，浏览器文件约 1.4 MB。没有全球影像的天体使用纯色椭球；遥远天体 GLB 的表面可能是艺术示意。部分卫星原资产把直径填入半径字段，现按同项目引用的 `pck00011.tpc` 校正；冥王星四颗小卫星采用 JPL 平均半径估计：冥卫二 18±1 km、冥卫三 18.5±1 km、冥卫四 6±1 km、冥卫五 5.2±1 km；均为等效球，未恢复真实不规则形状。新增卫星姿态为朝向母星的示意，不是精确自转模型。部分遥远天体尺寸为人工采用的观测估计值，详见来源说明。
 
@@ -118,6 +118,8 @@ python3 -m venv /tmp/solarspace-assets-venv
 /tmp/solarspace-assets-venv/bin/python scripts/verify-system.py
 /tmp/solarspace-assets-venv/bin/python scripts/enrich-system.py
 /tmp/solarspace-assets-venv/bin/python scripts/index-catalogs.py
+# 可选：从已缓存 SPK 记录生成历元附近的多点插值样本
+/tmp/solarspace-assets-venv/bin/python scripts/sample-minor-moons.py
 npm test
 npm run build
 ```
@@ -138,6 +140,7 @@ npm run build
 | `src/tour.ts`、`src/tour-path.ts` | 全屏漫游状态、控制面板、32 站路线与避障镜头 |
 | `src/main.ts`、`src/catalogs.ts`、`src/style.css` | 页面、目录、时间状态与响应式交互 |
 | `scripts/enrich-system.py` | JPL 物理参数、PDS 环参数与灶神星模型转换 |
+| `scripts/sample-minor-moons.py` | 历元附近 SPICE 多点采样与浏览器插值数据生成 |
 | `scripts/index-catalogs.py`、`data/catalog.sqlite` | 完整目录去重及 FTS5 名称索引 |
 | `server/catalog-api.mjs`、`server/catalog_worker.py` | Node API 与只读 Python SQLite 查询进程 |
 
