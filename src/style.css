@@ -1908,6 +1908,22 @@ dialog > p {
 .observatory-dialog h2 { margin: 6px 0; font-size: 21px; }
 .observatory-dialog > p { margin: 7px 0; line-height: 1.5; }
 .observatory-dialog .primary-button { margin-top: 12px; }
+@media (min-width: 700px) {
+    .observatory-dialog {
+        width: min(1100px, calc(100vw - 48px));
+        max-width: min(1100px, calc(100vw - 48px));
+        max-height: min(94svh, 860px);
+    }
+    .observatory-layout {
+        display: grid;
+        grid-template-columns: minmax(280px, .85fr) minmax(440px, 1.15fr);
+        gap: 20px;
+        align-items: start;
+    }
+    .observatory-controls,
+    .observatory-output { min-width: 0; }
+    .observatory-controls .primary-button { width: 100%; }
+}
 .observatory-time {
     margin: 10px 0 8px;
     padding: 8px 10px 6px;
@@ -2184,6 +2200,8 @@ dialog > p {
     border-radius: 5px;
     background: #02060a;
     image-rendering: auto;
+    max-height: 280px;
+    object-fit: contain;
 }
 .observatory-image[hidden],
 .sky-caption[hidden] { display: none; }
