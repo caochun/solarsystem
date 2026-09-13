@@ -8,6 +8,15 @@ import {
     SearchRiseSet,
 } from "astronomy-engine";
 import { ASTRO_BODY, type BodyId } from "./model";
+import starCatalog from "./stars.json";
+
+export interface ObservatoryStar {
+    id: string;
+    azimuthDeg: number;
+    altitudeDeg: number;
+    magnitude: number;
+    colorIndex: number | null;
+}
 
 export interface ObservatorySite {
     id: string;
@@ -72,6 +81,22 @@ const angularSeparationDeg = (a: { ra: number; dec: number }, b: { ra: number; d
     const cosine = Math.sin(dec1) * Math.sin(dec2) + Math.cos(dec1) * Math.cos(dec2) * Math.cos(ra1 - ra2);
     return (Math.acos(Math.max(-1, Math.min(1, cosine))) * 180) / Math.PI;
 };
+
+export function starsForSky(date: Date, site: ObservatorySite): ObservatoryStar[] {
+    const observer = new Observer(site.latitude, site.longitude, site.heightMeters);
+    return starCatalog.stars.flatMap((star) => {
+        const horizontal = Horizon(date, observer, star.ra, star.dec);
+        return horizontal.altitude > -2
+            ? [{
+                  id: String(star.id),
+                  azimuthDeg: horizontal.azimuth,
+                  altitudeDeg: horizontal.altitude,
+                  magnitude: star.mag,
+                  colorIndex: star.ci,
+              }]
+            : [];
+    });
+}
 
 export function observe(
     target: BodyId,

@@ -2024,6 +2024,24 @@ dialog > p {
 .sky-dome::after {
     background: linear-gradient(90deg, transparent 49.7%, #b3d8c525 50%, transparent 50.3%);
 }
+.sky-stars,
+.sky-star {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.sky-star {
+    left: var(--star-x);
+    top: var(--star-y);
+    inset: auto;
+    width: var(--star-size);
+    height: var(--star-size);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #e5f2ff;
+    opacity: var(--star-opacity);
+    box-shadow: 0 0 4px #cfe8ff99;
+}
 .sky-cardinal {
     position: absolute;
     z-index: 2;
