@@ -1981,6 +1981,19 @@ dialog > p {
     text-transform: uppercase;
     margin-bottom: 8px;
 }
+.sky-track {
+    border: 1px solid #779d8a88;
+    border-radius: 999px;
+    padding: 3px 9px;
+    color: #c6e8d4;
+    background: #173126;
+    font-size: 11px;
+    cursor: pointer;
+}
+.sky-track[aria-pressed="true"] {
+    color: #173126;
+    background: #a9ddbf;
+}
 .sky-dome {
     position: relative;
     height: 130px;
@@ -2024,6 +2037,20 @@ dialog > p {
     bottom: 18%;
     border-top: 1px dashed #a9d2bd66;
 }
+.sky-fov {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    top: 50%;
+    width: var(--fov-size, 30%);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border: 1px solid #f5d38d99;
+    border-radius: 50%;
+    box-shadow: 0 0 0 999px #02060a44;
+}
+.sky-dome.tracking .sky-cardinal,
+.sky-dome.tracking .sky-horizon { opacity: .25; }
 .sky-crosshair {
     position: absolute;
     z-index: 2;
