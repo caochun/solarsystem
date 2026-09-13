@@ -17,6 +17,10 @@ test("ground observatory reports topocentric coordinates for the selected target
     await expect(page.locator("#observatory-image-note")).toContainText("模拟图像");
     await expect(page.locator("#observatory-download")).toBeVisible();
     await expect(page.locator("#observatory-fits")).toBeVisible();
+    await page.locator("#observatory-lock-pointing").click();
+    await expect(page.locator("#observatory-pointing-mode")).toHaveValue("fixed");
+    await page.locator("#observatory-capture").click();
+    await expect(page.locator("#observatory-image-note")).toContainText("固定当前方向");
     await page.locator("#observatory-site").selectOption("mauna-kea");
     await expect(page.locator("#observatory-lat")).toHaveValue("19.8207");
     await page.locator("#close-observatory").click();

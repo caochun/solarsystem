@@ -2225,6 +2225,10 @@ dialog > p {
     background: #09141b;
     color: var(--text);
 }
+.sky-pointing .sky-capture {
+    justify-self: start;
+    margin-top: 2px;
+}
 .observatory-image {
     display: block;
     width: 100%;
