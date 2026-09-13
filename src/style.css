@@ -1950,7 +1950,7 @@ dialog > p {
     background: #0b171d99;
 }
 .observatory-camera .eyebrow { margin-bottom: 8px; }
-.observatory-camera .observatory-form { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
+.observatory-camera .observatory-form { grid-template-columns: repeat(5, minmax(0, 1fr)); margin: 0; }
 .observatory-target,
 .observatory-result {
     margin-top: 10px;
