@@ -821,6 +821,11 @@ async function observationTexture(target: BodyId): Promise<HTMLImageElement | nu
         return null;
     }
 }
+function formatFieldDegrees(degrees: number): string {
+    if (degrees < 0.01) return degrees.toPrecision(2);
+    if (degrees < 1) return degrees.toFixed(3);
+    return degrees.toFixed(2);
+}
 async function renderObservatoryImage(result: ReturnType<typeof observe>, site: ObservatorySite) {
     if (!result) return;
     const canvas = q<HTMLCanvasElement>("#observatory-image");
@@ -840,7 +845,7 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
     const filterColor = filter === "R" ? "#ffb0a0" : filter === "G" ? "#c8ffd0" : filter === "B" ? "#b8d6ff" : filter === "Ha" ? "#ff8b8b" : "#d9eaff";
     const dynamicRange = Math.pow(2, bitDepth) - 1;
     const magnification = focalLength > 0 && eyepiece > 0 ? focalLength / eyepiece : 40;
-    const fieldDeg = Math.max(0.1, Math.min(120, apparentField / magnification));
+    const fieldDeg = Math.max(0.000001, Math.min(120, apparentField / magnification));
     const daylight = Math.max(0, Math.min(1, (result.sunAltitudeDeg + 18) / 60));
     const pollution = Math.max(0, Math.min(1, (21.7 - site.skyBrightnessMag) / 5));
     context.fillStyle = `rgb(${2 + daylight * 10 + pollution * 8}, ${5 + daylight * 12 + pollution * 7}, ${12 + daylight * 18 + pollution * 5})`;
@@ -870,7 +875,7 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
         const targetX = canvas.width / 2 + (Math.random() - 0.5) * jitterPixels;
         const targetY = canvas.height / 2 + (Math.random() - 0.5) * jitterPixels;
         const seeingPixels = (seeingArcsec / 3600 / fieldDeg) * canvas.width;
-        const targetRadius = Math.max(3, Math.min(105, (result.angularDiameterArcsec / 3600 / fieldDeg) * canvas.width * 0.5 + seeingPixels));
+        const targetRadius = Math.max(3, Math.min(canvas.width * 2000, (result.angularDiameterArcsec / 3600 / fieldDeg) * canvas.width * 0.5 + seeingPixels));
         const extinction = result.airmass === null ? 1 : Math.pow(10, -0.4 * 0.2 * Math.max(0, result.airmass - 1));
         const targetSignal = (1.4 - result.visualMagnitude * 0.04) * Math.sqrt(exposure * Math.max(0.2, gain)) * extinction;
         const targetIntensity = Math.max(0.35, Math.min(1, 1 - Math.exp((-targetSignal * dynamicRange) / 1800)));
@@ -882,7 +887,10 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
         context.fillRect(targetX - targetRadius * 2.5, targetY - targetRadius * 2.5, targetRadius * 5, targetRadius * 5);
         const texture = await observationTexture(result.target);
         if (texture && targetRadius >= 3) {
-            const diameter = Math.max(8, Math.ceil(targetRadius * 2));
+            // Keep the working texture bounded while retaining the optical scale in
+            // the destination rectangle. Extreme focal lengths therefore show a
+            // genuinely narrower crop instead of collapsing to the same 105 px dot.
+            const diameter = Math.max(8, Math.min(2048, Math.ceil(targetRadius * 2)));
             const surface = document.createElement("canvas");
             surface.width = diameter;
             surface.height = diameter;
@@ -955,7 +963,7 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
     fits.dataset.url = fitsUrl;
     fits.hidden = false;
     const note = q<HTMLElement>("#observatory-image-note");
-    note.textContent = `模拟图像 · ${fieldDeg.toFixed(2)}° 视场 · ${exposure.toFixed(2)} s · 增益 ${gain.toFixed(1)} · ${filter} 滤镜 · ${bitDepth} bit · 天空亮度 ${site.skyBrightnessMag.toFixed(1)} mag/arcsec² · 读出噪声 ${readNoise.toFixed(1)} ADU · 视宁度 ${seeingArcsec.toFixed(1)}″ · 抖动 ${jitterArcsec.toFixed(1)}″ · 散射 ${scatter.toFixed(2)}`;
+    note.textContent = `模拟图像 · ${formatFieldDegrees(fieldDeg)}° 视场 · ${exposure.toFixed(2)} s · 增益 ${gain.toFixed(1)} · ${filter} 滤镜 · ${bitDepth} bit · 天空亮度 ${site.skyBrightnessMag.toFixed(1)} mag/arcsec² · 读出噪声 ${readNoise.toFixed(1)} ADU · 视宁度 ${seeingArcsec.toFixed(1)}″ · 抖动 ${jitterArcsec.toFixed(1)}″ · 散射 ${scatter.toFixed(2)}`;
     note.hidden = false;
 }
 function createFitsBlob(canvas: HTMLCanvasElement, metadata: Record<string, string>): Blob {
@@ -1020,7 +1028,7 @@ function solveObservatory() {
     const trueField = instrumentValid ? apparentField / magnification : 0;
     const limitingMagnitude = instrumentValid ? 2 + 5 * Math.log10(aperture / 7) : 0;
     const instrumentNote = instrumentValid
-        ? `${magnification.toFixed(1)}× · ${trueField.toFixed(2)}° · ${limitingMagnitude.toFixed(1)} 等`
+        ? `${magnification.toFixed(1)}× · ${formatFieldDegrees(trueField)}° · ${limitingMagnitude.toFixed(1)} 等`
         : "请填写有效的望远镜参数";
     const qualityLabel = result.quality === "good" ? "条件良好" : result.quality === "limited" ? "可以观测，但有限制" : "当前不适合观测";
     const qualityNote = result.qualityNotes.length > 0 ? result.qualityNotes.join(" · ") : "无明显限制";
@@ -1056,7 +1064,8 @@ function solveObservatory() {
         observatoryStarsKey = starsKey;
     }
     const fov = q<HTMLElement>("#observatory-fov");
-    fov.style.setProperty("--fov-size", `${Math.max(18, Math.min(72, trueField * 22))}%`);
+    const fovSize = Math.max(1, Math.min(72, 72 * Math.sqrt(Math.max(0.000001, trueField) / 60)));
+    fov.style.setProperty("--fov-size", `${fovSize}%`);
     fov.hidden = !trackingActive;
     q("#observatory-track").textContent = observatoryTracking ? "停止跟踪" : "跟踪目标";
     q("#observatory-track").setAttribute("aria-pressed", String(observatoryTracking));
