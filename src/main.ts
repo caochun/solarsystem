@@ -23,9 +23,11 @@ import {
     phaseName,
     yearBounds,
     dataStatus,
+    ASTRO_BODY,
     type BodyId,
     type ScaleMode,
 } from "./model";
+import { Libration, RotationAxis } from "astronomy-engine";
 import { SolarScene } from "./scene";
 import { SolarTour } from "./tour";
 import { initCatalogs, catalogRequest } from "./catalogs";
@@ -871,7 +873,12 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
             surface.height = diameter;
             const surfaceContext = surface.getContext("2d")!;
             const rotationDays = BODY_ROTATION_DAYS[result.target] ?? 1;
-            const rotation = ((time / 86_400_000) / Math.abs(rotationDays)) * Math.PI * 2 * Math.sign(rotationDays);
+            let rotation = ((time / 86_400_000) / Math.abs(rotationDays)) * Math.PI * 2 * Math.sign(rotationDays);
+            const astroBody = ASTRO_BODY[result.target];
+            if (astroBody) {
+                rotation = (RotationAxis(astroBody, new Date(time)).spin * Math.PI) / 180;
+                if (result.target === "moon") rotation += (Libration(new Date(time)).elon * Math.PI) / 180;
+            }
             surfaceContext.translate(diameter / 2, diameter / 2);
             surfaceContext.rotate(rotation);
             surfaceContext.drawImage(texture, -diameter / 2, -diameter / 2, diameter, diameter);
