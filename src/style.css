@@ -1912,7 +1912,7 @@ dialog > p {
     .observatory-dialog {
         width: min(1100px, calc(100vw - 48px));
         max-width: min(1100px, calc(100vw - 48px));
-        max-height: min(94svh, 860px);
+        max-height: min(95svh, 860px);
     }
     .observatory-layout {
         display: grid;
@@ -1923,6 +1923,24 @@ dialog > p {
     .observatory-controls,
     .observatory-output { min-width: 0; }
     .observatory-controls .primary-button { width: 100%; }
+    .observatory-sky {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 8px 12px;
+        align-items: start;
+    }
+    .observatory-sky .sky-heading { grid-column: 1 / -1; }
+    .observatory-sky .sky-dome { grid-column: 1; grid-row: 2; }
+    .observatory-sky > .sky-caption:not(#observatory-image-note) { grid-column: 1; grid-row: 3; }
+    .observatory-sky > .sky-capture { grid-column: 1; grid-row: 4; justify-self: start; }
+    .observatory-image-panel {
+        grid-column: 2;
+        grid-row: 2 / span 3;
+        min-width: 0;
+    }
+    .observatory-image-panel .observatory-image { margin-top: 0; }
+    .observatory-downloads { display: flex; flex-wrap: wrap; gap: 6px; }
+    .observatory-downloads .sky-capture { margin-top: 6px; }
 }
 .observatory-time {
     margin: 10px 0 8px;
@@ -2200,11 +2218,13 @@ dialog > p {
     border-radius: 5px;
     background: #02060a;
     image-rendering: auto;
-    max-height: 280px;
+    max-height: 220px;
     object-fit: contain;
 }
 .observatory-image[hidden],
 .sky-caption[hidden] { display: none; }
+.observatory-image-panel { min-width: 0; }
+.observatory-downloads { display: flex; flex-wrap: wrap; gap: 6px; }
 @media (max-width: 520px) {
     .observatory-form,
     .observatory-result dl { grid-template-columns: 1fr 1fr; }
