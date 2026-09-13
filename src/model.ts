@@ -12,6 +12,7 @@ import {
 import openSpace from "./openspace-data.json";
 import extended from "./extended-data.json";
 import supplemental from "./supplemental-data.json";
+import lunarSurface from "./lunar-surface-data.json";
 import { keplerPosition, type KeplerElements } from "./kepler";
 import type { DataCompleteness } from "./catalog-types";
 
@@ -54,7 +55,7 @@ export interface ExtendedBody {
 export function dataStatus(id: BodyId): DataCompleteness {
     const body = extra(id);
     if (!body) return "full-model";
-    const hasVisual = Boolean(body.model || body.texture || body.category === "dwarf");
+    const hasVisual = Boolean(body.model || body.texture);
     if (hasVisual) return "full-model";
     if (body.orbit) return "orbit-point";
     return "name-only";
@@ -107,6 +108,7 @@ export function childrenOf(id: BodyId) {
     return BODY_IDS.filter((body) => parentOf(body) === id);
 }
 export function textureOf(id: BodyId) {
+    if (id === "moon") return lunarSurface.sceneColor.path.replace(/^textures\//, "");
     return extra(id) ? extra(id)!.texture : id === "sun" ? null : `${id}.jpg`;
 }
 export function shapeRatios(id: BodyId): [number, number, number] {
@@ -418,6 +420,8 @@ for (const [id, physical] of Object.entries(PHYSICAL)) {
 }
 export function sourceDescription(id: BodyId) {
     if (!extra(id)) return "Astronomy Engine 解析星历";
+    if (extra(id)!.orbitSource.includes("JPL SBDB"))
+        return `JPL SBDB 轨道 · 开普勒近似（历元 ${new Date(extra(id)!.orbit!.epoch).toISOString().slice(0, 10)}）`;
     if (id === "pluto" || extra(id)!.parent === "jupiter")
         return "解析星历 · OpenSpace 外观数据";
     return extra(id)!.orbitSource.includes("SPK")

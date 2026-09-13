@@ -1,4 +1,4 @@
-"""Read epoch states from OpenSpace SPK type 2/3 segments using verified ranges.
+"""Read epoch states from OpenSpace SPK type 2/3/17 segments using verified ranges.
 
 Caches only requested records, not an entire multi-gigabyte kernel. The exported
 state is exact to SPK polynomial evaluation; Kepler propagation of it is approximate.
@@ -6,7 +6,10 @@ state is exact to SPK polynomial evaluation; Kepler propagation of it is approxi
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import struct
+from functools import lru_cache
+from threading import Lock
 import numpy as np
+import spiceypy as spice
 from resources import CACHE, ranged
 
 
@@ -15,6 +18,8 @@ class RemoteSPK:
         self.url = url
         self.cache = CACHE / "spk-records" / hashlib.sha256(url.encode()).hexdigest()[:16]
         self.cache.mkdir(parents=True, exist_ok=True)
+        self._locks = {}
+        self._lock_guard = Lock()
         head = self.read(0, 1024)
         if not head.startswith(b"DAF/SPK"):
             raise ValueError("Not an SPK kernel")
@@ -30,14 +35,25 @@ class RemoteSPK:
                 self.segments.append(struct.unpack_from(self.order + "dd6i", data, 24 + 40 * index))
             record = int(following)
 
+    @lru_cache(maxsize=4096)
     def read(self, offset, length):
-        return ranged(self.url, offset, offset + length - 1, self.cache / f"{offset}-{length}.bin")
+        with self._lock_guard:
+            lock = self._locks.setdefault((offset, length), Lock())
+        with lock:
+            return ranged(self.url.replace('http://', 'https://', 1), offset, offset + length - 1, self.cache / f"{offset}-{length}.bin")
 
     def state(self, target, et):
         segment = next(s for s in reversed(self.segments) if s[2] == target and s[0] <= et <= s[1])
         start, end, _, center, frame, kind, address, final = segment
-        if kind not in (2, 3) or frame not in (1, 17):
+        if kind not in (2, 3, 17) or frame not in (1, 17):
             raise ValueError(f"Unsupported segment {kind}, frame {frame}")
+        if kind == 17:
+            # NAIF SPK type 17: epoch, nine equinoctial elements, pole RA/Dec.
+            if final-address+1 != 12:
+                raise ValueError('Invalid type 17 segment size')
+            words = struct.unpack(self.order + '12d', self.read((address-1)*8,96))
+            state = spice.eqncpv(et, words[0], words[1:10], words[10], words[11])
+            return self.ecliptic_state(state,frame), center
         initial, interval, record_size, count = struct.unpack(self.order + "4d", self.read((final - 4) * 8, 32))
         index = min(int((et - initial) // interval), int(count) - 1)
         record_size = int(record_size)
@@ -49,11 +65,15 @@ class RemoteSPK:
         state = [float(np.polynomial.chebyshev.chebval(x, c)) for c in coefficients]
         if kind == 2:
             state += [float(np.polynomial.chebyshev.chebval(x, np.polynomial.chebyshev.chebder(c)) / scale) for c in coefficients]
+        return self.ecliptic_state(state,frame), center
+
+    @staticmethod
+    def ecliptic_state(state,frame):
         if frame == 1:
             angle = np.deg2rad(23.43929111111111)
             rotation = np.array([[1, 0, 0], [0, np.cos(angle), np.sin(angle)], [0, -np.sin(angle), np.cos(angle)]])
             state = [*(rotation @ state[:3]), *(rotation @ state[3:])]
-        return np.array(state), center
+        return np.array(state)
 
     def relative(self, target, parent, et):
         state, center = self.state(target, et)

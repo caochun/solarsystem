@@ -1,0 +1,85 @@
+{
+  "body": "moon",
+  "page": "https://svs.gsfc.nasa.gov/4720/",
+  "credit": "NASA's Scientific Visualization Studio; LRO / LROC / LOLA; Ernie Wright",
+  "retrieved": "2026-09-13",
+  "colorEdition": "2025",
+  "elevationEdition": "2019",
+  "projection": {
+    "type": "equirectangular",
+    "longitudeLeftDeg": -180,
+    "longitudeRightDeg": 180,
+    "latitudeTopDeg": 90,
+    "latitudeBottomDeg": -90,
+    "longitudePositive": "east"
+  },
+  "sources": {
+    "color": {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_8k.tif",
+      "sha256": "db7808e878b6a55eb409bb231eab8deb477f84b5c9d7396d76ff73e5d54992d9",
+      "bytes": 243289792,
+      "width": 8192,
+      "height": 4096
+    },
+    "elevation": {
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_16_uint.tif",
+      "sha256": "45a2b32d56e81ed30db07fead8abc842b249b6511219d9ca2c53f81bc2dc5d62",
+      "bytes": 33201026,
+      "width": 5760,
+      "height": 2880
+    }
+  },
+  "color": {
+    "path": "textures/moon-lroc-8k.jpg",
+    "sha256": "a83d1389a90bb040c472b134c9fe3fe08b85d09d87ba68a1e618b2be1780c036",
+    "bytes": 10366679,
+    "width": 8192,
+    "height": 4096,
+    "encoding": "sRGB JPEG, 8 bit per channel"
+  },
+  "sceneColor": {
+    "path": "textures/moon-lroc-4k.jpg",
+    "sha256": "8964722e7d91c2d79da1582c4572ad8d53b265f452e216469c080d0e6492d5b1",
+    "bytes": 2757155,
+    "width": 4096,
+    "height": 2048,
+    "encoding": "sRGB JPEG, 8 bit per channel"
+  },
+  "elevation": {
+    "path": "terrain/moon-lola-16ppd.u16le.gz",
+    "sha256": "7060834eaefde7c7adafc72c5b2d1fc471c1263e234bef0187a9a34bcefa979b",
+    "bytes": 30026952,
+    "width": 5760,
+    "height": 2880,
+    "encoding": "gzip of row-major unsigned 16-bit little-endian samples",
+    "scaleMeters": 0.5,
+    "offsetMeters": -10000,
+    "referenceRadiusKm": 1737.4,
+    "minMeters": -8981.5,
+    "maxMeters": 10685.5
+  },
+  "normals": {
+    "path": "textures/moon-lola-normals.png",
+    "sha256": "837eb0afd53fce1ac0a56b83190c8801d679579995b9fd9ffa927d20603bd5a8",
+    "bytes": 10656205,
+    "width": 4096,
+    "height": 2048,
+    "encoding": "linear RGB object-space XYZ normal, n = RGB / 127.5 - 1",
+    "exaggeration": 1
+  },
+  "sceneNormals": {
+    "path": "textures/moon-lola-normals-2k.png",
+    "sha256": "f010f7e08f07f3b2ca089d3cec383e6909e3fe46e09168ca388bb4be89aa781a",
+    "bytes": 2856084,
+    "width": 2048,
+    "height": 1024,
+    "encoding": "linear RGB object-space normal; normalize after texture filtering",
+    "exaggeration": 1
+  },
+  "limitations": [
+    "LROC color covers 70 N to 70 S; NASA fills polar areas with lower-resolution monochrome albedo and inpaints small data gaps.",
+    "Color is exposure/white-balance adjusted; it is not a calibrated spectral reflectance cube.",
+    "LOLA grid is 16 pixels/degree (~1.90 km/pixel at the equator); 0.5 m encoding is not a claim of 0.5 m accuracy.",
+    "Normals affect local illumination only; no terrain silhouette, cast shadows, terrain ray tracing or lunar eclipse model."
+  ]
+}

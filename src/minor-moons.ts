@@ -25,8 +25,10 @@ export interface MinorMoon extends CatalogObject {
     physical?: PhysicalData;
     /** Optional local SPICE position samples, ordered by UTC milliseconds. */
     spiceSamples?: SpiceSample[];
+    /** AU/day velocities, in the same (X, Z, -Y) frame as the positions. */
+    spiceVelocities?: [number, number, number][];
 }
-export type OrbitAccuracy = "near-epoch" | "extended" | "far";
+export type OrbitAccuracy = "sampled" | "near-epoch" | "extended" | "far";
 export type SpiceSample = [time: number, x: number, y: number, z: number];
 export type OrbitTarget = CatalogObject | MinorMoon;
 export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
@@ -42,6 +44,8 @@ export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
     sourceEpoch: body.sourceEpoch ?? minorMoonData.epoch,
     dataStatus: "orbit-point",
     physical: supplemental.physical[body.id as keyof typeof supplemental.physical],
+    spiceSamples: (body as unknown as MinorMoon).spiceSamples,
+    spiceVelocities: (body as unknown as MinorMoon).spiceVelocities,
 }));
 export const MINOR_MOON_BY_ID = new Map(
     MINOR_MOONS.map((moon) => [moon.id, moon]),
@@ -53,6 +57,10 @@ export const isMinorMoon = (
 
 /** Classify the distance from the SPICE state epoch used by the local model. */
 export function orbitAccuracy(target: OrbitTarget, time: number): OrbitAccuracy {
+    if (isMinorMoon(target) && target.spiceSamples && target.spiceSamples.length >= 2) {
+        const samples = target.spiceSamples;
+        if (time >= samples[0][0] && time <= samples[samples.length-1][0]) return "sampled";
+    }
     const days = Math.abs(time - target.orbit!.epoch) / 86_400_000;
     if (days <= 90) return "near-epoch";
     if (days <= 730) return "extended";
@@ -71,6 +79,13 @@ export function relativePosition(target: OrbitTarget, time: number): [number, nu
     const lo = hi - 1;
     const a = samples[lo], b = samples[hi];
     const fraction = (time - a[0]) / Math.max(b[0] - a[0], 1);
+    if (target.spiceVelocities?.length === samples.length) {
+        const u = fraction, u2 = u*u, u3 = u2*u;
+        const days = (b[0]-a[0])/86_400_000;
+        const va = target.spiceVelocities[lo], vb = target.spiceVelocities[hi];
+        return [0,1,2].map(i => (2*u3-3*u2+1)*a[i+1] + (u3-2*u2+u)*days*va[i]
+            + (-2*u3+3*u2)*b[i+1] + (u3-u2)*days*vb[i]) as [number,number,number];
+    }
     return [a[1] + (b[1] - a[1]) * fraction, a[2] + (b[2] - a[2]) * fraction, a[3] + (b[3] - a[3]) * fraction];
 }
 

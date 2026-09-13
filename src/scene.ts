@@ -73,6 +73,16 @@ const planetFragment = `uniform sampler2D uMap; uniform vec3 uSunDirection; unif
     gl_FragColor=vec4(c,1.);
     #include <colorspace_fragment>
   }`;
+const moonFragment = `uniform sampler2D uMap; uniform sampler2D uNormals; uniform mat3 uSurfaceToWorld;
+  uniform vec3 uSunDirection;
+  varying vec2 vUv; varying vec3 vNormal; varying vec3 vWorld;
+  void main(){
+    vec3 terrainNormal=normalize(uSurfaceToWorld*(texture2D(uNormals,vUv).rgb*2.-1.));
+    float light=dot(normalize(vNormal),uSunDirection)>0.?max(dot(terrainNormal,uSunDirection),0.):0.;
+    vec3 c=texture2D(uMap,vUv).rgb*(.022+light*1.25);
+    gl_FragColor=vec4(c,1.);
+    #include <colorspace_fragment>
+  }`;
 const ringFragment = `uniform sampler2D uMap; uniform vec3 uSunDirection; uniform vec3 uCenter; uniform float uRadius;
   varying vec2 vUv; varying vec3 vNormal; varying vec3 vWorld;
   void main(){vec4 ring=texture2D(uMap,vUv);if(ring.a<.015)discard;
@@ -273,7 +283,7 @@ export class SolarScene {
             if (!materials[id]) {
                 const material = new THREE.ShaderMaterial({
                     vertexShader: planetVertex,
-                    fragmentShader: planetFragment,
+                    fragmentShader: id === "moon" ? moonFragment : planetFragment,
                     uniforms: {
                         uMap: {
                             value: textureOf(id) ? load(textureOf(id)!) : white,
@@ -281,6 +291,10 @@ export class SolarScene {
                         uHasMap: { value: Boolean(textureOf(id)) },
                         uColor: { value: new THREE.Color(BODIES[id].color) },
                         uSunDirection: { value: new THREE.Vector3() },
+                        ...(id === "moon" ? {
+                            uNormals: {value: load("moon-lola-normals-2k.png",false)},
+                            uSurfaceToWorld: {value:new THREE.Matrix3()},
+                        } : {}),
                     },
                 });
                 materials[id] = material;
@@ -667,6 +681,9 @@ export class SolarScene {
             }
             const material = this.planetMaterials[id];
             if (material) {
+                if (id === "moon") material.uniforms.uSurfaceToWorld.value.setFromMatrix4(
+                    new THREE.Matrix4().makeRotationFromQuaternion(this.surfaces[id].quaternion),
+                );
                 // Each planet is lit from its own heliocentric direction.
                 const direction =
                     id === "moon"

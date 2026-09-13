@@ -1,6 +1,6 @@
 # 星际之间 · SolarSpace
 
-基于 OpenSpace 资源的浏览器太阳系展示与交互应用，独立于 OpenSpace C++ 桌面程序。当前可选择 **441 个天体条目**：46 个有模型/资料的主要天体，加上 395 颗 OpenSpace 小卫星的轨道定位点；小卫星支持搜索、母行星导航、跟随观察和 `?moon=` 深链接，附 OpenSpace 引用的全部 16 类 JPL 小天体目录。
+基于 OpenSpace 资源的浏览器太阳系展示与交互应用，独立于 OpenSpace C++ 桌面程序。当前可选择 **442 个天体条目**：46 个有模型/资料的主要天体，加上 396 颗 OpenSpace 小卫星的轨道定位点；小卫星支持搜索、母行星导航、跟随观察和 `?moon=` 深链接，附 OpenSpace 引用的全部 16 类 JPL 小天体目录。
 
 局域网已部署到 **http://192.168.30.134:5173/**，监听 `0.0.0.0:5173`，由用户级 `solarspace.service` 运行。管理方式见 [deploy/README.md](deploy/README.md)。
 
@@ -61,7 +61,7 @@ npm run preview  # 本地预览生产版本，默认 http://127.0.0.1:4173/
 - 地面望远镜观测：选择北京、上海、莫纳克亚山或自定义经纬度，计算太阳系目标的地平坐标（方位角/高度角）、赤经/赤纬、距离、光行时、太阳高度和当前可观测性。第一版使用 Astronomy Engine 的地面观测模型，目录小天体暂不参与精确地平坐标解算。
 - 可复制包含天体、时间、比例、卫星系统/总览、点云类别和所跟随目录对象的链接；支持窄屏布局。
 - 沉浸式太阳系漫游：按 F 或点击顶栏 F，从太阳开始自动游览 32 个站点；默认一轮 11 分 12 秒，可循环或在完成后返回探索界面。
-- 巨行星卫星系统会在总览或卫星系统视图中显示 395 颗 OpenSpace 小卫星的轨道点云；列表中的小卫星可直接选择并跟随，点云使用 SPK 历元状态转换的本地开普勒近似，未虚构表面尺寸或贴图。
+- 巨行星卫星系统会在总览或卫星系统视图中显示 396 颗 OpenSpace 小卫星的轨道点云；列表中的小卫星可直接选择并跟随，位置在本地 SPICE 样本窗口内插值，窗口外用开普勒近似，未虚构表面尺寸或贴图。
 - 快捷键：F 开始漫游，空格播放/暂停，1—8 按距日顺序选择行星，0 太阳，9 月球，R 重置视角。输入或对话框操作时不触发场景快捷键。
 
 ## 沉浸式太阳系漫游
@@ -88,17 +88,18 @@ F 请求浏览器全屏，隐藏导航、资料、时间轴、标签与轨道。
 
 左侧天体目录会按本地可用资料标记四种状态：**模型/贴图**（有可视化资源）、**轨道点**（有轨道要素但没有独立表面资源）、**目录记录**（仅全量小天体目录中的名称记录，无法定位）和**仅名称**（项目资产存在但缺少可用轨道与表面资源）。目录筛选器可按状态过滤；轨道点使用固定历元的开普勒近似，目录记录仍可通过完整 CSV 和搜索 API 查询。
 
-**新增资源实际下载自 OpenSpace 引用的服务器，Three.js 负责渲染。** 首版地球、月球仍使用 Three.js 示例纹理；太阳是程序化示意。精确资源地址、版本、原资产路径及 SHA-256 见 [DATA_SOURCES.md](DATA_SOURCES.md) 和数据清单。
+**外观资源来自 OpenSpace 资源服务器或 NASA，Three.js 负责渲染。** 月球已改为 NASA LROC 彩色地图与 LOLA 地形法线；地球保留 Three.js 示例纹理，太阳是程序化示意。11 颗缺少全球贴图的卫星可在资料面板点击“查看探测器实拍参考图”。当前覆盖和未完成项见 [DATA_COMPLETENESS.md](DATA_COMPLETENESS.md)。精确资源地址、版本、原资产路径及 SHA-256 见 [DATA_SOURCES.md](DATA_SOURCES.md) 和数据清单。
 
 | 对象 | 浏览器位置模型 |
 | --- | --- |
 | 八大行星、月球、冥王星 | Astronomy Engine |
 | 木星四大卫星 | Astronomy Engine 的 L1 解析模型 |
-| 其他新增卫星 | 从 OpenSpace SPK 提取 2026-09-10 00:00 UTC 状态，转换为固定开普勒要素后外推 |
-| 谷神星与目录点云 | OpenSpace 引用的 JPL SBDB 快照开普勒要素 |
-| 其余可选小天体 | 原 OpenSpace `transforms.asset` 中的开普勒要素 |
+| 其他主要卫星 | 从 OpenSpace SPK 提取 2026-09-10 00:00 UTC 状态，转换为固定开普勒要素后外推 |
+| 396 颗小卫星 | 各自局部窗口内 SPICE 位置/速度三次 Hermite 插值，窗口外开普勒近似 |
+| 谷神星、灶神星与其余独立小天体 | 2026-09-13 下载的 JPL SBDB 瞬时轨道要素，保留实际历元 |
+| 目录点云 | OpenSpace 引用的 JPL SBDB 原快照要素，本轮未更新全量目录 |
 
-浏览器没有运行完整 SPICE，也没有下载全部多 GB 星历内核。固定历元轨道只作展示，离历元越远，相位误差可能越大；可选的 `sample-minor-moons.py` 会把历元附近的 SPICE 相对位置写入 `spiceSamples`，浏览器在样本窗口内线性插值，窗口外仍回退到开普勒模型。未模拟长期摄动、非引力加速度、精确食现象或彗尾。日期范围表示控件支持范围，不是所有模型在该范围内的精度保证。
+浏览器没有运行完整 SPICE，也没有下载全部多 GB 星历内核。固定历元轨道只作展示，离历元越远，相位误差可能越大；`sample-minor-moons.py` 已生成 396 颗小卫星共 25,740 个位置/速度状态，浏览器在样本窗口内作三次 Hermite 插值，窗口外仍回退到开普勒模型。各窗口最多前后 7 天，短周期卫星仅覆盖四分之一周期。与源内核逐区间中点对照的最大残差约 20.3 米，这是插值一致性，不能当作真实位置精度。未模拟长期摄动、非引力加速度、精确食现象或彗尾。日期范围表示控件支持范围，不是所有模型在该范围内的精度保证。
 
 累计新增 15 张表面图和 6 个 GLB 模型，其中灶神星来自原 OpenSpace OBJ，约 80 万面简化为 8 万面，浏览器文件约 1.4 MB。没有全球影像的天体使用纯色椭球；遥远天体 GLB 的表面可能是艺术示意。部分卫星原资产把直径填入半径字段，现按同项目引用的 `pck00011.tpc` 校正；冥王星四颗小卫星采用 JPL 平均半径估计：冥卫二 18±1 km、冥卫三 18.5±1 km、冥卫四 6±1 km、冥卫五 5.2±1 km；均为等效球，未恢复真实不规则形状。新增卫星姿态为朝向母星的示意，不是精确自转模型。部分遥远天体尺寸为人工采用的观测估计值，详见来源说明。
 
@@ -116,11 +117,17 @@ python3 -m venv /tmp/solarspace-assets-venv
 # 完整目录必须先于新增天体导入：谷神星使用同一份 SBDB 快照
 /tmp/solarspace-assets-venv/bin/python scripts/sync-catalogs.py
 /tmp/solarspace-assets-venv/bin/python scripts/expand-system.py
-/tmp/solarspace-assets-venv/bin/python scripts/verify-system.py
 /tmp/solarspace-assets-venv/bin/python scripts/enrich-system.py
 /tmp/solarspace-assets-venv/bin/python scripts/index-catalogs.py
-# 可选：从已缓存 SPK 记录生成历元附近的多点插值样本
+# 本轮补充；若重新执行前面的基础导入，需按顺序再次应用这些补充
+/tmp/solarspace-assets-venv/bin/python scripts/import-minor-moons.py
+/tmp/solarspace-assets-venv/bin/python scripts/supplement-small-bodies.py
+/tmp/solarspace-assets-venv/bin/python scripts/import-lunar-surface.py
+/tmp/solarspace-assets-venv/bin/python scripts/import-surface-references.py
+/tmp/solarspace-assets-venv/bin/python scripts/supplement-daphnis.py
 /tmp/solarspace-assets-venv/bin/python scripts/sample-minor-moons.py
+python3 scripts/audit-data.py
+/tmp/solarspace-assets-venv/bin/python scripts/verify-system.py
 npm test
 npm run build
 ```
@@ -154,7 +161,7 @@ npx playwright install webkit
 BROWSER_ENGINE=webkit npm run test:browser
 ```
 
-数值、数据与 API 测试共 24 项，覆盖 CSPICE 参考状态、逆行/高偏心率轨道、46 个有模型天体父子关系与比例、395 颗小卫星导入及其前端条目、尺寸修正、所有完整目录解压校验，以及漫游路径在三个日期与横竖屏下的连续性、有限值和天体/行星环避障。原生验证另对 26 个 SPK 段各取三个时间检查读取结果；这验证读取与换算，不代表长期二体轨道准确。
+数值、数据与 API 测试，覆盖 CSPICE 参考状态、逆行/高偏心率轨道、46 个有模型天体父子关系与比例、396 颗小卫星导入及其前端条目、尺寸修正、所有完整目录解压校验，以及漫游路径在三个日期与横竖屏下的连续性、有限值和天体/行星环避障。原生验证另对 26 个 SPK 段各取三个时间检查读取结果；这验证读取与换算，不代表长期二体轨道准确。
 
 浏览器测试共 19 项，覆盖筛选、卫星导航、按需模型、点云链接、实际下载解压、行星/时间/图层操作、右键平移与重置、三个新增环、全量目录搜索/跟随/链接恢复、无效轨道拒绝定位和 390px 窄屏；另验证漫游全屏及拒绝全屏回退、界面收起、暂停与平移、站点遍历、结束循环、视角/比例/播放恢复、异步目录链接和快速退出。截图保存在 `test-results/`。窄屏测试是浏览器模拟，尚未进行手机真机验证。可用 `BROWSER_BASE_URL` 指向已部署地址运行相同检查。
 

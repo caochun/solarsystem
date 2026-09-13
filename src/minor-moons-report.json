@@ -1,11 +1,11 @@
 {
   "epoch": "2026-09-10T00:00:00Z",
-  "extractedCount": 395,
+  "extractedCount": 396,
   "extractedByParent": {
     "jupiter": 93,
-    "saturn": 264,
-    "uranus": 24,
-    "neptune": 14
+    "neptune": 14,
+    "saturn": 265,
+    "uranus": 24
   },
   "assetCandidatesByParent": {
     "jupiter": [
@@ -1999,14 +1999,7 @@
   },
   "unsupportedByParent": {
     "jupiter": [],
-    "saturn": [
-      {
-        "id": "daphnis",
-        "english": "Daphnis",
-        "name": "Daphnis",
-        "reason": "OpenSpace asset present, but no usable elliptic segment at the selected epoch"
-      }
-    ],
+    "saturn": [],
     "uranus": [],
     "neptune": []
   }

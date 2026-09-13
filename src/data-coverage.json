@@ -1,0 +1,57 @@
+{
+  "auditDate": "2026-09-13",
+  "scope": "Local OpenSpace asset snapshot, not a census of all known Solar System objects",
+  "majorEntries": 46,
+  "minorMoonEntries": 396,
+  "selectableEntries": 442,
+  "minorMoonsByParent": {
+    "jupiter": 93,
+    "neptune": 14,
+    "saturn": 265,
+    "uranus": 24
+  },
+  "missingOriginalMinorMoonCandidates": {
+    "jupiter": [],
+    "saturn": [],
+    "uranus": [],
+    "neptune": []
+  },
+  "minorMoonSamples": {
+    "bodies": 396,
+    "statePoints": 25740,
+    "maxMidpointResidualKm": 0.0203276723125814,
+    "referenceTimeUTC": "2026-09-10T00:00:00Z",
+    "coveringReferenceTime": 396,
+    "outsideWindow": "Fixed osculating Kepler orbit; residual does not describe true ephemeris accuracy"
+  },
+  "physicalRecords": 48,
+  "minorMoonsWithPhysicalRecords": 19,
+  "referencePhotos": 11,
+  "missingGlobalMapAndIndependentMesh": [
+    "ariel",
+    "gonggong",
+    "hydra",
+    "hyperion",
+    "kerberos",
+    "miranda",
+    "nereid",
+    "nix",
+    "oberon",
+    "orcus",
+    "quaoar",
+    "sedna",
+    "styx",
+    "titania",
+    "umbriel"
+  ],
+  "updatedSmallBodySnapshots": 10,
+  "limitations": [
+    "Global maps remain unavailable locally for 15 modeled entries; reference photos are not spherical maps.",
+    "Distant dwarf-body dimensions still include unversioned display estimates; SBDB provides no GM/diameter/density for eight of ten queried bodies.",
+    "Most small moons have no imported physical parameters or resolved surface data.",
+    "Only local SPK windows are sampled, not continuous 1900–2100 ephemerides; major satellites mostly still use fixed Kepler elements.",
+    "LROC/LOLA lunar resources are finite-resolution mosaics; illumination omits terrain shadow casting and eclipses.",
+    "The sixteen full small-body catalogs remain the previously downloaded OpenSpace snapshots; one non-elliptic/incomplete record is not positioned.",
+    "Other planetary terrain tiles, full ring dynamics, comet activity and full SPICE attitude/observation solvers are not integrated."
+  ]
+}

@@ -19,7 +19,7 @@ ET = (EPOCH_MS - datetime(2000, 1, 1, 12, tzinfo=timezone.utc).timestamp() * 100
 ET += .001657 * math.sin(math.radians(357.53 + .9856003 * ET / 86400))
 KERNELS = {
     "jupiter": (["http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/3/jup347.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/jupiter/kernels/2/jup365.bsp"], 599, 126686534.911),
-    "saturn": (["http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat415.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat455.bsp"], 699, 37931207.8),
+    "saturn": (["https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/shepherd_kernels/1/sat393_daphnis.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat415.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/2/sat441.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat454.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/kernels/3/sat455.bsp"], 699, 37931207.8),
     "uranus": (["http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-1.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-2.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/uranus/kernels/3/ura184_part-3.bsp"], 799, 5793951.3),
     "neptune": (["http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep095.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/2/nep101xl-802.bsp", "http://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/neptune/kernels/3/nep104.bsp"], 899, 6835099.97),
 }
@@ -77,7 +77,7 @@ def main():
                 # Use the latest usable segment and clamp the extraction epoch to
                 # its coverage instead of discarding an otherwise valid SPK record.
                 candidates = [(k, s) for k in kernels for s in k.segments
-                              if s[2] == target and s[5] in (2, 3) and s[4] in (1, 17)]
+                              if s[2] == target and s[5] in (2, 3, 17) and s[4] in (1, 17)]
                 if not candidates: raise ValueError("no usable elliptic segment")
                 kernel, segment = max(candidates, key=lambda item: item[1][1])
                 epoch_et = min(max(ET, segment[0]), segment[1])

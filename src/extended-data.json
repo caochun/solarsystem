@@ -103,21 +103,26 @@
         454.7
       ],
       "asset": "data/assets/scene/solarsystem/dwarf_planets/ceres/globe.asset",
-      "orbitSource": "OpenSpace SBDB elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": "ceres.jpg",
       "surface": "OpenSpace 引用的观测影像拼接图；覆盖与色彩以原图为准",
       "orbit": {
-        "a": 2.765615651508659,
-        "e": 0.07957631994408416,
-        "i": 10.58788658206854,
-        "node": 80.24963090816965,
-        "peri": 73.29975464616518,
-        "m": 231.5397330043706,
-        "period": 1679.910572771899,
-        "epoch": 1763683200000
+        "a": 2.765552595034094,
+        "e": 0.07969229514816586,
+        "i": 10.58802780183462,
+        "node": 80.24862682043221,
+        "peri": 73.29421453021587,
+        "m": 274.4193463761342,
+        "period": 1679.853119758983,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.3780833333333333,
-      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true&full-prec=true",
+        "sha256": "b074a06f7b93e10d0cf8bd16e706156c96bead3c83b7eafc1283c2922044e3be",
+        "retrieved": "2026-09-13"
+      }
     },
     "charon": {
       "name": "冥卫一",
@@ -307,22 +312,27 @@
       ],
       "assetRadiiKm": null,
       "asset": "data/assets/scene/solarsystem/dwarf_planets/eris/model.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
       "orbit": {
-        "a": 68.14633540173307,
-        "e": 0.4319581224809352,
-        "i": 43.76049565740999,
-        "node": 36.07068767579804,
-        "peri": 150.9970340507818,
-        "m": 208.7617474668772,
-        "period": 205472.1258735657,
-        "epoch": 1675892285000.0
+        "a": 67.93394687853566,
+        "e": 0.4382385347971672,
+        "i": 43.9258279471791,
+        "node": 36.00477044417249,
+        "peri": 150.7949235840312,
+        "m": 211.774434275007,
+        "period": 204516.6629430732,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 1.0791666666666666,
       "model": "models/eris.glb",
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=136199&phys-par=true&full-prec=true",
+        "sha256": "8f618adf7e0cb9d60b2e54ea57a5477ce48c16e52b611fe6cf3d027db67111c4",
+        "retrieved": "2026-09-13"
+      }
     },
     "europa": {
       "name": "木卫二",
@@ -426,21 +436,26 @@
         615.0
       ],
       "asset": "data/assets/scene/solarsystem/dwarf_planets/gonggong/globe.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "无全球影像，使用纯色形状示意",
       "orbit": {
-        "a": 67.28368697208764,
-        "e": 0.4979719595192342,
-        "i": 30.6429146610929,
-        "node": 336.8562311756138,
-        "peri": 207.244325413599,
-        "m": 108.9504644269052,
-        "period": 201582.9642396014,
-        "epoch": 1669396700000.0
+        "a": 66.86666567773766,
+        "e": 0.5042510000302973,
+        "i": 30.89906721170288,
+        "node": 336.8383156185827,
+        "peri": 206.6232839773693,
+        "m": 111.664541568459,
+        "period": 199716.0317096358,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.9333333333333332,
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=225088&phys-par=true&full-prec=true",
+        "sha256": "8f3e2f5fccf0fa80a7ea6b26c837384a4aa2f9b9eae7199a8b9edd59d4cf84b0",
+        "retrieved": "2026-09-13"
+      }
     },
     "haumea": {
       "name": "妊神星",
@@ -454,22 +469,27 @@
       ],
       "assetRadiiKm": null,
       "asset": "data/assets/scene/solarsystem/dwarf_planets/haumea/model.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
       "orbit": {
-        "a": 42.90891832299778,
-        "e": 0.200029230460531,
-        "i": 28.21036755623824,
-        "node": 122.031014162472,
-        "peri": 240.4219275047551,
-        "m": 219.4933206849489,
-        "period": 102662.1853273871,
-        "epoch": 1677283200000.0
+        "a": 43.06029023650952,
+        "e": 0.1944430148898797,
+        "i": 28.20847393040364,
+        "node": 121.7860561329425,
+        "peri": 240.6905472508661,
+        "m": 223.2104118812299,
+        "period": 103208.1173403618,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.16314166666666666,
       "model": "models/haumea.glb",
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=136108&phys-par=true&full-prec=true",
+        "sha256": "204dbe9a83a29231dc919f6cc6eed1ac39190d8c3e46d136679d998d23cbed9c",
+        "retrieved": "2026-09-13"
+      }
     },
     "hydra": {
       "name": "冥卫三",
@@ -700,22 +720,27 @@
       ],
       "assetRadiiKm": null,
       "asset": "data/assets/scene/solarsystem/dwarf_planets/makemake/model.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "OpenSpace 引用的三维模型；遥远天体表面为艺术示意",
       "orbit": {
-        "a": 45.26514245277056,
-        "e": 0.1661360684291203,
-        "i": 29.01842946746389,
-        "node": 79.36123402529158,
-        "peri": 295.8223003368652,
-        "m": 167.5755900333624,
-        "period": 111233.3435553189,
-        "epoch": 1675892323000.0
+        "a": 45.57093317300052,
+        "e": 0.1588889953992523,
+        "i": 29.02785603743067,
+        "node": 79.2948338209406,
+        "peri": 297.0922733397207,
+        "m": 169.9379962048232,
+        "period": 112364.8068762869,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.42804166666666665,
       "model": "models/makemake.glb",
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=136472&phys-par=true&full-prec=true",
+        "sha256": "5330a73af140275a0716d411b372d236259f542ff5b020c51f2cd17fc1ff74fc",
+        "retrieved": "2026-09-13"
+      }
     },
     "mimas": {
       "name": "土卫一",
@@ -949,21 +974,26 @@
         917.0
       ],
       "asset": "data/assets/scene/solarsystem/dwarf_planets/orcus/globe.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "无全球影像，使用纯色形状示意",
       "orbit": {
-        "a": 39.11708578529354,
-        "e": 0.2286250262659888,
-        "i": 20.56757017337535,
-        "node": 268.5357792998585,
-        "peri": 73.46005226906388,
-        "m": 184.3682302120697,
-        "period": 89359.12208173508,
-        "epoch": 1675879250000.0
+        "a": 39.37686537914865,
+        "e": 0.2205240628250881,
+        "i": 20.55681019612,
+        "node": 268.4053519455824,
+        "peri": 73.56848606705262,
+        "m": 189.0972913554275,
+        "period": 90252.68650688507,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.5495,
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=90482&phys-par=true&full-prec=true",
+        "sha256": "ea09d78997d82e23308429d9378700d2a125a8203843dde433139870353f07f1",
+        "retrieved": "2026-09-13"
+      }
     },
     "phobos": {
       "name": "火卫一",
@@ -1047,21 +1077,26 @@
         1036.0
       ],
       "asset": "data/assets/scene/solarsystem/dwarf_planets/quaoar/globe.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "无全球影像，使用纯色形状示意",
       "orbit": {
-        "a": 43.47262257795771,
-        "e": 0.04098702510897952,
-        "i": 7.991232171849933,
-        "node": 189.0902949942479,
-        "peri": 155.214428533145,
-        "m": 296.22300217209,
-        "period": 104691.8599963541,
-        "epoch": 1660016068000.0
+        "a": 43.15617648834794,
+        "e": 0.03520023677935285,
+        "i": 7.991575801906905,
+        "node": 188.9191248447958,
+        "peri": 163.2090510089555,
+        "m": 292.8487574745446,
+        "period": 103553.0434885775,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.36833333333333335,
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=50000&phys-par=true&full-prec=true",
+        "sha256": "4b36c681edaa209e4fb6e17f0923038527bf589dfe6ead18f31472ea2ae3d8c2",
+        "retrieved": "2026-09-13"
+      }
     },
     "rhea": {
       "name": "土卫五",
@@ -1122,21 +1157,26 @@
         1025.0
       ],
       "asset": "data/assets/scene/solarsystem/dwarf_planets/sedna/globe.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "无全球影像，使用纯色形状示意",
       "orbit": {
-        "a": 532.3140469775566,
-        "e": 0.8565069519144183,
-        "i": 11.93034000375754,
-        "node": 144.2584776398181,
-        "peri": 310.8687900929183,
-        "m": 358.4694078785378,
-        "period": 4485811.755507208,
-        "epoch": 1676036918000.0
+        "a": 543.7195289104732,
+        "e": 0.8598824585187618,
+        "i": 11.92527582847476,
+        "node": 144.5061662673739,
+        "peri": 311.0987725939751,
+        "m": 358.5956944005428,
+        "period": 4630851.183590915,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.42804166666666665,
-      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对"
+      "radiiSource": "观测估计尺寸，用于形状示意；保留原资产尺寸供核对",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=90377&phys-par=true&full-prec=true",
+        "sha256": "150935e0b97f4f0a0ef20c1bf784305c0dd703ba46f76573b57f7c01e183b7f6",
+        "retrieved": "2026-09-13"
+      }
     },
     "styx": {
       "name": "冥卫五",
@@ -1409,21 +1449,26 @@
       ],
       "assetRadiiKm": null,
       "asset": "data/assets/scene/solarsystem/dwarf_planets/vesta/model.asset",
-      "orbitSource": "OpenSpace Kepler elements",
+      "orbitSource": "JPL SBDB osculating elements / Kepler approximation",
       "texture": null,
       "surface": "无全球影像，使用纯色形状示意",
       "orbit": {
-        "a": 2.363071846845419,
-        "e": 0.0887575049859888,
-        "i": 7.139257981928672,
-        "node": 103.7573001493549,
-        "peri": 151.5991639880173,
-        "m": 115.1329895974862,
-        "period": 1326.797192349944,
-        "epoch": 1618312557000.0
+        "a": 2.361365965127599,
+        "e": 0.09020374382834395,
+        "i": 7.143925545058711,
+        "node": 103.701293265032,
+        "peri": 151.4686478221564,
+        "m": 81.19015607686903,
+        "period": 1325.389042911101,
+        "epoch": 1780963130815.0
       },
       "rotationDays": 0.2225886525,
-      "radiiSource": "OpenSpace general_pck / pck00011.tpc"
+      "radiiSource": "OpenSpace general_pck / pck00011.tpc",
+      "orbitProvenance": {
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true&full-prec=true",
+        "sha256": "ed1c182bd5d64c1f790ceff5545fa8e1157a314b07b67a518e24af65ec3a3363",
+        "retrieved": "2026-09-13"
+      }
     }
   },
   "resources": [

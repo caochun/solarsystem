@@ -1,0 +1,107 @@
+{
+  "source": {
+    "identifier": "saturn_shepherd_kernels",
+    "version": 1,
+    "url": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/shepherd_kernels/1/sat393_daphnis.bsp",
+    "sha256": "8b21b3b68e5603006b67cb02197d789afa2e04925c3495363ac16fe180be2e08",
+    "bytes": 9216
+  },
+  "kernelType": 17,
+  "checks": [
+    {
+      "et": -1578398400.0,
+      "positionDifferenceKm": 7.275957614183426e-12,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": -1104904800.0,
+      "positionDifferenceKm": 0.0,
+      "velocityDifferenceKmS": 0.0
+    },
+    {
+      "et": -631411200.0,
+      "positionDifferenceKm": 3.637978807091713e-12,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": -157917600.0,
+      "positionDifferenceKm": 7.275957614183426e-12,
+      "velocityDifferenceKmS": 4.440892098500626e-16
+    },
+    {
+      "et": 315576000.0,
+      "positionDifferenceKm": 1.8189894035458565e-12,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 315576000.0,
+      "positionDifferenceKm": 1.8189894035458565e-12,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 362901600.0,
+      "positionDifferenceKm": 2.7284841053187847e-12,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 410227200.0,
+      "positionDifferenceKm": 1.3642420526593924e-12,
+      "velocityDifferenceKmS": 0.0
+    },
+    {
+      "et": 457552800.0,
+      "positionDifferenceKm": 9.094947017729282e-13,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 504878400.0,
+      "positionDifferenceKm": 3.410605131648481e-13,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 504878400.0,
+      "positionDifferenceKm": 3.410605131648481e-13,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 773323200.0,
+      "positionDifferenceKm": 3.637978807091713e-12,
+      "velocityDifferenceKmS": 0.0
+    },
+    {
+      "et": 1041768000.0,
+      "positionDifferenceKm": 7.275957614183426e-12,
+      "velocityDifferenceKmS": 8.881784197001252e-16
+    },
+    {
+      "et": 1310212800.0,
+      "positionDifferenceKm": 7.275957614183426e-12,
+      "velocityDifferenceKmS": 4.440892098500626e-16
+    },
+    {
+      "et": 1578657600.0,
+      "positionDifferenceKm": 7.275957614183426e-12,
+      "velocityDifferenceKmS": 0.0
+    }
+  ],
+  "body": {
+    "id": "daphnis",
+    "name": "Daphnis",
+    "english": "DAPHNIS",
+    "parent": "saturn",
+    "orbit": {
+      "a": 0.0009169213665767062,
+      "e": 0.004832760310155287,
+      "i": 28.050112240352888,
+      "node": 169.5302449474704,
+      "peri": 258.9891599897082,
+      "m": 359.76740508408625,
+      "period": 0.5998657244452915,
+      "epoch": 1788998400000.0
+    },
+    "stateKm": [47649.27655837042,111354.27181227668,-62958.872356074775,-15.593522896485565,5.805870893669404,-1.5322159990946083],
+    "source": "https://liu-se.cdn.openspaceproject.com/files/solarsystem/planets/saturn/shepherd_kernels/1/sat393_daphnis.bsp",
+    "sourceEpoch": "2026-09-10T00:00:00Z",
+    "sourceAsset": "data/assets/scene/solarsystem/planets/saturn/minor/shepherd_group/transforms.asset"
+  }
+}

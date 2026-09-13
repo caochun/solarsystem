@@ -6,7 +6,7 @@ test("minor moons are searchable, selectable, linked and navigable", async ({
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto("/?time=1788998400000");
     await expect(page.locator("#fps")).toHaveText(/\d+ FPS/);
-    await expect(page.locator(".body-card")).toHaveCount(441);
+    await expect(page.locator(".body-card")).toHaveCount(442);
     await page.locator("#body-filter").selectOption("jupiter");
     await expect(page.locator(".body-card:visible")).toHaveCount(98);
     await page.locator("#body-search").fill("Himalia");
@@ -14,6 +14,10 @@ test("minor moons are searchable, selectable, linked and navigable", async ({
     await expect(page.locator("#body-name")).toHaveText("Himalia");
     await expect(page.locator("#parent-body")).toHaveText("返回木星 ↗");
     await expect(page.locator("#body-orbit-period")).toContainText("天");
+    await expect(page.locator("#body-radius")).not.toHaveText(/未收录|定位点/);
+    await expect(page.locator("#body-mass")).not.toHaveText("未收录");
+    await expect(page.locator("#body-density")).toContainText("g/cm³");
+    await expect(page.locator("#orbit-accuracy")).toContainText("SPICE 样本插值");
     await expect
         .poll(() => new URL(page.url()).searchParams.get("moon"))
         .toBe("himalia");

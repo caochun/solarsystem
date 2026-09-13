@@ -27,7 +27,10 @@ import {
     type BodyId,
     type ScaleMode,
 } from "./model";
-import { Libration, RotationAxis } from "astronomy-engine";
+import { RotationAxis } from "astronomy-engine";
+import lunarSurfaceData from "./lunar-surface-data.json";
+import surfaceReferences from "./surface-references.json";
+import { lunarPixels, lunarView, type SurfaceRaster } from "./lunar-surface";
 import { SolarScene } from "./scene";
 import { SolarTour } from "./tour";
 import { initCatalogs, catalogRequest } from "./catalogs";
@@ -83,10 +86,11 @@ const DATA_STATUS_LABEL: Record<DataCompleteness, string> = {
 const OBSERVATORY_TARGET_IDS: BodyId[] = ["sun", ...PLANET_IDS, "moon"];
 const statusLabel = (status: DataCompleteness) => DATA_STATUS_LABEL[status];
 const accuracyLabel = (target: OrbitTarget, at: number) => {
-    if (!isMinorMoon(target)) return "解析星历";
+    if (!isMinorMoon(target)) return "开普勒历元外推";
     const accuracy = orbitAccuracy(target, at);
-    return accuracy === "near-epoch"
-        ? "接近 SPICE 历元"
+    return accuracy === "sampled" ? "SPICE 样本插值"
+        : accuracy === "near-epoch"
+        ? "开普勒近似 · 接近 SPICE 历元"
         : accuracy === "extended"
           ? "开普勒扩展"
           : "远离历元 · 仅轨道形态";
@@ -156,6 +160,7 @@ q("#app").innerHTML = `
       <dl class="facts"><div><dt id="body-radius-title">参考半径</dt><dd><span id="body-radius"></span><small> km</small></dd></div><div><dt>质量</dt><dd><span id="body-mass"></span><small> kg</small></dd></div><div><dt>自转周期</dt><dd id="body-rotation"></dd></div><div><dt>公转周期</dt><dd id="body-orbit-period"></dd></div><div><dt>温度</dt><dd id="body-temperature"></dd></div><div><dt>平均密度</dt><dd id="body-density"></dd></div></dl><p id="physical-source" class="body-source"></p><p id="ring-source" class="body-source"></p>
       <div class="observation"><div class="eyebrow">此刻的相对位置</div><div class="live-value"><span id="distance-title">距太阳</span><strong id="distance-value"></strong></div><div class="live-value secondary"><span id="secondary-title"></span><span id="secondary-value"></span></div></div>
       <p class="fact-note" id="body-fact"></p><p class="body-source" id="orbit-accuracy"></p>
+      <button id="open-surface-reference" class="catalog-link" hidden>查看探测器实拍参考图 ↗</button>
       <div class="layers"><div class="catalog-heading"><span>观察选项</span><span class="mono">LAYERS</span></div><label><span>轨道路径</span><input type="checkbox" id="orbits" checked/><span class="switch"></span></label><label><span>天体标签</span><input type="checkbox" id="labels" checked/><span class="switch"></span></label><label><span>地球自转轴</span><input type="checkbox" id="axis"/><span class="switch"></span></label><label><span>天然卫星</span><input type="checkbox" id="moons" checked/><span class="switch"></span></label><label><span>行星环</span><input type="checkbox" id="rings" checked/><span class="switch"></span></label><button id="open-catalog" class="catalog-link">小天体数据目录 ↗</button></div>
     </aside>
     <div class="scene-footer"><div class="interaction-hint"><span>左键旋转 · 右键平移</span><i>·</i><span>滚轮缩放</span><i>·</i><span>点击天体探索</span></div><div class="scale-control"><span>尺度</span><div class="segmented" role="group" aria-label="场景比例"><button data-scale="illustrated" aria-pressed="true">展示比例</button><button data-scale="physical" aria-pressed="false">真实比例</button></div><button id="scale-info" class="icon-button" aria-label="了解比例说明">${icon("info")}</button></div></div>
@@ -170,7 +175,7 @@ q("#app").innerHTML = `
   <dialog id="catalog-dialog"><div class="dialog-heading"><span class="eyebrow">SMALL BODY CATALOGS</span><button id="close-catalog" class="icon-button" aria-label="关闭小天体目录">${icon("close")}</button></div><h2>小世界，大太阳系。</h2><p>OpenSpace 引用的 16 类 JPL 小天体目录。每类按固定规则抽样绘制，分类之间可能包含同一个天体；完整数据可下载。</p><div class="dataset-controls"><label>目录分类<select id="catalog-category" aria-label="小天体目录分类"></select></label><label class="cloud-toggle"><input id="small-bodies" type="checkbox"/>在场景显示抽样点云</label></div><p id="catalog-summary"></p><p id="catalog-status" role="status">正在读取数据索引…</p><div class="catalog-full-search"><h3>搜索与跟随</h3><p id="catalog-index-info"></p><div class="dataset-controls"><label>名称 / 编号<input id="catalog-search" type="search" placeholder="例如 Eros、433、2024 YR4" maxlength="100"/></label><label>搜索范围<select id="catalog-scope"><option value="current">当前类别</option><option value="all">全部目录</option></select></label></div><button id="catalog-search-submit" class="catalog-link">搜索完整目录 ↗</button><p id="catalog-search-status" role="status"></p><label class="catalog-object-label">天体记录<select id="catalog-object" aria-label="小天体搜索结果"></select></label><div class="dataset-actions"><button id="catalog-prev" disabled>上一页</button><button id="catalog-next" disabled>下一页</button></div><p id="catalog-object-info"></p><button id="catalog-focus" class="primary-button" disabled>定位并跟随 ↗</button></div><p class="guide-footnote">轨道按原始历元的开普勒要素外推；未模拟长期摄动、非引力加速度或彗尾。目录标签“潜在危险”不代表当前存在撞击预警。</p><div class="dataset-actions"><a id="catalog-download" download>下载完整目录</a><button id="catalog-retry">重新加载</button><button id="catalog-overview">查看太阳系总览 ↗</button></div></dialog>
   <dialog id="observatory-dialog" class="observatory-dialog"><div class="dialog-heading"><span class="eyebrow">GROUND OBSERVATORY</span><button id="close-observatory" class="icon-button" aria-label="关闭地面观测站">${icon("close")}</button></div><h2>地面望远镜观测</h2><p>选择地点、目标和 UTC 时间，拖动时间轴查看目标何时适合观测。</p><div class="observatory-time"><label for="observatory-time-slider">模拟时间 <output id="observatory-time-label">--</output></label><input id="observatory-time-slider" type="range" step="900"/><div class="observatory-time-scale"><span>00:00</span><span>06:00</span><span>12:00</span><span>18:00</span><span>24:00</span></div></div><div class="observatory-layout"><div class="observatory-controls"><div class="observatory-form"><label>观测地点<select id="observatory-site">${OBSERVATORY_SITES.map((site) => `<option value="${site.id}">${site.name}</option>`).join("")}</select></label><label>观测目标<select id="observatory-target-select">${OBSERVATORY_TARGET_IDS.map((id) => `<option value="${id}" ${id === selected ? "selected" : ""}>${BODIES[id].name}</option>`).join("")}</select></label><label>纬度（°）<input id="observatory-lat" type="number" step="0.0001" min="-90" max="90" value="39.9042"/></label><label>经度（°）<input id="observatory-lon" type="number" step="0.0001" min="-180" max="180" value="116.4074"/></label><label>海拔（m）<input id="observatory-height" type="number" step="1" min="0" value="43"/></label></div><details class="observatory-section" open><summary>望远镜参数</summary><div class="observatory-form"><label>口径（mm）<input id="observatory-aperture" type="number" step="1" min="20" value="100"/></label><label>焦距（mm）<input id="observatory-focal-length" type="number" step="1" min="100" value="1000"/></label><label>目镜焦距（mm）<input id="observatory-eyepiece" type="number" step="0.1" min="1" value="25"/></label><label>目视场角（°）<input id="observatory-apparent-field" type="number" step="1" min="20" max="120" value="60"/></label></div></details><details class="observatory-section" open><summary>相机参数</summary><div class="observatory-form"><label>曝光（秒）<input id="observatory-exposure" type="number" step="0.1" min="0.01" value="2"/></label><label>增益<input id="observatory-gain" type="number" step="0.1" min="0" value="1"/></label><label>读出噪声（ADU）<input id="observatory-read-noise" type="number" step="0.1" min="0" value="1.5"/></label><label>视宁度（角秒）<input id="observatory-seeing" type="number" step="0.1" min="0.1" value="1.5"/></label><label>跟踪抖动（角秒）<input id="observatory-jitter" type="number" step="0.1" min="0" value="0.8"/></label><label>光学散射<input id="observatory-scatter" type="number" step="0.05" min="0" max="1" value="0.15"/></label><label>滤镜<select id="observatory-filter"><option value="L">L · 综合色</option><option value="R">R · 红光</option><option value="G">G · 绿光</option><option value="B">B · 蓝光</option><option value="Ha">Hα · 窄带</option></select></label><label>位深<select id="observatory-bit-depth"><option value="8">8 bit</option><option value="12" selected>12 bit</option><option value="16">16 bit</option></select></label></div></details></div><div class="observatory-output"><button id="observatory-solve" class="primary-button">计算当前目标 ↗</button><p id="observatory-target" class="observatory-target"></p><div id="observatory-result" class="observatory-result" role="status"><span>请选择目标并计算</span></div><div id="observatory-sky" class="observatory-sky" hidden><div class="sky-heading"><span>全天空位置预览</span><button id="observatory-track" class="sky-track" aria-pressed="false">跟踪目标</button></div><div class="sky-dome"><div id="observatory-stars" class="sky-stars" aria-hidden="true"></div><span class="sky-cardinal north">N</span><span class="sky-cardinal east">E</span><span class="sky-cardinal south">S</span><span class="sky-cardinal west">W</span><span class="sky-horizon"></span><span id="observatory-fov" class="sky-fov" hidden></span><span id="observatory-crosshair" class="sky-crosshair" aria-hidden="true"></span><span id="observatory-marker" class="sky-marker"><i></i><b id="observatory-marker-label"></b></span></div><p class="sky-caption">背景星点来自 HYG v3.8 亮星目录（星等 ≤ 5.5）；此处显示目标在地平坐标中的位置。生成观测图像时，望远镜会自动指向目标，因此目标位于图像中心；开启跟踪后，目标会随模拟时间保持在中心。</p><label class="sky-pointing">成像指向<select id="observatory-pointing-mode"><option value="target">自动指向目标（目标居中）</option><option value="fixed">固定当前方向（目标会漂移）</option></select><button id="observatory-lock-pointing" class="sky-capture" type="button">锁定当前方向</button></label><button id="observatory-capture" class="sky-capture">生成模拟观测图像</button><div class="observatory-image-panel"><canvas id="observatory-image" class="observatory-image" width="640" height="400" hidden></canvas><p id="observatory-image-note" class="sky-caption" hidden></p><div class="observatory-downloads"><a id="observatory-download" class="sky-capture" download="solarspace-observation.png" hidden>下载 PNG 图像</a><a id="observatory-fits" class="sky-capture" download="solarspace-observation.fits" hidden>下载 FITS 图像</a></div></div></div></div></div><p class="guide-footnote">第一版使用 Astronomy Engine 的地面观测模型；小天体目录对象暂不参与精确地平坐标计算。大气折射采用标准模型。</p></dialog>
   <div id="toast" role="status" class="toast" hidden></div>
-  <dialog id="guide-dialog"><div class="dialog-heading"><span class="eyebrow">FIELD GUIDE</span><button id="close-guide" class="icon-button" aria-label="关闭观测指南">${icon("close")}</button></div><h2>开始你的宇宙探索</h2><p>选择一个天体，从熟悉的世界出发。按 F 或点击顶栏 F 按钮，进入约 11 分钟的全屏太阳系漫游；空格暂停，N 显示讲解，Esc 退出。漫游保持当前模拟日期，退出后恢复原视角与播放状态。</p><div class="guide-grid"><div><b>01 / 观察</b><p>左键拖动旋转视角，右键拖动平移，滚轮缩放；触屏单指旋转、双指平移与缩放。按 R 或点击重置可重新居中。点击三维天体、标签或左侧列表，即可跟随观察。也可使用右侧的放大、缩小按钮。</p></div><div><b>02 / 时间</b><p>播放或倒放天体运动，选择速度，拖动年度时间线，或直接输入 UTC 日期。支持 1900—2100 年。空格暂停 / 播放，1—8 按距日顺序选择行星，0 选择太阳，9 选择月球，R 重置视角。</p></div><div><b>03 / 尺度</b><p>展示比例压缩行星间距、地月距离及巨行星与太阳的大小，让整个太阳系更易观察。天体方向保留，尺寸与间距不按同一比例。真实比例统一使用同一比例尺，天体可能小到难以看见，请用天体列表定位。</p></div><div><b>04 / 模型与数据</b><p>位置由 Astronomy Engine 解析星历计算，使用 J2000 黄道坐标与 IAU 自转模型。轨道线是所选时刻附近一个周期的采样参考；不是航天导航或日月食预测工具。主要卫星已提取 OpenSpace SPICE 在 2026-09-10 的轨道状态，用开普勒模型外推；木星四大卫星采用解析模型。远离历元会有相位误差，不能用于预测食现象。</p></div></div><p class="guide-footnote">新增七颗行星的尺寸与贴图、土星环的范围和纹理来自本项目 OpenSpace 资产定义及其资源服务器；贴图已缩小并转换为浏览器格式。地球、月球沿用 Three.js 示例纹理，太阳为程序化示意。土星环光照与阴影为简化模型，未模拟颗粒或精确散射。新增卫星、矮行星沿用原项目影像或模型；缺少全球影像的天体使用纯色形状示意。部分原资产的尺寸按同项目 NASA 参数核校正。新增木星、天王星、海王星环使用 NASA PDS 参数，亮度与展示比例下的细环宽度经过增强；没有模拟环弧。卫星物理资料补充自 JPL，平均半径估计与三轴形状分别说明。完整小天体目录支持名称/编号搜索、定位与跟随。详细来源见工程资源说明。</p><button id="start-explore" class="primary-button">继续探索 ${icon("arrow")}</button></dialog>
+  <dialog id="guide-dialog"><div class="dialog-heading"><span class="eyebrow">FIELD GUIDE</span><button id="close-guide" class="icon-button" aria-label="关闭观测指南">${icon("close")}</button></div><h2>开始你的宇宙探索</h2><p>选择一个天体，从熟悉的世界出发。按 F 或点击顶栏 F 按钮，进入约 11 分钟的全屏太阳系漫游；空格暂停，N 显示讲解，Esc 退出。漫游保持当前模拟日期，退出后恢复原视角与播放状态。</p><div class="guide-grid"><div><b>01 / 观察</b><p>左键拖动旋转视角，右键拖动平移，滚轮缩放；触屏单指旋转、双指平移与缩放。按 R 或点击重置可重新居中。点击三维天体、标签或左侧列表，即可跟随观察。也可使用右侧的放大、缩小按钮。</p></div><div><b>02 / 时间</b><p>播放或倒放天体运动，选择速度，拖动年度时间线，或直接输入 UTC 日期。支持 1900—2100 年。空格暂停 / 播放，1—8 按距日顺序选择行星，0 选择太阳，9 选择月球，R 重置视角。</p></div><div><b>03 / 尺度</b><p>展示比例压缩行星间距、地月距离及巨行星与太阳的大小，让整个太阳系更易观察。天体方向保留，尺寸与间距不按同一比例。真实比例统一使用同一比例尺，天体可能小到难以看见，请用天体列表定位。</p></div><div><b>04 / 模型与数据</b><p>位置由 Astronomy Engine 解析星历计算，使用 J2000 黄道坐标与 IAU 自转模型。轨道线是所选时刻附近一个周期的采样参考；不是航天导航或日月食预测工具。主要卫星已提取 OpenSpace SPICE 在 2026-09-10 的轨道状态，用开普勒模型外推；木星四大卫星采用解析模型。远离历元会有相位误差，不能用于预测食现象。</p></div></div><p class="guide-footnote">新增七颗行星的尺寸与贴图、土星环的范围和纹理来自本项目 OpenSpace 资产定义及其资源服务器；贴图已缩小并转换为浏览器格式。地球沿用 Three.js 示例纹理；月球使用 NASA LROC 彩色地图与 LOLA 地形法线，太阳为程序化示意。土星环光照与阴影为简化模型，未模拟颗粒或精确散射。新增卫星、矮行星沿用原项目影像或模型；缺少全球影像的天体使用纯色形状示意，其中 11 颗卫星可查看 NASA 探测器实拍参考图。部分原资产的尺寸按同项目 NASA 参数核校正。新增木星、天王星、海王星环使用 NASA PDS 参数，亮度与展示比例下的细环宽度经过增强；没有模拟环弧。卫星物理资料补充自 JPL，平均半径估计与三轴形状分别说明。完整小天体目录支持名称/编号搜索、定位与跟随。详细来源见工程资源说明。</p><button id="start-explore" class="primary-button">继续探索 ${icon("arrow")}</button></dialog>
 `;
 
 function toast(message: string) {
@@ -283,6 +288,7 @@ function refreshData() {
     syncTime();
 }
 function updateSelection() {
+    q("#open-surface-reference").hidden = Boolean(trackedObject) || !(selected in surfaceReferences.bodies);
     q(".details").scrollTop = 0;
     q(".details").classList.toggle("catalog-details", Boolean(trackedObject));
     if (isMinorMoon(trackedObject)) {
@@ -292,7 +298,7 @@ function updateSelection() {
         q("#body-kind").textContent = "天然卫星 · 轨道定位";
         q("#body-number").textContent = "OpenSpace";
         q("#body-description").textContent =
-            `围绕${BODIES[body.parentBody].name}运行的小卫星，使用本项目 OpenSpace SPICE 状态的开普勒近似外推。`;
+            `围绕${BODIES[body.parentBody].name}运行的小卫星，在本地采样窗口内使用 OpenSpace SPICE 状态插值，窗口外使用开普勒近似。`;
         q("#body-source").textContent = "OpenSpace SPICE / JPL";
         q("#body-orbit-period").textContent =
             `${body.orbit.period.toFixed(body.orbit.period < 1 ? 3 : 2)} 天`;
@@ -301,7 +307,7 @@ function updateSelection() {
             ? physical.meanRadiusKm.toLocaleString("zh-CN")
             : "定位点";
         q("#body-mass").textContent = physical?.massKg
-            ? physical.massKg.toExponential(3).replace("e+", " × 10^")
+            ? `${physical.massUpperLimit ? "< " : "≈ "}${physical.massKg.toExponential(3).replace("e+", " × 10^")}`
             : "未收录";
         q("#body-density").textContent = physical?.densityGcm3
             ? `${physical.densityGcm3} ± ${physical.densitySigma ?? "?"} g/cm³`
@@ -313,18 +319,8 @@ function updateSelection() {
             : "参考半径";
         q("#body-fact").textContent =
             `数据完整度：${statusLabel(body.dataStatus)} · ${accuracyLabel(body, time)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
-        for (const key of [
-            "radius",
-            "mass",
-            "rotation",
-            "temperature",
-            "density",
-        ])
+        for (const key of ["rotation", "temperature"])
             q(`#body-${key}`).textContent = "未收录";
-        q("#body-radius-title").textContent = "参考半径";
-        q("#body-radius").textContent = "定位点";
-        q("#body-radius").nextElementSibling!.setAttribute("hidden", "");
-        q("#body-mass").nextElementSibling!.setAttribute("hidden", "");
         q("#physical-source").replaceChildren();
         if (physical) {
             const link = document.createElement("a");
@@ -760,6 +756,23 @@ for (const id of ["orbits", "labels", "axis", "rings", "moons"])
         );
     });
 const dialog = q<HTMLDialogElement>("#guide-dialog");
+const referenceDialog = document.createElement("dialog");
+referenceDialog.id = "surface-reference-dialog";
+referenceDialog.innerHTML = `<div class="dialog-heading"><span class="eyebrow">探测器实拍参考图</span><button class="icon-button" aria-label="关闭参考图">${icon("close")}</button></div><h2></h2><img alt=""/><p class="reference-note"></p><p class="body-source reference-credit"></p><a class="catalog-link" target="_blank" rel="noopener noreferrer">NASA 原始图注与来源 ↗</a>`;
+document.body.append(referenceDialog);
+referenceDialog.querySelector("button")!.addEventListener("click", () => referenceDialog.close());
+q("#open-surface-reference").addEventListener("click", () => {
+    const reference = surfaceReferences.bodies[selected as keyof typeof surfaceReferences.bodies];
+    if (!reference || trackedObject) return;
+    referenceDialog.querySelector("h2")!.textContent = BODIES[selected].name;
+    const photo = referenceDialog.querySelector("img")!;
+    photo.src = `${import.meta.env.BASE_URL}${reference.path}`;
+    photo.alt = reference.title;
+    referenceDialog.querySelector(".reference-note")!.textContent = `${reference.note} 这是历史观测照片，不随模拟时间变化，也不是用于球面渲染的全球贴图。`;
+    referenceDialog.querySelector(".reference-credit")!.textContent = `${reference.credit} · ${reference.nasaId}`;
+    referenceDialog.querySelector("a")!.href = reference.page;
+    referenceDialog.showModal();
+});
 for (const id of ["guide", "about", "scale-info"])
     q(`#${id}`).addEventListener("click", () => dialog.showModal());
 for (const id of ["close-guide", "start-explore"])
@@ -781,6 +794,28 @@ let observatoryTracking = false;
 let observatoryPointingAnchor: { azimuthDeg: number; altitudeDeg: number } | null = null;
 let observatoryStarsKey = "";
 const observationTextureCache = new Map<string, HTMLImageElement | null>();
+let lunarRasterPromise: Promise<[SurfaceRaster, SurfaceRaster]> | null = null;
+let observationGeneration = 0;
+function lunarRasters() {
+    if (!lunarRasterPromise) {
+        lunarRasterPromise = Promise.all([lunarSurfaceData.color.path, lunarSurfaceData.normals.path].map(async path => {
+            const image = new Image();
+            image.src = `${import.meta.env.BASE_URL}${path}`;
+            await image.decode();
+            const canvas = document.createElement("canvas");
+            canvas.width = image.naturalWidth; canvas.height = image.naturalHeight;
+            const context = canvas.getContext("2d", {willReadFrequently:true})!;
+            context.drawImage(image,0,0);
+            const raster = context.getImageData(0,0,canvas.width,canvas.height);
+            canvas.width = canvas.height = 0;
+            return raster;
+        })).then(maps => [maps[0], maps[1]] as [SurfaceRaster,SurfaceRaster]).catch(error => {
+            lunarRasterPromise = null;
+            throw error;
+        });
+    }
+    return lunarRasterPromise;
+}
 const BODY_ROTATION_DAYS: Partial<Record<BodyId, number>> = {
     mercury: 58.646,
     venus: -243.025,
@@ -833,6 +868,8 @@ async function renderObservatoryImage(
     pointing?: { azimuthDeg: number; altitudeDeg: number },
 ) {
     if (!result) return;
+    const generation = ++observationGeneration;
+    const observationTime = time;
     const canvas = q<HTMLCanvasElement>("#observatory-image");
     const context = canvas.getContext("2d");
     if (!context) return;
@@ -855,9 +892,11 @@ async function renderObservatoryImage(
     const centerAltitude = pointing?.altitudeDeg ?? result.altitudeDeg;
     const daylight = Math.max(0, Math.min(1, (result.sunAltitudeDeg + 18) / 60));
     const pollution = Math.max(0, Math.min(1, (21.7 - site.skyBrightnessMag) / 5));
+    const moonMaps = result.target === "moon" ? await lunarRasters() : null;
+    if (generation !== observationGeneration) return;
     context.fillStyle = `rgb(${2 + daylight * 10 + pollution * 8}, ${5 + daylight * 12 + pollution * 7}, ${12 + daylight * 18 + pollution * 5})`;
     context.fillRect(0, 0, canvas.width, canvas.height);
-    const stars = starsForSky(new Date(time), site);
+    const stars = starsForSky(new Date(observationTime), site);
     for (const star of stars) {
         let deltaAz = star.azimuthDeg - centerAzimuth;
         while (deltaAz > 180) deltaAz -= 360;
@@ -895,8 +934,16 @@ async function renderObservatoryImage(
         glow.addColorStop(1, "rgba(255,224,160,0)");
         context.fillStyle = glow;
         context.fillRect(targetX - targetRadius * 2.5, targetY - targetRadius * 2.5, targetRadius * 5, targetRadius * 5);
-        const texture = await observationTexture(result.target);
-        if (texture && targetRadius >= 3) {
+        const texture = moonMaps ? null : await observationTexture(result.target);
+        if (generation !== observationGeneration) return;
+        if (moonMaps) {
+            const pixels = lunarPixels(canvas.width,canvas.height,targetX,targetY,targetRadius,
+                lunarView(new Date(observationTime),site),moonMaps[0],moonMaps[1],targetIntensity);
+            const surface = document.createElement("canvas");
+            surface.width = canvas.width; surface.height = canvas.height;
+            surface.getContext("2d")!.putImageData(new ImageData(pixels,canvas.width,canvas.height),0,0);
+            context.drawImage(surface,0,0);
+        } else if (texture && targetRadius >= 3) {
             // Keep the working texture bounded while retaining the optical scale in
             // the destination rectangle. Extreme focal lengths therefore show a
             // genuinely narrower crop instead of collapsing to the same 105 px dot.
@@ -906,11 +953,10 @@ async function renderObservatoryImage(
             surface.height = diameter;
             const surfaceContext = surface.getContext("2d")!;
             const rotationDays = BODY_ROTATION_DAYS[result.target] ?? 1;
-            let rotation = ((time / 86_400_000) / Math.abs(rotationDays)) * Math.PI * 2 * Math.sign(rotationDays);
+            let rotation = ((observationTime / 86_400_000) / Math.abs(rotationDays)) * Math.PI * 2 * Math.sign(rotationDays);
             const astroBody = ASTRO_BODY[result.target];
             if (astroBody) {
-                rotation = (RotationAxis(astroBody, new Date(time)).spin * Math.PI) / 180;
-                if (result.target === "moon") rotation += (Libration(new Date(time)).elon * Math.PI) / 180;
+                rotation = (RotationAxis(astroBody, new Date(observationTime)).spin * Math.PI) / 180;
             }
             surfaceContext.translate(diameter / 2, diameter / 2);
             surfaceContext.rotate(rotation);
@@ -961,7 +1007,7 @@ async function renderObservatoryImage(
     const fits = q<HTMLAnchorElement>("#observatory-fits");
     if (fits.dataset.url) URL.revokeObjectURL(fits.dataset.url);
     const fitsBlob = createFitsBlob(canvas, {
-        DATE_OBS: new Date(time).toISOString(),
+        DATE_OBS: new Date(observationTime).toISOString(),
         OBJECT: BODIES[result.target].english,
         OBS_LAT: site.latitude.toFixed(5),
         OBS_LON: site.longitude.toFixed(5),
@@ -975,6 +1021,7 @@ async function renderObservatoryImage(
     const note = q<HTMLElement>("#observatory-image-note");
     note.textContent = `模拟图像（${pointing ? "固定当前方向" : "自动指向目标"}） · ${formatFieldDegrees(fieldDeg)}° 视场 · ${exposure.toFixed(2)} s · 增益 ${gain.toFixed(1)} · ${filter} 滤镜 · ${bitDepth} bit · 天空亮度 ${site.skyBrightnessMag.toFixed(1)} mag/arcsec² · 读出噪声 ${readNoise.toFixed(1)} ADU · 视宁度 ${seeingArcsec.toFixed(1)}″ · 抖动 ${jitterArcsec.toFixed(1)}″ · 散射 ${scatter.toFixed(2)}`;
     note.hidden = false;
+    if (moonMaps) note.textContent += " · 月面：NASA LROC 8K / LOLA 地形光照（地平向上）";
 }
 function createFitsBlob(canvas: HTMLCanvasElement, metadata: Record<string, string>): Blob {
     const image = canvas.getContext("2d")!.getImageData(0, 0, canvas.width, canvas.height);
@@ -1139,7 +1186,15 @@ q<HTMLButtonElement>("#observatory-capture").addEventListener("click", () => {
     const fixedPointing = q<HTMLSelectElement>("#observatory-pointing-mode").value === "fixed";
     if (fixedPointing && result && !observatoryPointingAnchor)
         observatoryPointingAnchor = { azimuthDeg: result.azimuthDeg, altitudeDeg: result.altitudeDeg };
-    void renderObservatoryImage(result, site, fixedPointing ? observatoryPointingAnchor ?? undefined : undefined);
+    const button = q<HTMLButtonElement>("#observatory-capture");
+    button.disabled = true;
+    button.textContent = "正在生成观测图像…";
+    void renderObservatoryImage(result, site, fixedPointing ? observatoryPointingAnchor ?? undefined : undefined)
+        .catch(() => toast("观测图像资源加载失败，请重试。"))
+        .finally(() => {
+            button.disabled = false;
+            button.textContent = "生成模拟观测图像";
+        });
 });
 q("#share").addEventListener("click", async () => {
     updateLink();

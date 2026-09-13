@@ -315,7 +315,7 @@ main {
         0 0 6px #2d83bf44;
 }
 .planet-thumb.moon {
-    background-image: url("/textures/moon.jpg");
+    background-image: url("/textures/moon-lroc-4k.jpg");
     background-position: 45% center;
     filter: brightness(0.8);
 }
@@ -2446,4 +2446,21 @@ body.tour-idle #viewport {
     color: #a9b9b7;
     font-size: 0.68rem;
     letter-spacing: 0.03em;
+}
+
+#surface-reference-dialog {
+    width: min(860px, calc(100vw - 32px));
+    max-height: calc(100dvh - 32px);
+}
+#surface-reference-dialog img {
+    display: block;
+    width: 100%;
+    height: min(48dvh, 480px);
+    object-fit: contain;
+    background: #080d10;
+}
+#surface-reference-dialog .reference-note {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 14px 0 8px;
 }

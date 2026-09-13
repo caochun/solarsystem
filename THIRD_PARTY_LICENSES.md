@@ -55,3 +55,11 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## NASA lunar maps, elevation and spacecraft reference images
+
+Lunar source: https://svs.gsfc.nasa.gov/4720/ — credit **NASA's Scientific Visualization Studio; LRO / LROC / LOLA; Ernie Wright**. Color/elevation derivatives retain the source mapping and limitations. Full provenance and processing are recorded in `src/lunar-surface-data.json` and `DATA_SOURCES.md`.
+
+Spacecraft images are redistributed as the original NASA library JPEGs, with each original credit, caption and source link retained in `src/surface-references.json` and displayed beside the reference image. Credits include NASA/JPL; NASA/JPL/Space Science Institute; and NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute. NASA imagery usage guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/ . These resources are not relicensed under the application's code license; no NASA endorsement is implied.
+
+NAIF leap-seconds kernel `scripts/reference/naif0012.tls` is copied unchanged from OpenSpace `tests/horizonsTest/naif0012.tls`. Source: https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls . Original explanatory text and modification history are preserved.

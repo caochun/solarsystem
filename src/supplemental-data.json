@@ -461,9 +461,9 @@
     },
     "ceres": {
       "source": {
-        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true",
-        "sha256": "5cb2a3c8ea09ba6efe47e88e19310792c3a9287c651099686086002018e39f1f",
-        "retrieved": "2026-09-11"
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true&full-prec=true",
+        "sha256": "b074a06f7b93e10d0cf8bd16e706156c96bead3c83b7eafc1283c2922044e3be",
+        "retrieved": "2026-09-13"
       },
       "gm": 62.6284,
       "gmSigma": 0.0009,
@@ -477,142 +477,159 @@
       "densitySigma": 0.008,
       "originalParameters": {
         "H": {
-          "desc": "absolute magnitude (magnitude at 1 au from Sun and observer)",
-          "title": "absolute magnitude",
-          "sigma": null,
-          "name": "H",
           "notes": "IRAS observations used: 15",
-          "units": null,
+          "sigma": null,
           "value": "3.34",
+          "desc": "absolute magnitude (magnitude at 1 au from Sun and observer)",
+          "name": "H",
+          "title": "absolute magnitude",
+          "units": null,
           "ref": "MPO980521"
         },
         "G": {
-          "title": "magnitude slope",
-          "desc": "magnitude slope parameter used in the standard asteroid H/G magnitude law",
-          "ref": "PDS3 (MPC 17257)",
-          "units": null,
           "notes": "Fit",
+          "sigma": null,
           "value": "0.12",
+          "desc": "magnitude slope parameter used in the standard asteroid H/G magnitude law",
           "name": "G",
-          "sigma": null
+          "title": "magnitude slope",
+          "units": null,
+          "ref": "PDS3 (MPC 17257)"
         },
         "diameter": {
           "sigma": "0.2",
-          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
-          "value": "939.4",
           "notes": null,
-          "units": "km",
-          "name": "diameter",
           "desc": "effective body diameter",
-          "title": "diameter"
+          "value": "939.4",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "units": "km",
+          "title": "diameter",
+          "name": "diameter"
         },
         "extent": {
-          "title": "extent",
-          "desc": "tri(or bi)-axial body dimensions",
-          "units": "km",
           "notes": "fit w.r.t. center of mass and in body-fixed frame",
+          "sigma": "0.2 x 0.2 x 0.2",
           "value": "964.4 x 964.2 x 891.8",
-          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "desc": "tri(or bi)-axial body dimensions",
           "name": "extent",
-          "sigma": "0.2 x 0.2 x 0.2"
+          "title": "extent",
+          "units": "km",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)"
         },
         "GM": {
           "sigma": "0.0009",
-          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
           "notes": null,
-          "units": "km^3/s^2",
-          "value": "62.6284",
-          "name": "GM",
           "desc": "standard gravitational parameter: product of the mass (M) and gravitational constant (G)",
-          "title": "GM"
+          "value": "62.6284",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "units": "km^3/s^2",
+          "title": "GM",
+          "name": "GM"
         },
         "density": {
-          "name": "density",
-          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
-          "value": "2.162",
           "notes": null,
-          "units": "g/cm^3",
           "sigma": "0.008",
-          "title": "bulk density",
-          "desc": "bulk density"
+          "value": "2.162",
+          "desc": "bulk density",
+          "units": "g/cm^3",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "name": "density",
+          "title": "bulk density"
         },
         "rot_per": {
-          "value": "9.074170",
-          "notes": "derived from published value: 952.1532 +/- 0.0001 deg./day",
+          "name": "rot_per",
+          "title": "rotation period",
           "units": "h",
           "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
-          "name": "rot_per",
-          "sigma": "0.000001",
-          "title": "rotation period",
-          "desc": "body rotation period (synodic)"
+          "value": "9.074170",
+          "desc": "body rotation period (synodic)",
+          "notes": "derived from published value: 952.1532 +/- 0.0001 deg./day",
+          "sigma": "0.000001"
         },
         "pole": {
-          "value": "291.421/66.758",
-          "notes": null,
-          "units": null,
-          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
-          "name": "pole",
           "sigma": "0.007/0.002",
+          "notes": null,
+          "desc": "spin-pole direction in R.A./Dec.",
+          "value": "291.421/66.758",
           "title": "pole direction",
-          "desc": "spin-pole direction in R.A./Dec."
+          "name": "pole",
+          "ref": "Nature vol. 537, pp515-517 (22 September 2016)",
+          "units": null
         },
         "albedo": {
           "sigma": "0.003",
-          "ref": "Li et al. (2006) Icarus v182:pp143-160",
-          "value": "0.090",
           "notes": "V-band geometric albedo",
-          "units": null,
-          "name": "albedo",
           "desc": "geometric albedo",
-          "title": "geometric albedo"
+          "value": "0.090",
+          "ref": "Li et al. (2006) Icarus v182:pp143-160",
+          "units": null,
+          "title": "geometric albedo",
+          "name": "albedo"
         },
         "BV": {
-          "units": null,
-          "notes": "#obs=52; phase (min.=1.47, mean=11.85, max.=22.59) deg.",
-          "value": "0.713",
-          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
-          "name": "BV",
           "sigma": "0.014",
+          "notes": "#obs=52; phase (min.=1.47, mean=11.85, max.=22.59) deg.",
+          "desc": "color index B-V magnitude difference",
+          "value": "0.713",
           "title": "B-V",
-          "desc": "color index B-V magnitude difference"
+          "name": "BV",
+          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
+          "units": null
         },
         "UB": {
-          "value": "0.426",
-          "notes": "#obs=52; phase (min.=1.47, mean=12.16, max.=22.59) deg.",
+          "name": "UB",
+          "title": "U-B",
           "units": null,
           "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
-          "name": "UB",
+          "notes": "#obs=52; phase (min.=1.47, mean=12.16, max.=22.59) deg.",
           "sigma": "0.026",
-          "title": "U-B",
+          "value": "0.426",
           "desc": "color index U-B magnitude difference"
         },
         "spec_T": {
-          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
-          "value": "G",
-          "notes": "used 7 color indices; used ground-based radiometric albedo",
           "units": null,
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
           "name": "spec_T",
-          "sigma": null,
           "title": "Tholen spectral type",
-          "desc": "Tholen spectral taxonomic classification"
+          "value": "G",
+          "desc": "Tholen spectral taxonomic classification",
+          "notes": "used 7 color indices; used ground-based radiometric albedo",
+          "sigma": null
         },
         "spec_B": {
-          "title": "SMASSII spectral type",
-          "desc": "SMASSII spectral taxonomic classification",
-          "units": null,
-          "notes": "based on a high-resolution spectrum by Xu et al. (1995) or Bus and Binzel (2002)",
           "value": "C",
-          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
+          "desc": "SMASSII spectral taxonomic classification",
+          "notes": "based on a high-resolution spectrum by Xu et al. (1995) or Bus and Binzel (2002)",
+          "sigma": null,
           "name": "spec_B",
-          "sigma": null
+          "title": "SMASSII spectral type",
+          "units": null,
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0"
+        }
+      },
+      "parameterSources": {
+        "GM": {
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true&full-prec=true",
+          "sha256": "b074a06f7b93e10d0cf8bd16e706156c96bead3c83b7eafc1283c2922044e3be",
+          "retrieved": "2026-09-13"
+        },
+        "diameter": {
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true&full-prec=true",
+          "sha256": "b074a06f7b93e10d0cf8bd16e706156c96bead3c83b7eafc1283c2922044e3be",
+          "retrieved": "2026-09-13"
+        },
+        "density": {
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=1&phys-par=true&full-prec=true",
+          "sha256": "b074a06f7b93e10d0cf8bd16e706156c96bead3c83b7eafc1283c2922044e3be",
+          "retrieved": "2026-09-13"
         }
       }
     },
     "vesta": {
       "source": {
-        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true",
-        "sha256": "3e209f0abcb6559312438f215a0235426474368328fd3ea6614830c2db00d196",
-        "retrieved": "2026-09-11"
+        "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true&full-prec=true",
+        "sha256": "ed1c182bd5d64c1f790ceff5545fa8e1157a314b07b67a518e24af65ec3a3363",
+        "retrieved": "2026-09-13"
       },
       "gm": 17.2882844,
       "gmSigma": 3e-06,
@@ -626,134 +643,151 @@
       "densitySigma": 0.005,
       "originalParameters": {
         "H": {
-          "desc": "absolute magnitude (magnitude at 1 au from Sun and observer)",
-          "sigma": null,
-          "ref": "E2024D82",
-          "title": "absolute magnitude",
-          "name": "H",
-          "value": "3.25",
           "notes": "IRAS observations used: 2",
-          "units": null
+          "desc": "absolute magnitude (magnitude at 1 au from Sun and observer)",
+          "ref": "E2024D82",
+          "name": "H",
+          "units": null,
+          "sigma": null,
+          "title": "absolute magnitude",
+          "value": "3.25"
         },
         "G": {
-          "units": null,
+          "desc": "magnitude slope parameter used in the standard asteroid H/G magnitude law",
           "notes": "Fit",
           "value": "0.32",
-          "name": "G",
           "title": "magnitude slope",
-          "ref": "PDS3 (MPC 17257)",
           "sigma": null,
-          "desc": "magnitude slope parameter used in the standard asteroid H/G magnitude law"
+          "units": null,
+          "name": "G",
+          "ref": "PDS3 (MPC 17257)"
         },
         "diameter": {
-          "name": "diameter",
-          "title": "diameter",
-          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
-          "units": "km",
-          "notes": null,
-          "value": "522.77",
           "sigma": "0.1",
-          "desc": "effective body diameter"
+          "units": "km",
+          "title": "diameter",
+          "value": "522.77",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "name": "diameter",
+          "desc": "effective body diameter",
+          "notes": null
         },
         "extent": {
           "sigma": "0.1 x 0.1 x 0.1",
-          "desc": "tri(or bi)-axial body dimensions",
-          "name": "extent",
-          "title": "extent",
-          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
-          "notes": null,
           "units": "km",
-          "value": "569.24 x 554.48 x 452.66"
+          "title": "extent",
+          "value": "569.24 x 554.48 x 452.66",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "name": "extent",
+          "desc": "tri(or bi)-axial body dimensions",
+          "notes": null
         },
         "GM": {
+          "title": "GM",
           "value": "17.2882844",
           "units": "km^3/s^2",
-          "notes": null,
-          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
-          "title": "GM",
+          "sigma": "0.0000030",
           "name": "GM",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
           "desc": "standard gravitational parameter: product of the mass (M) and gravitational constant (G)",
-          "sigma": "0.0000030"
+          "notes": null
         },
         "density": {
-          "title": "bulk density",
+          "notes": null,
+          "desc": "bulk density",
           "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
           "name": "density",
-          "value": "3.460",
-          "notes": null,
+          "sigma": "0.005",
           "units": "g/cm^3",
-          "desc": "bulk density",
-          "sigma": "0.005"
+          "title": "bulk density",
+          "value": "3.460"
         },
         "rot_per": {
-          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
-          "title": "rotation period",
-          "name": "rot_per",
-          "value": "5.3421276322",
-          "units": "h",
           "notes": "Rotation rate (deg/day): 1617.33312922 +/- 0.00000013",
           "desc": "body rotation period (synodic)",
-          "sigma": "0.0000000004"
+          "name": "rot_per",
+          "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "value": "5.3421276322",
+          "title": "rotation period",
+          "sigma": "0.0000000004",
+          "units": "h"
         },
         "pole": {
           "notes": "values in degrees",
-          "units": null,
-          "value": "309.06110/42.232386",
+          "desc": "spin-pole direction in R.A./Dec.",
           "name": "pole",
-          "title": "pole direction",
           "ref": "Park, R.S. et al. 2025, Nat Astron, DOI: 10.1038/s41550-025-02533-7",
+          "title": "pole direction",
+          "value": "309.06110/42.232386",
           "sigma": "0.00031/0.000068",
-          "desc": "spin-pole direction in R.A./Dec."
+          "units": null
         },
         "albedo": {
           "name": "albedo",
           "ref": "IRAS-A-FPA-3-RDR-IMPS-V6.0",
+          "value": "0.4228",
           "title": "geometric albedo",
+          "sigma": "0.053",
           "units": null,
           "notes": "IRAS observations used: 2",
-          "value": "0.4228",
-          "sigma": "0.053",
           "desc": "geometric albedo"
         },
         "BV": {
+          "desc": "color index B-V magnitude difference",
+          "notes": "#obs=23; phase (min.=1.73, mean=14.92, max.=24.69) deg.",
+          "sigma": "0.020",
+          "units": null,
+          "value": "0.782",
           "title": "B-V",
           "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
-          "name": "BV",
-          "value": "0.782",
-          "units": null,
-          "notes": "#obs=23; phase (min.=1.73, mean=14.92, max.=24.69) deg.",
-          "desc": "color index B-V magnitude difference",
-          "sigma": "0.020"
+          "name": "BV"
         },
         "UB": {
-          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
           "title": "U-B",
-          "name": "UB",
           "value": "0.492",
-          "notes": "#obs=23; phase (min.=1.73, mean=15.34, max.=24.69) deg.",
+          "sigma": "0.030",
           "units": null,
+          "name": "UB",
+          "ref": "EAR-A-5-DDR-UBV-MEAN-VALUES-V1.2",
           "desc": "color index U-B magnitude difference",
-          "sigma": "0.030"
+          "notes": "#obs=23; phase (min.=1.73, mean=15.34, max.=24.69) deg."
         },
         "spec_T": {
+          "desc": "Tholen spectral taxonomic classification",
+          "notes": "used 7 color indices; used ground-based radiometric albedo",
+          "sigma": null,
+          "units": null,
+          "value": "V",
           "title": "Tholen spectral type",
           "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
-          "name": "spec_T",
-          "value": "V",
-          "units": null,
-          "notes": "used 7 color indices; used ground-based radiometric albedo",
-          "desc": "Tholen spectral taxonomic classification",
-          "sigma": null
+          "name": "spec_T"
         },
         "spec_B": {
-          "units": null,
+          "desc": "SMASSII spectral taxonomic classification",
           "notes": "based on a high-resolution spectrum by Xu et al. (1995) or Bus and Binzel (2002)",
           "value": "V",
-          "name": "spec_B",
-          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0",
           "title": "SMASSII spectral type",
           "sigma": null,
-          "desc": "SMASSII spectral taxonomic classification"
+          "units": null,
+          "name": "spec_B",
+          "ref": "EAR-A-5-DDR-TAXONOMY-V4.0"
+        }
+      },
+      "parameterSources": {
+        "GM": {
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true&full-prec=true",
+          "sha256": "ed1c182bd5d64c1f790ceff5545fa8e1157a314b07b67a518e24af65ec3a3363",
+          "retrieved": "2026-09-13"
+        },
+        "diameter": {
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true&full-prec=true",
+          "sha256": "ed1c182bd5d64c1f790ceff5545fa8e1157a314b07b67a518e24af65ec3a3363",
+          "retrieved": "2026-09-13"
+        },
+        "density": {
+          "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=4&phys-par=true&full-prec=true",
+          "sha256": "ed1c182bd5d64c1f790ceff5545fa8e1157a314b07b67a518e24af65ec3a3363",
+          "retrieved": "2026-09-13"
         }
       }
     },

@@ -2,7 +2,7 @@
 
 ## 当前版本实际使用
 
-当前 46 个有模型/资料的主要天体、395 个可选择的小卫星轨道点，以及 16 类小天体目录采用混合来源：新增行星、卫星、矮行星的资源来自 OpenSpace 的资产引用，位置使用 Astronomy Engine 或从 OpenSpace 提取的开普勒要素。部分卫星在导入时读取了原 SPICE 内核的局部记录；浏览器没有运行完整 SPICE。Three.js 负责三维渲染。2026-09-11 另从 NASA/JPL/PDS 直接补充物理与环参数；新增来源与原 OpenSpace 清单分开记录。
+当前 46 个有模型/资料的主要天体、396 个可选择的小卫星轨道点，以及 16 类小天体目录采用混合来源：新增行星、卫星、矮行星的资源来自 OpenSpace 的资产引用，位置使用 Astronomy Engine 或从 OpenSpace 提取的开普勒要素。部分卫星在导入时读取了原 SPICE 内核的局部记录；浏览器没有运行完整 SPICE。Three.js 负责三维渲染。2026-09-11 另从 NASA/JPL/PDS 直接补充物理与环参数；新增来源与原 OpenSpace 清单分开记录。
 
 | 天体 | OpenSpace 资源标识 / 版本 | 原始文件 | 浏览器文件 |
 | --- | --- | --- | --- |
@@ -36,15 +36,15 @@ python3 -m venv /tmp/solarspace-assets-venv
 | 地球日间纹理                             | [earth_atmos_2048.jpg](https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg)                       | 保存为 `public/textures/earth.jpg`                              |
 | 地球夜间灯光                             | [earth_lights_2048.png](https://threejs.org/examples/textures/planets/earth_lights_2048.png)                     | 保存为 `public/textures/earth-night.png`                        |
 | 云层                                     | [earth_clouds_1024.png](https://threejs.org/examples/textures/planets/earth_clouds_1024.png)                     | 保存为 `public/textures/earth-clouds.png`                       |
-| 月球纹理                                 | [moon_1024.jpg](https://threejs.org/examples/textures/planets/moon_1024.jpg)                                     | 保存为 `public/textures/moon.jpg`                               |
+| 月球彩色地图与高程 | [NASA CGI Moon Kit](https://svs.gsfc.nasa.gov/4720/) | LROC 2025 色彩图、LOLA 2019 高程；见下方本轮清单 |
 | 日地月半径、各天体质量、周期、温度等概览参数 | [NASA 行星事实表](https://nssdc.gsfc.nasa.gov/planetary/factsheet/)及 IAU 常用参考值 | 人工整理到 `src/model.ts`，只作科普概览；新增七颗行星的半径来自上述 OpenSpace 清单 |
 | 太阳表面                                 | 原型内程序化着色器                                                                                               | 视觉示意，不是观测图像                                          |
 
-纹理下载日期：2026-09-10。上述图片按来源原样保留，未宣称为本项目原创；Three.js 代码的 MIT 许可与每张纹理的原始素材权利应分别对待。公开发行前应追溯原始图片来源并按其署名/授权要求使用，或替换为具备明确使用许可的 NASA 素材。
+地球示例纹理下载日期：2026-09-10。地球图片按来源原样保留，未宣称为本项目原创；Three.js 代码的 MIT 许可与每张纹理的原始素材权利应分别对待。公开发行前应追溯原始图片来源并按其署名/授权要求使用，或替换为具备明确使用许可的 NASA 素材。
 
 ## 新增卫星、矮行星与其他小天体
 
-2026-09-10 本次新增 36 个可选天体（26 颗卫星、五颗矮行星、五个其他小天体）。配合原太阳、八大行星和月球，场景共有 46 个有模型/资料的天体；另有 395 个小卫星点可选择跟踪。完整尺寸、轨道、原资产路径和校验清单位于 [`src/extended-data.json`](src/extended-data.json)。
+2026-09-10 本次新增 36 个可选天体（26 颗卫星、五颗矮行星、五个其他小天体）。配合原太阳、八大行星和月球，场景共有 46 个有模型/资料的天体；另有 396 个小卫星点可选择跟踪。完整尺寸、轨道、原资产路径和校验清单位于 [`src/extended-data.json`](src/extended-data.json)。
 
 以下 15 张影像均由对应 OpenSpace 资源列表下载，转为不超过 2048×1024 的 JPEG（quality=88）。不以重绘或 AI 生成补全地貌；原始拼接图的缺测、填补、投影和颜色限制继续保留。
 
@@ -68,7 +68,7 @@ python3 -m venv /tmp/solarspace-assets-venv
 
 初次扩展保留五个原始 GLB：`phobos_model`、`deimos_model`、`eris_model`、`haumea_model`、`makemake_model`，均为资源版本 1。文件与校验值见清单 `resources`。渲染时保留原 UV 和模型拓扑，按所采用的三轴尺寸缩放。遥远天体的模型表面为艺术示意，不能当作近距离观测图。
 
-土卫七、天王星五大卫星、海卫二、四颗冥王星小卫星及部分遥远天体尚未接入表面影像，使用纯色形状或平均半径等效球。2026-09-11 已导入灶神星原 OBJ 的简化网格，使用纯色材质。土卫六显示卡西尼 ISS 地表拼接表示，没有叠加完整云雾模型。
+土卫七、天王星五大卫星、海卫二、四颗冥王星小卫星及部分遥远天体尚未接入全球贴图，场景使用纯色形状或平均半径等效球。前 11 颗现可查看探测器实拍参考照片，照片没有贴到球面上。2026-09-11 已导入灶神星原 OBJ 的简化网格，使用纯色材质。土卫六显示卡西尼 ISS 地表拼接表示，没有叠加完整云雾模型。
 
 ### 轨道与时间
 
@@ -77,8 +77,7 @@ python3 -m venv /tmp/solarspace-assets-venv
 | 八大行星、原月球、冥王星 | Astronomy Engine，日心/地心解析模型 |
 | 木星四大卫星 | Astronomy Engine `JupiterMoons`，L1 模型；导入的 SPK 状态只留作来源记录 |
 | 其他新增卫星 | 下表 OpenSpace SPK 在 2026-09-10 00:00 UTC 的状态，经 CSPICE `oscelt` 转为固定二体要素 |
-| 谷神星 | 同项目主带 SBDB 快照中的 `1 Ceres`；旧内核不覆盖本次选定历元 |
-| 阋神星、妊神星、鸟神星、灶神星、塞德娜、创神星、共工星、亡神星 | 原 `transforms.asset` 的字面量开普勒要素，原历元分别保留在清单 |
+| 谷神星、阋神星、妊神星、鸟神星、灶神星、塞德娜、创神星、共工星、亡神星 | 2026-09-13 直接下载 JPL SBDB 全精度要素；历元 JDTDB 经 CSPICE 与闰秒核转 UTC，固定二体近似 |
 | 小天体点云 | 每条原始 SBDB 记录的轨道要素和历元 |
 
 | 母星系统 | OpenSpace 内核资源 / 版本 | 使用的文件 |
@@ -94,7 +93,7 @@ python3 -m venv /tmp/solarspace-assets-venv
 
 二体换算的母星 GM 为导入脚本手工给定的近似值（km³/s²）：火星 42828.375214，木星 126686534.911，土星 37931207.8，天王星 5793951.3，海王星 6835099.97，冥王星系统 975.5。这些值并非自动从本次 OpenSpace 资源读取。冥卫一相对冥王星；四颗小卫星的原状态相对冥王星系统质心，运行时用冥卫一相对向量乘 `105.9 / 975.5` 近似求质心偏移。
 
-本次 UTC→ET 转换使用当代 UTC/TAI 偏移、32.184 秒以及 TDB 周期近似；不是完整闰秒核转换。原资产和 SBDB 日期也按页面时间轴近似映射，没有逐条实现 TDB/UTC 的完整换算。浏览器统一映射到 J2000 黄道系，并采用 `(x, z, -y)` 作为 Y 向上场景坐标。
+本次 UTC→ET 转换使用当代 UTC/TAI 偏移、32.184 秒以及 TDB 周期近似；不是完整闰秒核转换。原资产和全量 SBDB 目录日期也按页面时间轴近似映射，没有逐条实现 TDB/UTC 的完整换算；2026-09-13 更新的 10 份独立 SBDB 快照改用下述 CSPICE 闰秒核转换。浏览器统一映射到 J2000 黄道系，并采用 `(x, z, -y)` 作为 Y 向上场景坐标。
 
 固定二体外推忽略摄动、卫星共振与长期进动；高倍播放和远离历元时只能用于观察轨道形态，不能据此推算精确相位、掩食或导航。新增卫星采用朝向母星的姿态示意，并非观测自转；特别不能把土卫七等天体解释为同步自转。主要行星和原月球保留 Astronomy Engine IAU 旋转模型。
 
@@ -151,12 +150,32 @@ API 由现有 Node 服务启动系统 Python 的只读 SQLite 子进程提供，
 
 32 站自动导览复用上述天体位置、影像与模型，未引入另一套天体数据。主带、木星特洛伊和海王星外天体点云读取现有三个 `public/catalogs/*.json` 固定样本；不会加载完整 SQLite 数据库或声称画出了全量目录。全屏漫游本身可在纯静态托管运行。
 
-## 2026-09-12 小卫星点云
+## 小卫星点云（2026-09-13 补充后）
 
-新增 `src/minor-moons.json` 记录从 OpenSpace `jup347.bsp`/`jup365.bsp`、`sat415.bsp`/`sat441.bsp`/`sat454.bsp`/`sat455.bsp`、`ura184` 三段和 `nep095.bsp`/`nep101xl-802.bsp`/`nep104.bsp` 读取的 **395 颗**木星、土星、天王星和海王星小卫星。脚本 `scripts/import-minor-moons.py` 只通过 HTTP Range 请求 SPK 头、段描述符和所需历元记录，使用同项目引用的行星 GM 转换为固定历元开普勒要素；不会把约 GB 级完整内核放进仓库。部分内卫星由 OpenSpace 内核的可用段覆盖，缺少可用椭圆段的对象会保留在 OpenSpace 原资产但不伪造轨道。
+新增 `src/minor-moons.json` 记录从 OpenSpace `jup347.bsp`/`jup365.bsp`、`sat415.bsp`/`sat441.bsp`/`sat454.bsp`/`sat455.bsp`/`sat393_daphnis.bsp`、`ura184` 三段和 `nep095.bsp`/`nep101xl-802.bsp`/`nep104.bsp` 读取的 **396 颗**木星、土星、天王星和海王星小卫星。脚本 `scripts/import-minor-moons.py` 只通过 HTTP Range 请求 SPK 头、段描述符和所需历元记录，使用同项目引用的行星 GM 转换为固定历元开普勒要素；不会把约 GB 级完整内核放进仓库。部分内卫星由 OpenSpace 内核的可用段覆盖，缺少可用椭圆段的对象会保留在 OpenSpace 原资产但不伪造轨道。
 
-浏览器在太阳系总览和卫星系统视图显示这些小卫星的轨道点云；列表中 395 个点均可选择、搜索、跟踪，并支持 `?moon=<id>` 深链接。点大小为屏幕示意；没有为其虚构平均半径、表面影像或独立三维模型。它们与 46 个有模型/资料的主要天体共同形成 441 个可选条目。
+浏览器在太阳系总览和卫星系统视图显示这些小卫星的轨道点云；列表中 396 个点均可选择、搜索、跟踪，并支持 `?moon=<id>` 深链接。点大小为屏幕示意；没有为其虚构平均半径、表面影像或独立三维模型。它们与 46 个有模型/资料的主要天体共同形成 442 个可选条目。
 
-可用 `scripts/sample-minor-moons.py` 从同一批 SPK 段生成历元附近的相对位置样本。浏览器仅在样本窗口内线性插值，超出窗口仍使用固定历元开普勒模型；未生成样本的对象自动沿用原有回退路径。
+`scripts/sample-minor-moons.py` 已生成全部 396 颗小卫星的 25,740 个位置/速度状态。浏览器仅在各自样本窗口内用三次 Hermite 插值，超出窗口仍使用固定历元开普勒模型。详见下一节的窗口、单位与验证范围。
 
-路线固定进入时的 UTC 模拟日期，使用展示比例的同一空间坐标。停留位置、环绕角度、连接曲线、停留时长与避障区域由本应用为观看体验设计，不是 OpenSpace 记录的航天器轨迹，也不是按物理速度执行的飞行模拟。太阳程序外观、地月 Three.js 示例纹理、OpenSpace 影像/GLB 和纯色占位继续沿用原来源与限制；可选站点讲解注明目录抽样、缺测表面及艺术表示。
+路线固定进入时的 UTC 模拟日期，使用展示比例的同一空间坐标。停留位置、环绕角度、连接曲线、停留时长与避障区域由本应用为观看体验设计，不是 OpenSpace 记录的航天器轨迹，也不是按物理速度执行的飞行模拟。太阳程序外观、地球 Three.js 示例纹理、NASA 月球地图、OpenSpace 影像/GLB 和纯色占位继续沿用原来源与限制；可选站点讲解注明目录抽样、缺测表面及艺术表示。
+
+## 2026-09-13：月球、全部小卫星样本、SBDB 更新及实拍参考图
+
+本轮覆盖清单见 `src/data-coverage.json` 与 [DATA_COMPLETENESS.md](DATA_COMPLETENESS.md)。下载成功和运行时接入分开核查，未以艺术纹理补全缺测地貌。
+
+**月球：** [NASA SVS CGI Moon Kit](https://svs.gsfc.nasa.gov/4720/)，署名 **NASA's Scientific Visualization Studio; LRO/LROC/LOLA; Ernie Wright**。`scripts/import-lunar-surface.py` 导入 2025 年版 LROC 8192×4096 的 16 bit sRGB TIFF，生成浏览器用 8K/4K JPEG；原色彩图使用 643/566/415 nm 波段，NASA 已调整曝光与白平衡。70°N—70°S 之外由 NASA 以低分辨率单色反照率填充，少量缺口经过 inpainting。不是标定光谱反射率数据。
+
+LOLA 2019 高程使用 `ldem_16_uint.tif`（5760×2880，16 像素/度，赤道约 1.90 km/像素），保留全部原始 unsigned 16 bit 样本为 `public/terrain/moon-lola-16ppd.u16le.gz`。相对 1737.4 km 参考球高程为 `sample × 0.5 − 10000` 米，范围 −8981.5 至 10685.5 米；0.5 米是编码刻度，不是精度承诺。4K/2K 物体坐标法线由原高程梯度计算，没有地形夸张。原件/转换资源哈希、尺寸、单位、投影、版本均在 `src/lunar-surface-data.json`。
+
+三维场景使用 4K 颜色与 2K 法线；望远镜成像按需载入 8K 颜色与 4K 法线，高程压缩包不在首页自动下载。观测图用 Astronomy Engine 的 IAU 月固连轴、地表观察位置及太阳方向采样可见半球，图像保持地平向上，可随地点、时间和焦距显示不同月面及裁剪。相对于旧的平面地图裁圆，月海的位置恢复到地球所见的一侧。仍为正交球面投影和局部法线光照，未实现精密 SPICE 姿态、地形轮廓、地形投影阴影或月食；原相机/光学模型的简化也继续存在。
+
+**Daphnis 与小卫星：** 原资产 `saturn/minor/shepherd_group/transforms.asset` 另引用 `saturn_shepherd_kernels` / 1 的 `sat393_daphnis.bsp`，含三段 SPK type 17。导入器现在通过 CSPICE `eqncpv` 读取该类型，与原生 `spkgeo` 在三个段共 15 个时刻核对位置和速度，清单为 `src/daphnis-source.json`。这补上了当前原 OpenSpace 小卫星资产候选中的最后一个遗漏；不代表收录了今天全部已知卫星。
+
+396 颗小卫星均保存 65 个位置与速度状态：位置 AU、速度 AU/day，坐标为 J2000 黄道 `(X,Z,−Y)`，时间为 UTC 毫秒。窗口相对各自轨道历元前后 `min(7 天, 周期/8)`，并裁至源段覆盖范围。三次 Hermite 插值在每一间隔中点对照源 SPK，最大位置残差 **0.0203277 km**；这是对源内核的插值残差，不包含来源星历误差，也不能推广到窗口外。全部窗口覆盖 2026-09-10 00:00 UTC；窗口外使用固定历元 Kepler，并显示相应精度提示。`scripts/sample-minor-moons.py` 会先完成全部生成和验证再替换运行数据。
+
+**10 份 SBDB 快照：** `scripts/supplement-small-bodies.py` 从 [JPL SBDB API](https://ssd-api.jpl.nasa.gov/doc/sbdb.html) 使用 `phys-par=true&full-prec=true` 下载 Ceres、Vesta、Pluto、Eris、Haumea、Makemake、Sedna、Quaoar、Gonggong、Orcus。保留要素、历元、解算信息、误差、物理参数及引用于 `src/small-body-updates.json`；9 个对象更新浏览器开普勒要素，Pluto 继续使用 Astronomy Engine。9 个新历元为 JDTDB 2461200.5（UTC 2026-06-08 23:58:50.815）；Pluto 的 SBDB 轨道快照较旧，只留档。
+
+时间转换使用 `scripts/reference/naif0012.tls`，来自本项目 `tests/horizonsTest/naif0012.tls` 的 NAIF 闰秒核，原始官方地址与哈希保留在快照清单。Ceres、Vesta 的物理参数更新；其余八份 API 回答未提供 GM、直径和密度，不能据此填造这些字段。光变自转周期及歧义说明留在原始清单，不自动作为模型贴图自转参数。原来的百万条分类目录快照没有被这 10 份小更新替换。
+
+**11 组实拍参考图：** `scripts/import-surface-references.py` 从 [NASA Images API](https://images-api.nasa.gov/) 下载原始发布 JPEG，保存于 `public/reference-images/`，没有重绘、裁切或贴到球面。`src/surface-references.json` 逐项保留 NASA ID、URL、原图注、署名、发布时刻、原件哈希与处理限制。天卫一/二/三/四/五、土卫七、海卫二、冥卫二/三/四/五均可从资料面板查看。旅行者、卡西尼和新视野号图片仅覆盖当时可见面；海卫二及冥王星小卫星的低分辨率、去卷积、放大和拼图标尺均明确说明。`date_created` 是 NASA 库中的发布记录，不当作拍摄时间；拍摄时间以原始图注为准。
