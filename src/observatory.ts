@@ -24,6 +24,7 @@ export interface ObservatorySite {
     latitude: number;
     longitude: number;
     heightMeters: number;
+    skyBrightnessMag: number;
 }
 
 export interface ObservationResult {
@@ -54,10 +55,10 @@ export interface ObservationResult {
 }
 
 export const OBSERVATORY_SITES: ObservatorySite[] = [
-    { id: "beijing", name: "北京", latitude: 39.9042, longitude: 116.4074, heightMeters: 43 },
-    { id: "shanghai", name: "上海", latitude: 31.2304, longitude: 121.4737, heightMeters: 4 },
-    { id: "mauna-kea", name: "莫纳克亚山", latitude: 19.8207, longitude: -155.4681, heightMeters: 4205 },
-    { id: "custom", name: "自定义地点", latitude: 0, longitude: 0, heightMeters: 0 },
+    { id: "beijing", name: "北京", latitude: 39.9042, longitude: 116.4074, heightMeters: 43, skyBrightnessMag: 17.5 },
+    { id: "shanghai", name: "上海", latitude: 31.2304, longitude: 121.4737, heightMeters: 4, skyBrightnessMag: 17.2 },
+    { id: "mauna-kea", name: "莫纳克亚山", latitude: 19.8207, longitude: -155.4681, heightMeters: 4205, skyBrightnessMag: 21.7 },
+    { id: "custom", name: "自定义地点", latitude: 0, longitude: 0, heightMeters: 0, skyBrightnessMag: 20.0 },
 ];
 
 const bodyFor = (id: BodyId): Body | null => ASTRO_BODY[id] ?? null;

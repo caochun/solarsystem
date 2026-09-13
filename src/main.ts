@@ -831,7 +831,8 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
     const magnification = focalLength > 0 && eyepiece > 0 ? focalLength / eyepiece : 40;
     const fieldDeg = Math.max(0.1, Math.min(120, apparentField / magnification));
     const daylight = Math.max(0, Math.min(1, (result.sunAltitudeDeg + 18) / 60));
-    context.fillStyle = `rgb(${2 + daylight * 10}, ${5 + daylight * 12}, ${12 + daylight * 18})`;
+    const pollution = Math.max(0, Math.min(1, (21.7 - site.skyBrightnessMag) / 5));
+    context.fillStyle = `rgb(${2 + daylight * 10 + pollution * 8}, ${5 + daylight * 12 + pollution * 7}, ${12 + daylight * 18 + pollution * 5})`;
     context.fillRect(0, 0, canvas.width, canvas.height);
     const stars = starsForSky(new Date(time), site);
     for (const star of stars) {
@@ -841,7 +842,8 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
         const x = canvas.width / 2 + (deltaAz / fieldDeg) * canvas.width;
         const y = canvas.height / 2 - ((star.altitudeDeg - result.altitudeDeg) / fieldDeg) * canvas.height;
         if (x < -4 || x > canvas.width + 4 || y < -4 || y > canvas.height + 4) continue;
-        const rawSignal = (1.3 - star.magnitude * 0.13) * Math.sqrt(exposure * Math.max(0.2, gain));
+        const extinction = result.airmass === null ? 1 : Math.pow(10, -0.4 * 0.2 * Math.max(0, result.airmass - 1));
+        const rawSignal = (1.3 - star.magnitude * 0.13) * Math.sqrt(exposure * Math.max(0.2, gain)) * extinction;
         const intensity = Math.max(0.08, Math.min(1, 1 - Math.exp((-rawSignal * dynamicRange) / 1800)));
         const seeingPixels = (seeingArcsec / 3600 / fieldDeg) * canvas.width;
         const radius = Math.max(0.5, Math.min(5, 3.2 - star.magnitude * 0.45 + seeingPixels));
@@ -858,7 +860,8 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
         const targetY = canvas.height / 2 + (Math.random() - 0.5) * jitterPixels;
         const seeingPixels = (seeingArcsec / 3600 / fieldDeg) * canvas.width;
         const targetRadius = Math.max(3, Math.min(105, (result.angularDiameterArcsec / 3600 / fieldDeg) * canvas.width * 0.5 + seeingPixels));
-        const targetSignal = (1.4 - result.visualMagnitude * 0.04) * Math.sqrt(exposure * Math.max(0.2, gain));
+        const extinction = result.airmass === null ? 1 : Math.pow(10, -0.4 * 0.2 * Math.max(0, result.airmass - 1));
+        const targetSignal = (1.4 - result.visualMagnitude * 0.04) * Math.sqrt(exposure * Math.max(0.2, gain)) * extinction;
         const targetIntensity = Math.max(0.35, Math.min(1, 1 - Math.exp((-targetSignal * dynamicRange) / 1800)));
         const glow = context.createRadialGradient(targetX, targetY, 0, targetX, targetY, targetRadius * 2.5);
         glow.addColorStop(0, `rgba(255,224,160,${targetIntensity})`);
@@ -940,7 +943,7 @@ async function renderObservatoryImage(result: ReturnType<typeof observe>, site: 
     fits.dataset.url = fitsUrl;
     fits.hidden = false;
     const note = q<HTMLElement>("#observatory-image-note");
-    note.textContent = `模拟图像 · ${fieldDeg.toFixed(2)}° 视场 · ${exposure.toFixed(2)} s · 增益 ${gain.toFixed(1)} · ${filter} 滤镜 · ${bitDepth} bit · 读出噪声 ${readNoise.toFixed(1)} ADU · 视宁度 ${seeingArcsec.toFixed(1)}″ · 抖动 ${jitterArcsec.toFixed(1)}″`;
+    note.textContent = `模拟图像 · ${fieldDeg.toFixed(2)}° 视场 · ${exposure.toFixed(2)} s · 增益 ${gain.toFixed(1)} · ${filter} 滤镜 · ${bitDepth} bit · 天空亮度 ${site.skyBrightnessMag.toFixed(1)} mag/arcsec² · 读出噪声 ${readNoise.toFixed(1)} ADU · 视宁度 ${seeingArcsec.toFixed(1)}″ · 抖动 ${jitterArcsec.toFixed(1)}″`;
     note.hidden = false;
 }
 function createFitsBlob(canvas: HTMLCanvasElement, metadata: Record<string, string>): Blob {
