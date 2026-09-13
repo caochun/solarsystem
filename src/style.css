@@ -1993,10 +1993,11 @@ dialog > p {
     font: 11px "SFMono-Regular", Consolas, monospace;
     opacity: .85;
 }
-.sky-cardinal.north { top: 8px; left: 50%; transform: translateX(-50%); }
-.sky-cardinal.east { right: 10px; top: 50%; transform: translateY(-50%); }
-.sky-cardinal.south { bottom: 8px; left: 50%; transform: translateX(-50%); }
-.sky-cardinal.west { left: 10px; top: 50%; transform: translateY(-50%); }
+.sky-cardinal { bottom: 8px; top: auto; transform: translateX(-50%); }
+.sky-cardinal.north { left: 2%; }
+.sky-cardinal.east { left: 25%; }
+.sky-cardinal.south { left: 50%; }
+.sky-cardinal.west { left: 75%; }
 .sky-horizon {
     position: absolute;
     z-index: 1;
