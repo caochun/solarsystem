@@ -1932,10 +1932,11 @@ dialog > p {
     .observatory-sky .sky-heading { grid-column: 1 / -1; }
     .observatory-sky .sky-dome { grid-column: 1; grid-row: 2; }
     .observatory-sky > .sky-caption:not(#observatory-image-note) { grid-column: 1; grid-row: 3; }
-    .observatory-sky > .sky-capture { grid-column: 1; grid-row: 4; justify-self: start; }
+    .observatory-sky > .sky-pointing { grid-column: 1; grid-row: 4; }
+    .observatory-sky > .sky-capture { grid-column: 1; grid-row: 5; justify-self: start; }
     .observatory-image-panel {
         grid-column: 2;
-        grid-row: 2 / span 3;
+        grid-row: 2 / span 4;
         min-width: 0;
     }
     .observatory-image-panel .observatory-image { margin-top: 0; }
@@ -2208,6 +2209,21 @@ dialog > p {
     background: #11231b;
     font-size: 11px;
     cursor: pointer;
+}
+.sky-pointing {
+    display: grid;
+    gap: 4px;
+    color: #a8bdb2;
+    font-size: 11px;
+}
+.sky-pointing select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 8px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #09141b;
+    color: var(--text);
 }
 .observatory-image {
     display: block;
