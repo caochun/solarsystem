@@ -1924,6 +1924,15 @@ dialog > p {
     background: #09141b;
     color: var(--text);
 }
+.observatory-instrument {
+    margin: 18px 0 4px;
+    padding: 12px;
+    border: 1px solid #607f7338;
+    border-radius: 6px;
+    background: #0b171d99;
+}
+.observatory-instrument .eyebrow { margin-bottom: 8px; }
+.observatory-instrument .observatory-form { margin: 0; }
 .observatory-target,
 .observatory-result {
     margin-top: 16px;
