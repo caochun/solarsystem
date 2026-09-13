@@ -40,6 +40,13 @@ import {
     type OrbitTarget,
 } from "./minor-moons";
 import minorMoonData from "./minor-moons.json";
+import {
+    OBSERVATORY_SITES,
+    formatDeclination,
+    formatRightAscension,
+    observe,
+    type ObservatorySite,
+} from "./observatory";
 
 const paths: Record<string, string> = {
     orbit: '<circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="5" transform="rotate(-35 12 12)"/>',
@@ -121,7 +128,7 @@ q("#app").innerHTML = `
   <header class="header">
     <a class="brand" href="${import.meta.env.BASE_URL}" aria-label="星际之间，返回初始视角"><span class="brand-mark">${icon("orbit")}</span><span>星际之间<small>SOLAR EXPLORER</small></span></a>
     <nav class="top-nav" aria-label="主要导航"><button id="system-nav" class="nav-item">太阳系探索 <span>↗</span></button><span class="nav-divider"></span><span class="edition">行星 · 卫星 · 矮行星 · 小天体</span></nav>
-    <div class="header-actions"><span class="local-badge"><i></i>浏览器观测站</span><button id="start-tour" class="icon-button tour-launch" aria-label="开始太阳系漫游（F）" title="沉浸漫游 · F">F</button><button id="catalog-shortcut" class="icon-button" aria-label="打开小天体数据目录">${icon("grid")}</button><button id="guide" class="icon-button" aria-label="打开观测指南">${icon("info")}</button><button id="share" class="icon-button" aria-label="复制当前观测链接">${icon("link")}</button></div>
+    <div class="header-actions"><span class="local-badge"><i></i>浏览器观测站</span><button id="open-observatory" class="observatory-launch" aria-label="打开地面望远镜观测站">◎ 观测</button><button id="start-tour" class="icon-button tour-launch" aria-label="开始太阳系漫游（F）" title="沉浸漫游 · F">F</button><button id="catalog-shortcut" class="icon-button" aria-label="打开小天体数据目录">${icon("grid")}</button><button id="guide" class="icon-button" aria-label="打开观测指南">${icon("info")}</button><button id="share" class="icon-button" aria-label="复制当前观测链接">${icon("link")}</button></div>
   </header>
   <main>
     <div id="viewport"></div>
@@ -157,6 +164,7 @@ q("#app").innerHTML = `
   </main>
   <footer class="statusbar"><span><i class="status-dot"></i><span id="fps">正在准备场景</span><span class="status-separator">/</span><span id="scale-caption">天体与距离已调整，便于观察</span></span><button id="about">解析星历 · 数据与说明 ↗</button><span class="version">OPENSPACE WEB STUDY / 05</span></footer>
   <dialog id="catalog-dialog"><div class="dialog-heading"><span class="eyebrow">SMALL BODY CATALOGS</span><button id="close-catalog" class="icon-button" aria-label="关闭小天体目录">${icon("close")}</button></div><h2>小世界，大太阳系。</h2><p>OpenSpace 引用的 16 类 JPL 小天体目录。每类按固定规则抽样绘制，分类之间可能包含同一个天体；完整数据可下载。</p><div class="dataset-controls"><label>目录分类<select id="catalog-category" aria-label="小天体目录分类"></select></label><label class="cloud-toggle"><input id="small-bodies" type="checkbox"/>在场景显示抽样点云</label></div><p id="catalog-summary"></p><p id="catalog-status" role="status">正在读取数据索引…</p><div class="catalog-full-search"><h3>搜索与跟随</h3><p id="catalog-index-info"></p><div class="dataset-controls"><label>名称 / 编号<input id="catalog-search" type="search" placeholder="例如 Eros、433、2024 YR4" maxlength="100"/></label><label>搜索范围<select id="catalog-scope"><option value="current">当前类别</option><option value="all">全部目录</option></select></label></div><button id="catalog-search-submit" class="catalog-link">搜索完整目录 ↗</button><p id="catalog-search-status" role="status"></p><label class="catalog-object-label">天体记录<select id="catalog-object" aria-label="小天体搜索结果"></select></label><div class="dataset-actions"><button id="catalog-prev" disabled>上一页</button><button id="catalog-next" disabled>下一页</button></div><p id="catalog-object-info"></p><button id="catalog-focus" class="primary-button" disabled>定位并跟随 ↗</button></div><p class="guide-footnote">轨道按原始历元的开普勒要素外推；未模拟长期摄动、非引力加速度或彗尾。目录标签“潜在危险”不代表当前存在撞击预警。</p><div class="dataset-actions"><a id="catalog-download" download>下载完整目录</a><button id="catalog-retry">重新加载</button><button id="catalog-overview">查看太阳系总览 ↗</button></div></dialog>
+  <dialog id="observatory-dialog" class="observatory-dialog"><div class="dialog-heading"><span class="eyebrow">GROUND OBSERVATORY</span><button id="close-observatory" class="icon-button" aria-label="关闭地面观测站">${icon("close")}</button></div><h2>地面望远镜观测</h2><p>选择地面站和时间，计算当前天体在当地天空中的方位、高度与可观测性。</p><div class="observatory-form"><label>观测地点<select id="observatory-site">${OBSERVATORY_SITES.map((site) => `<option value="${site.id}">${site.name}</option>`).join("")}</select></label><label>纬度（°）<input id="observatory-lat" type="number" step="0.0001" min="-90" max="90" value="39.9042"/></label><label>经度（°）<input id="observatory-lon" type="number" step="0.0001" min="-180" max="180" value="116.4074"/></label><label>海拔（m）<input id="observatory-height" type="number" step="1" min="0" value="43"/></label></div><button id="observatory-solve" class="primary-button">计算当前目标 ↗</button><p id="observatory-target" class="observatory-target"></p><div id="observatory-result" class="observatory-result" role="status"><span>请选择目标并计算</span></div><p class="guide-footnote">第一版使用 Astronomy Engine 的地面观测模型；小天体目录对象暂不参与精确地平坐标计算。大气折射采用标准模型。</p></dialog>
   <div id="toast" role="status" class="toast" hidden></div>
   <dialog id="guide-dialog"><div class="dialog-heading"><span class="eyebrow">FIELD GUIDE</span><button id="close-guide" class="icon-button" aria-label="关闭观测指南">${icon("close")}</button></div><h2>开始你的宇宙探索</h2><p>选择一个天体，从熟悉的世界出发。按 F 或点击顶栏 F 按钮，进入约 11 分钟的全屏太阳系漫游；空格暂停，N 显示讲解，Esc 退出。漫游保持当前模拟日期，退出后恢复原视角与播放状态。</p><div class="guide-grid"><div><b>01 / 观察</b><p>左键拖动旋转视角，右键拖动平移，滚轮缩放；触屏单指旋转、双指平移与缩放。按 R 或点击重置可重新居中。点击三维天体、标签或左侧列表，即可跟随观察。也可使用右侧的放大、缩小按钮。</p></div><div><b>02 / 时间</b><p>播放或倒放天体运动，选择速度，拖动年度时间线，或直接输入 UTC 日期。支持 1900—2100 年。空格暂停 / 播放，1—8 按距日顺序选择行星，0 选择太阳，9 选择月球，R 重置视角。</p></div><div><b>03 / 尺度</b><p>展示比例压缩行星间距、地月距离及巨行星与太阳的大小，让整个太阳系更易观察。天体方向保留，尺寸与间距不按同一比例。真实比例统一使用同一比例尺，天体可能小到难以看见，请用天体列表定位。</p></div><div><b>04 / 模型与数据</b><p>位置由 Astronomy Engine 解析星历计算，使用 J2000 黄道坐标与 IAU 自转模型。轨道线是所选时刻附近一个周期的采样参考；不是航天导航或日月食预测工具。主要卫星已提取 OpenSpace SPICE 在 2026-09-10 的轨道状态，用开普勒模型外推；木星四大卫星采用解析模型。远离历元会有相位误差，不能用于预测食现象。</p></div></div><p class="guide-footnote">新增七颗行星的尺寸与贴图、土星环的范围和纹理来自本项目 OpenSpace 资产定义及其资源服务器；贴图已缩小并转换为浏览器格式。地球、月球沿用 Three.js 示例纹理，太阳为程序化示意。土星环光照与阴影为简化模型，未模拟颗粒或精确散射。新增卫星、矮行星沿用原项目影像或模型；缺少全球影像的天体使用纯色形状示意。部分原资产的尺寸按同项目 NASA 参数核校正。新增木星、天王星、海王星环使用 NASA PDS 参数，亮度与展示比例下的细环宽度经过增强；没有模拟环弧。卫星物理资料补充自 JPL，平均半径估计与三轴形状分别说明。完整小天体目录支持名称/编号搜索、定位与跟随。详细来源见工程资源说明。</p><button id="start-explore" class="primary-button">继续探索 ${icon("arrow")}</button></dialog>
 `;
@@ -263,6 +271,7 @@ function syncTime(force = false) {
             : selected === "earth"
               ? `${Math.round(data.earthMoonKm).toLocaleString("zh-CN")} km`
               : lightTime;
+    if (q<HTMLDialogElement>("#observatory-dialog")?.open) solveObservatory();
 }
 function refreshData() {
     data = ephemeris(new Date(time));
@@ -763,6 +772,46 @@ dialog.addEventListener("click", (event) => {
             dialog.close();
     }
 });
+let observatorySite: ObservatorySite = OBSERVATORY_SITES[0];
+function updateObservatorySite(site: ObservatorySite) {
+    observatorySite = site;
+    q<HTMLInputElement>("#observatory-lat").value = String(site.latitude);
+    q<HTMLInputElement>("#observatory-lon").value = String(site.longitude);
+    q<HTMLInputElement>("#observatory-height").value = String(site.heightMeters);
+}
+function solveObservatory() {
+    const site: ObservatorySite = {
+        ...observatorySite,
+        latitude: Number(q<HTMLInputElement>("#observatory-lat").value),
+        longitude: Number(q<HTMLInputElement>("#observatory-lon").value),
+        heightMeters: Number(q<HTMLInputElement>("#observatory-height").value),
+    };
+    const target = isMinorMoon(trackedObject) ? null : selected;
+    q("#observatory-target").textContent = target
+        ? `当前目标：${BODIES[target].name}`
+        : "当前目标：目录小天体暂不支持地平坐标解算";
+    if (!target || !Number.isFinite(site.latitude) || !Number.isFinite(site.longitude)) {
+        q("#observatory-result").innerHTML = "<span>请选择行星或月球，并填写有效的经纬度。</span>";
+        return;
+    }
+    const result = observe(target, new Date(time), site);
+    if (!result) {
+        q("#observatory-result").innerHTML = "<span>当前目标没有可用的地面观测星历。</span>";
+        return;
+    }
+    const visibility = result.observable ? "当前可观测" : result.aboveHorizon ? "目标在地平线上方，但太阳高度不满足天文夜条件" : "目标低于地平线";
+    q("#observatory-result").innerHTML = `<strong class="observatory-visibility ${result.observable ? "visible" : "hidden"}">${visibility}</strong><dl><div><dt>方位角</dt><dd>${result.azimuthDeg.toFixed(2)}°</dd></div><div><dt>高度角</dt><dd>${result.altitudeDeg.toFixed(2)}°</dd></div><div><dt>赤经 / 赤纬</dt><dd>${formatRightAscension(result.rightAscensionHours)} / ${formatDeclination(result.declinationDeg)}</dd></div><div><dt>距离</dt><dd>${(result.rangeKm / 1e6).toFixed(3)} 百万 km</dd></div><div><dt>光行时</dt><dd>${(result.lightTimeSeconds / 60).toFixed(1)} 分钟</dd></div><div><dt>太阳高度</dt><dd>${result.sunAltitudeDeg.toFixed(2)}°</dd></div></dl>`;
+}
+q<HTMLButtonElement>("#open-observatory").addEventListener("click", () => {
+    q<HTMLDialogElement>("#observatory-dialog").showModal();
+    solveObservatory();
+});
+q<HTMLButtonElement>("#close-observatory").addEventListener("click", () => q<HTMLDialogElement>("#observatory-dialog").close());
+q<HTMLSelectElement>("#observatory-site").addEventListener("change", (event) => {
+    const site = OBSERVATORY_SITES.find((item) => item.id === (event.target as HTMLSelectElement).value);
+    if (site) updateObservatorySite(site);
+});
+q<HTMLButtonElement>("#observatory-solve").addEventListener("click", solveObservatory);
 q("#share").addEventListener("click", async () => {
     updateLink();
     try {
