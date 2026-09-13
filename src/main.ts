@@ -777,13 +777,28 @@ dialog.addEventListener("click", (event) => {
 let observatorySite: ObservatorySite = OBSERVATORY_SITES[0];
 let observatoryTracking = false;
 let observatoryStarsKey = "";
+const observationTextureCache = new Map<string, HTMLImageElement | null>();
 function updateObservatorySite(site: ObservatorySite) {
     observatorySite = site;
     q<HTMLInputElement>("#observatory-lat").value = String(site.latitude);
     q<HTMLInputElement>("#observatory-lon").value = String(site.longitude);
     q<HTMLInputElement>("#observatory-height").value = String(site.heightMeters);
 }
-function renderObservatoryImage(result: ReturnType<typeof observe>, site: ObservatorySite) {
+async function observationTexture(target: BodyId): Promise<HTMLImageElement | null> {
+    if (target === "sun") return null;
+    if (observationTextureCache.has(target)) return observationTextureCache.get(target)!;
+    const image = new Image();
+    image.src = `${import.meta.env.BASE_URL}textures/${target}.jpg`;
+    try {
+        await image.decode();
+        observationTextureCache.set(target, image);
+        return image;
+    } catch {
+        observationTextureCache.set(target, null);
+        return null;
+    }
+}
+async function renderObservatoryImage(result: ReturnType<typeof observe>, site: ObservatorySite) {
     if (!result) return;
     const canvas = q<HTMLCanvasElement>("#observatory-image");
     const context = canvas.getContext("2d");
@@ -837,11 +852,47 @@ function renderObservatoryImage(result: ReturnType<typeof observe>, site: Observ
         glow.addColorStop(1, "rgba(255,224,160,0)");
         context.fillStyle = glow;
         context.fillRect(targetX - targetRadius * 2.5, targetY - targetRadius * 2.5, targetRadius * 5, targetRadius * 5);
-        context.globalAlpha = targetIntensity;
-        context.fillStyle = "#fff0c2";
-        context.beginPath();
-        context.arc(targetX, targetY, targetRadius, 0, Math.PI * 2);
-        context.fill();
+        const texture = await observationTexture(result.target);
+        if (texture && targetRadius >= 3) {
+            const diameter = Math.max(8, Math.ceil(targetRadius * 2));
+            const surface = document.createElement("canvas");
+            surface.width = diameter;
+            surface.height = diameter;
+            const surfaceContext = surface.getContext("2d")!;
+            surfaceContext.drawImage(texture, 0, 0, diameter, diameter);
+            const pixels = surfaceContext.getImageData(0, 0, diameter, diameter);
+            const phase = result.phaseAngleDeg === null ? 0 : (result.phaseAngleDeg * Math.PI) / 180;
+            const sinPhase = Math.sin(phase);
+            const cosPhase = Math.cos(phase);
+            for (let py = 0; py < diameter; py++) {
+                for (let px = 0; px < diameter; px++) {
+                    const nx = (px + 0.5 - diameter / 2) / (diameter / 2);
+                    const ny = (py + 0.5 - diameter / 2) / (diameter / 2);
+                    const sphere = nx * nx + ny * ny;
+                    const index = (py * diameter + px) * 4;
+                    if (sphere > 1) {
+                        pixels.data[index + 3] = 0;
+                        continue;
+                    }
+                    const nz = Math.sqrt(1 - sphere);
+                    const lighting = result.target === "moon"
+                        ? Math.max(0, nx * sinPhase + nz * cosPhase)
+                        : 0.72 + 0.28 * nz;
+                    pixels.data[index] *= lighting * targetIntensity;
+                    pixels.data[index + 1] *= lighting * targetIntensity;
+                    pixels.data[index + 2] *= lighting * targetIntensity;
+                }
+            }
+            surfaceContext.putImageData(pixels, 0, 0);
+            context.globalAlpha = 1;
+            context.drawImage(surface, targetX - targetRadius, targetY - targetRadius, targetRadius * 2, targetRadius * 2);
+        } else {
+            context.globalAlpha = targetIntensity;
+            context.fillStyle = "#fff0c2";
+            context.beginPath();
+            context.arc(targetX, targetY, targetRadius, 0, Math.PI * 2);
+            context.fill();
+        }
         context.globalAlpha = 1;
     }
     const noiseCount = Math.round(Math.min(18_000, canvas.width * canvas.height * 0.06 * (readNoise / 3)));
@@ -1001,7 +1052,7 @@ q<HTMLButtonElement>("#observatory-capture").addEventListener("click", () => {
         heightMeters: Number(q<HTMLInputElement>("#observatory-height").value),
     };
     const target = q<HTMLSelectElement>("#observatory-target-select").value as BodyId;
-    renderObservatoryImage(observe(target, new Date(time), site), site);
+    void renderObservatoryImage(observe(target, new Date(time), site), site);
 });
 q("#share").addEventListener("click", async () => {
     updateLink();
