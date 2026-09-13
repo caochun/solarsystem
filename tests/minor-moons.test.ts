@@ -27,6 +27,13 @@ test("all imported minor moons become unique selectable orbit targets", () => {
         ["daphnis"],
     );
 });
+test("JPL physical records are attached when a named minor moon is covered", () => {
+    const amalthea = MINOR_MOON_BY_ID.get("amalthea");
+    const himalia = MINOR_MOON_BY_ID.get("himalia");
+    assert.ok(amalthea?.physical?.meanRadiusKm);
+    assert.ok(himalia?.physical?.densityGcm3);
+    assert.equal(MINOR_MOONS.filter((moon) => moon.physical).length, 19);
+});
 
 test("minor moon orbit points use local parent-relative scale in both modes", () => {
     const moon = MINOR_MOON_BY_ID.get("himalia")!;

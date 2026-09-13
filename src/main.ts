@@ -270,8 +270,23 @@ function updateSelection() {
         q("#body-source").textContent = "OpenSpace SPICE / JPL";
         q("#body-orbit-period").textContent =
             `${body.orbit.period.toFixed(body.orbit.period < 1 ? 3 : 2)} 天`;
+        const physical = body.physical;
+        q("#body-radius").textContent = physical?.meanRadiusKm
+            ? physical.meanRadiusKm.toLocaleString("zh-CN")
+            : "定位点";
+        q("#body-mass").textContent = physical?.massKg
+            ? physical.massKg.toExponential(3).replace("e+", " × 10^")
+            : "未收录";
+        q("#body-density").textContent = physical?.densityGcm3
+            ? `${physical.densityGcm3} ± ${physical.densitySigma ?? "?"} g/cm³`
+            : "未收录";
+        q("#body-radius").nextElementSibling!.toggleAttribute("hidden", !physical?.meanRadiusKm);
+        q("#body-mass").nextElementSibling!.toggleAttribute("hidden", !physical?.massKg);
+        q("#body-radius-title").textContent = physical?.meanRadiusKm
+            ? "平均半径"
+            : "参考半径";
         q("#body-fact").textContent =
-            `数据完整度：${statusLabel(body.dataStatus)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。未收录表面半径、质量与纹理。`;
+            `数据完整度：${statusLabel(body.dataStatus)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
         for (const key of [
             "radius",
             "mass",
@@ -284,7 +299,15 @@ function updateSelection() {
         q("#body-radius").textContent = "定位点";
         q("#body-radius").nextElementSibling!.setAttribute("hidden", "");
         q("#body-mass").nextElementSibling!.setAttribute("hidden", "");
-        q("#physical-source").textContent = "";
+        q("#physical-source").replaceChildren();
+        if (physical) {
+            const link = document.createElement("a");
+            link.href = physical.source.url;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+            link.textContent = "JPL 物理参数来源 ↗";
+            q("#physical-source").append("平均半径、质量与密度；", link);
+        }
         q("#ring-source").textContent = "";
         q("#parent-body").hidden = false;
         q("#parent-body").textContent = `返回${BODIES[body.parentBody].name} ↗`;

@@ -10,6 +10,9 @@ import {
     type ScaleMode,
 } from "./model";
 import type { CatalogObject } from "./catalog-types";
+import supplemental from "./supplemental-data.json";
+
+type PhysicalData = (typeof supplemental.physical)[keyof typeof supplemental.physical];
 
 export interface MinorMoon extends CatalogObject {
     kind: "minor-moon";
@@ -19,6 +22,7 @@ export interface MinorMoon extends CatalogObject {
     sourceEpoch: string;
     orbit: KeplerElements;
     dataStatus: "orbit-point";
+    physical?: PhysicalData;
 }
 export type OrbitTarget = CatalogObject | MinorMoon;
 export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
@@ -33,6 +37,7 @@ export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
     sourceUrl: body.source,
     sourceEpoch: body.sourceEpoch ?? minorMoonData.epoch,
     dataStatus: "orbit-point",
+    physical: supplemental.physical[body.id as keyof typeof supplemental.physical],
 }));
 export const MINOR_MOON_BY_ID = new Map(
     MINOR_MOONS.map((moon) => [moon.id, moon]),

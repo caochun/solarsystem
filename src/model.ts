@@ -412,7 +412,7 @@ export const BODIES: Record<BodyId, Record<string, string>> = {
     ),
 } as unknown as Record<BodyId, Record<string, string>>;
 for (const [id, physical] of Object.entries(PHYSICAL)) {
-    if (physical.massKg)
+    if (physical.massKg && BODIES[id as BodyId])
         BODIES[id as BodyId].mass =
             `${physical.massUpperLimit ? "< " : "≈ "}${physical.massKg.toExponential(3)}`;
 }

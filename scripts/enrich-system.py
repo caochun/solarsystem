@@ -25,13 +25,21 @@ def numeric(value):
 def main():
     satellites, origin = source('satellite-physical.html',SATELLITES)
     known = json.loads((WEB/'src/extended-data.json').read_text())['bodies']
+    # The SPICE import also exposes named inner/irregular satellites that are
+    # not represented as extended visual assets.  Keep their JPL physical
+    # records when the names match exactly; unknown designations stay absent.
+    minor = json.loads((WEB/'src/minor-moons.json').read_text())['bodies']
+    name_to_id = {key.lower(): key for key in known}
+    name_to_id.update({row['name'].strip().lower(): row['id'] for row in minor})
+    name_to_id['moon'] = 'moon'
     known['moon'] = {}
     result = {"physical":{},"rings":{},"resources":[origin],"massConversion":{"G":G,"relativeSigmaG":2.2e-5,"source":"https://physics.nist.gov/cgi-bin/cuu/Value?bg"}}
     refs = [li.get_text(' ',strip=True) for li in satellites.select('ol.sat-ephem-ref li')]
     for row in satellites.select('tr'):
         cells=[' '.join(t.strip() for t in td.find_all(string=True,recursive=False) if t.strip()) or td.get_text(' ',strip=True) for td in row.select('td')]
-        if len(cells)!=12 or cells[1].lower() not in known: continue
-        id=cells[1].lower()
+        if len(cells)!=12: continue
+        id=name_to_id.get(cells[1].strip().lower())
+        if not id: continue
         gm,mean,density=map(numeric,[cells[3],cells[6],cells[9]])
         ref=int(cells[8]) if cells[8].isdigit() else None
         result['physical'][id]={"source":origin,"gm":gm,"gmSigma":numeric(cells[4]),"gmReference":cells[5],
