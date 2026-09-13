@@ -35,6 +35,7 @@ import {
     MINOR_MOONS,
     MINOR_MOON_BY_ID,
     isMinorMoon,
+    orbitAccuracy,
     type OrbitTarget,
 } from "./minor-moons";
 import minorMoonData from "./minor-moons.json";
@@ -69,6 +70,15 @@ const DATA_STATUS_LABEL: Record<DataCompleteness, string> = {
     "name-only": "仅名称",
 };
 const statusLabel = (status: DataCompleteness) => DATA_STATUS_LABEL[status];
+const accuracyLabel = (target: OrbitTarget, at: number) => {
+    if (!isMinorMoon(target)) return "解析星历";
+    const accuracy = orbitAccuracy(target, at);
+    return accuracy === "near-epoch"
+        ? "接近 SPICE 历元"
+        : accuracy === "extended"
+          ? "开普勒扩展"
+          : "远离历元 · 仅轨道形态";
+};
 const params = new URLSearchParams(location.search);
 let selected: BodyId = ids.includes(params.get("body") as BodyId)
     ? (params.get("body") as BodyId)
@@ -133,7 +143,7 @@ q("#app").innerHTML = `
       <p id="body-description" class="body-description"></p><p id="body-source" class="body-source"></p>
       <dl class="facts"><div><dt id="body-radius-title">参考半径</dt><dd><span id="body-radius"></span><small> km</small></dd></div><div><dt>质量</dt><dd><span id="body-mass"></span><small> kg</small></dd></div><div><dt>自转周期</dt><dd id="body-rotation"></dd></div><div><dt>公转周期</dt><dd id="body-orbit-period"></dd></div><div><dt>温度</dt><dd id="body-temperature"></dd></div><div><dt>平均密度</dt><dd id="body-density"></dd></div></dl><p id="physical-source" class="body-source"></p><p id="ring-source" class="body-source"></p>
       <div class="observation"><div class="eyebrow">此刻的相对位置</div><div class="live-value"><span id="distance-title">距太阳</span><strong id="distance-value"></strong></div><div class="live-value secondary"><span id="secondary-title"></span><span id="secondary-value"></span></div></div>
-      <p class="fact-note" id="body-fact"></p>
+      <p class="fact-note" id="body-fact"></p><p class="body-source" id="orbit-accuracy"></p>
       <div class="layers"><div class="catalog-heading"><span>观察选项</span><span class="mono">LAYERS</span></div><label><span>轨道路径</span><input type="checkbox" id="orbits" checked/><span class="switch"></span></label><label><span>天体标签</span><input type="checkbox" id="labels" checked/><span class="switch"></span></label><label><span>地球自转轴</span><input type="checkbox" id="axis"/><span class="switch"></span></label><label><span>天然卫星</span><input type="checkbox" id="moons" checked/><span class="switch"></span></label><label><span>行星环</span><input type="checkbox" id="rings" checked/><span class="switch"></span></label><button id="open-catalog" class="catalog-link">小天体数据目录 ↗</button></div>
     </aside>
     <div class="scene-footer"><div class="interaction-hint"><span>左键旋转 · 右键平移</span><i>·</i><span>滚轮缩放</span><i>·</i><span>点击天体探索</span></div><div class="scale-control"><span>尺度</span><div class="segmented" role="group" aria-label="场景比例"><button data-scale="illustrated" aria-pressed="true">展示比例</button><button data-scale="physical" aria-pressed="false">真实比例</button></div><button id="scale-info" class="icon-button" aria-label="了解比例说明">${icon("info")}</button></div></div>
@@ -213,8 +223,10 @@ function syncTime(force = false) {
         q("#secondary-title").textContent = "阳光抵达这里";
         q("#secondary-value").textContent =
             `${((distanceAU * 499.0048) / 60).toFixed(1)} 分钟`;
+        q("#orbit-accuracy").textContent = `轨道精度提示：${accuracyLabel(trackedObject, time)}。${isMinorMoon(trackedObject) && orbitAccuracy(trackedObject, time) === "far" ? "当前日期远离 SPICE 历元，位置仅用于形态观察。" : ""}`;
         return;
     }
+    q("#orbit-accuracy").textContent = "";
     const distanceKm = isSatellite(selected)
         ? parentDistanceKm(data, selected)
         : selected === "sun"
@@ -286,7 +298,7 @@ function updateSelection() {
             ? "平均半径"
             : "参考半径";
         q("#body-fact").textContent =
-            `数据完整度：${statusLabel(body.dataStatus)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
+            `数据完整度：${statusLabel(body.dataStatus)} · ${accuracyLabel(body, time)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
         for (const key of [
             "radius",
             "mass",

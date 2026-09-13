@@ -6,6 +6,7 @@ import {
     MINOR_MOON_BY_ID,
     targetOffset,
     targetOrbitPoints,
+    orbitAccuracy,
 } from "../src/minor-moons";
 
 test("all imported minor moons become unique selectable orbit targets", () => {
@@ -33,6 +34,13 @@ test("JPL physical records are attached when a named minor moon is covered", () 
     assert.ok(amalthea?.physical?.meanRadiusKm);
     assert.ok(himalia?.physical?.densityGcm3);
     assert.equal(MINOR_MOONS.filter((moon) => moon.physical).length, 19);
+});
+test("Minor moon accuracy warning follows the distance from the SPICE epoch", () => {
+    const moon = MINOR_MOON_BY_ID.get("himalia")!;
+    const epoch = moon.orbit.epoch;
+    assert.equal(orbitAccuracy(moon, epoch), "near-epoch");
+    assert.equal(orbitAccuracy(moon, epoch + 180 * 86_400_000), "extended");
+    assert.equal(orbitAccuracy(moon, epoch + 3 * 365 * 86_400_000), "far");
 });
 
 test("minor moon orbit points use local parent-relative scale in both modes", () => {

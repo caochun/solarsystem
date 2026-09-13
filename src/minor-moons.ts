@@ -24,6 +24,7 @@ export interface MinorMoon extends CatalogObject {
     dataStatus: "orbit-point";
     physical?: PhysicalData;
 }
+export type OrbitAccuracy = "near-epoch" | "extended" | "far";
 export type OrbitTarget = CatalogObject | MinorMoon;
 export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
     id: body.id,
@@ -46,6 +47,14 @@ export const isMinorMoon = (
     target: OrbitTarget | null | undefined,
 ): target is MinorMoon =>
     Boolean(target && "kind" in target && target.kind === "minor-moon");
+
+/** Classify the distance from the SPICE state epoch used by the local model. */
+export function orbitAccuracy(target: OrbitTarget, time: number): OrbitAccuracy {
+    const days = Math.abs(time - target.orbit!.epoch) / 86_400_000;
+    if (days <= 90) return "near-epoch";
+    if (days <= 730) return "extended";
+    return "far";
+}
 
 export function targetOffset(
     target: OrbitTarget,
