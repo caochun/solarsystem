@@ -1908,6 +1908,39 @@ dialog > p {
 .observatory-dialog h2 { margin: 6px 0; font-size: 21px; }
 .observatory-dialog > p { margin: 7px 0; line-height: 1.5; }
 .observatory-dialog .primary-button { margin-top: 12px; }
+.observatory-time {
+    margin: 10px 0 8px;
+    padding: 8px 10px 6px;
+    border: 1px solid #607f7338;
+    border-radius: 6px;
+    background: #0b171d99;
+}
+.observatory-time label {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    color: #a8bdb2;
+    font-size: 11px;
+}
+.observatory-time output { color: #dcefe3; text-align: right; }
+.observatory-time input { width: 100%; margin: 7px 0 2px; accent-color: var(--mint); }
+.observatory-time-scale { display: flex; justify-content: space-between; color: #71897e; font: 10px "SFMono-Regular", Consolas, monospace; }
+.observatory-section {
+    margin: 6px 0;
+    border-top: 1px solid var(--line);
+}
+.observatory-section summary,
+.observatory-more summary {
+    cursor: pointer;
+    padding: 7px 0;
+    color: #a8cbbb;
+    font-size: 11px;
+    list-style-position: inside;
+}
+.observatory-section[open] summary,
+.observatory-more[open] summary { color: var(--mint); }
+.observatory-more { margin-top: 6px; border-top: 1px solid var(--line); }
+.observatory-more dl { margin-top: 4px; }
 .observatory-form {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));

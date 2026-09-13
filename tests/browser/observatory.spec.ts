@@ -7,6 +7,8 @@ test("ground observatory reports topocentric coordinates for the selected target
     await page.locator("#open-observatory").click();
     await expect(page.locator("#observatory-dialog")).toBeVisible();
     await expect(page.locator("#observatory-target")).toContainText("月球");
+    await expect(page.locator("#observatory-time-slider")).toBeVisible();
+    await expect(page.locator("#observatory-time-label")).toContainText("UTC");
     await page.locator("#observatory-solve").click();
     await expect(page.locator("#observatory-result")).toContainText("方位角");
     await expect(page.locator("#observatory-result")).toContainText("高度角");
