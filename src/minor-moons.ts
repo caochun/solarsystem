@@ -16,6 +16,7 @@ export interface MinorMoon extends CatalogObject {
     parentBody: Extract<BodyId, "jupiter" | "saturn" | "uranus" | "neptune">;
     english: string;
     sourceUrl: string;
+    sourceEpoch: string;
     orbit: KeplerElements;
 }
 export type OrbitTarget = CatalogObject | MinorMoon;
@@ -29,6 +30,7 @@ export const MINOR_MOONS: MinorMoon[] = minorMoonData.bodies.map((body) => ({
     kind: "minor-moon",
     parentBody: body.parent as MinorMoon["parentBody"],
     sourceUrl: body.source,
+    sourceEpoch: body.sourceEpoch ?? minorMoonData.epoch,
 }));
 export const MINOR_MOON_BY_ID = new Map(
     MINOR_MOONS.map((moon) => [moon.id, moon]),

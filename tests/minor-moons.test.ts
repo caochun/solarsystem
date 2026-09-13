@@ -1,5 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import report from "../src/minor-moons-report.json";
 import {
     MINOR_MOONS,
     MINOR_MOON_BY_ID,
@@ -14,8 +15,16 @@ test("all imported minor moons become unique selectable orbit targets", () => {
     assert.equal(MINOR_MOON_BY_ID.get("phoebe")?.parentBody, "saturn");
     assert.ok(
         MINOR_MOONS.every(
-            (moon) => moon.kind === "minor-moon" && moon.orbit.period > 0,
+            (moon) =>
+                moon.kind === "minor-moon" &&
+                moon.orbit.period > 0 &&
+                moon.sourceEpoch.length > 10 &&
+                moon.sourceUrl.includes(".bsp"),
         ),
+    );
+    assert.deepEqual(
+        report.unsupportedByParent.saturn.map((moon) => moon.id),
+        ["daphnis"],
     );
 });
 
