@@ -1942,6 +1942,15 @@ dialog > p {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     margin: 0;
 }
+.observatory-camera {
+    margin: 10px 0 4px;
+    padding: 9px;
+    border: 1px solid #607f7338;
+    border-radius: 6px;
+    background: #0b171d99;
+}
+.observatory-camera .eyebrow { margin-bottom: 8px; }
+.observatory-camera .observatory-form { grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; }
 .observatory-target,
 .observatory-result {
     margin-top: 10px;
@@ -2123,10 +2132,33 @@ dialog > p {
     color: #789187;
     font-size: 11px;
 }
+.sky-capture {
+    margin-top: 10px;
+    border: 1px solid #779d8a88;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: #c6e8d4;
+    background: #11231b;
+    font-size: 11px;
+    cursor: pointer;
+}
+.observatory-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border: 1px solid #607f7355;
+    border-radius: 5px;
+    background: #02060a;
+    image-rendering: auto;
+}
+.observatory-image[hidden],
+.sky-caption[hidden] { display: none; }
 @media (max-width: 520px) {
     .observatory-form,
     .observatory-result dl { grid-template-columns: 1fr 1fr; }
     .observatory-dialog { padding: 16px; }
+    .observatory-camera .observatory-form { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 760px) {
     .catalog-details #body-name {
