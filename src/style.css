@@ -1966,6 +1966,13 @@ dialog > p {
 .observatory-result dd { margin: 0; color: #eef8f1; text-align: right; }
 .observatory-visibility.visible { color: #9fe0b6; }
 .observatory-visibility.hidden { color: #e9b985; }
+.observatory-quality {
+    margin: 4px 0 0;
+    font-size: 11px;
+}
+.observatory-quality.good { color: #9fe0b6; }
+.observatory-quality.limited { color: #e7c487; }
+.observatory-quality.blocked { color: #e9b985; }
 .observatory-sky {
     margin-top: 12px;
     border-top: 1px solid var(--line);

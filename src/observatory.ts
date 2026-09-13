@@ -35,6 +35,13 @@ export interface ObservationResult {
     nextSetTime: Date | null;
     maxAltitudeDeg: number;
     maxAltitudeTime: Date;
+    visualMagnitude: number;
+    angularDiameterArcsec: number;
+    sunSeparationDeg: number | null;
+    moonSeparationDeg: number | null;
+    airmass: number | null;
+    quality: "good" | "limited" | "blocked";
+    qualityNotes: string[];
 }
 
 export const OBSERVATORY_SITES: ObservatorySite[] = [
@@ -45,6 +52,26 @@ export const OBSERVATORY_SITES: ObservatorySite[] = [
 ];
 
 const bodyFor = (id: BodyId): Body | null => ASTRO_BODY[id] ?? null;
+const MEAN_RADIUS_KM: Partial<Record<BodyId, number>> = {
+    sun: 696340,
+    mercury: 2439.7,
+    venus: 6051.8,
+    moon: 1737.4,
+    mars: 3389.5,
+    jupiter: 69911,
+    saturn: 58232,
+    uranus: 25362,
+    neptune: 24622,
+    pluto: 1188.3,
+};
+const angularSeparationDeg = (a: { ra: number; dec: number }, b: { ra: number; dec: number }) => {
+    const ra1 = (a.ra * 15 * Math.PI) / 180;
+    const ra2 = (b.ra * 15 * Math.PI) / 180;
+    const dec1 = (a.dec * Math.PI) / 180;
+    const dec2 = (b.dec * Math.PI) / 180;
+    const cosine = Math.sin(dec1) * Math.sin(dec2) + Math.cos(dec1) * Math.cos(dec2) * Math.cos(ra1 - ra2);
+    return (Math.acos(Math.max(-1, Math.min(1, cosine))) * 180) / Math.PI;
+};
 
 export function observe(
     target: BodyId,
@@ -74,6 +101,26 @@ export function observe(
     phaseAngleDeg = illumination.phase_angle;
     const aboveHorizon = horizontal.altitude > 0;
     const astronomicalNight = sunHorizontal.altitude < -18;
+    const moon = target === "moon" ? null : Equator(Body.Moon, date, observer, true, true);
+    const sunSeparationDeg = target === "sun" ? null : angularSeparationDeg(equator, sun);
+    const moonSeparationDeg = target === "moon" || !moon ? null : angularSeparationDeg(equator, moon);
+    const radiusKm = MEAN_RADIUS_KM[target] ?? 1;
+    const angularDiameterArcsec = (2 * Math.atan(radiusKm / rangeKm) * 206265);
+    const airmass = horizontal.altitude > 0
+        ? 1 / (Math.sin((horizontal.altitude * Math.PI) / 180) + 0.50572 * Math.pow(horizontal.altitude + 6.079, -1.6364))
+        : null;
+    const qualityNotes: string[] = [];
+    if (!aboveHorizon) qualityNotes.push("目标低于地平线");
+    if (target !== "sun" && sunHorizontal.altitude >= -18) qualityNotes.push("太阳高度不满足天文夜条件");
+    if (aboveHorizon && horizontal.altitude < 15) qualityNotes.push("高度角低于 15°，大气扰动较大");
+    if (sunSeparationDeg !== null && sunSeparationDeg < 30) qualityNotes.push("目标距离太阳小于 30°");
+    if (moonSeparationDeg !== null && moonSeparationDeg < 10) qualityNotes.push("目标距离月球小于 10°");
+    if (airmass !== null && airmass > 2) qualityNotes.push("空气质量路径较长");
+    const quality = !aboveHorizon || (target !== "sun" && !astronomicalNight)
+        ? "blocked"
+        : qualityNotes.length > 0
+          ? "limited"
+          : "good";
     const nextRise = SearchRiseSet(body, observer, +1, date, 2);
     const nextSet = SearchRiseSet(body, observer, -1, date, 2);
     let maxAltitudeDeg = -90;
@@ -106,11 +153,18 @@ export function observe(
         sunAltitudeDeg: sunHorizontal.altitude,
         aboveHorizon,
         astronomicalNight,
-        observable: aboveHorizon && astronomicalNight,
+        observable: aboveHorizon && (target === "sun" || astronomicalNight),
         nextRiseTime: nextRise ? nextRise.date : null,
         nextSetTime: nextSet ? nextSet.date : null,
         maxAltitudeDeg,
         maxAltitudeTime,
+        visualMagnitude: illumination.mag,
+        angularDiameterArcsec,
+        sunSeparationDeg,
+        moonSeparationDeg,
+        airmass,
+        quality,
+        qualityNotes,
     };
 }
 
