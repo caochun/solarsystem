@@ -22,6 +22,7 @@ import {
     parseUTC,
     phaseName,
     yearBounds,
+    dataStatus,
     type BodyId,
     type ScaleMode,
 } from "./model";
@@ -29,7 +30,7 @@ import { SolarScene } from "./scene";
 import { SolarTour } from "./tour";
 import { initCatalogs, catalogRequest } from "./catalogs";
 import { keplerPosition } from "./kepler";
-import type { CatalogObject } from "./catalog-types";
+import type { CatalogObject, DataCompleteness } from "./catalog-types";
 import {
     MINOR_MOONS,
     MINOR_MOON_BY_ID,
@@ -61,6 +62,13 @@ const q = <T extends HTMLElement = HTMLElement>(selector: string) =>
     document.querySelector<T>(selector)!;
 const ids = BODY_IDS;
 const minorMoons = minorMoonData.bodies;
+const DATA_STATUS_LABEL: Record<DataCompleteness, string> = {
+    "full-model": "模型/贴图",
+    "orbit-point": "轨道点",
+    "catalog-only": "目录记录",
+    "name-only": "仅名称",
+};
+const statusLabel = (status: DataCompleteness) => DATA_STATUS_LABEL[status];
 const params = new URLSearchParams(location.search);
 let selected: BodyId = ids.includes(params.get("body") as BodyId)
     ? (params.get("body") as BodyId)
@@ -112,9 +120,9 @@ q("#app").innerHTML = `
       <h1>从这里，<br>望向宇宙。</h1>
       <p class="intro">从岩石世界，到遥远的冰巨星。</p>
       <div class="catalog-heading"><span>探索天体</span><span id="body-count" class="mono">${ids.length + minorMoons.length}</span></div>
-      <p class="catalog-coverage">46 个模型/资料天体 · ${MINOR_MOONS.length} 个可跟踪小卫星点 · 另有 1 个资产卫星暂无可用轨道段</p>
-      <div class="catalog-filters"><select id="body-filter" aria-label="天体分类"><option value="all">全部天体</option><option value="major">太阳与行星</option><option value="satellite">天然卫星</option><option value="dwarf">五颗矮行星</option><option value="minor">其他小天体</option>${["earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"].map((id) => `<option value="${id}">${BODIES[id as BodyId].name}系统</option>`).join("")}</select><input id="body-search" type="search" placeholder="搜索天体" aria-label="搜索天体名称"/></div>
-      <div class="body-list" tabindex="0" aria-label="天体列表，可滚动">${ids.map((id) => `<button class="body-card ${id === selected ? "active" : ""}" data-body="${id}" aria-pressed="${id === selected}"><span class="planet-thumb ${id}" style="background-color:${BODIES[id].color};${textureOf(id) ? `background-image:url(${import.meta.env.BASE_URL}textures/${textureOf(id)})` : ""}"></span><span class="body-card-text">${BODIES[id].name}<small>${BODIES[id].english}</small></span><span class="body-card-arrow">↗</span></button>`).join("")}${minorMoons.map((body) => `<button class="body-card minor-moon-card" data-minor-moon="${body.id}" aria-pressed="false"><span class="planet-thumb minor-moon" style="background-color:#829b93"></span><span class="body-card-text">${body.name}<small>${body.parent.toUpperCase()} · 小卫星</small></span><span class="body-card-arrow">↗</span></button>`).join("")}</div>
+      <p class="catalog-coverage" id="coverage-summary"></p>
+      <div class="catalog-filters"><select id="body-filter" aria-label="天体分类"><option value="all">全部天体</option><option value="major">太阳与行星</option><option value="satellite">天然卫星</option><option value="dwarf">五颗矮行星</option><option value="minor">其他小天体</option><option value="full-model">有模型或贴图</option><option value="orbit-point">只有轨道定位</option><option value="catalog-only">只有目录记录</option><option value="name-only">只有名称或资产</option>${["earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"].map((id) => `<option value="${id}">${BODIES[id as BodyId].name}系统</option>`).join("")}</select><input id="body-search" type="search" placeholder="搜索天体" aria-label="搜索天体名称"/></div>
+      <div class="body-list" tabindex="0" aria-label="天体列表，可滚动">${ids.map((id) => { const status = dataStatus(id); return `<button class="body-card ${id === selected ? "active" : ""}" data-body="${id}" data-status="${status}" aria-pressed="${id === selected}"><span class="planet-thumb ${id}" style="background-color:${BODIES[id].color};${textureOf(id) ? `background-image:url(${import.meta.env.BASE_URL}textures/${textureOf(id)})` : ""}"></span><span class="body-card-text">${BODIES[id].name}<small>${BODIES[id].english} · ${statusLabel(status)}</small></span><span class="body-card-arrow">↗</span></button>`; }).join("")}${minorMoons.map((body) => `<button class="body-card minor-moon-card" data-minor-moon="${body.id}" data-status="orbit-point" aria-pressed="false"><span class="planet-thumb minor-moon" style="background-color:#829b93"></span><span class="body-card-text">${body.name}<small>${body.parent.toUpperCase()} · ${statusLabel("orbit-point")}</small></span><span class="body-card-arrow">↗</span></button>`).join("")}</div>
       <button id="overview" class="overview-button">${icon("grid")}<span>太阳系总览</span>${icon("arrow")}</button>
     </aside>
     <div class="view-heading"><span class="eyebrow" id="view-eyebrow">FOCUS / EARTH</span><span class="view-title" id="view-title">地球近景</span><span class="view-rule"></span><div class="family-actions"><button id="parent-body" hidden></button><button id="family-view" hidden>卫星系统 ↗</button></div></div>
@@ -263,7 +271,7 @@ function updateSelection() {
         q("#body-orbit-period").textContent =
             `${body.orbit.period.toFixed(body.orbit.period < 1 ? 3 : 2)} 天`;
         q("#body-fact").textContent =
-            `母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。未收录表面半径、质量与纹理。`;
+            `数据完整度：${statusLabel(body.dataStatus)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。未收录表面半径、质量与纹理。`;
         for (const key of [
             "radius",
             "mass",
@@ -327,7 +335,7 @@ function updateSelection() {
         q("#body-orbit-period").textContent =
             `${body.orbit!.period.toFixed(2)} 天`;
         q("#body-fact").textContent =
-            `历元 ${new Date(body.orbit!.epoch).toISOString().slice(0, 10)} · 开普勒近似外推。亮点仅表示位置，不代表实测大小；未加载地貌或彗尾。`;
+            `数据完整度：${statusLabel(body.dataStatus ?? "orbit-point")} · 历元 ${new Date(body.orbit!.epoch).toISOString().slice(0, 10)} · 开普勒近似外推。亮点仅表示位置，不代表实测大小；未加载地貌或彗尾。`;
         q("#physical-source").textContent = "";
         q("#ring-source").textContent = "";
         q("#parent-body").hidden = q("#family-view").hidden = true;
@@ -526,6 +534,8 @@ function filterBodies() {
                   ? isSatellite(id)
                   : group === "dwarf" || group === "minor"
                     ? extra(id)?.category === group
+                    : group === "full-model" || group === "orbit-point" || group === "name-only"
+                      ? dataStatus(id) === group
                     : id === group || parentOf(id) === group);
         const matchesText = `${BODIES[id].name} ${id}`
             .toLowerCase()
@@ -540,15 +550,18 @@ function filterBodies() {
             group === "all" ||
             group === "satellite" ||
             group === "minor" ||
+            group === "orbit-point" ||
             group === moon.parentBody;
+        const matchesStatus =
+            group === "orbit-point" || group === "all" || group === "satellite" || group === "minor" || group === moon.parentBody;
         const matchesText =
             `${moon.name} ${moon.english} ${moon.id} ${BODIES[moon.parentBody].name}`
                 .toLowerCase()
                 .includes(keyword);
         q<HTMLButtonElement>(`[data-minor-moon="${moon.id}"]`).hidden = !(
-            matchesGroup && matchesText
+            matchesGroup && matchesStatus && matchesText
         );
-        if (matchesGroup && matchesText) count++;
+        if (matchesGroup && matchesStatus && matchesText) count++;
     }
     q("#body-count").textContent =
         `${count} / ${ids.length + MINOR_MOONS.length}`;
@@ -610,6 +623,15 @@ void initCatalogs(
     focusCatalog,
 );
 filterBodies();
+{
+    const counts = ids.reduce<Record<DataCompleteness, number>>(
+        (acc, id) => { acc[dataStatus(id)]++; return acc; },
+        { "full-model": 0, "orbit-point": 0, "catalog-only": 0, "name-only": 0 },
+    );
+    counts["orbit-point"] += MINOR_MOONS.length;
+    q("#coverage-summary").textContent =
+        `${counts["full-model"]} 个模型/贴图 · ${counts["orbit-point"]} 个轨道定位点 · ${counts["name-only"] + counts["catalog-only"]} 个仅资料记录`;
+}
 updateSelection();
 setMode(mode);
 

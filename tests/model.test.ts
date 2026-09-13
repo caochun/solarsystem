@@ -25,6 +25,7 @@ import {
     positions,
     radius,
     yearBounds,
+    dataStatus,
 } from "../src/model.ts";
 
 test("Earth–Sun and Earth–Moon distances remain in physical ranges across the supported era", () => {
@@ -128,6 +129,12 @@ test("Imported oblate dimensions and Saturn ring extents are physically plausibl
     assert.equal(SATURN_RINGS.innerKm, 74500);
     assert.equal(SATURN_RINGS.outerKm, 140445);
     assert.ok(SATURN_RINGS.innerKm > RADII.saturn);
+});
+test("Data completeness levels reflect local assets and orbital coverage", () => {
+    assert.equal(dataStatus("earth"), "full-model");
+    assert.equal(dataStatus("phobos"), "full-model");
+    assert.equal(dataStatus("gonggong"), "orbit-point");
+    assert.equal(dataStatus("pluto"), "full-model");
 });
 test("Illustrated scale preserves sky direction but deliberately compresses distances", () => {
     const data = ephemeris(new Date("2026-09-10T12:00:00Z"));

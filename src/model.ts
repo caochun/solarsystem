@@ -13,6 +13,7 @@ import openSpace from "./openspace-data.json";
 import extended from "./extended-data.json";
 import supplemental from "./supplemental-data.json";
 import { keplerPosition, type KeplerElements } from "./kepler";
+import type { DataCompleteness } from "./catalog-types";
 
 export const PLANET_IDS = [
     "mercury",
@@ -43,6 +44,20 @@ export interface ExtendedBody {
     rotationDays?: number | null;
     radiusQuality?: string;
     stateKm?: number[];
+}
+/**
+ * Local coverage level used by the explorer UI.  A model or texture makes an
+ * object visually inspectable; an object with only orbital elements is shown
+ * as a location point.  Objects without an orbit remain selectable as named
+ * assets and are labelled accordingly.
+ */
+export function dataStatus(id: BodyId): DataCompleteness {
+    const body = extra(id);
+    if (!body) return "full-model";
+    const hasVisual = Boolean(body.model || body.texture || body.category === "dwarf");
+    if (hasVisual) return "full-model";
+    if (body.orbit) return "orbit-point";
+    return "name-only";
 }
 export const PHYSICAL = supplemental.physical;
 export const EXTRA_RINGS = supplemental.rings;

@@ -1,6 +1,6 @@
 import type { SolarScene } from "./scene";
 import type { KeplerElements } from "./kepler";
-import type { CatalogObject } from "./catalog-types";
+import type { CatalogObject, DataCompleteness } from "./catalog-types";
 
 type Row = KeplerElements & { name: string };
 interface Category {
@@ -21,6 +21,8 @@ interface SearchResult {
 }
 const q = <T extends HTMLElement>(id: string) =>
     document.getElementById(id) as T;
+const resultStatus = (row: CatalogObject): DataCompleteness =>
+    row.dataStatus ?? (row.orbit ? "orbit-point" : "catalog-only");
 export async function catalogRequest<T>(
     path: string,
     signal?: AbortSignal,
@@ -95,6 +97,7 @@ export async function initCatalogs(
                     orbit,
                     sourceCategory: select.value,
                     categories: [select.value],
+                    dataStatus: "orbit-point",
                 }));
             q("catalog-search-status").textContent =
                 "下方为当前类别的部分抽样记录。输入名称、编号或临时编号，查询完整目录。";
@@ -118,7 +121,10 @@ export async function initCatalogs(
                 request.signal,
             );
             if (request.signal.aborted) return;
-            results = result.rows;
+            results = result.rows.map((row) => ({
+                ...row,
+                dataStatus: resultStatus(row),
+            }));
             total = result.total;
             limit = result.limit;
             q("catalog-search-status").textContent =
