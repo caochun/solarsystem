@@ -31,8 +31,39 @@ const types = {
 };
 
 const catalogs = createCatalogApi();
+const HORIZONS_TARGETS = new Set(['10', '199', '299', '301', '399', '499', '599', '699', '799', '899']);
+async function horizons(request, response, url) {
+  if (request.method !== 'GET' || url.pathname !== '/api/horizons') return false;
+  const target = url.searchParams.get('target') || '';
+  const start = url.searchParams.get('start') || '';
+  const stop = url.searchParams.get('stop') || '';
+  const lat = Number(url.searchParams.get('lat'));
+  const lon = Number(url.searchParams.get('lon'));
+  const elevation = Number(url.searchParams.get('elevation') || 0);
+  const startDate = new Date(start), stopDate = new Date(stop);
+  const valid = HORIZONS_TARGETS.has(target) && Number.isFinite(lat) && Number.isFinite(lon) &&
+    lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180 && Number.isFinite(elevation) &&
+    elevation >= -1 && elevation <= 10000 && Number.isFinite(startDate.getTime()) &&
+    Number.isFinite(stopDate.getTime()) && stopDate > startDate && stopDate - startDate <= 86_400_000;
+  const send = (status, body) => { response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); response.end(JSON.stringify(body)); };
+  if (!valid) { send(400, { error: 'Invalid Horizons request' }); return true; }
+  const params = new URLSearchParams({ format: 'json', COMMAND: `'${target}'`, OBJ_DATA: 'NO', MAKE_EPHEM: 'YES', EPHEM_TYPE: 'OBSERVER', CENTER: "'coord@399'", COORD_TYPE: 'GEODETIC', SITE_COORD: `'${lon},${lat},${elevation / 1000}'`, START_TIME: `'${startDate.toISOString().slice(0, 16).replace('T', ' ')}'`, STOP_TIME: `'${stopDate.toISOString().slice(0, 16).replace('T', ' ')}'`, STEP_SIZE: "'1 m'", QUANTITIES: "'4,20'" });
+  try {
+    const upstream = await fetch(`https://ssd.jpl.nasa.gov/api/horizons.api?${params}`, { signal: AbortSignal.timeout(15_000), headers: { Accept: 'application/json' } });
+    if (!upstream.ok) { send(502, { error: `Horizons returned HTTP ${upstream.status}` }); return true; }
+    const payload = await upstream.json();
+    if (payload.error) { send(502, { error: payload.error }); return true; }
+    const result = typeof payload.result === 'string' ? payload.result : '';
+    const soe = result.indexOf('$$SOE'), eoe = result.indexOf('$$EOE');
+    const ephemeris = soe >= 0 && eoe > soe ? result.slice(soe + 5, eoe).trim().split(/\r?\n/).slice(0, 32) : [];
+    send(200, { source: 'JPL Horizons', target, request: { start: startDate.toISOString(), stop: stopDate.toISOString(), latitude: lat, longitude: lon, elevationMeters: elevation }, ephemeris });
+  } catch (error) { send(504, { error: `Horizons 查询失败：${error.message}` }); }
+  return true;
+}
 const server = createServer(async (request, response) => {
   response.setHeader('X-Content-Type-Options', 'nosniff');
+  const requestUrl = new URL(request.url || '/', 'http://localhost');
+  if (await horizons(request, response, requestUrl)) return;
   if (await catalogs.handle(request, response)) return;
   const fail = (status, message) => {
     response.writeHead(status, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' });
