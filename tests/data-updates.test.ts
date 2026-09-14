@@ -5,6 +5,7 @@ import { createHash } from "node:crypto";
 import references from "../src/surface-references.json";
 import update from "../src/small-body-updates.json";
 import coverage from "../src/data-coverage.json";
+import quality from "../src/data-quality-report.json";
 import { extra, sourceDescription, dataStatus, thumbnailOf, type BodyId } from "../src/model";
 import { MINOR_MOONS } from "../src/minor-moons";
 
@@ -53,4 +54,13 @@ test("every model-backed body has a real catalogue thumbnail", () => {
         const bytes = readFileSync(new URL(`../public/${asset}`, import.meta.url));
         assert.ok(bytes.length > 1000, id);
     }
+});
+
+test("generated data quality report has no illegal resources or orbit records", () => {
+    assert.equal(quality.status, "warning");
+    assert.equal(quality.summary.errors, 0);
+    assert.ok(quality.summary.resources >= 30);
+    assert.ok(quality.summary.bodies >= 442);
+    assert.ok(quality.resources.every((resource: { status: string }) => resource.status === "ok" || resource.status === "metadata-only"));
+    assert.deepEqual(quality.missingGlobalMapAndIndependentMesh, ["ariel", "gonggong", "hydra", "hyperion", "kerberos", "miranda", "nereid", "nix", "oberon", "orcus", "quaoar", "sedna", "styx", "titania", "umbriel"]);
 });

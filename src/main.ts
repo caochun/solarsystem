@@ -30,6 +30,7 @@ import {
 import { RotationAxis } from "astronomy-engine";
 import lunarSurfaceData from "./lunar-surface-data.json";
 import surfaceReferences from "./surface-references.json";
+import dataQuality from "./data-quality-report.json";
 import { lunarPixels, lunarView, type SurfaceRaster } from "./lunar-surface";
 import { SolarScene } from "./scene";
 import { SolarTour } from "./tour";
@@ -85,6 +86,14 @@ const DATA_STATUS_LABEL: Record<DataCompleteness, string> = {
 };
 const OBSERVATORY_TARGET_IDS: BodyId[] = ["sun", ...PLANET_IDS, "moon"];
 const statusLabel = (status: DataCompleteness) => DATA_STATUS_LABEL[status];
+const qualityOf = (id: string) => (dataQuality.bodies as Record<string, { issues?: string[]; visual?: string; hasPhysical?: boolean; hasReferenceImage?: boolean }>)[id];
+const qualityLabel = (id: string) => {
+    const quality = qualityOf(id);
+    if (!quality) return "";
+    const labels = quality.visual === "texture" ? "本地贴图" : quality.visual === "model" ? "本地模型" : quality.visual === "procedural" ? "程序化外观" : "轨道定位点";
+    const details = [labels, quality.hasPhysical ? "有物理参数" : "物理参数缺失", quality.hasReferenceImage ? "有探测器参考图" : ""].filter(Boolean);
+    return details.join(" · ");
+};
 const accuracyLabel = (target: OrbitTarget, at: number) => {
     if (!isMinorMoon(target)) return "开普勒历元外推";
     const accuracy = orbitAccuracy(target, at);
@@ -318,7 +327,7 @@ function updateSelection() {
             ? "平均半径"
             : "参考半径";
         q("#body-fact").textContent =
-            `数据完整度：${statusLabel(body.dataStatus)} · ${accuracyLabel(body, time)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
+            `数据完整度：${statusLabel(body.dataStatus)} · ${qualityLabel(body.id)} · ${accuracyLabel(body, time)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
         for (const key of ["rotation", "temperature"])
             q(`#body-${key}`).textContent = "未收录";
         q("#physical-source").replaceChildren();
@@ -380,7 +389,7 @@ function updateSelection() {
         q("#body-orbit-period").textContent =
             `${body.orbit!.period.toFixed(2)} 天`;
         q("#body-fact").textContent =
-            `数据完整度：${statusLabel(body.dataStatus ?? "orbit-point")} · 历元 ${new Date(body.orbit!.epoch).toISOString().slice(0, 10)} · 开普勒近似外推。亮点仅表示位置，不代表实测大小；未加载地貌或彗尾。`;
+            `数据完整度：${statusLabel(body.dataStatus ?? "orbit-point")} · ${qualityLabel(body.id)} · 历元 ${new Date(body.orbit!.epoch).toISOString().slice(0, 10)} · 开普勒近似外推。亮点仅表示位置，不代表实测大小；未加载地貌或彗尾。`;
         q("#physical-source").textContent = "";
         q("#ring-source").textContent = "";
         q("#parent-body").hidden = q("#family-view").hidden = true;
@@ -419,7 +428,7 @@ function updateSelection() {
             button.classList.toggle("active", active);
             button.setAttribute("aria-pressed", String(active));
         });
-    q("#body-source").textContent = sourceDescription(selected);
+    q("#body-source").textContent = `${sourceDescription(selected)} · ${qualityLabel(selected)}`;
     q("#body-orbit-period").textContent =
         selected === "sun" ? "—" : `${PERIODS[selected].toFixed(2)} 天`;
     q("#body-mass").nextElementSibling!.toggleAttribute(

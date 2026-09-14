@@ -1,0 +1,3853 @@
+{
+  "auditDate": "2026-09-14T01:13:29+00:00",
+  "scope": "Local OpenSpace asset snapshot and imported browser datasets",
+  "summary": {
+    "errors": 0,
+    "warnings": 4,
+    "resources": 37,
+    "bodies": 442,
+    "physicalRecords": 52,
+    "referenceImages": 12
+  },
+  "status": "warning",
+  "errors": [],
+  "warnings": [
+    "gonggong: physical record unavailable",
+    "makemake: physical record unavailable",
+    "pluto: physical record unavailable",
+    "sedna: physical record unavailable"
+  ],
+  "resources": [
+    {
+      "identifier": "jupiter_textures",
+      "output": "textures/jupiter.jpg",
+      "manifestOutput": "jupiter.jpg",
+      "bytes": 332813,
+      "expectedSha256": "f94e9915daa01dee3a12a815d2cd7f43865aa22fbfe4207b32ed9a112b9af5b6",
+      "sha256": "f94e9915daa01dee3a12a815d2cd7f43865aa22fbfe4207b32ed9a112b9af5b6",
+      "status": "ok"
+    },
+    {
+      "identifier": "mars_textures",
+      "output": "textures/mars.jpg",
+      "manifestOutput": "mars.jpg",
+      "bytes": 502882,
+      "expectedSha256": "6c20d430fc99b7a8b135457948e1d9b0a8ed7517e20eef38f955bf08015bb384",
+      "sha256": "6c20d430fc99b7a8b135457948e1d9b0a8ed7517e20eef38f955bf08015bb384",
+      "status": "ok"
+    },
+    {
+      "identifier": "mercury_textures",
+      "output": "textures/mercury.jpg",
+      "manifestOutput": "mercury.jpg",
+      "bytes": 659661,
+      "expectedSha256": "3e890722745b2651926206d46c15c9844d259d200591ce238c1a3462892ec31d",
+      "sha256": "3e890722745b2651926206d46c15c9844d259d200591ce238c1a3462892ec31d",
+      "status": "ok"
+    },
+    {
+      "identifier": "neptune_textures",
+      "output": "textures/neptune.jpg",
+      "manifestOutput": "neptune.jpg",
+      "bytes": 100275,
+      "expectedSha256": "8a62ca6c87612be562d2d7c326278f55682e1c5615cfe5b7f0c9ae68b435bb8c",
+      "sha256": "8a62ca6c87612be562d2d7c326278f55682e1c5615cfe5b7f0c9ae68b435bb8c",
+      "status": "ok"
+    },
+    {
+      "identifier": "saturn_textures",
+      "output": "textures/saturn.jpg",
+      "manifestOutput": "saturn.jpg",
+      "bytes": 184364,
+      "expectedSha256": "5ad4ee8f0fb5ba5485067d2aa38ab78c4f555549e923c0e809410a06bc02789b",
+      "sha256": "5ad4ee8f0fb5ba5485067d2aa38ab78c4f555549e923c0e809410a06bc02789b",
+      "status": "ok"
+    },
+    {
+      "identifier": "saturn_textures",
+      "output": "textures/saturn-rings.png",
+      "manifestOutput": "saturn-rings.png",
+      "bytes": 4146,
+      "expectedSha256": "7397e2254c092a22c3fa8a2501990ae526fc6c952815ef0780f08ed30779ee4b",
+      "sha256": "7397e2254c092a22c3fa8a2501990ae526fc6c952815ef0780f08ed30779ee4b",
+      "status": "ok"
+    },
+    {
+      "identifier": "saturn_textures",
+      "output": "textures/saturn-rings.png",
+      "manifestOutput": "saturn-rings.png",
+      "bytes": 4146,
+      "expectedSha256": "7397e2254c092a22c3fa8a2501990ae526fc6c952815ef0780f08ed30779ee4b",
+      "sha256": "7397e2254c092a22c3fa8a2501990ae526fc6c952815ef0780f08ed30779ee4b",
+      "status": "ok"
+    },
+    {
+      "identifier": "uranus_textures",
+      "output": "textures/uranus.jpg",
+      "manifestOutput": "uranus.jpg",
+      "bytes": 38795,
+      "expectedSha256": "e99c948e39d2ef1764283a92ebf27e176323f2f7bd3a4bd76d11226ebf60a2bf",
+      "sha256": "e99c948e39d2ef1764283a92ebf27e176323f2f7bd3a4bd76d11226ebf60a2bf",
+      "status": "ok"
+    },
+    {
+      "identifier": "venus_textures",
+      "output": "textures/venus.jpg",
+      "manifestOutput": "venus.jpg",
+      "bytes": 57667,
+      "expectedSha256": "b4a9219dbaca5d816361fd81123a930c120d0a99f675221f08637aea80669db9",
+      "sha256": "b4a9219dbaca5d816361fd81123a930c120d0a99f675221f08637aea80669db9",
+      "status": "ok"
+    },
+    {
+      "identifier": "general_pck",
+      "status": "metadata-only"
+    },
+    {
+      "identifier": "ceres_textures",
+      "output": "textures/ceres.jpg",
+      "manifestOutput": "textures/ceres.jpg",
+      "bytes": 749923,
+      "expectedSha256": "715c4c855d034c611e81a15d32fe61ac8ad6d82185e114e13890df55546b102f",
+      "sha256": "715c4c855d034c611e81a15d32fe61ac8ad6d82185e114e13890df55546b102f",
+      "status": "ok"
+    },
+    {
+      "identifier": "charon_textures",
+      "output": "textures/charon.jpg",
+      "manifestOutput": "textures/charon.jpg",
+      "bytes": 295958,
+      "expectedSha256": "d7da643357963880dffdf76428722e52d09c1ab714315e80bf3aad45ad68f13d",
+      "sha256": "d7da643357963880dffdf76428722e52d09c1ab714315e80bf3aad45ad68f13d",
+      "status": "ok"
+    },
+    {
+      "identifier": "pluto_textures",
+      "output": "textures/pluto.jpg",
+      "manifestOutput": "textures/pluto.jpg",
+      "bytes": 338190,
+      "expectedSha256": "b0199bcecb361519e2d4c31c1c5bf14bf9f7a6313ce930aee4e805d7a17049e5",
+      "sha256": "b0199bcecb361519e2d4c31c1c5bf14bf9f7a6313ce930aee4e805d7a17049e5",
+      "status": "ok"
+    },
+    {
+      "identifier": "callisto_textures",
+      "output": "textures/callisto.jpg",
+      "manifestOutput": "textures/callisto.jpg",
+      "bytes": 495467,
+      "expectedSha256": "48a4d9ef6b6a11652e14685f6d49a216544d5fe4c8047e0db75e123ead890cad",
+      "sha256": "48a4d9ef6b6a11652e14685f6d49a216544d5fe4c8047e0db75e123ead890cad",
+      "status": "ok"
+    },
+    {
+      "identifier": "europa_textures",
+      "output": "textures/europa.jpg",
+      "manifestOutput": "textures/europa.jpg",
+      "bytes": 414657,
+      "expectedSha256": "76cd245eb23daa09c0cc039c8e82170dcfdfe979fcb991ee52af49d29ad0fcb2",
+      "sha256": "76cd245eb23daa09c0cc039c8e82170dcfdfe979fcb991ee52af49d29ad0fcb2",
+      "status": "ok"
+    },
+    {
+      "identifier": "ganymede_textures",
+      "output": "textures/ganymede.jpg",
+      "manifestOutput": "textures/ganymede.jpg",
+      "bytes": 373347,
+      "expectedSha256": "75b54fafad38ce23883d3a4e2aa78a39e57a1e2d05cfbdf12aaf105ae2d7b881",
+      "sha256": "75b54fafad38ce23883d3a4e2aa78a39e57a1e2d05cfbdf12aaf105ae2d7b881",
+      "status": "ok"
+    },
+    {
+      "identifier": "io_textures",
+      "output": "textures/io.jpg",
+      "manifestOutput": "textures/io.jpg",
+      "bytes": 369923,
+      "expectedSha256": "607f7c45449819d957d5972974252fe488221e9de581d0f56ef9321ff1176e7f",
+      "sha256": "607f7c45449819d957d5972974252fe488221e9de581d0f56ef9321ff1176e7f",
+      "status": "ok"
+    },
+    {
+      "identifier": "deimos_model",
+      "output": "models/deimos.glb",
+      "manifestOutput": "models/deimos.glb",
+      "bytes": 1600012,
+      "expectedSha256": "5d5da763970acffe88aac26d3c3bd0fa66c5bef251d1bb4bfe2ae5fd723507e4",
+      "sha256": "5d5da763970acffe88aac26d3c3bd0fa66c5bef251d1bb4bfe2ae5fd723507e4",
+      "status": "ok"
+    },
+    {
+      "identifier": "phobos_model",
+      "output": "models/phobos.glb",
+      "manifestOutput": "models/phobos.glb",
+      "bytes": 3855016,
+      "expectedSha256": "757712101e4fbcf9527942ee664a3bc6dfe3ab460466b760f4bf51ee85dbd8d3",
+      "sha256": "757712101e4fbcf9527942ee664a3bc6dfe3ab460466b760f4bf51ee85dbd8d3",
+      "status": "ok"
+    },
+    {
+      "identifier": "triton_textures",
+      "output": "textures/triton.jpg",
+      "manifestOutput": "textures/triton.jpg",
+      "bytes": 247043,
+      "expectedSha256": "10ecb28c0b35cba3cfbfabda0d0c6996d1481e22f50c81dcec318751553deb11",
+      "sha256": "10ecb28c0b35cba3cfbfabda0d0c6996d1481e22f50c81dcec318751553deb11",
+      "status": "ok"
+    },
+    {
+      "identifier": "dione_textures",
+      "output": "textures/dione.jpg",
+      "manifestOutput": "textures/dione.jpg",
+      "bytes": 626599,
+      "expectedSha256": "877c323e869e588e615e1b18fdf42f2113417c14bfd4c54f25bbe214822eeff5",
+      "sha256": "877c323e869e588e615e1b18fdf42f2113417c14bfd4c54f25bbe214822eeff5",
+      "status": "ok"
+    },
+    {
+      "identifier": "enceladus_textures",
+      "output": "textures/enceladus.jpg",
+      "manifestOutput": "textures/enceladus.jpg",
+      "bytes": 524128,
+      "expectedSha256": "314a48d770b38afab195e9ad453d9febc9ea5b816de328091f638356d73f34ce",
+      "sha256": "314a48d770b38afab195e9ad453d9febc9ea5b816de328091f638356d73f34ce",
+      "status": "ok"
+    },
+    {
+      "identifier": "iapetus_textures",
+      "output": "textures/iapetus.jpg",
+      "manifestOutput": "textures/iapetus.jpg",
+      "bytes": 473719,
+      "expectedSha256": "45984ae42f91c51dc83f909f60c2adf8b62f6013af218b2335fc1ba57c5a57ba",
+      "sha256": "45984ae42f91c51dc83f909f60c2adf8b62f6013af218b2335fc1ba57c5a57ba",
+      "status": "ok"
+    },
+    {
+      "identifier": "mimas_textures",
+      "output": "textures/mimas.jpg",
+      "manifestOutput": "textures/mimas.jpg",
+      "bytes": 440049,
+      "expectedSha256": "f9f76d4ec239c09c8024c2c6cbeb24d72eda0d6e1841be5f7805954d26ad5ee7",
+      "sha256": "f9f76d4ec239c09c8024c2c6cbeb24d72eda0d6e1841be5f7805954d26ad5ee7",
+      "status": "ok"
+    },
+    {
+      "identifier": "rhea_textures",
+      "output": "textures/rhea.jpg",
+      "manifestOutput": "textures/rhea.jpg",
+      "bytes": 695410,
+      "expectedSha256": "a8c58de7b419be96314b8504ae717b6c3c8fcd052c31dc321dab5a5b5ad2b674",
+      "sha256": "a8c58de7b419be96314b8504ae717b6c3c8fcd052c31dc321dab5a5b5ad2b674",
+      "status": "ok"
+    },
+    {
+      "identifier": "tethys_textures",
+      "output": "textures/tethys.jpg",
+      "manifestOutput": "textures/tethys.jpg",
+      "bytes": 566609,
+      "expectedSha256": "b34ee629a053c65717e049354034c0ce9e687ef9a79c265969613ac65610419e",
+      "sha256": "b34ee629a053c65717e049354034c0ce9e687ef9a79c265969613ac65610419e",
+      "status": "ok"
+    },
+    {
+      "identifier": "titan_textures",
+      "output": "textures/titan.jpg",
+      "manifestOutput": "textures/titan.jpg",
+      "bytes": 363537,
+      "expectedSha256": "d00b419e54089afd4d291ec2852d56e3891bbae5866018950ed8887cab98e320",
+      "sha256": "d00b419e54089afd4d291ec2852d56e3891bbae5866018950ed8887cab98e320",
+      "status": "ok"
+    },
+    {
+      "identifier": "eris_model",
+      "output": "models/eris.glb",
+      "manifestOutput": "models/eris.glb",
+      "bytes": 4398964,
+      "expectedSha256": "1b97f1b9eea244b047a72c2a3ac0db315715b7d421033d860d669ffd78681d54",
+      "sha256": "1b97f1b9eea244b047a72c2a3ac0db315715b7d421033d860d669ffd78681d54",
+      "status": "ok"
+    },
+    {
+      "identifier": "haumea_model",
+      "output": "models/haumea.glb",
+      "manifestOutput": "models/haumea.glb",
+      "bytes": 11335060,
+      "expectedSha256": "7b31737593054bd4ef8f61138a6ad1a2577bec03b84d1c3e76e8ac78632a87f8",
+      "sha256": "7b31737593054bd4ef8f61138a6ad1a2577bec03b84d1c3e76e8ac78632a87f8",
+      "status": "ok"
+    },
+    {
+      "identifier": "makemake_model",
+      "output": "models/makemake.glb",
+      "manifestOutput": "models/makemake.glb",
+      "bytes": 4441844,
+      "expectedSha256": "e7d5fa27f50afae10f0e7290cdf7a14ca856c0b9e99b2db02f25b75441fbdbef",
+      "sha256": "e7d5fa27f50afae10f0e7290cdf7a14ca856c0b9e99b2db02f25b75441fbdbef",
+      "status": "ok"
+    },
+    {
+      "identifier": null,
+      "status": "metadata-only"
+    },
+    {
+      "identifier": null,
+      "status": "metadata-only"
+    },
+    {
+      "identifier": null,
+      "status": "metadata-only"
+    },
+    {
+      "identifier": null,
+      "status": "metadata-only"
+    },
+    {
+      "identifier": null,
+      "status": "metadata-only"
+    },
+    {
+      "identifier": null,
+      "status": "metadata-only"
+    },
+    {
+      "identifier": "vesta_model",
+      "output": "models/vesta.glb",
+      "bytes": 1440764,
+      "expectedSha256": "72c979aa90c0bc7db9582c2db6ba5f822d500b782a23bf42c2f2f060d7968a4e",
+      "sha256": "72c979aa90c0bc7db9582c2db6ba5f822d500b782a23bf42c2f2f060d7968a4e",
+      "status": "ok"
+    }
+  ],
+  "bodies": {
+    "sun": {
+      "visual": "procedural",
+      "issues": []
+    },
+    "mercury": {
+      "visual": "texture",
+      "issues": []
+    },
+    "venus": {
+      "visual": "texture",
+      "issues": []
+    },
+    "earth": {
+      "visual": "procedural",
+      "issues": []
+    },
+    "mars": {
+      "visual": "texture",
+      "issues": []
+    },
+    "jupiter": {
+      "visual": "texture",
+      "issues": []
+    },
+    "saturn": {
+      "visual": "texture",
+      "issues": []
+    },
+    "uranus": {
+      "visual": "texture",
+      "issues": []
+    },
+    "neptune": {
+      "visual": "texture",
+      "issues": []
+    },
+    "moon": {
+      "visual": "texture",
+      "issues": []
+    },
+    "ariel": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "callisto": {
+      "visual": "texture",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ceres": {
+      "visual": "texture",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "charon": {
+      "visual": "texture",
+      "parent": "pluto",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "deimos": {
+      "visual": "model",
+      "parent": "mars",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "dione": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "enceladus": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "eris": {
+      "visual": "model",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "europa": {
+      "visual": "texture",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ganymede": {
+      "visual": "texture",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "gonggong": {
+      "visual": "location-only",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "haumea": {
+      "visual": "model",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "hydra": {
+      "visual": "location-only",
+      "parent": "pluto",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "hyperion": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "iapetus": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "io": {
+      "visual": "texture",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kerberos": {
+      "visual": "location-only",
+      "parent": "pluto",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "makemake": {
+      "visual": "model",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "mimas": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "miranda": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "nereid": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "nix": {
+      "visual": "location-only",
+      "parent": "pluto",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "oberon": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "orcus": {
+      "visual": "location-only",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "phobos": {
+      "visual": "model",
+      "parent": "mars",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pluto": {
+      "visual": "texture",
+      "parent": "sun",
+      "issues": [
+        "orbit-missing"
+      ],
+      "hasPhysical": false,
+      "hasOrbit": false,
+      "hasReferenceImage": false
+    },
+    "quaoar": {
+      "visual": "location-only",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "rhea": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "sedna": {
+      "visual": "location-only",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "styx": {
+      "visual": "location-only",
+      "parent": "pluto",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "tethys": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "titan": {
+      "visual": "texture",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "titania": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "triton": {
+      "visual": "texture",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "umbriel": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": true
+    },
+    "vesta": {
+      "visual": "location-only",
+      "parent": "sun",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "adrastea": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "aitne": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "amalthea": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ananke": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "aoede": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "arche": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "autonoe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "callirrhoe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "carme": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "carpo": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "chaldene": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "cyllene": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "dia": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "elara": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "erinome": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ersa": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "euanthe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "eukelade": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "eupheme": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "euporie": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "eurydome": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "harpalyke": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "hegemone": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "helike": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "hermippe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "herse": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "himalia": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "iocaste": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "isonoe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kale": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kallichore": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kalyke": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kore": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "leda": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "lysithea": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "megaclite": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "metis": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "mneme": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "orthosie": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pandia": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pasiphae": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pasithee": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "praxidike": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j10": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j12": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j15": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j16": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j18": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j19": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j23": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j24": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j4": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j5": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2003j9": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2010j1": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2010j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2011j1": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2011j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2011j3": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2016j1": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2016j3": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2016j4": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j1": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j10": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j11": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j3": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j5": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j6": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j7": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j8": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2017j9": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2018j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2018j3": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2018j4": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021j1": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021j3": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021j4": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021j5": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021j6": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2022j1": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2022j2": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2022j3": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "sinope": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "sponde": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "taygete": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "thebe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "thelxinoe": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "themisto": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "thyone": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "valetudo": {
+      "visual": "location-only",
+      "parent": "jupiter",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "despina": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "galatea": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "halimede": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "hippocamp": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "laomedeia": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "larissa": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "naiad": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "neso": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "proteus": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "psamathe": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2002n5": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2021n1": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "sao": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "thalassa": {
+      "visual": "location-only",
+      "parent": "neptune",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "aegaeon": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "aegir": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "albiorix": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "alvaldi": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "angrboda": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "anthe": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "atlas": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "bebhionn": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "beli": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "bergelmir": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "bestla": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "calypso": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "daphnis": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "eggther": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "epimetheus": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "erriapus": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "farbauti": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "fenrir": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "fornjot": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "geirrod": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "gerd": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "greip": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "gridr": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "gunnlod": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "hati": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "helene": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "hyrrokkin": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ijiraq": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "janus": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "jarnsaxa": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kari": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "kiviuq": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "loge": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "methone": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "mundilfari": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "narvi": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "paaliaq": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pallene": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pan": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "pandora": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "phoebe": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "polydeuces": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "prometheus": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": true,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s12": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s13": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s17": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s21": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s24": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s26": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s28": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s29": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s31": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s34": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s36": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s37": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s39": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s40": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s41": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s42": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s43": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s44": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s45": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s46": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s47": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s48": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s49": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s50": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s51": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s52": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s53": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s54": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s55": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s56": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s57": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s58": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s59": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s60": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s61": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2004s7": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2005s4": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2005s5": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2005s6": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2005s7": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s1": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s10": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s11": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s12": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s13": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s14": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s15": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s16": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s17": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s18": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s19": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s20": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s21": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s22": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s23": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s24": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s25": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s26": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s27": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s28": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s29": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s3": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2006s9": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s10": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s11": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s2": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s3": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s5": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s6": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s7": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s8": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2007s9": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s01": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s10": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s11": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s12": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s13": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s14": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s15": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s16": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s17": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s18": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s19": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s2": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s20": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s21": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s22": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s23": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s24": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s25": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s26": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s27": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s28": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s29": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s3": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s30": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s31": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s32": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s33": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s34": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s35": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s36": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s37": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s38": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s39": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s4": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s40": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s41": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s42": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s43": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s44": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s5": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s6": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s7": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s8": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2019s9": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s1": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s10": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s11": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s12": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s13": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s14": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s15": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s16": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s17": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s18": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s19": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s2": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s20": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s21": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s22": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s23": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s24": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s25": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s26": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s27": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s28": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s29": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s3": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s30": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s31": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s32": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s33": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s34": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s35": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s36": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s37": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s38": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s39": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s4": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s40": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s41": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s42": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s43": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s44": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s5": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s6": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s7": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s8": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2020s9": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s1": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s10": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s11": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s12": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s13": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s14": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s15": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s16": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s17": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s18": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s19": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s2": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s20": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s21": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s22": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s23": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s24": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s25": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s26": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s27": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s28": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s29": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s3": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s30": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s31": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s32": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s33": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s34": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s35": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s36": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s37": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s38": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s39": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s4": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s40": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s41": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s42": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s43": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s44": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s45": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s46": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s47": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s48": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s49": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s5": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s50": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s6": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s7": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s8": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023s9": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "siarnaq": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "skathi": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "skoll": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "skrymir": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "surtur": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "suttungr": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "tarqeq": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "tarvos": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "telesto": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "thiazzi": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "thrymr": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ymir": {
+      "visual": "location-only",
+      "parent": "saturn",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "belinda": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "bianca": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "caliban": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "cordelia": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "cressida": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "cupid": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "desdemona": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ferdinand": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "francisco": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "juliet": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "mab": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "margaret": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "ophelia": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "perdita": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "portia": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "prospero": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "puck": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "rosalind": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2023u1": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "s2025u1": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "setebos": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "stephano": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "sycorax": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    },
+    "trinculo": {
+      "visual": "location-only",
+      "parent": "uranus",
+      "issues": [],
+      "hasPhysical": false,
+      "hasOrbit": true,
+      "hasReferenceImage": false
+    }
+  },
+  "minorMoonSamples": {
+    "bodies": 396,
+    "statePoints": 25740,
+    "maxMidpointResidualKm": 0.0203276723125814,
+    "orbitIssueBodies": 0
+  },
+  "missingGlobalMapAndIndependentMesh": [
+    "ariel",
+    "gonggong",
+    "hydra",
+    "hyperion",
+    "kerberos",
+    "miranda",
+    "nereid",
+    "nix",
+    "oberon",
+    "orcus",
+    "quaoar",
+    "sedna",
+    "styx",
+    "titania",
+    "umbriel"
+  ],
+  "modelThumbnails": {
+    "objects": [
+      "vesta",
+      "eris",
+      "phobos",
+      "deimos",
+      "makemake",
+      "haumea"
+    ],
+    "path": "public/thumbnails/{id}.png"
+  }
+}
