@@ -314,7 +314,7 @@ function updateSelection() {
         q("#body-number").textContent = "OpenSpace";
         q("#body-description").textContent =
             `围绕${BODIES[body.parentBody].name}运行的小卫星，在本地采样窗口内使用 OpenSpace SPICE 状态插值，窗口外使用开普勒近似。`;
-        q("#body-source").textContent = "OpenSpace SPICE / JPL";
+        q("#body-source").textContent = "OpenSpace SPICE / JPL · 样本内三次 Hermite 插值";
         q("#body-orbit-period").textContent =
             `${body.orbit.period.toFixed(body.orbit.period < 1 ? 3 : 2)} 天`;
         const physical = body.physical;

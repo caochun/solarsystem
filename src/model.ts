@@ -433,6 +433,10 @@ for (const [id, physical] of Object.entries(PHYSICAL)) {
 }
 export function sourceDescription(id: BodyId) {
     if (!extra(id)) return "Astronomy Engine 解析星历";
+    if (extra(id)!.spiceSamples?.length) {
+        const window = extra(id)!.sampleWindow!;
+        return `OpenSpace SPK 精密样本插值（${new Date(window[0]).toISOString().slice(0, 10)} 至 ${new Date(window[1]).toISOString().slice(0, 10)}）`;
+    }
     if (extra(id)!.orbitSource.includes("JPL SBDB"))
         return `JPL SBDB 轨道 · 开普勒近似（历元 ${new Date(extra(id)!.orbit!.epoch).toISOString().slice(0, 10)}）`;
     if (id === "pluto" || extra(id)!.parent === "jupiter")

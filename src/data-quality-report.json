@@ -1,10 +1,10 @@
 {
-  "auditDate": "2026-09-14T02:26:09+00:00",
+  "auditDate": "2026-09-14T04:18:29+00:00",
   "scope": "Local OpenSpace asset snapshot and imported browser datasets",
   "summary": {
     "errors": 0,
     "warnings": 4,
-    "resources": 37,
+    "resources": 38,
     "bodies": 442,
     "physicalRecords": 52,
     "referenceImages": 12
@@ -97,6 +97,15 @@
       "bytes": 57667,
       "expectedSha256": "b4a9219dbaca5d816361fd81123a930c120d0a99f675221f08637aea80669db9",
       "sha256": "b4a9219dbaca5d816361fd81123a930c120d0a99f675221f08637aea80669db9",
+      "status": "ok"
+    },
+    {
+      "identifier": "venus_magellan_topography_global_4641m_v02",
+      "output": "textures/venus-magellan-topography.jpg",
+      "manifestOutput": "venus-magellan-topography.jpg",
+      "bytes": 104731,
+      "expectedSha256": "a91e98d9f952e42414298ab5388f36125546057d6d880409d9e865e9d883446d",
+      "sha256": "a91e98d9f952e42414298ab5388f36125546057d6d880409d9e865e9d883446d",
       "status": "ok"
     },
     {
@@ -4702,8 +4711,8 @@
   },
   "majorSatelliteSamples": {
     "bodies": 25,
-    "statePoints": 1625,
-    "windowDays": 14,
+    "statePoints": 6425,
+    "windowDays": 30,
     "outsideWindow": "Osculating Kepler fallback; precise SPK coverage is local to the sampled window"
   },
   "minorMoonSamples": {

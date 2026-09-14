@@ -56,11 +56,11 @@ test("Triton's path is retrograde and changing the clock moves short-period sate
 });
 
 test("Major satellites use local SPK interpolation around the reference epoch", () => {
-    const sampled = Object.values(EXTENDED).filter((body) => body.spiceSamples?.length === 65);
+    const sampled = Object.values(EXTENDED).filter((body) => body.spiceSamples?.length === 257);
     assert.equal(sampled.length, 25);
     for (const [id, body] of Object.entries(EXTENDED).filter(([, body]) => body.spiceSamples?.length === 65)) {
         const window = body.sampleWindow!;
-        assert.ok(window[1] - window[0] > 13 * DAY);
+        assert.ok(window[1] - window[0] > 29 * DAY);
         assert.ok(body.spiceSamples!.every((sample) => sample.slice(1).every(Number.isFinite)));
         assert.ok(body.spiceVelocities!.every((sample) => sample.every(Number.isFinite)));
         const atEpoch = relativeVector(id as BodyId, new Date(Date.UTC(2026, 8, 10)));

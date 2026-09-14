@@ -36,11 +36,10 @@ def main():
     def sample(item):
         parent,name,target,body=item; kernel=RemoteSPK(urls[name]); pnaif=PARENT_NAIF[parent]
         segment=next(s for s in kernel.segments if s[2]==target and s[0]<=ET<=s[1])
-        # A seven-day local window keeps short-period moons well resolved while
-        # keeping the browser payload small; outside it the UI labels the
-        # fallback to the osculating orbit explicitly.
-        start=max(segment[0],ET-7*DAY); end=min(segment[1],ET+7*DAY)
-        times=np.linspace(start,end,65); states=[]
+        # A 30-day local window provides useful continuous SPK coverage while
+        # retaining enough samples for the shortest-period inner moons.
+        start=max(segment[0],ET-15*DAY); end=min(segment[1],ET+15*DAY)
+        times=np.linspace(start,end,257); states=[]
         for t in times:
             if parent=='pluto': state=kernel.state(target,float(t))[0]
             else: state=kernel.relative(target,pnaif,float(t))
@@ -51,7 +50,7 @@ def main():
             velocities.append(scene_velocity(state))
         body['spiceSamples']=samples; body['spiceVelocities']=velocities
         body['sampleWindow']=[samples[0][0],samples[-1][0]]
-        body['sampleValidation']={'source':kernel.url,'method':'SPK state samples with cubic Hermite interpolation','frame':'J2000 ecliptic (X,Z,-Y)','positionUnits':'AU','velocityUnits':'AU/day','sampleCount':len(samples),'windowDays':14}
+        body['sampleValidation']={'source':kernel.url,'method':'SPK state samples with cubic Hermite interpolation','frame':'J2000 ecliptic (X,Z,-Y)','positionUnits':'AU','velocityUnits':'AU/day','sampleCount':len(samples),'windowDays':30}
         return body['english']
     with ThreadPoolExecutor(max_workers=8) as pool:
         for name in pool.map(sample,targets): print('Sampled',name,flush=True)
