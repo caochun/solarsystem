@@ -1,5 +1,5 @@
 {
-  "auditDate": "2026-09-14T01:49:06+00:00",
+  "auditDate": "2026-09-14T02:26:09+00:00",
   "scope": "Local OpenSpace asset snapshot and imported browser datasets",
   "summary": {
     "errors": 0,
@@ -4699,6 +4699,12 @@
       "dataQuality": "location-only",
       "physicalQuality": "missing"
     }
+  },
+  "majorSatelliteSamples": {
+    "bodies": 25,
+    "statePoints": 1625,
+    "windowDays": 14,
+    "outsideWindow": "Osculating Kepler fallback; precise SPK coverage is local to the sampled window"
   },
   "minorMoonSamples": {
     "bodies": 396,
