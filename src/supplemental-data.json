@@ -1113,6 +1113,146 @@
       "radiusReference": "B. A. Archinal, C. H. Acton, M. F. A’Hearn, et al. (2018) \"Report of the IAU Working Group on Cartographic Coordinates and Rotational Elements: 2015\". Celest.~Mech. 130 :22.",
       "densityGcm3": 1.0269,
       "densitySigma": 0.9695
+    },
+    "haumea": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "gm": 264.413,
+      "gmSigma": null,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "massKg": 3.96165890055886e+21,
+      "massUpperLimit": false,
+      "massReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "parameterSources": {
+        "GM": {
+          "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+          "localSource": "data-cache/reference/gm_de440.tpc",
+          "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+          "retrieved": "2026-09-14"
+        }
+      },
+      "originalParameters": {
+        "GM": {
+          "name": "GM",
+          "value": "264.413",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
+        }
+      },
+      "meanRadiusKm": null,
+      "meanRadiusSigmaKm": null,
+      "radiusReference": "DE440 GM source does not provide diameter",
+      "densityGcm3": null,
+      "densitySigma": null
+    },
+    "eris": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "gm": 1098.9,
+      "gmSigma": null,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "massKg": 1.6464647978065116e+22,
+      "massUpperLimit": false,
+      "massReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "parameterSources": {
+        "GM": {
+          "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+          "localSource": "data-cache/reference/gm_de440.tpc",
+          "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+          "retrieved": "2026-09-14"
+        }
+      },
+      "originalParameters": {
+        "GM": {
+          "name": "GM",
+          "value": "1098.9",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
+        }
+      },
+      "meanRadiusKm": null,
+      "meanRadiusSigmaKm": null,
+      "radiusReference": "DE440 GM source does not provide diameter",
+      "densityGcm3": null,
+      "densitySigma": null
+    },
+    "quaoar": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "gm": 95.6021989005497,
+      "gmSigma": null,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "massKg": 1.4323928936450218e+21,
+      "massUpperLimit": false,
+      "massReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "parameterSources": {
+        "GM": {
+          "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+          "localSource": "data-cache/reference/gm_de440.tpc",
+          "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+          "retrieved": "2026-09-14"
+        }
+      },
+      "originalParameters": {
+        "GM": {
+          "name": "GM",
+          "value": "95.6021989005497",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
+        }
+      },
+      "meanRadiusKm": null,
+      "meanRadiusSigmaKm": null,
+      "radiusReference": "DE440 GM source does not provide diameter",
+      "densityGcm3": null,
+      "densitySigma": null
+    },
+    "orcus": {
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "gm": 38.55963303,
+      "gmSigma": null,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "massKg": 5.777329911751045e+20,
+      "massUpperLimit": false,
+      "massReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "parameterSources": {
+        "GM": {
+          "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+          "localSource": "data-cache/reference/gm_de440.tpc",
+          "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+          "retrieved": "2026-09-14"
+        }
+      },
+      "originalParameters": {
+        "GM": {
+          "name": "GM",
+          "value": "38.55963303",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
+        }
+      },
+      "meanRadiusKm": null,
+      "meanRadiusSigmaKm": null,
+      "radiusReference": "DE440 GM source does not provide diameter",
+      "densityGcm3": null,
+      "densitySigma": null
     }
   },
   "rings": {

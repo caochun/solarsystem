@@ -1,0 +1,66 @@
+{
+  "source": {
+    "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+    "localPath": "data-cache/reference/gm_de440.tpc",
+    "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+    "description": "NAIF/JPL Horizons mass-parameter PCK; values preserved verbatim"
+  },
+  "objects": {
+    "haumea": {
+      "naif": 920136108,
+      "gm": 264.413,
+      "massKg": 3.96165890055886e+21,
+      "massUpperLimit": false,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "parameter": "GM (km³/s²), mass converted using G = 6.67430e-20 km³ kg⁻¹ s⁻²"
+    },
+    "eris": {
+      "naif": 920136199,
+      "gm": 1098.9,
+      "massKg": 1.6464647978065116e+22,
+      "massUpperLimit": false,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "parameter": "GM (km³/s²), mass converted using G = 6.67430e-20 km³ kg⁻¹ s⁻²"
+    },
+    "quaoar": {
+      "naif": 920050000,
+      "gm": 95.6021989005497,
+      "massKg": 1.4323928936450218e+21,
+      "massUpperLimit": false,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "parameter": "GM (km³/s²), mass converted using G = 6.67430e-20 km³ kg⁻¹ s⁻²"
+    },
+    "orcus": {
+      "naif": 920090482,
+      "gm": 38.55963303,
+      "massKg": 5.777329911751045e+20,
+      "massUpperLimit": false,
+      "gmReference": "DE440 / gm_Horizons.pck; KBO system primary",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      },
+      "parameter": "GM (km³/s²), mass converted using G = 6.67430e-20 km³ kg⁻¹ s⁻²"
+    }
+  }
+}

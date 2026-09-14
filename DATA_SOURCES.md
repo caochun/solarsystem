@@ -179,3 +179,8 @@ LOLA 2019 高程使用 `ldem_16_uint.tif`（5760×2880，16 像素/度，赤道�
 时间转换使用 `scripts/reference/naif0012.tls`，来自本项目 `tests/horizonsTest/naif0012.tls` 的 NAIF 闰秒核，原始官方地址与哈希保留在快照清单。Ceres、Vesta 的物理参数更新；其余八份 API 回答未提供 GM、直径和密度，不能据此填造这些字段。光变自转周期及歧义说明留在原始清单，不自动作为模型贴图自转参数。原来的百万条分类目录快照没有被这 10 份小更新替换。
 
 **11 组实拍参考图：** `scripts/import-surface-references.py` 从 [NASA Images API](https://images-api.nasa.gov/) 下载原始发布 JPEG，保存于 `public/reference-images/`，没有重绘、裁切或贴到球面。`src/surface-references.json` 逐项保留 NASA ID、URL、原图注、署名、发布时刻、原件哈希与处理限制。天卫一/二/三/四/五、土卫七、海卫二、冥卫二/三/四/五均可从资料面板查看。旅行者、卡西尼和新视野号图片仅覆盖当时可见面；海卫二及冥王星小卫星的低分辨率、去卷积、放大和拼图标尺均明确说明。`date_created` 是 NASA 库中的发布记录，不当作拍摄时间；拍摄时间以原始图注为准。
+
+
+## 2026-09-14：DE440 KBO 系统质量参数
+
+项目已有的 NAIF/JPL `gm_Horizons.pck` 缓存（原始文件见 `data-cache/reference/gm_de440.tpc`）包含 Quaoar、Orcus、Haumea 和 Eris 系统主星的 GM，来源说明为 JPL Solar System Dynamics 的 Horizons 质量参数文件。脚本 `scripts/supplement-de440-gm.py` 将四个值原样导入 `src/de440-gm-sources.json` 和 `src/supplemental-data.json`：Haumea 264.413、Eris 1098.9、Quaoar 95.6021989005497、Orcus 38.55963303 km³/s²。质量使用 `G = 6.67430e-20 km³ kg⁻¹ s⁻²` 换算。未从 GM 推导直径、密度或半径，也没有伪造误差；SBDB 仍是这些对象的轨道来源。

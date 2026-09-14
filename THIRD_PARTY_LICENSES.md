@@ -63,3 +63,8 @@ Lunar source: https://svs.gsfc.nasa.gov/4720/ — credit **NASA's Scientific Vis
 Spacecraft images are redistributed as the original NASA library JPEGs, with each original credit, caption and source link retained in `src/surface-references.json` and displayed beside the reference image. Credits include NASA/JPL; NASA/JPL/Space Science Institute; and NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute. NASA imagery usage guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/ . These resources are not relicensed under the application's code license; no NASA endorsement is implied.
 
 NAIF leap-seconds kernel `scripts/reference/naif0012.tls` is copied unchanged from OpenSpace `tests/horizonsTest/naif0012.tls`. Source: https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls . Original explanatory text and modification history are preserved.
+
+
+## JPL/NAIF DE440 mass-parameter PCK
+
+The four KBO system GM values are copied from the JPL/NAIF Horizons mass-parameter PCK, published at https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck . The local provenance and unchanged source hash are recorded in `src/de440-gm-sources.json`.

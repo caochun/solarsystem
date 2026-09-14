@@ -24,7 +24,7 @@
     "coveringReferenceTime": 396,
     "outsideWindow": "Fixed osculating Kepler orbit; residual does not describe true ephemeris accuracy"
   },
-  "physicalRecords": 48,
+  "physicalRecords": 52,
   "minorMoonsWithPhysicalRecords": 19,
   "referencePhotos": 11,
   "missingGlobalMapAndIndependentMesh": [

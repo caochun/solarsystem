@@ -881,14 +881,25 @@
           "ref": "LCDB (Rev. 2023-October); Warner et al., 2009",
           "desc": "body rotation period (synodic)",
           "notes": "[Result based on less than full coverage, so that the period may be wrong by 30 percent or so.]  REFERENCE LIST:[Roe, H. G.; Pike, R.E.; Brown, M.E. (2008) Icarus 198, 459-464.]"
+        },
+        "GM": {
+          "name": "GM",
+          "value": "1098.9",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
         }
       },
       "missingPhysical": [
-        "GM",
         "diameter",
         "density"
       ],
-      "runtimePosition": "fixed osculating elements / Kepler"
+      "runtimePosition": "fixed osculating elements / Kepler",
+      "physicalSourceSupplement": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      }
     },
     "haumea": {
       "source": {
@@ -1049,14 +1060,25 @@
           "units": "h",
           "name": "rot_per",
           "ref": "LCDB (Rev. 2023-October); Warner et al., 2009"
+        },
+        "GM": {
+          "name": "GM",
+          "value": "264.413",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
         }
       },
       "missingPhysical": [
-        "GM",
         "diameter",
         "density"
       ],
-      "runtimePosition": "fixed osculating elements / Kepler"
+      "runtimePosition": "fixed osculating elements / Kepler",
+      "physicalSourceSupplement": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      }
     },
     "makemake": {
       "source": {
@@ -1553,14 +1575,25 @@
           "ref": "LCDB (Rev. 2023-October); Warner et al., 2009",
           "sigma": null,
           "value": "8.84"
+        },
+        "GM": {
+          "name": "GM",
+          "value": "95.6021989005497",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
         }
       },
       "missingPhysical": [
-        "GM",
         "diameter",
         "density"
       ],
-      "runtimePosition": "fixed osculating elements / Kepler"
+      "runtimePosition": "fixed osculating elements / Kepler",
+      "physicalSourceSupplement": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      }
     },
     "gonggong": {
       "source": {
@@ -1889,14 +1922,25 @@
           "value": "13.188",
           "sigma": null,
           "notes": "[Result based on less than full coverage, so that the period may be wrong by 30 percent or so.]  REFERENCE LIST:[Rabinowitz, D.L.; Schaefer, B.E.; Tourtellotte, S.W. (2007) Astron. J. 133, 26-43.]"
+        },
+        "GM": {
+          "name": "GM",
+          "value": "38.55963303",
+          "units": "km^3/s^2",
+          "ref": "DE440 / gm_Horizons.pck; KBO system primary"
         }
       },
       "missingPhysical": [
-        "GM",
         "diameter",
         "density"
       ],
-      "runtimePosition": "fixed osculating elements / Kepler"
+      "runtimePosition": "fixed osculating elements / Kepler",
+      "physicalSourceSupplement": {
+        "url": "https://ssd.jpl.nasa.gov/ftp/xfr/gm_Horizons.pck",
+        "localSource": "data-cache/reference/gm_de440.tpc",
+        "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+        "retrieved": "2026-09-14"
+      }
     }
   }
 }

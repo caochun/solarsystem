@@ -29,8 +29,12 @@ test("updated SBDB orbits retain their actual epochs, sources and omitted physic
         if (id==="pluto") continue;
         assert.equal(extra(id as BodyId)!.orbit!.epoch,utc);
         assert.match(sourceDescription(id as BodyId),/JPL SBDB/);
-        if (!["ceres","vesta"].includes(id))
-            assert.deepEqual(snapshot.missingPhysical,["GM","diameter","density"]);
+        if (!["ceres","vesta"].includes(id)) {
+            const expected = ["makemake","sedna","gonggong"].includes(id)
+                ? ["GM","diameter","density"]
+                : ["diameter","density"];
+            assert.deepEqual(snapshot.missingPhysical,expected);
+        }
     }
 });
 
@@ -38,5 +42,6 @@ test("coverage report reconciles all imported moons, sample points and local phy
     assert.equal(coverage.minorMoonEntries,MINOR_MOONS.length);
     assert.equal(coverage.minorMoonSamples.statePoints,MINOR_MOONS.reduce((n,b)=>n+b.spiceSamples!.length,0));
     assert.equal(coverage.minorMoonsWithPhysicalRecords,MINOR_MOONS.filter(b=>b.physical).length);
+    assert.equal(coverage.physicalRecords,52);
     assert.ok(Object.values(coverage.missingOriginalMinorMoonCandidates).every(b=>b.length===0));
 });
