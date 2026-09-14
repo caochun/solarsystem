@@ -45,6 +45,10 @@ export interface ExtendedBody {
     rotationDays?: number | null;
     radiusQuality?: string;
     stateKm?: number[];
+    spiceSamples?: [number, number, number, number][];
+    spiceVelocities?: [number, number, number][];
+    sampleWindow?: [number, number];
+    sampleValidation?: { source: string; sampleCount: number; windowDays: number };
 }
 /**
  * Local coverage level used by the explorer UI.  A model or texture makes an
@@ -109,6 +113,7 @@ export function childrenOf(id: BodyId) {
 }
 export function textureOf(id: BodyId) {
     if (id === "moon") return lunarSurface.sceneColor.path.replace(/^textures\//, "");
+    if (id === "venus") return "venus-magellan-topography.jpg";
     return extra(id) ? extra(id)!.texture : id === "sun" ? null : `${id}.jpg`;
 }
 /** Asset used by the compact catalogue icon. Model-only bodies use a small
@@ -466,6 +471,28 @@ export function relativeVector(id: BodyId, date: Date): Vec3 {
         );
     if (ASTRO_BODY[id]) return eqjToScene(HelioVector(ASTRO_BODY[id]!, date));
     const body = extra(id)!;
+    if (body.spiceSamples && body.spiceSamples.length >= 2) {
+        const samples = body.spiceSamples;
+        const t = date.getTime();
+        if (t >= samples[0][0] && t <= samples[samples.length - 1][0]) {
+            const hi = samples.findIndex((sample) => sample[0] >= t);
+            if (hi <= 0) return samples[0].slice(1) as Vec3;
+            const lo = hi - 1;
+            const a = samples[lo], b = samples[hi];
+            const u = (t - a[0]) / Math.max(b[0] - a[0], 1);
+            if (body.spiceVelocities?.length === samples.length) {
+                const va = body.spiceVelocities[lo], vb = body.spiceVelocities[hi];
+                const days = (b[0] - a[0]) / DAY, u2 = u * u, u3 = u2 * u;
+                return [0, 1, 2].map((i) =>
+                    (2 * u3 - 3 * u2 + 1) * a[i + 1] +
+                    (u3 - 2 * u2 + u) * days * va[i] +
+                    (-2 * u3 + 3 * u2) * b[i + 1] +
+                    (u3 - u2) * days * vb[i],
+                ) as Vec3;
+            }
+            return [a[1] + (b[1] - a[1]) * u, a[2] + (b[2] - a[2]) * u, a[3] + (b[3] - a[3]) * u];
+        }
+    }
     const vector = keplerPosition(body.orbit!, date.getTime());
     if (body.parent === "pluto" && id !== "charon") {
         return add(
@@ -486,7 +513,7 @@ export function ephemeris(date: Date) {
     for (const id of BODY_IDS) {
         if (id === "sun") continue;
         relative[id] =
-            id in jovian
+            id in jovian && !extra(id)?.spiceSamples
                 ? eqjToScene(jovian[id as keyof typeof jovian])
                 : relativeVector(id, date);
     }

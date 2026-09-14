@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { BODY_IDS, BODIES, EXTENDED, DAY, ephemeris, parentOf, isSatellite, positions, radius, RADII, parentDistanceKm } from "../src/model.ts";
+import { BODY_IDS, BODIES, EXTENDED, DAY, ephemeris, parentOf, isSatellite, positions, radius, RADII, parentDistanceKm, relativeVector } from "../src/model.ts";
 import { keplerPosition } from "../src/kepler.ts";
 import reference from "./fixtures/kepler-reference.json";
 
@@ -53,4 +53,17 @@ test("Triton's path is retrograde and changing the clock moves short-period sate
     const a = ephemeris(new Date(t)), b = ephemeris(new Date(t + DAY / 10));
     const difference = Math.hypot(...a.relative.phobos.map((v, i) => v - b.relative.phobos[i]));
     assert.ok(difference > 0.00005);
+});
+
+test("Major satellites use local SPK interpolation around the reference epoch", () => {
+    const sampled = Object.values(EXTENDED).filter((body) => body.spiceSamples?.length === 65);
+    assert.equal(sampled.length, 25);
+    for (const [id, body] of Object.entries(EXTENDED).filter(([, body]) => body.spiceSamples?.length === 65)) {
+        const window = body.sampleWindow!;
+        assert.ok(window[1] - window[0] > 13 * DAY);
+        assert.ok(body.spiceSamples!.every((sample) => sample.slice(1).every(Number.isFinite)));
+        assert.ok(body.spiceVelocities!.every((sample) => sample.every(Number.isFinite)));
+        const atEpoch = relativeVector(id as BodyId, new Date(Date.UTC(2026, 8, 10)));
+        assert.ok(atEpoch.every(Number.isFinite), body.english);
+    }
 });

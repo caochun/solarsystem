@@ -190,5 +190,22 @@
     "innerKm": 74500.0,
     "outerKm": 140445.0,
     "asset": "data/assets/scene/solarsystem/planets/saturn/globe.asset"
-  }
+  },
+  "surfaceResources": [
+    {
+      "body": "venus",
+      "identifier": "venus_magellan_topography_global_4641m_v02",
+      "source": "USGS Astrogeology / NASA Magellan",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif",
+      "sourceProduct": "Venus Magellan Global Topography 4641m v02",
+      "output": "venus-magellan-topography.jpg",
+      "outputSha256": "a91e98d9f952e42414298ab5388f36125546057d6d880409d9e865e9d883446d",
+      "resolution": [
+        1024,
+        512
+      ],
+      "coverage": "global",
+      "type": "single-band radar-derived topography visualization"
+    }
+  ]
 }

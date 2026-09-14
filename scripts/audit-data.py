@@ -43,7 +43,7 @@ def main():
     physical=supplemental.get('physical',{}); refs=read('surface-references')['bodies']; errors=[]; warnings=[]; resources=[]; bodies={}
     for manifest in (openspace,extended,supplemental):
         default_dir = 'textures' if manifest is openspace else ''
-        for resource in manifest.get('resources',[])+manifest.get('textures',[]): resources.append(audit_resource(resource,errors,warnings,default_dir))
+        for resource in manifest.get('resources',[])+manifest.get('textures',[])+manifest.get('surfaceResources',[]): resources.append(audit_resource(resource,errors,warnings,default_dir))
     vesta=supplemental.get('vestaModel')
     if vesta:
         path=PUBLIC/vesta['path']; actual=digest(path) if path.exists() else None
@@ -90,7 +90,7 @@ def main():
     report['unsupportedByParent']={parent:[{**b,'reason':'No imported orbit'} for b in candidates if b['id'] not in moon_ids]
         for parent,candidates in report['assetCandidatesByParent'].items()}
     (SRC/'minor-moons-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n')
-    audit={'auditDate':datetime.now(timezone.utc).isoformat(timespec='seconds'),'scope':'Local OpenSpace asset snapshot and imported browser datasets','summary':{'errors':len(errors),'warnings':len(warnings),'resources':len(resources),'bodies':len(bodies),'physicalRecords':len(physical),'referenceImages':len(refs)},'status':'error' if errors else ('warning' if warnings else 'ok'),'errors':errors,'warnings':warnings,'resources':resources,'bodies':bodies,'minorMoonSamples':{'bodies':sum(bool(b.get('spiceSamples')) for b in moons['bodies']),'statePoints':sum(len(b.get('spiceSamples',[])) for b in moons['bodies']),'maxMidpointResidualKm':moons['sampleCoverage']['maxValidatedInterpolationErrorKm'],'orbitIssueBodies':moon_issues},'missingGlobalMapAndIndependentMesh':sorted(k for k,b in extra.items() if not b.get('texture') and not b.get('model') and k!='vesta'),'modelThumbnails':{'objects':[p.stem for p in (PUBLIC/'thumbnails').glob('*.png')],'path':'public/thumbnails/{id}.png'}}
+    audit={'auditDate':datetime.now(timezone.utc).isoformat(timespec='seconds'),'scope':'Local OpenSpace asset snapshot and imported browser datasets','summary':{'errors':len(errors),'warnings':len(warnings),'resources':len(resources),'bodies':len(bodies),'physicalRecords':len(physical),'referenceImages':len(refs)},'status':'error' if errors else ('warning' if warnings else 'ok'),'errors':errors,'warnings':warnings,'resources':resources,'bodies':bodies,'majorSatelliteSamples':{'bodies':sum(bool(b.get('spiceSamples')) for b in extra.values()),'statePoints':sum(len(b.get('spiceSamples',[])) for b in extra.values()),'windowDays':14,'outsideWindow':'Osculating Kepler fallback; precise SPK coverage is local to the sampled window'},'minorMoonSamples':{'bodies':sum(bool(b.get('spiceSamples')) for b in moons['bodies']),'statePoints':sum(len(b.get('spiceSamples',[])) for b in moons['bodies']),'maxMidpointResidualKm':moons['sampleCoverage']['maxValidatedInterpolationErrorKm'],'orbitIssueBodies':moon_issues},'missingGlobalMapAndIndependentMesh':sorted(k for k,b in extra.items() if not b.get('texture') and not b.get('model') and k!='vesta'),'modelThumbnails':{'objects':[p.stem for p in (PUBLIC/'thumbnails').glob('*.png')],'path':'public/thumbnails/{id}.png'}}
     (SRC/'data-quality-report.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n'); print(json.dumps(audit,ensure_ascii=False,indent=2))
     if errors: raise SystemExit(1)
 
