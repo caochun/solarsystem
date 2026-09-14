@@ -1,5 +1,5 @@
 {
-  "auditDate": "2026-09-14T01:13:29+00:00",
+  "auditDate": "2026-09-14T01:49:06+00:00",
   "scope": "Local OpenSpace asset snapshot and imported browser datasets",
   "summary": {
     "errors": 0,
@@ -319,43 +319,63 @@
   "bodies": {
     "sun": {
       "visual": "procedural",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "mercury": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "venus": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "earth": {
       "visual": "procedural",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "mars": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "jupiter": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "saturn": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "uranus": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "neptune": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "moon": {
       "visual": "texture",
-      "issues": []
+      "issues": [],
+      "dataQuality": "real",
+      "physicalQuality": "embedded"
     },
     "ariel": {
       "visual": "location-only",
@@ -363,7 +383,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "callisto": {
       "visual": "texture",
@@ -371,7 +393,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "ceres": {
       "visual": "texture",
@@ -379,7 +403,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "charon": {
       "visual": "texture",
@@ -387,7 +413,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "deimos": {
       "visual": "model",
@@ -395,7 +423,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "dione": {
       "visual": "texture",
@@ -403,7 +433,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "enceladus": {
       "visual": "texture",
@@ -411,7 +443,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "eris": {
       "visual": "model",
@@ -419,7 +453,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "europa": {
       "visual": "texture",
@@ -427,7 +463,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "ganymede": {
       "visual": "texture",
@@ -435,7 +473,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "gonggong": {
       "visual": "location-only",
@@ -443,7 +483,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "haumea": {
       "visual": "model",
@@ -451,7 +493,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "hydra": {
       "visual": "location-only",
@@ -459,7 +503,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "estimate"
     },
     "hyperion": {
       "visual": "location-only",
@@ -467,7 +513,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "iapetus": {
       "visual": "texture",
@@ -475,7 +523,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "io": {
       "visual": "texture",
@@ -483,7 +533,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "kerberos": {
       "visual": "location-only",
@@ -491,7 +543,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "estimate"
     },
     "makemake": {
       "visual": "model",
@@ -499,7 +553,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "missing"
     },
     "mimas": {
       "visual": "texture",
@@ -507,7 +563,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "miranda": {
       "visual": "location-only",
@@ -515,7 +573,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "nereid": {
       "visual": "location-only",
@@ -523,7 +583,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "nix": {
       "visual": "location-only",
@@ -531,7 +593,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "estimate"
     },
     "oberon": {
       "visual": "location-only",
@@ -539,7 +603,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "orcus": {
       "visual": "location-only",
@@ -547,7 +613,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "phobos": {
       "visual": "model",
@@ -555,7 +623,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "pluto": {
       "visual": "texture",
@@ -565,7 +635,9 @@
       ],
       "hasPhysical": false,
       "hasOrbit": false,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "missing"
     },
     "quaoar": {
       "visual": "location-only",
@@ -573,7 +645,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "rhea": {
       "visual": "texture",
@@ -581,7 +655,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "sedna": {
       "visual": "location-only",
@@ -589,7 +665,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "styx": {
       "visual": "location-only",
@@ -597,7 +675,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "estimate"
     },
     "tethys": {
       "visual": "texture",
@@ -605,7 +685,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "titan": {
       "visual": "texture",
@@ -613,7 +695,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "titania": {
       "visual": "location-only",
@@ -621,7 +705,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "triton": {
       "visual": "texture",
@@ -629,7 +715,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "real",
+      "physicalQuality": "real"
     },
     "umbriel": {
       "visual": "location-only",
@@ -637,7 +725,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": true
+      "hasReferenceImage": true,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "vesta": {
       "visual": "location-only",
@@ -645,7 +735,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "adrastea": {
       "visual": "location-only",
@@ -653,7 +745,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "aitne": {
       "visual": "location-only",
@@ -661,7 +755,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "amalthea": {
       "visual": "location-only",
@@ -669,7 +765,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "ananke": {
       "visual": "location-only",
@@ -677,7 +775,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "aoede": {
       "visual": "location-only",
@@ -685,7 +785,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "arche": {
       "visual": "location-only",
@@ -693,7 +795,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "autonoe": {
       "visual": "location-only",
@@ -701,7 +805,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "callirrhoe": {
       "visual": "location-only",
@@ -709,7 +815,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "carme": {
       "visual": "location-only",
@@ -717,7 +825,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "carpo": {
       "visual": "location-only",
@@ -725,7 +835,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "chaldene": {
       "visual": "location-only",
@@ -733,7 +845,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "cyllene": {
       "visual": "location-only",
@@ -741,7 +855,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "dia": {
       "visual": "location-only",
@@ -749,7 +865,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "elara": {
       "visual": "location-only",
@@ -757,7 +875,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "erinome": {
       "visual": "location-only",
@@ -765,7 +885,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "ersa": {
       "visual": "location-only",
@@ -773,7 +895,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "euanthe": {
       "visual": "location-only",
@@ -781,7 +905,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "eukelade": {
       "visual": "location-only",
@@ -789,7 +915,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "eupheme": {
       "visual": "location-only",
@@ -797,7 +925,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "euporie": {
       "visual": "location-only",
@@ -805,7 +935,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "eurydome": {
       "visual": "location-only",
@@ -813,7 +945,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "harpalyke": {
       "visual": "location-only",
@@ -821,7 +955,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "hegemone": {
       "visual": "location-only",
@@ -829,7 +965,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "helike": {
       "visual": "location-only",
@@ -837,7 +975,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "hermippe": {
       "visual": "location-only",
@@ -845,7 +985,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "herse": {
       "visual": "location-only",
@@ -853,7 +995,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "himalia": {
       "visual": "location-only",
@@ -861,7 +1005,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "iocaste": {
       "visual": "location-only",
@@ -869,7 +1015,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "isonoe": {
       "visual": "location-only",
@@ -877,7 +1025,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "kale": {
       "visual": "location-only",
@@ -885,7 +1035,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "kallichore": {
       "visual": "location-only",
@@ -893,7 +1045,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "kalyke": {
       "visual": "location-only",
@@ -901,7 +1055,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "kore": {
       "visual": "location-only",
@@ -909,7 +1065,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "leda": {
       "visual": "location-only",
@@ -917,7 +1075,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "lysithea": {
       "visual": "location-only",
@@ -925,7 +1085,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "megaclite": {
       "visual": "location-only",
@@ -933,7 +1095,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "metis": {
       "visual": "location-only",
@@ -941,7 +1105,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "mneme": {
       "visual": "location-only",
@@ -949,7 +1115,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "orthosie": {
       "visual": "location-only",
@@ -957,7 +1125,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "pandia": {
       "visual": "location-only",
@@ -965,7 +1135,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "pasiphae": {
       "visual": "location-only",
@@ -973,7 +1145,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "pasithee": {
       "visual": "location-only",
@@ -981,7 +1155,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "praxidike": {
       "visual": "location-only",
@@ -989,7 +1165,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j10": {
       "visual": "location-only",
@@ -997,7 +1175,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j12": {
       "visual": "location-only",
@@ -1005,7 +1185,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j15": {
       "visual": "location-only",
@@ -1013,7 +1195,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j16": {
       "visual": "location-only",
@@ -1021,7 +1205,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j18": {
       "visual": "location-only",
@@ -1029,7 +1215,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j19": {
       "visual": "location-only",
@@ -1037,7 +1225,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j2": {
       "visual": "location-only",
@@ -1045,7 +1235,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j23": {
       "visual": "location-only",
@@ -1053,7 +1245,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j24": {
       "visual": "location-only",
@@ -1061,7 +1255,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j4": {
       "visual": "location-only",
@@ -1069,7 +1265,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j5": {
       "visual": "location-only",
@@ -1077,7 +1275,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2003j9": {
       "visual": "location-only",
@@ -1085,7 +1285,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2010j1": {
       "visual": "location-only",
@@ -1093,7 +1295,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2010j2": {
       "visual": "location-only",
@@ -1101,7 +1305,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2011j1": {
       "visual": "location-only",
@@ -1109,7 +1315,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2011j2": {
       "visual": "location-only",
@@ -1117,7 +1325,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2011j3": {
       "visual": "location-only",
@@ -1125,7 +1335,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2016j1": {
       "visual": "location-only",
@@ -1133,7 +1345,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2016j3": {
       "visual": "location-only",
@@ -1141,7 +1355,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2016j4": {
       "visual": "location-only",
@@ -1149,7 +1365,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j1": {
       "visual": "location-only",
@@ -1157,7 +1375,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j10": {
       "visual": "location-only",
@@ -1165,7 +1385,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j11": {
       "visual": "location-only",
@@ -1173,7 +1395,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j2": {
       "visual": "location-only",
@@ -1181,7 +1405,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j3": {
       "visual": "location-only",
@@ -1189,7 +1415,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j5": {
       "visual": "location-only",
@@ -1197,7 +1425,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j6": {
       "visual": "location-only",
@@ -1205,7 +1435,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j7": {
       "visual": "location-only",
@@ -1213,7 +1445,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j8": {
       "visual": "location-only",
@@ -1221,7 +1455,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2017j9": {
       "visual": "location-only",
@@ -1229,7 +1465,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2018j2": {
       "visual": "location-only",
@@ -1237,7 +1475,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2018j3": {
       "visual": "location-only",
@@ -1245,7 +1485,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2018j4": {
       "visual": "location-only",
@@ -1253,7 +1495,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021j1": {
       "visual": "location-only",
@@ -1261,7 +1505,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021j2": {
       "visual": "location-only",
@@ -1269,7 +1515,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021j3": {
       "visual": "location-only",
@@ -1277,7 +1525,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021j4": {
       "visual": "location-only",
@@ -1285,7 +1535,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021j5": {
       "visual": "location-only",
@@ -1293,7 +1545,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021j6": {
       "visual": "location-only",
@@ -1301,7 +1555,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2022j1": {
       "visual": "location-only",
@@ -1309,7 +1565,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2022j2": {
       "visual": "location-only",
@@ -1317,7 +1575,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2022j3": {
       "visual": "location-only",
@@ -1325,7 +1585,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "sinope": {
       "visual": "location-only",
@@ -1333,7 +1595,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "sponde": {
       "visual": "location-only",
@@ -1341,7 +1605,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "taygete": {
       "visual": "location-only",
@@ -1349,7 +1615,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "thebe": {
       "visual": "location-only",
@@ -1357,7 +1625,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "thelxinoe": {
       "visual": "location-only",
@@ -1365,7 +1635,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "themisto": {
       "visual": "location-only",
@@ -1373,7 +1645,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "thyone": {
       "visual": "location-only",
@@ -1381,7 +1655,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "valetudo": {
       "visual": "location-only",
@@ -1389,7 +1665,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "despina": {
       "visual": "location-only",
@@ -1397,7 +1675,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "galatea": {
       "visual": "location-only",
@@ -1405,7 +1685,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "halimede": {
       "visual": "location-only",
@@ -1413,7 +1695,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "hippocamp": {
       "visual": "location-only",
@@ -1421,7 +1705,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "laomedeia": {
       "visual": "location-only",
@@ -1429,7 +1715,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "larissa": {
       "visual": "location-only",
@@ -1437,7 +1725,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "naiad": {
       "visual": "location-only",
@@ -1445,7 +1735,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "neso": {
       "visual": "location-only",
@@ -1453,7 +1745,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "proteus": {
       "visual": "location-only",
@@ -1461,7 +1755,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "psamathe": {
       "visual": "location-only",
@@ -1469,7 +1765,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2002n5": {
       "visual": "location-only",
@@ -1477,7 +1775,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2021n1": {
       "visual": "location-only",
@@ -1485,7 +1785,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "sao": {
       "visual": "location-only",
@@ -1493,7 +1795,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "thalassa": {
       "visual": "location-only",
@@ -1501,7 +1805,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "aegaeon": {
       "visual": "location-only",
@@ -1509,7 +1815,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "aegir": {
       "visual": "location-only",
@@ -1517,7 +1825,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "albiorix": {
       "visual": "location-only",
@@ -1525,7 +1835,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "alvaldi": {
       "visual": "location-only",
@@ -1533,7 +1845,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "angrboda": {
       "visual": "location-only",
@@ -1541,7 +1855,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "anthe": {
       "visual": "location-only",
@@ -1549,7 +1865,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "atlas": {
       "visual": "location-only",
@@ -1557,7 +1875,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "bebhionn": {
       "visual": "location-only",
@@ -1565,7 +1885,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "beli": {
       "visual": "location-only",
@@ -1573,7 +1895,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "bergelmir": {
       "visual": "location-only",
@@ -1581,7 +1905,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "bestla": {
       "visual": "location-only",
@@ -1589,7 +1915,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "calypso": {
       "visual": "location-only",
@@ -1597,7 +1925,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "daphnis": {
       "visual": "location-only",
@@ -1605,7 +1935,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "eggther": {
       "visual": "location-only",
@@ -1613,7 +1945,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "epimetheus": {
       "visual": "location-only",
@@ -1621,7 +1955,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "erriapus": {
       "visual": "location-only",
@@ -1629,7 +1965,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "farbauti": {
       "visual": "location-only",
@@ -1637,7 +1975,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "fenrir": {
       "visual": "location-only",
@@ -1645,7 +1985,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "fornjot": {
       "visual": "location-only",
@@ -1653,7 +1995,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "geirrod": {
       "visual": "location-only",
@@ -1661,7 +2005,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "gerd": {
       "visual": "location-only",
@@ -1669,7 +2015,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "greip": {
       "visual": "location-only",
@@ -1677,7 +2025,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "gridr": {
       "visual": "location-only",
@@ -1685,7 +2035,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "gunnlod": {
       "visual": "location-only",
@@ -1693,7 +2045,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "hati": {
       "visual": "location-only",
@@ -1701,7 +2055,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "helene": {
       "visual": "location-only",
@@ -1709,7 +2065,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "hyrrokkin": {
       "visual": "location-only",
@@ -1717,7 +2075,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "ijiraq": {
       "visual": "location-only",
@@ -1725,7 +2085,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "janus": {
       "visual": "location-only",
@@ -1733,7 +2095,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "jarnsaxa": {
       "visual": "location-only",
@@ -1741,7 +2105,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "kari": {
       "visual": "location-only",
@@ -1749,7 +2115,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "kiviuq": {
       "visual": "location-only",
@@ -1757,7 +2125,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "loge": {
       "visual": "location-only",
@@ -1765,7 +2135,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "methone": {
       "visual": "location-only",
@@ -1773,7 +2145,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "mundilfari": {
       "visual": "location-only",
@@ -1781,7 +2155,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "narvi": {
       "visual": "location-only",
@@ -1789,7 +2165,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "paaliaq": {
       "visual": "location-only",
@@ -1797,7 +2175,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "pallene": {
       "visual": "location-only",
@@ -1805,7 +2185,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "pan": {
       "visual": "location-only",
@@ -1813,7 +2195,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "pandora": {
       "visual": "location-only",
@@ -1821,7 +2205,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "phoebe": {
       "visual": "location-only",
@@ -1829,7 +2215,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "polydeuces": {
       "visual": "location-only",
@@ -1837,7 +2225,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "prometheus": {
       "visual": "location-only",
@@ -1845,7 +2235,9 @@
       "issues": [],
       "hasPhysical": true,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "real"
     },
     "s2004s12": {
       "visual": "location-only",
@@ -1853,7 +2245,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s13": {
       "visual": "location-only",
@@ -1861,7 +2255,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s17": {
       "visual": "location-only",
@@ -1869,7 +2265,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s21": {
       "visual": "location-only",
@@ -1877,7 +2275,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s24": {
       "visual": "location-only",
@@ -1885,7 +2285,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s26": {
       "visual": "location-only",
@@ -1893,7 +2295,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s28": {
       "visual": "location-only",
@@ -1901,7 +2305,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s29": {
       "visual": "location-only",
@@ -1909,7 +2315,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s31": {
       "visual": "location-only",
@@ -1917,7 +2325,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s34": {
       "visual": "location-only",
@@ -1925,7 +2335,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s36": {
       "visual": "location-only",
@@ -1933,7 +2345,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s37": {
       "visual": "location-only",
@@ -1941,7 +2355,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s39": {
       "visual": "location-only",
@@ -1949,7 +2365,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s40": {
       "visual": "location-only",
@@ -1957,7 +2375,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s41": {
       "visual": "location-only",
@@ -1965,7 +2385,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s42": {
       "visual": "location-only",
@@ -1973,7 +2395,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s43": {
       "visual": "location-only",
@@ -1981,7 +2405,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s44": {
       "visual": "location-only",
@@ -1989,7 +2415,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s45": {
       "visual": "location-only",
@@ -1997,7 +2425,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s46": {
       "visual": "location-only",
@@ -2005,7 +2435,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s47": {
       "visual": "location-only",
@@ -2013,7 +2445,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s48": {
       "visual": "location-only",
@@ -2021,7 +2455,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s49": {
       "visual": "location-only",
@@ -2029,7 +2465,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s50": {
       "visual": "location-only",
@@ -2037,7 +2475,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s51": {
       "visual": "location-only",
@@ -2045,7 +2485,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s52": {
       "visual": "location-only",
@@ -2053,7 +2495,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s53": {
       "visual": "location-only",
@@ -2061,7 +2505,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s54": {
       "visual": "location-only",
@@ -2069,7 +2515,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s55": {
       "visual": "location-only",
@@ -2077,7 +2525,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s56": {
       "visual": "location-only",
@@ -2085,7 +2535,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s57": {
       "visual": "location-only",
@@ -2093,7 +2545,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s58": {
       "visual": "location-only",
@@ -2101,7 +2555,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s59": {
       "visual": "location-only",
@@ -2109,7 +2565,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s60": {
       "visual": "location-only",
@@ -2117,7 +2575,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s61": {
       "visual": "location-only",
@@ -2125,7 +2585,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2004s7": {
       "visual": "location-only",
@@ -2133,7 +2595,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2005s4": {
       "visual": "location-only",
@@ -2141,7 +2605,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2005s5": {
       "visual": "location-only",
@@ -2149,7 +2615,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2005s6": {
       "visual": "location-only",
@@ -2157,7 +2625,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2005s7": {
       "visual": "location-only",
@@ -2165,7 +2635,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s1": {
       "visual": "location-only",
@@ -2173,7 +2645,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s10": {
       "visual": "location-only",
@@ -2181,7 +2655,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s11": {
       "visual": "location-only",
@@ -2189,7 +2665,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s12": {
       "visual": "location-only",
@@ -2197,7 +2675,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s13": {
       "visual": "location-only",
@@ -2205,7 +2685,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s14": {
       "visual": "location-only",
@@ -2213,7 +2695,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s15": {
       "visual": "location-only",
@@ -2221,7 +2705,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s16": {
       "visual": "location-only",
@@ -2229,7 +2715,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s17": {
       "visual": "location-only",
@@ -2237,7 +2725,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s18": {
       "visual": "location-only",
@@ -2245,7 +2735,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s19": {
       "visual": "location-only",
@@ -2253,7 +2745,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s20": {
       "visual": "location-only",
@@ -2261,7 +2755,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s21": {
       "visual": "location-only",
@@ -2269,7 +2765,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s22": {
       "visual": "location-only",
@@ -2277,7 +2775,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s23": {
       "visual": "location-only",
@@ -2285,7 +2785,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s24": {
       "visual": "location-only",
@@ -2293,7 +2795,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s25": {
       "visual": "location-only",
@@ -2301,7 +2805,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s26": {
       "visual": "location-only",
@@ -2309,7 +2815,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s27": {
       "visual": "location-only",
@@ -2317,7 +2825,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s28": {
       "visual": "location-only",
@@ -2325,7 +2835,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s29": {
       "visual": "location-only",
@@ -2333,7 +2845,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s3": {
       "visual": "location-only",
@@ -2341,7 +2855,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2006s9": {
       "visual": "location-only",
@@ -2349,7 +2865,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s10": {
       "visual": "location-only",
@@ -2357,7 +2875,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s11": {
       "visual": "location-only",
@@ -2365,7 +2885,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s2": {
       "visual": "location-only",
@@ -2373,7 +2895,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s3": {
       "visual": "location-only",
@@ -2381,7 +2905,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s5": {
       "visual": "location-only",
@@ -2389,7 +2915,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s6": {
       "visual": "location-only",
@@ -2397,7 +2925,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s7": {
       "visual": "location-only",
@@ -2405,7 +2935,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s8": {
       "visual": "location-only",
@@ -2413,7 +2945,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2007s9": {
       "visual": "location-only",
@@ -2421,7 +2955,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s01": {
       "visual": "location-only",
@@ -2429,7 +2965,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s10": {
       "visual": "location-only",
@@ -2437,7 +2975,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s11": {
       "visual": "location-only",
@@ -2445,7 +2985,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s12": {
       "visual": "location-only",
@@ -2453,7 +2995,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s13": {
       "visual": "location-only",
@@ -2461,7 +3005,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s14": {
       "visual": "location-only",
@@ -2469,7 +3015,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s15": {
       "visual": "location-only",
@@ -2477,7 +3025,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s16": {
       "visual": "location-only",
@@ -2485,7 +3035,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s17": {
       "visual": "location-only",
@@ -2493,7 +3045,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s18": {
       "visual": "location-only",
@@ -2501,7 +3055,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s19": {
       "visual": "location-only",
@@ -2509,7 +3065,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s2": {
       "visual": "location-only",
@@ -2517,7 +3075,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s20": {
       "visual": "location-only",
@@ -2525,7 +3085,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s21": {
       "visual": "location-only",
@@ -2533,7 +3095,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s22": {
       "visual": "location-only",
@@ -2541,7 +3105,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s23": {
       "visual": "location-only",
@@ -2549,7 +3115,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s24": {
       "visual": "location-only",
@@ -2557,7 +3125,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s25": {
       "visual": "location-only",
@@ -2565,7 +3135,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s26": {
       "visual": "location-only",
@@ -2573,7 +3145,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s27": {
       "visual": "location-only",
@@ -2581,7 +3155,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s28": {
       "visual": "location-only",
@@ -2589,7 +3165,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s29": {
       "visual": "location-only",
@@ -2597,7 +3175,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s3": {
       "visual": "location-only",
@@ -2605,7 +3185,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s30": {
       "visual": "location-only",
@@ -2613,7 +3195,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s31": {
       "visual": "location-only",
@@ -2621,7 +3205,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s32": {
       "visual": "location-only",
@@ -2629,7 +3215,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s33": {
       "visual": "location-only",
@@ -2637,7 +3225,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s34": {
       "visual": "location-only",
@@ -2645,7 +3235,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s35": {
       "visual": "location-only",
@@ -2653,7 +3245,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s36": {
       "visual": "location-only",
@@ -2661,7 +3255,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s37": {
       "visual": "location-only",
@@ -2669,7 +3265,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s38": {
       "visual": "location-only",
@@ -2677,7 +3275,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s39": {
       "visual": "location-only",
@@ -2685,7 +3285,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s4": {
       "visual": "location-only",
@@ -2693,7 +3295,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s40": {
       "visual": "location-only",
@@ -2701,7 +3305,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s41": {
       "visual": "location-only",
@@ -2709,7 +3315,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s42": {
       "visual": "location-only",
@@ -2717,7 +3325,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s43": {
       "visual": "location-only",
@@ -2725,7 +3335,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s44": {
       "visual": "location-only",
@@ -2733,7 +3345,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s5": {
       "visual": "location-only",
@@ -2741,7 +3355,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s6": {
       "visual": "location-only",
@@ -2749,7 +3365,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s7": {
       "visual": "location-only",
@@ -2757,7 +3375,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s8": {
       "visual": "location-only",
@@ -2765,7 +3385,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2019s9": {
       "visual": "location-only",
@@ -2773,7 +3395,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s1": {
       "visual": "location-only",
@@ -2781,7 +3405,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s10": {
       "visual": "location-only",
@@ -2789,7 +3415,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s11": {
       "visual": "location-only",
@@ -2797,7 +3425,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s12": {
       "visual": "location-only",
@@ -2805,7 +3435,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s13": {
       "visual": "location-only",
@@ -2813,7 +3445,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s14": {
       "visual": "location-only",
@@ -2821,7 +3455,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s15": {
       "visual": "location-only",
@@ -2829,7 +3465,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s16": {
       "visual": "location-only",
@@ -2837,7 +3475,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s17": {
       "visual": "location-only",
@@ -2845,7 +3485,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s18": {
       "visual": "location-only",
@@ -2853,7 +3495,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s19": {
       "visual": "location-only",
@@ -2861,7 +3505,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s2": {
       "visual": "location-only",
@@ -2869,7 +3515,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s20": {
       "visual": "location-only",
@@ -2877,7 +3525,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s21": {
       "visual": "location-only",
@@ -2885,7 +3535,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s22": {
       "visual": "location-only",
@@ -2893,7 +3545,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s23": {
       "visual": "location-only",
@@ -2901,7 +3555,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s24": {
       "visual": "location-only",
@@ -2909,7 +3565,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s25": {
       "visual": "location-only",
@@ -2917,7 +3575,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s26": {
       "visual": "location-only",
@@ -2925,7 +3585,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s27": {
       "visual": "location-only",
@@ -2933,7 +3595,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s28": {
       "visual": "location-only",
@@ -2941,7 +3605,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s29": {
       "visual": "location-only",
@@ -2949,7 +3615,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s3": {
       "visual": "location-only",
@@ -2957,7 +3625,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s30": {
       "visual": "location-only",
@@ -2965,7 +3635,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s31": {
       "visual": "location-only",
@@ -2973,7 +3645,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s32": {
       "visual": "location-only",
@@ -2981,7 +3655,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s33": {
       "visual": "location-only",
@@ -2989,7 +3665,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s34": {
       "visual": "location-only",
@@ -2997,7 +3675,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s35": {
       "visual": "location-only",
@@ -3005,7 +3685,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s36": {
       "visual": "location-only",
@@ -3013,7 +3695,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s37": {
       "visual": "location-only",
@@ -3021,7 +3705,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s38": {
       "visual": "location-only",
@@ -3029,7 +3715,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s39": {
       "visual": "location-only",
@@ -3037,7 +3725,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s4": {
       "visual": "location-only",
@@ -3045,7 +3735,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s40": {
       "visual": "location-only",
@@ -3053,7 +3745,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s41": {
       "visual": "location-only",
@@ -3061,7 +3755,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s42": {
       "visual": "location-only",
@@ -3069,7 +3765,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s43": {
       "visual": "location-only",
@@ -3077,7 +3775,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s44": {
       "visual": "location-only",
@@ -3085,7 +3785,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s5": {
       "visual": "location-only",
@@ -3093,7 +3795,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s6": {
       "visual": "location-only",
@@ -3101,7 +3805,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s7": {
       "visual": "location-only",
@@ -3109,7 +3815,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s8": {
       "visual": "location-only",
@@ -3117,7 +3825,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2020s9": {
       "visual": "location-only",
@@ -3125,7 +3835,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s1": {
       "visual": "location-only",
@@ -3133,7 +3845,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s10": {
       "visual": "location-only",
@@ -3141,7 +3855,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s11": {
       "visual": "location-only",
@@ -3149,7 +3865,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s12": {
       "visual": "location-only",
@@ -3157,7 +3875,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s13": {
       "visual": "location-only",
@@ -3165,7 +3885,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s14": {
       "visual": "location-only",
@@ -3173,7 +3895,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s15": {
       "visual": "location-only",
@@ -3181,7 +3905,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s16": {
       "visual": "location-only",
@@ -3189,7 +3915,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s17": {
       "visual": "location-only",
@@ -3197,7 +3925,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s18": {
       "visual": "location-only",
@@ -3205,7 +3935,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s19": {
       "visual": "location-only",
@@ -3213,7 +3945,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s2": {
       "visual": "location-only",
@@ -3221,7 +3955,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s20": {
       "visual": "location-only",
@@ -3229,7 +3965,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s21": {
       "visual": "location-only",
@@ -3237,7 +3975,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s22": {
       "visual": "location-only",
@@ -3245,7 +3985,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s23": {
       "visual": "location-only",
@@ -3253,7 +3995,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s24": {
       "visual": "location-only",
@@ -3261,7 +4005,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s25": {
       "visual": "location-only",
@@ -3269,7 +4015,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s26": {
       "visual": "location-only",
@@ -3277,7 +4025,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s27": {
       "visual": "location-only",
@@ -3285,7 +4035,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s28": {
       "visual": "location-only",
@@ -3293,7 +4045,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s29": {
       "visual": "location-only",
@@ -3301,7 +4055,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s3": {
       "visual": "location-only",
@@ -3309,7 +4065,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s30": {
       "visual": "location-only",
@@ -3317,7 +4075,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s31": {
       "visual": "location-only",
@@ -3325,7 +4085,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s32": {
       "visual": "location-only",
@@ -3333,7 +4095,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s33": {
       "visual": "location-only",
@@ -3341,7 +4105,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s34": {
       "visual": "location-only",
@@ -3349,7 +4115,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s35": {
       "visual": "location-only",
@@ -3357,7 +4125,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s36": {
       "visual": "location-only",
@@ -3365,7 +4135,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s37": {
       "visual": "location-only",
@@ -3373,7 +4145,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s38": {
       "visual": "location-only",
@@ -3381,7 +4155,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s39": {
       "visual": "location-only",
@@ -3389,7 +4165,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s4": {
       "visual": "location-only",
@@ -3397,7 +4175,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s40": {
       "visual": "location-only",
@@ -3405,7 +4185,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s41": {
       "visual": "location-only",
@@ -3413,7 +4195,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s42": {
       "visual": "location-only",
@@ -3421,7 +4205,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s43": {
       "visual": "location-only",
@@ -3429,7 +4215,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s44": {
       "visual": "location-only",
@@ -3437,7 +4225,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s45": {
       "visual": "location-only",
@@ -3445,7 +4235,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s46": {
       "visual": "location-only",
@@ -3453,7 +4245,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s47": {
       "visual": "location-only",
@@ -3461,7 +4255,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s48": {
       "visual": "location-only",
@@ -3469,7 +4265,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s49": {
       "visual": "location-only",
@@ -3477,7 +4275,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s5": {
       "visual": "location-only",
@@ -3485,7 +4285,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s50": {
       "visual": "location-only",
@@ -3493,7 +4295,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s6": {
       "visual": "location-only",
@@ -3501,7 +4305,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s7": {
       "visual": "location-only",
@@ -3509,7 +4315,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s8": {
       "visual": "location-only",
@@ -3517,7 +4325,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023s9": {
       "visual": "location-only",
@@ -3525,7 +4335,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "siarnaq": {
       "visual": "location-only",
@@ -3533,7 +4345,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "skathi": {
       "visual": "location-only",
@@ -3541,7 +4355,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "skoll": {
       "visual": "location-only",
@@ -3549,7 +4365,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "skrymir": {
       "visual": "location-only",
@@ -3557,7 +4375,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "surtur": {
       "visual": "location-only",
@@ -3565,7 +4385,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "suttungr": {
       "visual": "location-only",
@@ -3573,7 +4395,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "tarqeq": {
       "visual": "location-only",
@@ -3581,7 +4405,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "tarvos": {
       "visual": "location-only",
@@ -3589,7 +4415,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "telesto": {
       "visual": "location-only",
@@ -3597,7 +4425,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "thiazzi": {
       "visual": "location-only",
@@ -3605,7 +4435,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "thrymr": {
       "visual": "location-only",
@@ -3613,7 +4445,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "ymir": {
       "visual": "location-only",
@@ -3621,7 +4455,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "belinda": {
       "visual": "location-only",
@@ -3629,7 +4465,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "bianca": {
       "visual": "location-only",
@@ -3637,7 +4475,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "caliban": {
       "visual": "location-only",
@@ -3645,7 +4485,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "cordelia": {
       "visual": "location-only",
@@ -3653,7 +4495,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "cressida": {
       "visual": "location-only",
@@ -3661,7 +4505,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "cupid": {
       "visual": "location-only",
@@ -3669,7 +4515,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "desdemona": {
       "visual": "location-only",
@@ -3677,7 +4525,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "ferdinand": {
       "visual": "location-only",
@@ -3685,7 +4535,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "francisco": {
       "visual": "location-only",
@@ -3693,7 +4545,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "juliet": {
       "visual": "location-only",
@@ -3701,7 +4555,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "mab": {
       "visual": "location-only",
@@ -3709,7 +4565,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "margaret": {
       "visual": "location-only",
@@ -3717,7 +4575,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "ophelia": {
       "visual": "location-only",
@@ -3725,7 +4585,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "perdita": {
       "visual": "location-only",
@@ -3733,7 +4595,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "portia": {
       "visual": "location-only",
@@ -3741,7 +4605,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "prospero": {
       "visual": "location-only",
@@ -3749,7 +4615,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "puck": {
       "visual": "location-only",
@@ -3757,7 +4625,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "rosalind": {
       "visual": "location-only",
@@ -3765,7 +4635,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2023u1": {
       "visual": "location-only",
@@ -3773,7 +4645,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "s2025u1": {
       "visual": "location-only",
@@ -3781,7 +4655,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "setebos": {
       "visual": "location-only",
@@ -3789,7 +4665,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "stephano": {
       "visual": "location-only",
@@ -3797,7 +4675,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "sycorax": {
       "visual": "location-only",
@@ -3805,7 +4685,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     },
     "trinculo": {
       "visual": "location-only",
@@ -3813,7 +4695,9 @@
       "issues": [],
       "hasPhysical": false,
       "hasOrbit": true,
-      "hasReferenceImage": false
+      "hasReferenceImage": false,
+      "dataQuality": "location-only",
+      "physicalQuality": "missing"
     }
   },
   "minorMoonSamples": {

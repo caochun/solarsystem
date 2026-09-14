@@ -5,7 +5,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite --host 127.0.0.1 --port 5173",
-        "build": "tsc --noEmit && vite build",
+        "audit": "python3 scripts/audit-data.py >/dev/null",
+        "build": "npm run audit && tsc --noEmit && vite build",
         "preview": "vite preview --host 127.0.0.1 --port 4173",
         "test": "tsx --test tests/*.test.ts",
         "test:browser": "playwright test"

@@ -51,7 +51,8 @@ def main():
         item['status']='ok' if path.exists() and actual==vesta.get('outputSha256') else 'missing-or-hash-mismatch'; resources.append(item)
         if item['status']!='ok': errors.append('vesta model missing or hash mismatch')
     for body in ('sun','mercury','venus','earth','mars','jupiter','saturn','uranus','neptune','moon'):
-        bodies[body]={'visual':'procedural' if body in {'sun','earth'} else 'texture','issues':[]}
+        bodies[body]={'visual':'procedural' if body in {'sun','earth'} else 'texture','issues':[],
+                      'dataQuality':'real','physicalQuality':'embedded'}
     texture_outputs={r.get('output') for r in resources if r.get('output','').startswith('textures/')}; model_outputs={r.get('output') for r in resources if r.get('output','').startswith('models/')}
     extra=extended['bodies']
     for body_id,body in extra.items():
@@ -63,8 +64,12 @@ def main():
         issues.extend(audit_orbit(body['orbit'],body_id,errors)) if body.get('orbit') else issues.append('orbit-missing')
         radii=body.get('radiiKm')
         if not isinstance(radii,list) or len(radii)!=3 or any(not finite(x) or x<=0 for x in radii): issues.append('radii-invalid')
-        if body_id not in physical: warnings.append(f'{body_id}: physical record unavailable')
-        bodies[body_id]={'visual':visual,'parent':parent,'issues':sorted(set(issues)),'hasPhysical':body_id in physical,'hasOrbit':bool(body.get('orbit')),'hasReferenceImage':body_id in refs}
+        record=physical.get(body_id)
+        if not record: warnings.append(f'{body_id}: physical record unavailable')
+        physical_quality='missing' if not record else ('upper-limit' if record.get('massUpperLimit') else 'real')
+        if body.get('radiusQuality') in {'mean-estimate','placeholder'}: physical_quality='estimate'
+        data_quality='location-only' if visual=='location-only' else ('estimate' if physical_quality=='estimate' else 'real')
+        bodies[body_id]={'visual':visual,'parent':parent,'issues':sorted(set(issues)),'hasPhysical':body_id in physical,'hasOrbit':bool(body.get('orbit')),'hasReferenceImage':body_id in refs,'dataQuality':data_quality,'physicalQuality':physical_quality}
     known={'sun','earth','moon','mercury','venus','mars','jupiter','saturn','uranus','neptune','pluto'}|set(extra)
     for body_id,body in extra.items():
         if body.get('parent') not in known: errors.append(f"{body_id}: unknown parent {body.get('parent')}")
@@ -76,7 +81,9 @@ def main():
     moon_issues=0
     for body in moons['bodies']:
         issues=audit_orbit(body.get('orbit'),body['id'],errors); moon_issues+=bool(issues)
-        bodies[body['id']]={'visual':'location-only','parent':body.get('parent'),'issues':issues,'hasPhysical':body['id'] in physical,'hasOrbit':bool(body.get('orbit')),'hasReferenceImage':body['id'] in refs}
+        record=physical.get(body['id'])
+        physical_quality='missing' if not record else ('upper-limit' if record.get('massUpperLimit') else 'real')
+        bodies[body['id']]={'visual':'location-only','parent':body.get('parent'),'issues':issues,'hasPhysical':body['id'] in physical,'hasOrbit':bool(body.get('orbit')),'hasReferenceImage':body['id'] in refs,'dataQuality':'location-only','physicalQuality':physical_quality}
     moon_ids={b['id'] for b in moons['bodies']}
     report['extractedCount']=len(moon_ids)
     report['extractedByParent']=dict(Counter(b['parent'] for b in moons['bodies']))

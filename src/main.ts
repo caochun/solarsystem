@@ -86,13 +86,19 @@ const DATA_STATUS_LABEL: Record<DataCompleteness, string> = {
 };
 const OBSERVATORY_TARGET_IDS: BodyId[] = ["sun", ...PLANET_IDS, "moon"];
 const statusLabel = (status: DataCompleteness) => DATA_STATUS_LABEL[status];
-const qualityOf = (id: string) => (dataQuality.bodies as Record<string, { issues?: string[]; visual?: string; hasPhysical?: boolean; hasReferenceImage?: boolean }>)[id];
+const qualityOf = (id: string) => (dataQuality.bodies as Record<string, { issues?: string[]; visual?: string; dataQuality?: string; physicalQuality?: string; hasPhysical?: boolean; hasReferenceImage?: boolean }>)[id];
 const qualityLabel = (id: string) => {
     const quality = qualityOf(id);
     if (!quality) return "";
-    const labels = quality.visual === "texture" ? "本地贴图" : quality.visual === "model" ? "本地模型" : quality.visual === "procedural" ? "程序化外观" : "轨道定位点";
-    const details = [labels, quality.hasPhysical ? "有物理参数" : "物理参数缺失", quality.hasReferenceImage ? "有探测器参考图" : ""].filter(Boolean);
+    const labels = quality.dataQuality === "estimate" ? "估算数据" : quality.dataQuality === "location-only" ? "仅定位点" : "真实数据";
+    const visual = quality.visual === "texture" ? "本地贴图" : quality.visual === "model" ? "本地模型" : quality.visual === "procedural" ? "程序化外观" : "轨道定位点";
+    const physical = quality.physicalQuality === "upper-limit" ? "质量为上限" : quality.physicalQuality === "estimate" ? "尺寸为估算" : quality.physicalQuality === "missing" ? "物理参数缺失" : "有物理参数";
+    const details = [labels, visual, physical, quality.hasReferenceImage ? "有探测器参考图" : ""].filter(Boolean);
     return details.join(" · ");
+};
+const qualityIssueText = (id: string) => {
+    const issues = qualityOf(id)?.issues ?? [];
+    return issues.length ? `数据审计问题：${issues.join("、")}。该对象的显示结果仅供定位参考。` : "";
 };
 const accuracyLabel = (target: OrbitTarget, at: number) => {
     if (!isMinorMoon(target)) return "开普勒历元外推";
@@ -327,7 +333,7 @@ function updateSelection() {
             ? "平均半径"
             : "参考半径";
         q("#body-fact").textContent =
-            `数据完整度：${statusLabel(body.dataStatus)} · ${qualityLabel(body.id)} · ${accuracyLabel(body, time)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。`;
+            `数据完整度：${statusLabel(body.dataStatus)} · ${qualityLabel(body.id)} · ${accuracyLabel(body, time)} · 母行星：${BODIES[body.parentBody].name} · 数据历元 ${body.sourceEpoch.slice(0, 10)} · 来源内核 ${body.sourceUrl.split("/").pop()}。${physical ? "物理参数来自 JPL 卫星物理参数表；" : "未收录物理参数；"}未加载表面纹理。${qualityIssueText(body.id)}`;
         for (const key of ["rotation", "temperature"])
             q(`#body-${key}`).textContent = "未收录";
         q("#physical-source").replaceChildren();
@@ -389,7 +395,7 @@ function updateSelection() {
         q("#body-orbit-period").textContent =
             `${body.orbit!.period.toFixed(2)} 天`;
         q("#body-fact").textContent =
-            `数据完整度：${statusLabel(body.dataStatus ?? "orbit-point")} · ${qualityLabel(body.id)} · 历元 ${new Date(body.orbit!.epoch).toISOString().slice(0, 10)} · 开普勒近似外推。亮点仅表示位置，不代表实测大小；未加载地貌或彗尾。`;
+            `数据完整度：${statusLabel(body.dataStatus ?? "orbit-point")} · ${qualityLabel(body.id)} · 历元 ${new Date(body.orbit!.epoch).toISOString().slice(0, 10)} · 开普勒近似外推。亮点仅表示位置，不代表实测大小；未加载地貌或彗尾。${qualityIssueText(body.id)}`;
         q("#physical-source").textContent = "";
         q("#ring-source").textContent = "";
         q("#parent-body").hidden = q("#family-view").hidden = true;
@@ -459,6 +465,9 @@ function updateSelection() {
             link,
         );
         q("#physical-source").title = physical.radiusReference;
+    }
+    if (qualityIssueText(selected)) {
+        q("#physical-source").append(document.createTextNode(` ${qualityIssueText(selected)}`));
     }
     const ring = EXTRA_RINGS[selected as keyof typeof EXTRA_RINGS];
     q("#ring-source").replaceChildren();
