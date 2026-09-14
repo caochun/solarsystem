@@ -111,6 +111,14 @@ export function textureOf(id: BodyId) {
     if (id === "moon") return lunarSurface.sceneColor.path.replace(/^textures\//, "");
     return extra(id) ? extra(id)!.texture : id === "sun" ? null : `${id}.jpg`;
 }
+/** Asset used by the compact catalogue icon. Model-only bodies use a small
+ * rendered thumbnail generated from the same local GLB, while mapped bodies
+ * reuse their actual albedo texture. */
+export function thumbnailOf(id: BodyId) {
+    const texture = textureOf(id);
+    if (texture && (id === "moon" || extra(id)?.texture || !extra(id))) return texture;
+    return extra(id)?.model ? `thumbnails/${id}.png` : null;
+}
 export function shapeRatios(id: BodyId): [number, number, number] {
     const axes = extra(id)?.radiiKm;
     return axes

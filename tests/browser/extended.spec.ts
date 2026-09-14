@@ -314,3 +314,15 @@ test("Mobile full search follows a comet and unsupported records cannot be posit
     ).toBe(true);
     expect(errors).toEqual([]);
 });
+
+test("catalog icons use the same visual assets as model-backed bodies", async ({ page }) => {
+    await page.goto("/?body=phobos");
+    for (const id of ["phobos", "deimos", "eris", "haumea", "makemake", "vesta"]) {
+        const style = await page.locator(`[data-body="${id}"] .planet-thumb`).getAttribute("style");
+        expect(style, id).toContain(`thumbnails/${id}.png`);
+    }
+    for (const id of ["earth", "jupiter", "uranus", "moon"]) {
+        const style = await page.locator(`[data-body="${id}"] .planet-thumb`).getAttribute("style");
+        expect(style, id).toContain("textures/");
+    }
+});

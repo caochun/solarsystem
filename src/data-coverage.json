@@ -26,7 +26,7 @@
   },
   "physicalRecords": 52,
   "minorMoonsWithPhysicalRecords": 19,
-  "referencePhotos": 11,
+  "referencePhotos": 12,
   "missingGlobalMapAndIndependentMesh": [
     "ariel",
     "gonggong",
@@ -53,5 +53,18 @@
     "LROC/LOLA lunar resources are finite-resolution mosaics; illumination omits terrain shadow casting and eclipses.",
     "The sixteen full small-body catalogs remain the previously downloaded OpenSpace snapshots; one non-elliptic/incomplete record is not positioned.",
     "Other planetary terrain tiles, full ring dynamics, comet activity and full SPICE attitude/observation solvers are not integrated."
-  ]
+  ],
+  "modelThumbnails": {
+    "objects": [
+      "phobos",
+      "deimos",
+      "eris",
+      "haumea",
+      "makemake",
+      "vesta"
+    ],
+    "path": "public/thumbnails/{id}.png",
+    "source": "Rendered from the corresponding local GLB model with the browser scene; thumbnail only",
+    "count": 6
+  }
 }

@@ -7,8 +7,8 @@ import {
     isSatellite,
     childrenOf,
     extra,
-    textureOf,
     sourceDescription,
+    thumbnailOf,
     physicalOf,
     EXTRA_RINGS,
     BODY_IDS,
@@ -148,7 +148,7 @@ q("#app").innerHTML = `
       <div class="catalog-heading"><span>探索天体</span><span id="body-count" class="mono">${ids.length + minorMoons.length}</span></div>
       <p class="catalog-coverage" id="coverage-summary"></p>
       <div class="catalog-filters"><select id="body-filter" aria-label="天体分类"><option value="all">全部天体</option><option value="major">太阳与行星</option><option value="satellite">天然卫星</option><option value="dwarf">五颗矮行星</option><option value="minor">其他小天体</option><option value="full-model">有模型或贴图</option><option value="orbit-point">只有轨道定位</option><option value="catalog-only">只有目录记录</option><option value="name-only">只有名称或资产</option>${["earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"].map((id) => `<option value="${id}">${BODIES[id as BodyId].name}系统</option>`).join("")}</select><input id="body-search" type="search" placeholder="搜索天体" aria-label="搜索天体名称"/></div>
-      <div class="body-list" tabindex="0" aria-label="天体列表，可滚动">${ids.map((id) => { const status = dataStatus(id); return `<button class="body-card ${id === selected ? "active" : ""}" data-body="${id}" data-status="${status}" aria-pressed="${id === selected}"><span class="planet-thumb ${id}" style="background-color:${BODIES[id].color};${textureOf(id) ? `background-image:url(${import.meta.env.BASE_URL}textures/${textureOf(id)})` : ""}"></span><span class="body-card-text">${BODIES[id].name}<small>${BODIES[id].english} · ${statusLabel(status)}</small></span><span class="body-card-arrow">↗</span></button>`; }).join("")}${minorMoons.map((body) => `<button class="body-card minor-moon-card" data-minor-moon="${body.id}" data-status="orbit-point" aria-pressed="false"><span class="planet-thumb minor-moon" style="background-color:#829b93"></span><span class="body-card-text">${body.name}<small>${body.parent.toUpperCase()} · ${statusLabel("orbit-point")}</small></span><span class="body-card-arrow">↗</span></button>`).join("")}</div>
+      <div class="body-list" tabindex="0" aria-label="天体列表，可滚动">${ids.map((id) => { const status = dataStatus(id), thumbnail = thumbnailOf(id), thumbnailPath = thumbnail ? (thumbnail.startsWith("thumbnails/") ? thumbnail : `textures/${thumbnail}`) : ""; return `<button class="body-card ${id === selected ? "active" : ""}" data-body="${id}" data-status="${status}" aria-pressed="${id === selected}"><span class="planet-thumb ${id}" style="background-color:${BODIES[id].color};${thumbnailPath ? `background-image:url(${import.meta.env.BASE_URL}${thumbnailPath})` : ""}"></span><span class="body-card-text">${BODIES[id].name}<small>${BODIES[id].english} · ${statusLabel(status)}</small></span><span class="body-card-arrow">↗</span></button>`; }).join("")}${minorMoons.map((body) => `<button class="body-card minor-moon-card" data-minor-moon="${body.id}" data-status="orbit-point" aria-pressed="false"><span class="planet-thumb minor-moon" style="background-color:#829b93"></span><span class="body-card-text">${body.name}<small>${body.parent.toUpperCase()} · ${statusLabel("orbit-point")}</small></span><span class="body-card-arrow">↗</span></button>`).join("")}</div>
       <button id="overview" class="overview-button">${icon("grid")}<span>太阳系总览</span>${icon("arrow")}</button>
     </aside>
     <div class="view-heading"><span class="eyebrow" id="view-eyebrow">FOCUS / EARTH</span><span class="view-title" id="view-title">地球近景</span><span class="view-rule"></span><div class="family-actions"><button id="parent-body" hidden></button><button id="family-view" hidden>卫星系统 ↗</button></div></div>

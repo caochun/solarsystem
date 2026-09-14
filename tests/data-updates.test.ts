@@ -5,7 +5,7 @@ import { createHash } from "node:crypto";
 import references from "../src/surface-references.json";
 import update from "../src/small-body-updates.json";
 import coverage from "../src/data-coverage.json";
-import { extra, sourceDescription, dataStatus, type BodyId } from "../src/model";
+import { extra, sourceDescription, dataStatus, thumbnailOf, type BodyId } from "../src/model";
 import { MINOR_MOONS } from "../src/minor-moons";
 
 test("spacecraft reference originals match their records without upgrading global surface coverage", () => {
@@ -44,4 +44,13 @@ test("coverage report reconciles all imported moons, sample points and local phy
     assert.equal(coverage.minorMoonsWithPhysicalRecords,MINOR_MOONS.filter(b=>b.physical).length);
     assert.equal(coverage.physicalRecords,52);
     assert.ok(Object.values(coverage.missingOriginalMinorMoonCandidates).every(b=>b.length===0));
+});
+
+test("every model-backed body has a real catalogue thumbnail", () => {
+    for (const id of ["phobos", "deimos", "eris", "haumea", "makemake", "vesta"] as BodyId[]) {
+        const asset = thumbnailOf(id);
+        assert.equal(asset, `thumbnails/${id}.png`);
+        const bytes = readFileSync(new URL(`../public/${asset}`, import.meta.url));
+        assert.ok(bytes.length > 1000, id);
+    }
 });

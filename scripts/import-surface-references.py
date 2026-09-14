@@ -22,6 +22,7 @@ CHOICES = {
     'hydra': ('PIA19711', '新视野号早期回传影像，分辨率有限；显示像素不代表可辨认同等尺度的地貌。'),
     'kerberos': ('PIA20034', '2015 年 7 月 14 日四张 LORRI 影像合成，经去卷积和 8 倍放大；放大不增加原始观测分辨率。'),
     'styx': ('PIA20033', '新视野号 LORRI 卫星合图，含冥卫一及四颗小卫星，保留原标尺；冥卫五没有解析的全球地表图。'),
+    'sedna': ('PIA05568', 'NASA 公布的塞德娜发现观测图；三幅图展示地面望远镜在不同时间拍摄的移动点源，仅用于观测参考，不能解析地表。'),
 }
 
 def fetch(url, path):
@@ -47,7 +48,7 @@ def import_one(pair):
     return body, {'nasaId':nasa_id,'path':f'reference-images/{nasa_id}.jpg','source':source,
         'metadataUrl':api,'page':f'https://images.nasa.gov/details/{nasa_id}',
         'title':data['title'],'description':data['description'],'credit':data.get('secondary_creator',data['center']),
-        'published':data['date_created'],'retrieved':'2026-09-13','note':note,
+        'published':data['date_created'],'retrieved':'2026-09-14','note':note,
         'kind':'spacecraft observation reference; not a global map','width':width,'height':height,
         'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
 
