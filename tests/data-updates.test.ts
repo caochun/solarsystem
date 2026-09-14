@@ -61,6 +61,13 @@ test("generated data quality report has no illegal resources or orbit records", 
     assert.equal(quality.summary.errors, 0);
     assert.ok(quality.summary.resources >= 30);
     assert.ok(quality.summary.bodies >= 442);
-    assert.ok(quality.resources.every((resource: { status: string }) => resource.status === "ok" || resource.status === "metadata-only"));
+    for (const resource of quality.resources as Array<{ status: string; output?: string; expectedSha256?: string; sha256?: string }>) {
+        assert.ok(resource.status === "ok" || resource.status === "metadata-only", resource.output);
+        if (resource.output && resource.expectedSha256) {
+            const bytes = readFileSync(new URL(`../public/${resource.output}`, import.meta.url));
+            assert.equal(createHash("sha256").update(bytes).digest("hex"), resource.expectedSha256, resource.output);
+            assert.equal(resource.sha256, resource.expectedSha256, resource.output);
+        }
+    }
     assert.deepEqual(quality.missingGlobalMapAndIndependentMesh, ["ariel", "gonggong", "hydra", "hyperion", "kerberos", "miranda", "nereid", "nix", "oberon", "orcus", "quaoar", "sedna", "styx", "titania", "umbriel"]);
 });
