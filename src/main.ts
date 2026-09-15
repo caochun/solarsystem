@@ -1161,7 +1161,10 @@ async function queryHorizons() {
         const response = await fetch(`/api/horizons?${params}`);
         const payload = await response.json();
         if (!response.ok) throw new Error(payload.error || `HTTP ${response.status}`);
-        precision.textContent = `JPL Horizons 精密观测星历已返回（${payload.ephemeris?.length ?? 0} 行，目标 ${BODIES[target].name}）。本地解算仍保留用于离线使用。`;
+        const row = payload.rows?.[0];
+        const fields = row?.fields ?? [];
+        const detail = fields.length >= 7 ? `RA ${fields[1]} · DEC ${fields[2]} · 方位 ${fields[5]}° · 高度 ${fields[6]}°` : `${payload.ephemeris?.length ?? 0} 行原始星历`;
+        precision.textContent = `JPL Horizons 精密观测星历已返回（${payload.rows?.length ?? 0} 行，目标 ${BODIES[target].name}）：${detail}。本地解算仍保留用于离线使用。`;
     } catch (error) { precision.textContent = `JPL Horizons 查询失败：${error instanceof Error ? error.message : String(error)}；当前显示本地解算结果。`; }
 }
 q<HTMLButtonElement>("#open-observatory").addEventListener("click", () => {

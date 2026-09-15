@@ -32,6 +32,14 @@ const types = {
 
 const catalogs = createCatalogApi();
 const HORIZONS_TARGETS = new Set(['10', '199', '299', '301', '399', '499', '599', '699', '799', '899']);
+function parseHorizonsRows(result) {
+  const soe = result.indexOf('$$SOE'), eoe = result.indexOf('$$EOE');
+  if (soe < 0 || eoe <= soe) return [];
+  return result.slice(soe + 5, eoe).trim().split(/\r?\n/).filter(Boolean).slice(0, 1441).map((line) => {
+    const fields = line.split(',').map((field) => field.trim());
+    return { raw: line, fields };
+  });
+}
 async function horizons(request, response, url) {
   if (request.method !== 'GET' || url.pathname !== '/api/horizons') return false;
   const target = url.searchParams.get('target') || '';
@@ -47,16 +55,15 @@ async function horizons(request, response, url) {
     Number.isFinite(stopDate.getTime()) && stopDate > startDate && stopDate - startDate <= 86_400_000;
   const send = (status, body) => { response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }); response.end(JSON.stringify(body)); };
   if (!valid) { send(400, { error: 'Invalid Horizons request' }); return true; }
-  const params = new URLSearchParams({ format: 'json', COMMAND: `'${target}'`, OBJ_DATA: 'NO', MAKE_EPHEM: 'YES', EPHEM_TYPE: 'OBSERVER', CENTER: "'coord@399'", COORD_TYPE: 'GEODETIC', SITE_COORD: `'${lon},${lat},${elevation / 1000}'`, START_TIME: `'${startDate.toISOString().slice(0, 16).replace('T', ' ')}'`, STOP_TIME: `'${stopDate.toISOString().slice(0, 16).replace('T', ' ')}'`, STEP_SIZE: "'1 m'", QUANTITIES: "'4,20'" });
+  const params = new URLSearchParams({ format: 'json', COMMAND: `'${target}'`, OBJ_DATA: 'NO', MAKE_EPHEM: 'YES', EPHEM_TYPE: 'OBSERVER', CENTER: "'coord@399'", COORD_TYPE: 'GEODETIC', SITE_COORD: `'${lon},${lat},${elevation / 1000}'`, START_TIME: `'${startDate.toISOString().slice(0, 16).replace('T', ' ')}'`, STOP_TIME: `'${stopDate.toISOString().slice(0, 16).replace('T', ' ')}'`, STEP_SIZE: "'1 m'", QUANTITIES: "'4,20,23,24'", CSV_FORMAT: 'YES' });
   try {
     const upstream = await fetch(`https://ssd.jpl.nasa.gov/api/horizons.api?${params}`, { signal: AbortSignal.timeout(15_000), headers: { Accept: 'application/json' } });
     if (!upstream.ok) { send(502, { error: `Horizons returned HTTP ${upstream.status}` }); return true; }
     const payload = await upstream.json();
     if (payload.error) { send(502, { error: payload.error }); return true; }
     const result = typeof payload.result === 'string' ? payload.result : '';
-    const soe = result.indexOf('$$SOE'), eoe = result.indexOf('$$EOE');
-    const ephemeris = soe >= 0 && eoe > soe ? result.slice(soe + 5, eoe).trim().split(/\r?\n/).slice(0, 32) : [];
-    send(200, { source: 'JPL Horizons', target, request: { start: startDate.toISOString(), stop: stopDate.toISOString(), latitude: lat, longitude: lon, elevationMeters: elevation }, ephemeris });
+    const rows = parseHorizonsRows(result);
+    send(200, { source: 'JPL Horizons', target, request: { start: startDate.toISOString(), stop: stopDate.toISOString(), latitude: lat, longitude: lon, elevationMeters: elevation }, columns: ['datetime', 'RA', 'DEC', 'range', 'range-rate', 'AZ', 'EL'], rows, ephemeris: rows.map((row) => row.raw).slice(0, 32) });
   } catch (error) { send(504, { error: `Horizons 查询失败：${error.message}` }); }
   return true;
 }
